@@ -1,0 +1,27 @@
+=== Espelhamento iniciado em 2026-05-06 16:10:48 ===
+
+Listando zonas na conta ORIGEM (Michael)...
+  ERRO listando zonas: [{'code': 6003, 'message': 'Invalid request headers', 'error_chain': [{'code': 6103, 'message': 'Invalid format for X-Auth-Key header'}]}]
+  Tentando com Global API Key...
+  ERRO listando zonas: [{'code': 6003, 'message': 'Invalid request headers', 'error_chain': [{'code': 6103, 'message': 'Invalid format for X-Auth-Key header'}]}]
+  0 zonas encontradas:
+
+Listando zonas na conta DESTINO (Felipe)...
+  2 zonas já existentes:
+    - cadencia.app.br
+    - cadencia.ia.br
+
+
+=== RESUMO ===
+Zonas criadas no destino: 0
+Zonas que já existiam (records sincronizados): 0
+Erros: 0
+
+Proximos passos:
+  1. Verificar zonas criadas no painel Cloudflare (sua conta) — devem estar 'Pending NS Update'
+  2. Replicar manualmente: Page Rules, Workers, SSL/TLS settings, WAF, Email Routing
+  3. NÃO trocar nameservers no registrador ainda (mantém tudo dormente)
+  4. ROTACIONAR tokens da conta origem (Michael) — eles foram expostos
+
+Log salvo em: C:\Users\felip\OneDrive\Documentos\ClaudeCode\Hub Projetos\Credenciais\Cloudflare\espelhar_20260506_161048.log
+Backups em: C:\Users\felip\OneDrive\Documentos\ClaudeCode\Hub Projetos\Credenciais\Cloudflare\backup

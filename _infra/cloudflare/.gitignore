@@ -1,0 +1,4 @@
+.env
+*.bind.txt
+*.json
+backup/
