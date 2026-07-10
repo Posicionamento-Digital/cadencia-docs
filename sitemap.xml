@@ -5,7 +5,15 @@
          <lastmod>2026-07-10</lastmod>
     </url>
     <url>
+         <loc>https://posicionamento-digital.github.io/cadencia-docs/_dev-process/2026-06-25%20Worktrees%20fora%20do%20OneDrive%20%28junction%29/</loc>
+         <lastmod>2026-07-10</lastmod>
+    </url>
+    <url>
          <loc>https://posicionamento-digital.github.io/cadencia-docs/_dev-process/Autenticacao%20de%20API%20-%20Bearer%20vs%20HMAC/</loc>
+         <lastmod>2026-07-10</lastmod>
+    </url>
+    <url>
+         <loc>https://posicionamento-digital.github.io/cadencia-docs/_dev-process/Como-Trabalhamos/</loc>
          <lastmod>2026-07-10</lastmod>
     </url>
     <url>
@@ -25,7 +33,15 @@
          <lastmod>2026-07-10</lastmod>
     </url>
     <url>
+         <loc>https://posicionamento-digital.github.io/cadencia-docs/_infra/2026-05-25%20Time%20Infra%20%E2%80%94%20Estrutura%20PD%20Framework%20%28refator%20PDL-257%29/</loc>
+         <lastmod>2026-07-10</lastmod>
+    </url>
+    <url>
          <loc>https://posicionamento-digital.github.io/cadencia-docs/_infra/Central-Observabilidade-Loop/</loc>
+         <lastmod>2026-07-10</lastmod>
+    </url>
+    <url>
+         <loc>https://posicionamento-digital.github.io/cadencia-docs/_infra/Central-Observabilidade/</loc>
          <lastmod>2026-07-10</lastmod>
     </url>
     <url>
@@ -34,6 +50,10 @@
     </url>
     <url>
          <loc>https://posicionamento-digital.github.io/cadencia-docs/_infra/Stack-Monitoramento-VPS-Master/</loc>
+         <lastmod>2026-07-10</lastmod>
+    </url>
+    <url>
+         <loc>https://posicionamento-digital.github.io/cadencia-docs/_infra/VPS-Hostinger-README/</loc>
          <lastmod>2026-07-10</lastmod>
     </url>
     <url>
@@ -50,6 +70,10 @@
     </url>
     <url>
          <loc>https://posicionamento-digital.github.io/cadencia-docs/_infra/hostinger/</loc>
+         <lastmod>2026-07-10</lastmod>
+    </url>
+    <url>
+         <loc>https://posicionamento-digital.github.io/cadencia-docs/_infra/n8n/</loc>
          <lastmod>2026-07-10</lastmod>
     </url>
     <url>
@@ -106,6 +130,10 @@
     </url>
     <url>
          <loc>https://posicionamento-digital.github.io/cadencia-docs/_onboarding/</loc>
+         <lastmod>2026-07-10</lastmod>
+    </url>
+    <url>
+         <loc>https://posicionamento-digital.github.io/cadencia-docs/_onboarding/Onboarding-Dev/</loc>
          <lastmod>2026-07-10</lastmod>
     </url>
     <url>
@@ -193,6 +221,10 @@
          <lastmod>2026-07-10</lastmod>
     </url>
     <url>
+         <loc>https://posicionamento-digital.github.io/cadencia-docs/_pd-framework/2026-06-05%20Vault%20Watcher%20%E2%80%94%20Organizador%20Automatico%20Obsidian/</loc>
+         <lastmod>2026-07-10</lastmod>
+    </url>
+    <url>
          <loc>https://posicionamento-digital.github.io/cadencia-docs/_pd-framework/2026-06-26%20PD%20Framework%20Agnostico%20%E2%80%94%20core%2C%20contrato%20e%20adapters/</loc>
          <lastmod>2026-07-10</lastmod>
     </url>
@@ -218,6 +250,10 @@
     </url>
     <url>
          <loc>https://posicionamento-digital.github.io/cadencia-docs/_pd-framework/2026-07-08%20PD%20Framework%202.0%20%E2%80%94%20Apresenta%C3%A7%C3%A3o%20%28Motor%20Aut%C3%B4nomo%29/</loc>
+         <lastmod>2026-07-10</lastmod>
+    </url>
+    <url>
+         <loc>https://posicionamento-digital.github.io/cadencia-docs/_pd-framework/AGENTS/</loc>
          <lastmod>2026-07-10</lastmod>
     </url>
     <url>
@@ -346,6 +382,54 @@
     </url>
     <url>
          <loc>https://posicionamento-digital.github.io/cadencia-docs/cadencia-app/features/otimizacao-performance-supabase/</loc>
+         <lastmod>2026-07-10</lastmod>
+    </url>
+    <url>
+         <loc>https://posicionamento-digital.github.io/cadencia-docs/cadencia-app/foundation/</loc>
+         <lastmod>2026-07-10</lastmod>
+    </url>
+    <url>
+         <loc>https://posicionamento-digital.github.io/cadencia-docs/cadencia-app/foundation/Bootstrap-Sessao-2026-05-25/</loc>
+         <lastmod>2026-07-10</lastmod>
+    </url>
+    <url>
+         <loc>https://posicionamento-digital.github.io/cadencia-docs/cadencia-app/foundation/Feature%20Blog/</loc>
+         <lastmod>2026-07-10</lastmod>
+    </url>
+    <url>
+         <loc>https://posicionamento-digital.github.io/cadencia-docs/cadencia-app/foundation/Foundation%20-%20Multi-Tenant%20Strategy/</loc>
+         <lastmod>2026-07-10</lastmod>
+    </url>
+    <url>
+         <loc>https://posicionamento-digital.github.io/cadencia-docs/cadencia-app/foundation/Foundation%20-%20Product%20Vision/</loc>
+         <lastmod>2026-07-10</lastmod>
+    </url>
+    <url>
+         <loc>https://posicionamento-digital.github.io/cadencia-docs/cadencia-app/foundation/Foundation%20-%20Target%20Customers/</loc>
+         <lastmod>2026-07-10</lastmod>
+    </url>
+    <url>
+         <loc>https://posicionamento-digital.github.io/cadencia-docs/cadencia-app/foundation/Foundation%20-%20Tech%20Architecture/</loc>
+         <lastmod>2026-07-10</lastmod>
+    </url>
+    <url>
+         <loc>https://posicionamento-digital.github.io/cadencia-docs/cadencia-app/foundation/Foundation%20-%20Tech%20Principles/</loc>
+         <lastmod>2026-07-10</lastmod>
+    </url>
+    <url>
+         <loc>https://posicionamento-digital.github.io/cadencia-docs/cadencia-app/foundation/Skills/</loc>
+         <lastmod>2026-07-10</lastmod>
+    </url>
+    <url>
+         <loc>https://posicionamento-digital.github.io/cadencia-docs/cadencia-app/foundation/Sub-squad%20Frontend/</loc>
+         <lastmod>2026-07-10</lastmod>
+    </url>
+    <url>
+         <loc>https://posicionamento-digital.github.io/cadencia-docs/cadencia-app/foundation/Sub-squad%20Growth/</loc>
+         <lastmod>2026-07-10</lastmod>
+    </url>
+    <url>
+         <loc>https://posicionamento-digital.github.io/cadencia-docs/cadencia-app/foundation/Sub-squad%20Workers/</loc>
          <lastmod>2026-07-10</lastmod>
     </url>
     <url>
@@ -481,6 +565,10 @@
          <lastmod>2026-07-10</lastmod>
     </url>
     <url>
+         <loc>https://posicionamento-digital.github.io/cadencia-docs/cadencia-app/runbooks/</loc>
+         <lastmod>2026-07-10</lastmod>
+    </url>
+    <url>
          <loc>https://posicionamento-digital.github.io/cadencia-docs/cadencia-app/workers/</loc>
          <lastmod>2026-07-10</lastmod>
     </url>
@@ -513,7 +601,39 @@
          <lastmod>2026-07-10</lastmod>
     </url>
     <url>
+         <loc>https://posicionamento-digital.github.io/cadencia-docs/cadencia-growth/</loc>
+         <lastmod>2026-07-10</lastmod>
+    </url>
+    <url>
+         <loc>https://posicionamento-digital.github.io/cadencia-docs/cadencia-growth/crons/</loc>
+         <lastmod>2026-07-10</lastmod>
+    </url>
+    <url>
+         <loc>https://posicionamento-digital.github.io/cadencia-docs/cadencia-growth/mission-control/</loc>
+         <lastmod>2026-07-10</lastmod>
+    </url>
+    <url>
+         <loc>https://posicionamento-digital.github.io/cadencia-docs/cadencia-growth/pipeline/</loc>
+         <lastmod>2026-07-10</lastmod>
+    </url>
+    <url>
+         <loc>https://posicionamento-digital.github.io/cadencia-docs/cadencia-growth/scoring/</loc>
+         <lastmod>2026-07-10</lastmod>
+    </url>
+    <url>
+         <loc>https://posicionamento-digital.github.io/cadencia-docs/cadencia-growth/scripts/</loc>
+         <lastmod>2026-07-10</lastmod>
+    </url>
+    <url>
          <loc>https://posicionamento-digital.github.io/cadencia-docs/pd-portal/</loc>
+         <lastmod>2026-07-10</lastmod>
+    </url>
+    <url>
+         <loc>https://posicionamento-digital.github.io/cadencia-docs/pd-portal/Brief/</loc>
+         <lastmod>2026-07-10</lastmod>
+    </url>
+    <url>
+         <loc>https://posicionamento-digital.github.io/cadencia-docs/pd-portal/pd-portal/</loc>
          <lastmod>2026-07-10</lastmod>
     </url>
 </urlset>
