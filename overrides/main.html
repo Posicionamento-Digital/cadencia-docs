@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block header %}
+<header class="md-header" data-md-component="header" data-md-state="shadow">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="{{ config.site_url | d(nav.homepage.url, true) }}" title="{{ config.site_name }}" class="md-header__button md-logo" aria-label="{{ config.site_name }}" data-md-component="logo">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:24px;height:24px">
+        <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+        <path d="M2 17l10 5 10-5"/>
+        <path d="M2 12l10 5 10-5"/>
+      </svg>
+    </a>
+    {% block site_name %}
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">{{ config.site_name }}</span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            {% if page.meta and page.meta.title %}
+              {{ page.meta.title }}
+            {% else %}
+              {{ page.title }}
+            {% endif %}
+          </span>
+        </div>
+      </div>
+    </div>
+    {% endblock %}
+    {% if "navigation.tabs" in features %}
+      {% include "partials/tabs.html" %}
+    {% endif %}
+    <div class="md-header__option">
+      {% include "partials/search.html" %}
+      {% include "partials/palette.html" %}
+      {% include "partials/header.html" %}
+    </div>
+  </nav>
+</header>
+{% endblock %}
