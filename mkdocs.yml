@@ -169,6 +169,21 @@ nav:
       - Epics & Stories: cadencia-app/prd/Epics-Stories-Visao-Geral.md
       - Roadmap 2026: cadencia-app/prd/Roadmap-Produto-2026.md
 
+    - Foundation:
+      - Visão Geral: cadencia-app/foundation/README.md
+      - Product Vision: cadencia-app/foundation/Foundation - Product Vision.md
+      - Target Customers: cadencia-app/foundation/Foundation - Target Customers.md
+      - Tech Architecture: cadencia-app/foundation/Foundation - Tech Architecture.md
+      - Tech Principles: cadencia-app/foundation/Foundation - Tech Principles.md
+      - Multi-Tenant Strategy: cadencia-app/foundation/Foundation - Multi-Tenant Strategy.md
+      - Sub-squad Frontend: cadencia-app/foundation/Sub-squad Frontend.md
+      - Sub-squad Growth: cadencia-app/foundation/Sub-squad Growth.md
+      - Sub-squad Workers: cadencia-app/foundation/Sub-squad Workers.md
+      - Feature Blog: cadencia-app/foundation/Feature Blog.md
+      - Skills: cadencia-app/foundation/Skills.md
+
+    - Runbooks: cadencia-app/runbooks/README.md
+
     - ADRs (Decisões):
       - Índice: cadencia-app/adr/README.md
       - ADR-0001 Stripe vs Asaas: cadencia-app/adr/0001-stripe-em-vez-de-asaas.md
@@ -203,13 +218,19 @@ nav:
       - Playbook Provisionar: _infra/vps-dev/Playbook-Provisionar-VPS-Dev.md
       - Acesso: _infra/vps-dev/Acesso-VPS-Dev-Luiz.md
 
+    - Central de Observabilidade (doc): _infra/Central-Observabilidade.md
+    - Estrutura Time Infra: "_infra/2026-05-25 Time Infra — Estrutura PD Framework (refator PDL-257).md"
+    - VPS Hostinger: _infra/VPS-Hostinger-README.md
+    - N8N: _infra/n8n/README.md
     - Cloudflare: _infra/cloudflare/README.md
     - Hostinger: _infra/hostinger/README.md
 
   - Dev Process:
+    - Como Trabalhamos: _dev-process/Como-Trabalhamos.md
     - Processo de Desenvolvimento: _dev-process/Processo - Desenvolvimento (Time Dev).md
     - PR & Deploy na Vercel: _dev-process/Processo - PR e Deploy na Vercel.md
     - Auth API — Bearer vs HMAC: _dev-process/Autenticacao de API - Bearer vs HMAC.md
+    - Worktrees fora do OneDrive: "_dev-process/2026-06-25 Worktrees fora do OneDrive (junction).md"
     - Estudo Ruflo (Motor Autônomo): "_dev-process/Estudo ruflo — an\xe1lise completa e decis\xf5es (Motor Aut\xf4nomo).md"
 
   - PD Framework:
@@ -237,6 +258,8 @@ nav:
       - DNS e HTTPS para VPS: _pd-framework/Domínio apontando para VPS — DNS e HTTPS.md
       - Symlink no Linux: _pd-framework/Symlink no Linux — atalho que aponta para arquivo original.md
       - Config VPS Desenvolvimento: _pd-framework/2026-05-21 Aprendizados — Configuração VPS de Desenvolvimento.md
+      - Vault Watcher: "_pd-framework/2026-06-05 Vault Watcher — Organizador Automatico Obsidian.md"
+      - LLM Wiki Pattern (AGENTS.md): _pd-framework/AGENTS.md
       - Fase 4 Auto-fix Observabilidade: _pd-framework/2026-05-25 PD Framework — Fase 4 plano técnico (Auto-fix observabilidade).md
       - Pronto para Uso Diário: _pd-framework/2026-05-25 PD Framework — Pronto para uso diário.md
       - Whisper Cache de Modelo: _pd-framework/2026-07-02 Whisper cache de modelo reaproveitavel entre projetos.md
@@ -244,10 +267,22 @@ nav:
 
   - Onboarding IA:
     - Visão Geral: _onboarding/README.md
+    - Onboarding Dev: _onboarding/Onboarding-Dev.md
     - Central de Aprendizado IA: _onboarding/ia/Central-Aprendizado-IA.md
     - Engenharia de Prompts: _onboarding/ia/Engenharia-de-Prompts-Manual-Completo.md
     - Prompts para Agentes Humanizados: _onboarding/ia/Como-Criar-Prompts-Agentes-Humanizados.md
     - Método de Aprendizado: _onboarding/ia/Metodo-Aprendizado-Felipe.md
     - Prompts Audio TTS: _onboarding/ia/Prompts-Audio-TTS.md
 
-  - PD Portal: pd-portal/README.md
+  - Cadencia Growth:
+    - Visão Geral: cadencia-growth/README.md
+    - Pipeline: cadencia-growth/pipeline.md
+    - Mission Control: cadencia-growth/mission-control.md
+    - Crons: cadencia-growth/crons.md
+    - Scoring: cadencia-growth/scoring.md
+    - Scripts: cadencia-growth/scripts.md
+
+  - PD Portal:
+    - Visão Geral: pd-portal/README.md
+    - Documento do Produto: pd-portal/pd-portal.md
+    - Brief: pd-portal/Brief.md
