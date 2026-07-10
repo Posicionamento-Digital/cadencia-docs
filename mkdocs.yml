@@ -169,6 +169,15 @@ nav:
       - Epics & Stories: cadencia-app/prd/Epics-Stories-Visao-Geral.md
       - Roadmap 2026: cadencia-app/prd/Roadmap-Produto-2026.md
 
+    - Roadmap Features:
+      - Brief: cadencia-app/roadmap-features/Brief.md
+      - Chat Tenho Uma Ideia: cadencia-app/roadmap-features/chat-tenho-uma-ideia.md
+      - Criar Tenant Agência: cadencia-app/roadmap-features/criar-tenant-agencia.md
+      - Growth Email Dispatch: cadencia-app/roadmap-features/growth-email-dispatch.md
+      - Growth Lead Scoring: cadencia-app/roadmap-features/growth-lead-scoring.md
+      - Growth Newsletter: cadencia-app/roadmap-features/growth-newsletter.md
+      - Otimização Performance Supabase: cadencia-app/roadmap-features/otimizacao-performance-supabase.md
+
     - Foundation:
       - Visão Geral: cadencia-app/foundation/README.md
       - Product Vision: cadencia-app/foundation/Foundation - Product Vision.md
@@ -224,14 +233,64 @@ nav:
     - N8N: _infra/n8n/README.md
     - Cloudflare: _infra/cloudflare/README.md
     - Hostinger: _infra/hostinger/README.md
+    - Monitoramento: _infra/monitoramento/README.md
+    - Recovery Hertzner:
+      - Índice: _infra/recovery-hertzner/00-indice.md
+      - Documentação: _infra/recovery-hertzner/01-documentacao.md
+      - Código Fonte: _infra/recovery-hertzner/02-codigo-fonte.md
+      - N8N Workflows: _infra/recovery-hertzner/03-n8n-workflows.md
+      - Banco de Dados: _infra/recovery-hertzner/04-banco-dados.md
+      - Infraestrutura: _infra/recovery-hertzner/05-infraestrutura.md
+      - Backups Brutos: _infra/recovery-hertzner/06-backups-brutos.md
 
   - Dev Process:
     - Como Trabalhamos: _dev-process/Como-Trabalhamos.md
+    - Gestão de Projetos Dev: _dev-process/Gestao-Projetos-Dev.md
+    - Documentação Dev — VPS para Obsidian: _dev-process/Documentacao-Dev-VPS-para-Obsidian.md
     - Processo de Desenvolvimento: _dev-process/Processo - Desenvolvimento (Time Dev).md
     - PR & Deploy na Vercel: _dev-process/Processo - PR e Deploy na Vercel.md
     - Auth API — Bearer vs HMAC: _dev-process/Autenticacao de API - Bearer vs HMAC.md
     - Worktrees fora do OneDrive: "_dev-process/2026-06-25 Worktrees fora do OneDrive (junction).md"
     - Estudo Ruflo (Motor Autônomo): "_dev-process/Estudo ruflo — an\xe1lise completa e decis\xf5es (Motor Aut\xf4nomo).md"
+
+    - Incidentes:
+      - Cadencia 16 bugs provisioning: _dev-process/incidentes/2026-05-29 2026-05-29-cadencia-16-bugs-provisioning-tenant-fe.md
+      - Cadencia bugs growth pipeline: _dev-process/incidentes/2026-05-29 2026-05-29-cadencia-bugs-reais-growth-pipeline.md
+      - Cadencia aprovou não gerou: _dev-process/incidentes/2026-06-02 2026-06-02-cadencia-aprovou-e-nao-gerou-4-causas-r.md
+      - Cadencia dual write log falso: _dev-process/incidentes/2026-06-02 2026-06-02-cadencia-dual-write-log-falso-cron-somb.md
+      - Cloudflare proxied bloqueia SSE: _dev-process/incidentes/2026-06-03 2026-06-03-cadencia-cloudflare-proxied-bloqueia-ss.md
+      - Trigger env stale systemd: _dev-process/incidentes/2026-06-03 2026-06-03-cadencia-trigger-server-env-stale-syste.md
+      - Generation queue 4 defeitos: _dev-process/incidentes/2026-06-10 2026-06-10-cadencia-generation-queue-4-defeitos-de.md
+      - Leads PDL28 gotchas APIs: _dev-process/incidentes/2026-06-11 2026-06-11-cadencia-leads-pdl28-gotchas-apis-exter.md
+      - CLI lifecycle enum en vs pt: _dev-process/incidentes/2026-06-24 2026-06-24-cadencia-cli-lifecycle-enum-en-vs-pt.md
+      - Deploy workers Coolify: _dev-process/incidentes/2026-06-25 2026-06-25-deploy-cadencia-workers-coolify-doc-rai.md
+      - OneDrive corrompeu repo: _dev-process/incidentes/2026-06-26 2026-06-26-onedrive-removeu-git-corrompeu-repo-pd-.md
+      - Deploy blocked git author: _dev-process/incidentes/2026-06-27 2026-06-27-cadencia-deploy-blocked-git-author-luiz.md
+      - Meeting transcriber OneDrive: _dev-process/incidentes/2026-06-30 2026-06-30-meeting-transcriber-onedrive-desidratad.md
+      - Playwright timeout Google Font: _dev-process/incidentes/2026-07-01 2026-07-01-cadencia-playwright-timeout-google-font.md
+      - Render slides uploads: _dev-process/incidentes/2026-07-01 2026-07-01-cadencia-render-slides-ok-com-uploads-v.md
+      - Whisper segfault cublas: _dev-process/incidentes/2026-07-02 2026-07-02-whisper-writer-segfault-cublas-windows.md
+
+    - Gotchas:
+      - Dev: _dev-process/gotchas/dev.md
+      - Comercial: _dev-process/gotchas/comercial.md
+      - Geração de Demanda: _dev-process/gotchas/comercial-geracao-de-demanda.md
+      - Geração de Negócios: _dev-process/gotchas/comercial-geracao-de-negocios.md
+
+    - Skills (Dev):
+      - Code Review — Claude: _dev-process/skills/Code-Review/Claude Review.md
+      - Code Review — Codex: _dev-process/skills/Code-Review/Codex Review.md
+      - Code Review — Gemini: _dev-process/skills/Code-Review/Gemini Review.md
+      - Debug — Polya: _dev-process/skills/Debug-Dev/Debug Polya.md
+      - Debug — Diagnose: _dev-process/skills/Debug-Dev/Mp Diagnose.md
+      - Debug — Architecture: _dev-process/skills/Debug-Dev/Mp Improve Codebase Architecture.md
+      - Debug — TDD: _dev-process/skills/Debug-Dev/Mp TDD.md
+      - Matt Pocock — Grill Me: _dev-process/skills/Matt-Pocock/Mp Grill Me.md
+      - Matt Pocock — Grill With Docs: _dev-process/skills/Matt-Pocock/Mp Grill With Docs.md
+      - Matt Pocock — Handoff: _dev-process/skills/Matt-Pocock/Mp Handoff.md
+      - Matt Pocock — Caveman: _dev-process/skills/Matt-Pocock/Mp Caveman.md
+      - Linear — Start Issue: _dev-process/skills/Linear-Workflow/start-issue/SKILL.md
+      - Linear — Close Issue: _dev-process/skills/Linear-Workflow/close-issue/SKILL.md
 
   - PD Framework:
     - Como Funciona: _pd-framework/PD Framework — Como funciona (consolidado 2026-05-25).md
@@ -260,6 +319,52 @@ nav:
       - Config VPS Desenvolvimento: _pd-framework/2026-05-21 Aprendizados — Configuração VPS de Desenvolvimento.md
       - Vault Watcher: "_pd-framework/2026-06-05 Vault Watcher — Organizador Automatico Obsidian.md"
       - LLM Wiki Pattern (AGENTS.md): _pd-framework/AGENTS.md
+      - AI Founder Mode: _pd-framework/AI-Founder-Mode.md
+
+    - Motor Autônomo 24/7:
+      - Brief: _pd-framework/motor-autonomo/Brief.md
+      - Visão Geral: _pd-framework/motor-autonomo/motor-autonomo.md
+      - Loop: _pd-framework/motor-autonomo/motor-loop.md
+      - Supervisor: _pd-framework/motor-autonomo/motor-supervisor.md
+      - Auto-Enqueue: _pd-framework/motor-autonomo/motor-auto-enqueue.md
+      - Outcomes: _pd-framework/motor-autonomo/outcomes.md
+      - Operação: _pd-framework/motor-autonomo/motor-autonomo-operacao.md
+      - Cascata Go-Live: "_pd-framework/motor-autonomo/2026-07-07 Cascata completa e go-live.md"
+
+    - Framework Interno:
+      - Visão Geral: _pd-framework/framework-interno/README.md
+      - Adapter Codex: _pd-framework/framework-interno/adapter-codex.md
+      - Knowledge Graph: _pd-framework/framework-interno/arquitetura-knowledge-graph.md
+      - Memory Engine: _pd-framework/framework-interno/memory-engine.md
+      - Model Map: _pd-framework/framework-interno/model-map.md
+      - Modelos Locais: _pd-framework/framework-interno/Modelos locais.md
+      - Outcomes & Cost: _pd-framework/framework-interno/outcomes-cost.md
+      - Session Recorder: _pd-framework/framework-interno/session-recorder.md
+      - Skills Tooling: _pd-framework/framework-interno/skills-tooling.md
+      - Wiki Pattern: _pd-framework/framework-interno/wiki-pattern.md
+      - Interface Claims: _pd-framework/framework-interno/interface-claims.md
+      - UI Standard (Astryx/Sofia): _pd-framework/framework-interno/astryx-sofia-ui-standard.md
+
+    - Squads:
+      - Dev: _pd-framework/squads/dev.md
+      - Infra: _pd-framework/squads/infra.md
+      - Produto: _pd-framework/squads/produto.md
+
+    - Decisões (dev/produto/infra):
+      - Dev: _pd-framework/decisoes/dev-memory.md
+      - Dev — Amelia: _pd-framework/decisoes/dev-amelia-memory.md
+      - Dev — Vitor: _pd-framework/decisoes/dev-vitor-memory.md
+      - Dev — Paloma: _pd-framework/decisoes/dev-paloma-memory.md
+      - Dev — Bruno: _pd-framework/decisoes/dev-bruno-memory.md
+      - Dev — Paula: _pd-framework/decisoes/dev-paula-memory.md
+      - Dev — Camila: _pd-framework/decisoes/dev-camila-memory.md
+      - Dev — João: _pd-framework/decisoes/dev-joao-memory.md
+      - Dev — Sofia: _pd-framework/decisoes/dev-sofia-memory.md
+      - Produto — Cadencia: _pd-framework/decisoes/produto-cadencia-memory.md
+      - Produto — Frontend: _pd-framework/decisoes/produto-cadencia-frontend-memory.md
+      - Produto — Growth: _pd-framework/decisoes/produto-cadencia-growth-memory.md
+      - Produto — Workers: _pd-framework/decisoes/produto-cadencia-workers-memory.md
+      - Infra: _pd-framework/decisoes/infra-memory.md
       - Fase 4 Auto-fix Observabilidade: _pd-framework/2026-05-25 PD Framework — Fase 4 plano técnico (Auto-fix observabilidade).md
       - Pronto para Uso Diário: _pd-framework/2026-05-25 PD Framework — Pronto para uso diário.md
       - Whisper Cache de Modelo: _pd-framework/2026-07-02 Whisper cache de modelo reaproveitavel entre projetos.md
@@ -268,11 +373,43 @@ nav:
   - Onboarding IA:
     - Visão Geral: _onboarding/README.md
     - Onboarding Dev: _onboarding/Onboarding-Dev.md
+    - Harness IA:
+      - O que é um Harness: "_onboarding/harness/O que \xe9 um harness.md"
+      - Live-01 Harness IA V2: _onboarding/harness/NoCode Startup - Live-01- Harness-IA V2.md
+      - Passo a Passo Montar Harness: _onboarding/harness/Passo a Passo Montar Harness.md
+      - Por que o harness é urgente: "_onboarding/harness/Por que o harness \xe9 urgente — custos de infer\xeancia.md"
     - Central de Aprendizado IA: _onboarding/ia/Central-Aprendizado-IA.md
     - Engenharia de Prompts: _onboarding/ia/Engenharia-de-Prompts-Manual-Completo.md
     - Prompts para Agentes Humanizados: _onboarding/ia/Como-Criar-Prompts-Agentes-Humanizados.md
     - Método de Aprendizado: _onboarding/ia/Metodo-Aprendizado-Felipe.md
     - Prompts Audio TTS: _onboarding/ia/Prompts-Audio-TTS.md
+
+  - Central CS Onboarding:
+    - Visão Geral: central-cs-onboarding/00-Visao-Geral.md
+    - Infra & Deploy: central-cs-onboarding/01-Infra-Deploy.md
+    - Receiver: central-cs-onboarding/02-Receiver.md
+    - Consumer: central-cs-onboarding/03-Consumer.md
+    - Consolidador: central-cs-onboarding/04-Consolidador.md
+    - Doc Generator: central-cs-onboarding/05-Doc-Generator.md
+    - Stakeholders: central-cs-onboarding/06-Stakeholders.md
+    - Evo Client: central-cs-onboarding/07-Evo-Client.md
+    - Workers Acompanhamento: central-cs-onboarding/08-Workers-Acompanhamento.md
+    - Coolify Migration: central-cs-onboarding/09-Coolify-Migration-2026-06-27.md
+    - Gate A6 Treinamento Kit: central-cs-onboarding/10-Gate-A6-Treinamento-Kit-Cadencia-2026-06-28.md
+    - Retrofit 13 Issues: central-cs-onboarding/11-Retrofit-Mel-Quevedo-13-Issues-2026-07-01.md
+    - Hardening Billing: central-cs-onboarding/12-Hardening-Billing-Observabilidade-2026-07-04.md
+    - Referência Técnica: central-cs-onboarding/13-Referencia-Tecnica-Componentes-2026-07-05.md
+    - Pós-Kickoff Validação: central-cs-onboarding/14-Pos-Kickoff-Validacao-Prompt-2026-07-07.md
+    - Robustez Ativar Cliente: central-cs-onboarding/Robustez ativar-cliente DEV-956.md
+
+  - Central de Observabilidade:
+    - Visão Geral: central-observabilidade/README.md
+    - Audit Cross-Tenant: central-observabilidade/audit-cross-tenant.md
+    - Deploy Log & Watcher: central-observabilidade/deploy-log-e-deploy-watcher.md
+    - Gate de Triagem: central-observabilidade/gate-de-triagem.md
+    - Hostinger Watcher: central-observabilidade/hostinger-watcher.md
+    - Self-Test Suite: central-observabilidade/self-test-suite.md
+    - Suporte Botão Ajuda: central-observabilidade/suporte-botao-ajuda.md
 
   - Cadencia Growth:
     - Visão Geral: cadencia-growth/README.md
@@ -282,7 +419,25 @@ nav:
     - Scoring: cadencia-growth/scoring.md
     - Scripts: cadencia-growth/scripts.md
 
+  - Ecuro MCP:
+    - Visão Geral: ecuro-mcp/README.md
+    - Docs: ecuro-mcp/README.md
+    - Runbooks: ecuro-mcp/runbooks/README.md
+
+  - GCI-GO:
+    - Docs: gci-go/README.md
+    - Runbooks: gci-go/runbooks/README.md
+
+  - Pipeline Conteúdo:
+    - Visão Geral: pipeline-conteudo/README.md
+    - Runbooks: pipeline-conteudo/runbooks/README.md
+    - Pipeline Cortes — Guia: pipeline-conteudo/pipeline-cortes-guia.md
+    - Pipeline Cortes — Criar Reel: pipeline-conteudo/pipeline-cortes/criar-reel.md
+
   - PD Portal:
     - Visão Geral: pd-portal/README.md
     - Documento do Produto: pd-portal/pd-portal.md
     - Brief: pd-portal/Brief.md
+    - Tech — Infra Portal: pd-portal/tech/infra-portal.md
+    - Tech — Overview: pd-portal/tech/portal-pd-overview.md
+    - Tech — Skills: pd-portal/tech/skills-portal.md
