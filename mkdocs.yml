@@ -43,6 +43,9 @@ extra:
     - icon: fontawesome/brands/github
       link: https://github.com/Posicionamento-Digital
 
+hooks:
+  - docs/hooks.py
+
 plugins:
   - search:
       lang: pt
@@ -273,4 +276,3 @@ nav:
       - "O que é um harness": "_onboarding/harness/O que \xe9 um harness.md"
       - Passo a passo: _onboarding/harness/Passo a Passo Montar Harness.md
       - "Por que é urgente": "_onboarding/harness/Por que o harness \xe9 urgente — custos de infer\xeancia.md"
-      - "Diagrama (teste Mermaid)": _onboarding/harness/diagrama-teste.md
