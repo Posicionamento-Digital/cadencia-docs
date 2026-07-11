@@ -243,6 +243,7 @@ nav:
       - Dev: _dev-process/gotchas/dev.md
       - Comercial: _dev-process/gotchas/comercial.md
     - Incidentes:
+      - _dev-process/incidentes/index.md
       - _dev-process/incidentes/2026-05-29 2026-05-29-cadencia-16-bugs-provisioning-tenant-fe.md
       - _dev-process/incidentes/2026-05-29 2026-05-29-cadencia-bugs-reais-growth-pipeline.md
       - _dev-process/incidentes/2026-06-02 2026-06-02-cadencia-aprovou-e-nao-gerou-4-causas-r.md

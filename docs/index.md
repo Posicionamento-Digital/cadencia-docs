@@ -11,14 +11,14 @@ title: Cadencia Docs
 
 <p class="docs-section-label">Cadencia — o produto</p>
 <div class="docs-grid docs-grid-wide">
-  <a href="cadencia-app/README/" class="docs-card">
+  <a href="cadencia-app/" class="docs-card">
     <div class="docs-card-icon">
       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/><path d="M15 12a3 3 0 0 1-3 3"/></svg>
     </div>
     <div class="docs-card-title">Sistema principal</div>
     <div class="docs-card-desc">App SaaS multi-tenant — arquitetura, frontend, auth, billing, CRM, ADRs.</div>
   </a>
-  <a href="cadencia-app/growth/README/" class="docs-card">
+  <a href="cadencia-app/growth/" class="docs-card">
     <div class="docs-card-icon">
       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
     </div>
@@ -32,7 +32,7 @@ title: Cadencia Docs
     <div class="docs-card-title">Onboarding de clientes</div>
     <div class="docs-card-desc">Sistema autônomo que recebe o kickoff e provisiona o cliente completo — sem intervenção manual.</div>
   </a>
-  <a href="central-observabilidade/README/" class="docs-card">
+  <a href="central-observabilidade/" class="docs-card">
     <div class="docs-card-icon">
       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
     </div>
@@ -71,14 +71,14 @@ title: Cadencia Docs
     <div class="docs-card-title">VPS Dev</div>
     <div class="docs-card-desc">Ambiente de desenvolvimento remoto — acesso, POP de uso.</div>
   </a>
-  <a href="_infra/cloudflare/README/" class="docs-card">
+  <a href="_infra/cloudflare/" class="docs-card">
     <div class="docs-card-icon">
       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
     </div>
     <div class="docs-card-title">Cloudflare</div>
     <div class="docs-card-desc">DNS, proxy, domínios e configuração.</div>
   </a>
-  <a href="_infra/README/" class="docs-card">
+  <a href="_infra/" class="docs-card">
     <div class="docs-card-icon">
       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
     </div>
