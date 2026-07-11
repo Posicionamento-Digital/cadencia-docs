@@ -102,22 +102,39 @@
 .md-sidebar--primary { border-right: 1px solid var(--border) !important; }
 .md-sidebar--secondary { border-left: 1px solid var(--border) !important; }
 
-.md-nav { font-size: 14px; }
+/* Sidebar scroll area sem truncar */
+.md-sidebar__scrollwrap { overflow-x: hidden !important; }
+.md-sidebar__inner { padding: 0 8px 16px !important; }
+
+.md-nav { font-size: 13.5px; }
+
+/* Título de seção (ex: "Cadencia", "Infra") */
 .md-nav__title {
-  font-size: 11px !important;
+  font-size: 10.5px !important;
   font-weight: 700 !important;
   text-transform: uppercase !important;
   letter-spacing: 0.08em !important;
   color: var(--subtle) !important;
-  padding: 12px 12px 6px !important;
+  padding: 16px 8px 4px !important;
   background: none !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
+
+/* Links de nav */
 .md-nav__item .md-nav__link {
   color: var(--muted);
-  border-radius: var(--radius-sm);
-  padding: 5px 10px;
-  margin: 1px 4px;
+  border-radius: 6px;
+  padding: 5px 8px;
+  margin: 1px 0;
   transition: background 0.12s, color 0.12s;
+  /* Impede truncamento: permite quebra de linha */
+  white-space: normal !important;
+  line-height: 1.4;
+  display: flex;
+  align-items: flex-start;
+  gap: 4px;
 }
 .md-nav__item .md-nav__link:hover { color: var(--indigo); background: var(--indigo-light); }
 .md-nav__item .md-nav__link--active,
@@ -126,8 +143,28 @@
   font-weight: 600;
   background: var(--indigo-light);
 }
-.md-nav__icon { color: var(--subtle) !important; }
-.md-nav__item--section > .md-nav__link { font-weight: 600; color: var(--text2); }
+
+/* Ícone toggle (seta ▶) — alinhado com o texto */
+.md-nav__icon {
+  color: var(--subtle) !important;
+  flex-shrink: 0 !important;
+  margin-top: 2px !important;
+}
+
+/* Seções (itens com filhos) */
+.md-nav__item--section > .md-nav__link {
+  font-weight: 600;
+  color: var(--text2);
+}
+
+/* Sub-nav recuo */
+.md-nav--secondary .md-nav__link,
+.md-nav__item .md-nav .md-nav__link {
+  padding-left: 16px !important;
+}
+
+/* Remove truncamento em qualquer nível */
+.md-nav__link span { white-space: normal !important; }
 
 /* ── Main content ── */
 .md-main { background: var(--bg) !important; }
