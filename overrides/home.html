@@ -1,0 +1,17 @@
+{% extends "main.html" %}
+
+{% block tabs %}{% endblock %}
+
+{% block content %}
+<style>
+  /* Homepage — remove sidebar, full width */
+  .md-sidebar { display: none !important; }
+  .md-content { max-width: 100% !important; }
+  .md-content__inner { max-width: 1200px !important; margin: 0 auto !important; padding: 40px 32px 80px !important; }
+  .md-main__inner { margin: 0 !important; }
+  @media (max-width: 768px) {
+    .md-content__inner { padding: 24px 16px 60px !important; }
+  }
+</style>
+{{ page.content }}
+{% endblock %}
