@@ -30,7 +30,6 @@ theme:
     - search.suggest
     - search.share
     - content.code.copy
-    - toc.follow
 
 extra_css:
   - stylesheets/cadencia.css

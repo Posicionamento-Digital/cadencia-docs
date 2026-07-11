@@ -100,7 +100,8 @@
 /* ── Sidebar ── */
 .md-sidebar { background: var(--surface) !important; }
 .md-sidebar--primary { border-right: 1px solid var(--border) !important; }
-.md-sidebar--secondary { border-left: 1px solid var(--border) !important; }
+/* Esconde TOC secundário — conteúdo usa toda a largura disponível */
+.md-sidebar--secondary { display: none !important; }
 
 /* Sidebar scroll area sem truncar */
 .md-sidebar__scrollwrap { overflow-x: hidden !important; }
@@ -122,14 +123,14 @@
   text-overflow: ellipsis;
 }
 
-/* Links de nav — deixa o Material controlar o display/flex, só ajustamos cor e hover */
+/* Links de nav */
 .md-nav__item .md-nav__link {
   color: var(--muted) !important;
   border-radius: 6px;
-  padding: 4px 8px !important;
+  padding: 0.35rem 0.6rem !important;
   margin: 1px 0;
   transition: background 0.12s, color 0.12s;
-  line-height: 1.4;
+  /* NÃO sobrescrever display/flex/align-items/line-height — Material cuida disso */
 }
 .md-nav__item .md-nav__link:hover {
   color: var(--indigo) !important;
@@ -142,9 +143,8 @@
   background: var(--indigo-light) !important;
 }
 
-/* Ícone toggle — não mexer no position/display, só cor */
-.md-nav__icon { color: var(--subtle) !important; }
-.md-nav__icon::after { color: var(--subtle) !important; }
+/* Ícone toggle (chevron) — usa mask-image, currentcolor afeta background-color do ::after */
+.md-nav__icon { color: var(--subtle) !important; flex-shrink: 0; }
 
 /* Seções pai */
 .md-nav__item--section > .md-nav__link {
@@ -157,8 +157,9 @@
 
 /* ── Main content ── */
 .md-main { background: var(--bg) !important; }
-.md-content { background: var(--bg) !important; }
-.md-content__inner { max-width: 960px; margin: 0 auto; padding: 40px 40px 64px; }
+.md-content { background: var(--bg) !important; max-width: 100% !important; }
+/* Sem max-width — preenche todo o espaço disponível (sidebar TOC já foi ocultada) */
+.md-content__inner { max-width: 1080px; margin: 0 auto; padding: 40px 48px 64px; }
 @media (max-width: 960px) { .md-content__inner { padding: 32px 24px 64px; } }
 
 /* ── Typography ── */
