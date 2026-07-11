@@ -35,6 +35,9 @@ theme:
 extra_css:
   - stylesheets/cadencia.css
 
+extra_javascript:
+  - https://unpkg.com/mermaid@11/dist/mermaid.min.js
+
 extra:
   social:
     - icon: fontawesome/brands/github
@@ -49,7 +52,11 @@ plugins:
 markdown_extensions:
   - admonition
   - pymdownx.details
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.highlight:
       anchor_linenums: true
       line_spans: __span
@@ -266,3 +273,4 @@ nav:
       - "O que é um harness": "_onboarding/harness/O que \xe9 um harness.md"
       - Passo a passo: _onboarding/harness/Passo a Passo Montar Harness.md
       - "Por que é urgente": "_onboarding/harness/Por que o harness \xe9 urgente — custos de infer\xeancia.md"
+      - "Diagrama (teste Mermaid)": _onboarding/harness/diagrama-teste.md
