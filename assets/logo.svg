@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 32" fill="none">
+  <rect width="28" height="28" rx="7" fill="#4F46E5" y="2"/>
+  <path d="M8 16C8 11.582 11.582 8 16 8C18.8 8 21.3 9.4 22.8 11.6L19.8 13.4C18.9 12.1 17.5 11.2 16 11.2C13.35 11.2 11.2 13.35 11.2 16C11.2 18.65 13.35 20.8 16 20.8C17.5 20.8 18.9 19.9 19.8 18.6L22.8 20.4C21.3 22.6 18.8 24 16 24C11.582 24 8 20.418 8 16Z" fill="white"/>
+  <text x="36" y="22" font-family="Inter, system-ui, sans-serif" font-size="15" font-weight="700" fill="#111827">Cadencia</text>
+  <text x="100" y="22" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="500" fill="#6B7280">docs</text>
+</svg>
