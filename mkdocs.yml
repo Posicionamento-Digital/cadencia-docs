@@ -234,6 +234,7 @@ nav:
   # ── DEV ───────────────────────────────────────────────────────────────────
   - Dev:
     - Como trabalhamos: _dev-process/Como-Trabalhamos.md
+    - Princípios de programação: _dev-process/Principios-de-Programacao.md
     - Gestão de projetos: _dev-process/Gestao-Projetos-Dev.md
     - Processo de desenvolvimento: "_dev-process/Processo - Desenvolvimento (Time Dev).md"
     - PR & Deploy Vercel: "_dev-process/Processo - PR e Deploy na Vercel.md"
