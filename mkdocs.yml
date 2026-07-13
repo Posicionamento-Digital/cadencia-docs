@@ -180,6 +180,7 @@ nav:
   # ── PROCESSOS DA EMPRESA ──────────────────────────────────────────────────
   - Processos:
     - processos/README.md
+    - Onboarding dev acesso restrito: processos/onboarding-dev-acesso-restrito.md
 
   # ── INFRA ─────────────────────────────────────────────────────────────────
   - Infra:
