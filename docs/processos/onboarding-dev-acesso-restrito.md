@@ -4,17 +4,17 @@
 
 ## Por que foi construído assim
 
-O primeiro dev contratado depois do Luiz (Renan Manhães, 2026-07) precisava de ambiente na VPS Dev. A abordagem anterior — usada pro próprio Luiz — foi criar um **fork separado do `pd-framework`** (`pd-framework-luiz`), uma cópia incompleta que nunca sincronizava com o framework real. Isso criava dois problemas: o dev nunca tinha o contexto completo/atualizado, e qualquer melhoria no framework real precisava ser replicada manualmente na cópia.
+GitHub não tem controle de leitura por pasta em nenhum mecanismo — deploy key, PAT fine-grained e collaborator liberam sempre o repo inteiro pra quem tem a credencial. Um servidor git próprio (Gitea/Forgejo ou espelho local) resolveria isso de forma real, mas é infraestrutura desproporcional ao ganho neste estágio.
 
-A alternativa óbvia — dar ao novo dev acesso total ao `pd-framework` real — esbarra em uma limitação técnica do GitHub: **não existe controle de leitura por pasta em nenhum mecanismo** (deploy key, PAT fine-grained, collaborator — todos liberam o repo inteiro pra quem tem a credencial). Avaliamos e descartamos um servidor git próprio (Gitea/Forgejo, ou espelho local `file://`) que resolveria isso de forma real — mais infraestrutura do que o ganho justificava nesse estágio.
+A solução adotada aceita esse limite conscientemente: o boundary de acesso é por **configuração** (sparse-checkout + usuário de sistema sem privilégio), não uma garantia criptográfica. É adequado a um perfil de confiança direta (contratação por indicação, supervisão de perto) — não é defesa contra ameaça interna deliberada.
 
-**Solução adotada:** um clone de verdade do `pd-framework` (mesmo remoto GitHub, sem fork), com `git sparse-checkout` limitando o que aparece no disco às pastas relevantes, e um usuário Linux dedicado sem `sudo`. O boundary é por convenção + configuração, não uma garantia criptográfica — adequado ao perfil de risco de um contratado de confiança direta (indicação, supervisão de perto), não uma defesa contra ameaça interna deliberada.
+Um repo espelho separado (mesmo auto-sincronizado) foi descartado por violar DRY (`_core/CODING-PRINCIPLES.md` §1): duas representações do mesmo conhecimento divergem. A solução usa um único repo — um clone a mais, mesmo padrão já usado entre Windows/VPS Master/VPS Dev do Felipe.
 
 ## Stack
 
 | Camada | Tecnologia |
 |---|---|
-| Host | VPS Dev (Hostinger, `2.24.117.172`) |
+| Host | VPS Dev (Hostinger) |
 | Isolamento de usuário | Usuário Linux dedicado, sem grupo `sudo` |
 | Filtro de pastas | `git sparse-checkout` (cone mode) + partial clone (`--filter=blob:none`) |
 | Acesso remoto | SSH (Zed Remote SSH), chave dedicada por pessoa |
@@ -40,22 +40,22 @@ flowchart TD
     K --> L["Próximo git pull do dev<br/>já traz o que foi aceito"]
 ```
 
-O usuário PreToolUse/Stop já existentes no framework (`pretooluse-session-branch.py` + `stop-session-branch.py`) funcionam sem alteração pra qualquer clone — a única mudança foi um branch de comportamento no `stop-session-branch.py`: se `getpass.getuser()` está no conjunto `PR_ONLY_USERS`, a função `handle_pr_only_close()` roda no lugar do merge automático — publica a branch e chama `gh pr create`, sem tocar a `main` local.
+Os hooks `pretooluse-session-branch.py` + `stop-session-branch.py` funcionam sem alteração pra qualquer clone. A única mudança é um branch de comportamento em `stop-session-branch.py`: se `getpass.getuser()` está em `PR_ONLY_USERS`, `handle_pr_only_close()` roda no lugar do merge automático — publica a branch e chama `gh pr create`, sem tocar a `main` local.
 
 ## Decisões técnicas
 
-- **Sparse-checkout + usuário sem sudo, em vez de repo espelho separado.** Um repo/servidor git separado (mesmo auto-sincronizado) foi avaliado e descartado por violar o princípio DRY do framework (`_core/CODING-PRINCIPLES.md` §1 — duas representações do mesmo conhecimento divergem). A solução adotada é um único repo, um clone a mais — mesmo padrão já usado entre Windows/VPS Master/VPS Dev do próprio Felipe.
-- **PR-only sem exceção trivial**, diferente do motor autônomo (`_core/PR-ESCALATION-MATRIX.md`), que tem uma classe de auto-merge pra mudanças triviais. O novo dev fica abaixo do tier "Coordenador" da matriz até ganhar histórico — toda mudança dele no `pd-framework` passa por aprovação humana.
-- **1Password: service account por pessoa, não por conta compartilhada genérica.** Mesmo padrão já usado com o Luiz (`.profile` com `OP_SERVICE_ACCOUNT_TOKEN` escopado a 1 vault) — permite revogação isolada por pessoa sem afetar os demais.
-- **Repo `pd-framework` continua no GitHub pessoal do Felipe, não migra pra org.** Migrar pra org exporia o repo à política de permissão padrão da org (outros membros podem ter acesso a todos os repos, dependendo da config) — risco maior que o problema que resolveria.
+- **Sparse-checkout + usuário sem sudo, não repo espelho separado.** Um repo/servidor git à parte violaria DRY (`_core/CODING-PRINCIPLES.md` §1). A solução é um único repo com um clone a mais.
+- **PR-only sem exceção trivial.** Diferente do motor autônomo (`_core/PR-ESCALATION-MATRIX.md`), que tem classe de auto-merge pra mudanças triviais — o novo dev fica abaixo do tier "Coordenador" até ganhar histórico, toda mudança dele passa por aprovação humana.
+- **1Password: service account por pessoa, não conta compartilhada genérica.** `.profile` com `OP_SERVICE_ACCOUNT_TOKEN` escopado a 1 vault, por pessoa — permite revogação isolada.
+- **Repo `pd-framework` continua no GitHub pessoal, não migra pra org.** Migrar pra org exporia o repo à política de permissão padrão da org (outros membros podem ter acesso a todos os repos) — risco maior que o problema que resolveria.
 
 ## Gotchas & armadilhas
 
-- **`sparse-checkout` não é uma garantia de segurança.** Um usuário com credencial de leitura no GitHub (deploy key, PAT ou collaborator) tecnicamente consegue alcançar qualquer pasta do repo se forçar (`git sparse-checkout add`, ou clonar de novo sem sparse). O filtro evita exposição acidental, não é blindagem contra tentativa deliberada.
-- **Nunca imprimir valor de credencial em comando de shell/log.** `grep`/`cat` num arquivo que contém token/chave ecoam o valor no output — já aconteceu 2x nesta implementação (uma chave SSH nova, um token de service account já em uso). Regra: sempre verificar existência/conteúdo sem exibir valor (`grep -c`, ou pipe direto arquivo→arquivo sem passar por stdout visível).
-- **Deploy key ≠ chave de login.** São dois pares de chave SSH completamente diferentes — uma autentica a VPS *pro GitHub* (push/pull), a outra autentica a pessoa *pra VPS* (login remoto). Nomear os itens 1Password de forma inequívoca desde o início evita confusão (`GitHub Deploy Key - ...` vs `Hostinger VPS Dev - ... (SSH Key)`).
-- **`gh pr create` exige token de API, SSH não basta.** SSH (deploy key) só cobre o protocolo git (push/pull); abrir PR é uma chamada da API REST/GraphQL do GitHub, precisa de PAT ou OAuth próprio.
-- **Service account do 1Password não cria outro service account.** `op service-account create` só funciona autenticado como membro humano — um agente/processo rodando como service account não consegue provisionar credencial pra outra pessoa sozinho.
+- **`sparse-checkout` não é garantia de segurança.** Credencial de leitura no GitHub (deploy key, PAT ou collaborator) alcança qualquer pasta do repo se o usuário forçar (`git sparse-checkout add`, ou clone novo sem sparse). O filtro evita exposição acidental, não bloqueia tentativa deliberada.
+- **Nunca imprimir valor de credencial em comando de shell/log.** `grep`/`cat` num arquivo com token/chave ecoa o valor no output. Verificar existência/conteúdo sem exibir valor (`grep -c`, ou pipe arquivo→arquivo sem passar por stdout visível).
+- **Deploy key ≠ chave de login.** Dois pares SSH diferentes — um autentica a VPS pro GitHub (push/pull), o outro autentica a pessoa pra VPS (login remoto). Nomear os itens 1Password de forma inequívoca evita confusão.
+- **`gh pr create` exige token de API — SSH não basta.** SSH (deploy key) só cobre o protocolo git; abrir PR é chamada da API REST/GraphQL do GitHub.
+- **Service account do 1Password não cria outro service account.** `op service-account create` só funciona autenticado como membro humano.
 
 ## Como operar
 
@@ -75,14 +75,14 @@ sudo -u <user> -H bash -c 'source ~/.profile && op vault list'
 
 ## FAQ
 
-**Por que não criar um GitHub collaborator pro novo dev, é mais "correto"?**
-Testado e descartado — collaborator dá leitura do repo inteiro, exatamente a mesma exposição que deploy key ou PAT. Não existe forma de dar collaborator restrito a pastas específicas.
+**Por que não criar um GitHub collaborator pro novo dev?**
+Collaborator dá leitura do repo inteiro — mesma exposição que deploy key ou PAT. Não existe collaborator restrito a pastas específicas.
 
 **Por que não usar 1Password Connect em vez de service account?**
-Connect resolve rate limit em cenários de alto volume (múltiplos serviços de produção batendo no 1Password). Pro volume atual (poucas pessoas, uso manual/interativo), é infraestrutura extra sem ganho — service account por pessoa já entrega revogação isolada.
+Connect resolve rate limit em alto volume (múltiplos serviços de produção). No volume atual (poucas pessoas, uso interativo), é infraestrutura extra sem ganho.
 
 **O que acontece se o dev tentar acessar uma pasta fora do sparse-checkout?**
-Não existe localmente — o clone nunca baixou o conteúdo (partial clone `--filter=blob:none`). Ele precisaria rodar `git sparse-checkout add <pasta>` deliberadamente, o que buscaria do GitHub (funciona se a credencial dele tiver acesso de leitura ao repo, que tem).
+Não existe localmente — o clone nunca baixou o conteúdo (partial clone `--filter=blob:none`). Precisaria rodar `git sparse-checkout add <pasta>` deliberadamente, que busca do GitHub (funciona se a credencial tiver acesso de leitura ao repo).
 
 **Como o dev recebe credenciais operacionais (Supabase, Vercel etc.) no dia a dia?**
-Via o vault 1Password compartilhado (`service account` no `.profile` dele, escopado só a esse vault) — `op item get "<item>" --vault "<vault>"`. Nunca por mensagem/chat.
+Vault 1Password compartilhado (service account no `.profile`, escopado só a esse vault) — `op item get "<item>" --vault "<vault>"`. Nunca por mensagem/chat.
