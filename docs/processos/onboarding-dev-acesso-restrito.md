@@ -56,6 +56,8 @@ Os hooks `pretooluse-session-branch.py` + `stop-session-branch.py` funcionam sem
 - **Deploy key ≠ chave de login.** Dois pares SSH diferentes — um autentica a VPS pro GitHub (push/pull), o outro autentica a pessoa pra VPS (login remoto). Nomear os itens 1Password de forma inequívoca evita confusão.
 - **`gh pr create` exige token de API — SSH não basta.** SSH (deploy key) só cobre o protocolo git; abrir PR é chamada da API REST/GraphQL do GitHub.
 - **Service account do 1Password não cria outro service account.** `op service-account create` só funciona autenticado como membro humano.
+- **Item de categoria "SSH Key" criado via `op item create --template=` (import de chave existente) pode ficar malformado e ilegível — pelo próprio `op` CLI e pelo botão de download do app.** Sintoma: `op item get`/`op read` falham com `"private_key" isn't a field`, mesmo o item existindo e tendo o campo visível na UI. Causa: a categoria SSH Key espera campos derivados (`public_key`, `fingerprint`, `key_type`) que o app preenche automaticamente ao gerar a chave, mas que um template CLI mínimo não popula corretamente. **Fix:** sempre criar o item deixando o 1Password gerar a chave (`op item create --category="SSH Key" --ssh-generate-key=ed25519`), nunca importar uma chave pronta via template JSON. Pra extrair a chave depois, usar `op read "op://<vault>/<item>/private key?ssh-format=openssh" -o arquivo.key` (sem esse query param, o valor vem truncado/sem o wrapper PEM).
+- **Nunca copiar/colar conteúdo de chave privada em editor de texto (Notepad etc.) pra criar o arquivo manualmente.** Introduz CRLF/BOM, e o SSH rejeita com `error in libcrypto` ou `invalid format`. Entregar sempre como arquivo — download direto do 1Password, ou anexo de arquivo (não texto colado) se for por WhatsApp/chat.
 
 ## Como operar
 
@@ -86,3 +88,6 @@ Não existe localmente — o clone nunca baixou o conteúdo (partial clone `--fi
 
 **Como o dev recebe credenciais operacionais (Supabase, Vercel etc.) no dia a dia?**
 Vault 1Password compartilhado (service account no `.profile`, escopado só a esse vault) — `op item get "<item>" --vault "<vault>"`. Nunca por mensagem/chat.
+
+**O dev não consegue baixar a chave de login do 1Password — o que fazer?**
+Verificar se o item não está malformado (ver gotcha acima) antes de qualquer outra hipótese: `op item get "<item>" --vault "Time" --format json` — se der erro `"private_key" isn't a field`, o item está quebrado e precisa ser recriado (nunca corrigido por edição manual). Rotacionar: gerar item novo com `--ssh-generate-key`, atualizar `authorized_keys` do usuário na VPS com a chave pública nova, validar login end-to-end antes de entregar. Entrega final sempre como arquivo (nunca texto colado).
