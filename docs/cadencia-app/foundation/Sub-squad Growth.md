@@ -114,7 +114,7 @@ Tags GHL automáticas: `interesse:automacao`, `interesse:gestao-ia`, etc — bas
 |---|---|
 | Mover `/cadencia/` → `/opt/cadencia-growth/` | PDL-213 |
 | Env vars Coolify 6 apps (In Progress) | PDL-215 |
-| Validar race condition pós-migração + cancelar Railway | PDL-21 |
+| ~~Validar race condition pós-migração + cancelar Railway~~ concluído (DEV-638) | PDL-21 |
 | Cron retention storage (depende política PDL-22) | PDL-23 |
 
 ---

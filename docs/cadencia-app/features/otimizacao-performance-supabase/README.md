@@ -203,7 +203,7 @@ a41620e Merge feat/pdl-165-drop-unused-indexes
 
 - **CONCURRENTLY exige fora de transação.** Migration auto-wrap do Supabase quebra. Separar em arquivo próprio sem BEGIN/COMMIT.
 - **Migration referencia tabela `tenant_users` (inexistente)** em 2 policies originais do projeto. Pré-existente. Corrigido na hora, mas indica que migrations órfãs entraram em prod sem validação.
-- **Race condition no dispatch DOM** é difícil de pegar em review estática — só aparece em teste E2E quando o worker é lento (cold start Railway).
+- **Race condition no dispatch DOM** é difícil de pegar em review estática — só aparece em teste E2E quando o worker é lento (cold start do worker).
 - **1Password CLI tem timeout de sessão.** Mid-execução, comandos `op` começaram a falhar com `authorization timeout`. Felipe precisou reautenticar localmente.
 
 ## Próximos passos (issues abertas)

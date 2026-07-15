@@ -8,7 +8,7 @@
 
 ## TL;DR
 
-4 grupos de rotas de integração: webhooks externos (Stripe + GHL), Meta Conversions API, WhatsApp Stevo e API interna v1 (workers Railway chamam daqui).
+4 grupos de rotas de integração: webhooks externos (Stripe + GHL), Meta Conversions API, WhatsApp Stevo e API interna v1 (workers Coolify VPS Master chamam daqui).
 
 ## Identidade
 
@@ -19,7 +19,7 @@
   - `src/app/api/stevo/` — WhatsApp QR
   - `src/app/api/v1/` — API interna
 - **Status:** ativo
-- **Deps:** Stripe, GHL, Stevo, Workers Railway
+- **Deps:** Stripe, GHL, Stevo, Workers Coolify VPS Master
 
 ## Webhooks
 
@@ -41,7 +41,7 @@
 - `GET /api/stevo/status` — verifica se WhatsApp conectado
 - Usado pela página `/conectar-whatsapp` (pública)
 
-## v1 (API interna — workers Railway)
+## v1 (API interna — workers Coolify VPS Master)
 
 | Rota | Chamado por |
 |---|---|
@@ -62,7 +62,7 @@
 - GHL envia webhook após eventos custom (location_created, contact_created etc).
 - Meta CAPI: enviar conversão server-side em cada checkout/signup.
 - Stevo QR/status para `/conectar-whatsapp`.
-- Workers Railway chamam `/api/v1/*` para operações internas (signup GHL, status pipeline).
+- Workers Coolify VPS Master chamam `/api/v1/*` para operações internas (signup GHL, status pipeline).
 
 ## Quando NÃO usar
 

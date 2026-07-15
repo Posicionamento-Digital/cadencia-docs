@@ -27,14 +27,14 @@ Deploy: **Vercel** com auto-deploy na branch `master`.
 | `instagram/` | `/api/instagram/*` | Análise perfil via Apify |
 | `onboarding/` | `/api/onboarding/*` | Fluxo onboarding (fases 1, 2, 3) |
 | `stevo/` | `/api/stevo/*` | WhatsApp Stevo (QR + status) |
-| `v1/` | `/api/v1/*` | API interna — workers Railway chamam aqui |
+| `v1/` | `/api/v1/*` | API interna — workers Coolify VPS Master chamam aqui |
 | `webhooks/` | `/api/webhooks/*` | Stripe + GHL externos |
 
 ## Fluxo trigger-generation (mais crítico)
 
 ```
 cron-job.org → POST /api/app/trigger-generation (Vercel)
-  ├─ canal carrossel/reels → Railway workers
+  ├─ canal carrossel/reels → workers Coolify VPS Master
   └─ outros canais        → VPS :39090/trigger
 ```
 

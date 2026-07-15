@@ -30,7 +30,7 @@ description: Fecha uma issue no Linear (Done), faz commit com "Closes PDL-XX", m
 
 | Projeto | Plataforma | Deploy |
 |---|---|---|
-| cadencia-app | Vercel + Railway | automático ao mergear main |
+| cadencia-app | Vercel + Coolify VPS Master | automático ao mergear main (workers: deploy Coolify) |
 | gci-go-whatsapp | VPS Hostinger | manual: pull + restart |
 | lara (confirmação de agenda) | VPS Hostinger | manual: pull + restart |
 | bot-telegram | VPS Hostinger | manual: pull + restart |

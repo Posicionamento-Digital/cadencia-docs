@@ -114,7 +114,7 @@ Outros paths:
 
 - PDL-25 P1 GHL OAuth nova agência (aguardando Felipe) — bloqueia onboarding novos tenants
 - PDL-202 P1 subconta GHL onboarding (bug)
-- PDL-18 acesso Luiz Railway+Vercel
+- ~~PDL-18 acesso Luiz Railway+Vercel~~ — obsoleto (Railway DESLIGADO, DEV-638)
 - PDL-69 P3 preview Vercel login redirect
 
 ---

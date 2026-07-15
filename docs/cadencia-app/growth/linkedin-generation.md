@@ -42,7 +42,7 @@ Gera e agenda post para LinkedIn do tenant. Roda no cron diário (11h BRT) e no 
 
 ## Quando NÃO usar
 
-- ❌ Para post visual (carrossel/reels) — vai para Instagram via Railway.
+- ❌ Para post visual (carrossel/reels) — vai para Instagram via workers Coolify VPS Master.
 - ❌ Tenant `trial`/`essencial`/`starter` em dia que não seja segunda ou quinta (planos restritos a 2x/sem para LinkedIn).
 - ❌ Sem `linkedin_url` configurada — não tem destino.
 

@@ -16,7 +16,7 @@
 - **Stack:** React 19 + Tailwind + shadcn/ui + Serwist (PWA)
 - **Path:** `src/app/(app)/app/`
 - **Status:** ativo (Vercel, auto-deploy `master`)
-- **Deps:** Supabase Auth, Workers Railway (geração), VPS (growth), GHL (wrappers)
+- **Deps:** Supabase Auth, Workers Coolify VPS Master (geração), VPS (growth), GHL (wrappers)
 
 ## Rotas principais
 

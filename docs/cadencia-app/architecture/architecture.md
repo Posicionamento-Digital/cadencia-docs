@@ -51,7 +51,7 @@ graph TB
         ApiRoutes[API Routes<br/>auth + billing + trigger<br/>webhooks + capi + stevo]
     end
 
-    subgraph Railway [Railway — Workers Python]
+    subgraph Workers [Coolify VPS Master — Workers Python]
         Workers[cadencia-workers<br/>FastAPI + Playwright<br/>orchestrator 7-step<br/>carrossel + reels + chat + onboarding]
     end
 
@@ -110,7 +110,7 @@ Resumo por área:
 - [ADR-0001](adr/0001-stripe-em-vez-de-asaas.md) — Stripe substituiu Asaas (11/05/2026)
 - [ADR-0002](adr/0002-chat-agent-design.md) — Design do chat "Tenho uma ideia"
 - [ADR-0003](adr/0003-ghl-motor-invisivel.md) — GHL como motor invisível, nunca exposto na UI
-- [ADR-0004](adr/0004-carrossel-railway-resto-vps.md) — Carrossel/reels Railway, blog/seinfeld/linkedin VPS
+- [ADR-0004](adr/0004-carrossel-railway-resto-vps.md) — Carrossel/reels em workers dedicados (hoje Coolify VPS Master; ADR-0012), blog/seinfeld/linkedin VPS
 - [ADR-0005](adr/0005-location-pit-token-por-tenant.md) — `location_pit_token` por tenant (não global)
 - [ADR-0006](adr/0006-multi-tenant-rls-supabase.md) — Multi-tenant via RLS Supabase (não DBs separados)
 
@@ -143,7 +143,7 @@ growth_pipeline.py
 
 ```
 POST /api/app/trigger-generation (Vercel)
-  ├─ filtra carrossel/reels → Railway workers
+  ├─ filtra carrossel/reels → workers Coolify VPS Master
   └─ outros canais → POST VPS:39090/trigger
        └─ run_pipeline(): sync → blog → seinfeld --generate → linkedin → instagram
           (newsletter é silenciosamente pulada — G002)

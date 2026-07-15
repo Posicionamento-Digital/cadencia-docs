@@ -35,7 +35,7 @@ Hoje o Cadencia só é operável pela UI (JWT de sessão) ou por acesso bruto (S
 
 **Existe parcial (conteúdo):** content, generation-queue, trigger-generation, newsletter/generate.
 
-**Workers:** growth já na VPS Master `/cadencia/` (`:39090/trigger`, HMAC). Carrossel/reels ainda no Railway (migração In Progress — CAD-20/21).
+**Workers:** growth já na VPS Master `/cadencia/` (`:39090/trigger`, HMAC). Carrossel/reels no Coolify VPS Master (migração concluída — DEV-638; Railway DESLIGADO).
 
 **NÃO existe:** token de serviço · endpoint HMAC `/api/v1/automations/move-card` (CAD-582) · cadências (CAD-579/580/581) · email send (CAD-617) · campanhas (CAD-619) · multi-rede (CAD-624) · agendador (CAD-631).
 
@@ -63,7 +63,7 @@ Hoje o Cadencia só é operável pela UI (JWT de sessão) ou por acesso bruto (S
 
 ## O que NÃO fazer
 
-- Não hardcodar destino de worker (migração Railway→Master In Progress).
+- Não hardcodar destino de worker (migração Railway→Coolify VPS Master concluída — DEV-638).
 - Supabase service_role bypassa RLS → risco; preferir `/api/app` quando houver token; parameterized queries.
 - UA browser → 401 na service key (usar UA server-like).
 - `generation_queue` schema instável (PDL-171) — verificar antes de escrever.

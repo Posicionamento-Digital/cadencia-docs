@@ -50,7 +50,7 @@ A skill apresenta o Bloco A e aguarda cada bloco antes de executar qualquer cois
 4. Popular `tenant_config` com 30+ campos JSONB
 5. Inserir `profile_responses` (6 registros) + `tenant_profile` (consolidado, confidence=0.9)
 6. Upload de logo e fotos para Supabase Storage
-7. Workers Railway: dossier (~30s) + visual-identity + editorials + sub-preset-choice
+7. Workers Coolify VPS Master: dossier (~30s) + visual-identity + editorials + sub-preset-choice
 8. Gerar Soul.md via endpoint admin; se falhar, gera manualmente com dados do briefing
 9. Gerar primeiras 5 ideias (se `GERAR_IDEIAS = true`)
 10. Verificação final — query consolidada em todas as tabelas

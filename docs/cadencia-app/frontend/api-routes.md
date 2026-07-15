@@ -27,7 +27,7 @@ API routes do Next.js (Vercel). 9 grupos de rotas.
 | Rota | Função |
 |---|---|
 | `POST /api/auth/provision-tenant` | Signup: cria tenants + users + roles + onboarding + plano trial (3 créditos) |
-| `POST /api/app/trigger-generation` | On-demand: filtra carrossel/reels (Railway) e envia restante ao VPS porta 39090 |
+| `POST /api/app/trigger-generation` | On-demand: filtra carrossel/reels (workers Coolify VPS Master) e envia restante ao VPS porta 39090 |
 | `GET /api/app/generation-queue` | Status da fila de geração |
 | `POST /api/app/content/[id]/publish` | Publica conteúdo aprovado |
 | `GET /api/growth/oauth/callback` | Troca code GHL por tokens, salva em `ghl_agency_oauth` |
@@ -38,7 +38,7 @@ API routes do Next.js (Vercel). 9 grupos de rotas.
 
 ```
 cron-job.org → POST /api/app/trigger-generation (Vercel)
-  ├─ carrossel / reels → Railway workers
+  ├─ carrossel / reels → workers Coolify VPS Master
   └─ blog / seinfeld / linkedin / instagram → VPS porta 39090
 ```
 
@@ -59,19 +59,19 @@ gh api "repos/felipeluissalgueiro/cadencia-app/contents/src/app/api/<path>?ref=m
 
 ## Quando NÃO usar
 
-- ❌ Para lógica que precisa de >10s — usar workers Railway (timeout Vercel).
+- ❌ Para lógica que precisa de >10s — usar workers Coolify VPS Master (timeout Vercel).
 - ❌ Para acesso direto a DB de outro tenant — usar service_role com cuidado.
 - ❌ Substituir webhooks externos — Stripe/GHL chamam aqui, não o contrário.
 
 ## Por que funciona assim
 
 - Vercel para latência baixa em rotas síncronas (auth, trigger).
-- `trigger-generation` filtra canais e roteia (Railway vs VPS) — single point of dispatch.
+- `trigger-generation` filtra canais e roteia (workers Coolify vs VPS growth) — single point of dispatch.
 - v1 isolada para chamadas de workers — separa "público" (app) de "interno" (workers).
 
 ## 🚫 Don'ts
 
-- **Não** chamar workers Railway/VPS direto do client — sempre via `/api/app/*`.
+- **Não** chamar workers Coolify/VPS direto do client — sempre via `/api/app/*`.
 - **Não** ignorar timeout Vercel (10s hobby, 60s pro) — operações pesadas vão pra worker.
 - **Não** misturar service_role com endpoints públicos — RLS bypassa.
 - **Não** assumir que `v1/*` é seguro — exige auth shared-secret.

@@ -66,5 +66,5 @@ curl -s -X POST "https://coolify.cadencia.ia.br/api/v1/deploy?uuid=x10s2h2186f7n
 ## Links relacionados
 
 - Issue: DEV-859 (maint: Cadência — Bugs e suporte)
-- ADR-0012 — Workers Railway → Coolify (fonte de verdade)
+- ADR-0012 — Workers Coolify VPS Master → Coolify (fonte de verdade)
 - `times/produto/cadencia/context/runtime-fix-review-DEV-859.md`

@@ -8,7 +8,7 @@
 
 ## TL;DR
 
-2 scripts de geração que rodam na VPS: `blog_generate.py` gera post de blog e faz deploy via webhook. `instagram_generate.py` gera legenda/hashtags para Instagram (a publicação em si é feita pelos workers Railway).
+2 scripts de geração que rodam na VPS: `blog_generate.py` gera post de blog e faz deploy via webhook. `instagram_generate.py` gera legenda/hashtags para Instagram (a publicação em si é feita pelos workers Coolify VPS Master).
 
 ## Identidade
 
@@ -29,7 +29,7 @@
 ## instagram_generate.py
 
 - Gera caption + hashtags para Instagram
-- NÃO publica — publicação via `instagram_publisher.py` nos workers Railway
+- NÃO publica — publicação via `instagram_publisher.py` nos workers Coolify VPS Master
 - Salva em `published_posts.instagram_caption`
 
 ## Don'ts
@@ -46,7 +46,7 @@
 
 ## Quando NÃO usar
 
-- ❌ Para carrossel/reels (Railway).
+- ❌ Para carrossel/reels (workers Coolify VPS Master).
 - ❌ `trial`/`essencial`/`starter` fora de seg+qui (frequência restrita).
 - ❌ Blog em batch concorrente — gera duplicação.
 

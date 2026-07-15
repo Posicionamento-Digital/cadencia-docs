@@ -2,7 +2,7 @@
 
 7 scripts Python que rodam na **VPS Master `72.60.4.71` em `/cadencia/`**. Geram blog, email Seinfeld, LinkedIn, newsletter, post simples Instagram + scoring de leads.
 
-> **⚠️ NÃO confundir com workers Railway** ([`../workers/`](../workers/)). Esses scripts são para conteúdo de texto/email e scoring. Carrossel e reels NÃO rodam aqui. Ver [ADR-0004](../adr/0004-carrossel-railway-resto-vps.md).
+> **⚠️ NÃO confundir com workers Coolify VPS Master** ([`../workers/`](../workers/)). Esses scripts são para conteúdo de texto/email e scoring. Carrossel e reels NÃO rodam aqui. Ver [ADR-0004](../adr/0004-carrossel-railway-resto-vps.md).
 >
 > **Migração em andamento:** `/cadencia/` → `/opt/cadencia-growth/` (PDL-213).
 
@@ -45,7 +45,7 @@ growth_pipeline.py newsletter
 
 ```
 POST /api/app/trigger-generation (Vercel)
-  ├─ canal carrossel/reels → Railway workers
+  ├─ canal carrossel/reels → workers Coolify VPS Master
   └─ outros canais       → POST 72.60.4.71:39090/trigger
       └─ trigger_server.py.run_pipeline():
           sync → blog → seinfeld --generate → linkedin → instagram
@@ -78,7 +78,7 @@ tail -f /cadencia/logs/growth_pipeline.log
 ## Refs
 
 - Voltar: [`../README.md`](../README.md)
-- ADRs: [`../adr/0004-*`](../adr/0004-carrossel-railway-resto-vps.md) (Railway vs VPS), [`../adr/0005-*`](../adr/0005-location-pit-token-por-tenant.md) (PIT token)
+- ADRs: [`../adr/0004-*`](../adr/0004-carrossel-railway-resto-vps.md) (workers Coolify vs VPS growth), [`../adr/0005-*`](../adr/0005-location-pit-token-por-tenant.md) (PIT token)
 - Outro pólo (carrossel/reels): [`../workers/`](../workers/)
 - Fluxo end-to-end: [`../architecture/architecture.md`](../architecture/architecture.md)
 - VPS Access: `pd-framework/_core/VPS-ACCESS.md`

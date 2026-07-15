@@ -48,7 +48,7 @@ entities: ["[[Cadencia-Growth]]", "[[Cadencia]]", "[[marketing]]"]
 
 | Repo | Org | Conteúdo | Deploy |
 |---|---|---|---|
-| `cadencia-app` | felipeluissalgueiro | Frontend Next.js (`src/`) + Workers Python (`cadencia-workers/`) — monorepo | Vercel (`main`) + Railway (`master`) |
+| `cadencia-app` | felipeluissalgueiro | Frontend Next.js (`src/`) + Workers Python (`cadencia-workers/`) — monorepo | Vercel (`main`) + Coolify VPS Master (`master`) |
 | `cadencia-growth` | Posicionamento-Digital | Pipeline Python — blog/seinfeld/linkedin/newsletter + scoring webhook | VPS Hostinger `/cadencia/` → `/opt/cadencia-growth/` (migração PDL-213) |
 | `cadencia-blog-template` | felipeluissalgueiro | Template Next.js multi-tenant para blogs gerados | Vercel auto-deploy por tenant |
 
@@ -85,7 +85,7 @@ entities: ["[[Cadencia-Growth]]", "[[Cadencia]]", "[[marketing]]"]
 
 ## Workers backend (`cadencia-app/cadencia-workers/`)
 
-**Stack:** Python 3.12 + FastAPI + Playwright (HTML→PNG) + Dockerfile + Procfile + railway.toml
+**Stack:** Python 3.12 + FastAPI + Playwright (HTML→PNG) + Dockerfile + docker-compose Coolify _(railway.toml/Procfile = legado)_
 
 **Pipeline 7-step orchestrator** (`src/workers/orchestrator.py`):
 1. **Research Agent** — pesquisa tema (Método X/Y)
@@ -206,7 +206,7 @@ entities: ["[[Cadencia-Growth]]", "[[Cadencia]]", "[[marketing]]"]
 
 ## Cron jobs
 
-- **Hoje:** cron-job.org → triggers Railway workers
+- **Hoje:** cron-job.org → triggers workers Coolify VPS Master
 - **Migração:** Coolify cron nativo OU cron VPS Master
 
 ---

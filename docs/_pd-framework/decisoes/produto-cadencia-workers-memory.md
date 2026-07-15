@@ -17,7 +17,7 @@ generated: wiki-backfill
 
 ## 2026-05-25 — Migração Railway → Coolify VPS Master é decisão arquitetural
 
-**Contexto:** Cadeia PDL-18 a 23 trata da migração dos workers Railway → Docker Compose VPS Master (Coolify). Race condition histórica entre Railway worker pool e VPS pool gerou incidents (25/04 generation_queue, 15/05 ideias presas).
+**Contexto:** Cadeia PDL-18 a 23 trata da migração dos workers Coolify VPS Master → Docker Compose VPS Master (Coolify). Race condition histórica entre Railway worker pool e VPS pool gerou incidents (25/04 generation_queue, 15/05 ideias presas).
 
 **Decisão:** Workers vão migrar de Railway pra Coolify VPS Master. Path no servidor: `/opt/cadencia-workers/` (paralelo a `/opt/cadencia-app/` já presente). Após migração, push `master` vai pro Coolify. Pós-migração, validar ausência race condition (PDL-21) + cancelar serviços Railway.
 

@@ -41,7 +41,7 @@
 ```
 cron-job.org → POST /api/app/trigger-generation (Vercel)
   ↓
-Vercel filtra carrossel/reels → Railway workers
+Vercel filtra carrossel/reels → workers Coolify VPS Master
 VPS: recebe APENAS blog/seinfeld/linkedin/instagram
 ```
 
@@ -57,7 +57,7 @@ VPS: recebe APENAS blog/seinfeld/linkedin/instagram
 
 - **Cron 11h BRT VPS**: pipeline diário automático (`growth_pipeline.py sync blog seinfeld linkedin instagram`).
 - **Cron sexta 15h BRT**: newsletter semanal (`growth_pipeline.py newsletter`).
-- **On-demand**: `trigger_server.py` chama `run_pipeline()` quando usuário aprova ideia (filtra carrossel/reels que vão para Railway).
+- **On-demand**: `trigger_server.py` chama `run_pipeline()` quando usuário aprova ideia (filtra carrossel/reels que vão para os workers Coolify VPS Master).
 - **Retry**: catch-up de tenants com `provisioning_status='failed'` via `retry_provisioning.py` (10h55 BRT).
 
 ## Quando NÃO usar

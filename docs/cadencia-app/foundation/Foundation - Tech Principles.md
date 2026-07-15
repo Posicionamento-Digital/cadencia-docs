@@ -52,7 +52,7 @@ entities: ["[[Cadencia]]", "[[marketing]]"]
 
 ---
 
-## 3. Frontend Vercel `main`, Workers Railway `master` (migrando Coolify)
+## 3. Frontend Vercel `main`, Workers Coolify VPS Master `master` (migrando Coolify)
 
 **Princípio:** dois pipelines de deploy, sincronizados por `git push origin main:master`.
 
@@ -60,9 +60,9 @@ entities: ["[[Cadencia]]", "[[marketing]]"]
 
 **Como aplicar:**
 - Push em `main` → Vercel deploy frontend automático
-- Push em `master` (espelhamento de `main`) → Railway deploy workers
+- Push em `master` (espelhamento de `main`) → Coolify VPS Master deploy workers
 - Comando padrão pós-push: `git push origin main:master`
-- Pós-push: validar `vercel ls | head -3` Ready e `railway logs` sem erro
+- Pós-push: validar `vercel ls | head -3` Ready e logs Coolify sem erro
 
 **Migração ativa:** Railway → Coolify VPS Master (PDL-18 a 23 cadeia). Após migração, `master` push vai para Coolify.
 
@@ -159,7 +159,7 @@ entities: ["[[Cadencia]]", "[[marketing]]"]
 **Pós-push:**
 ```
 [ ] vercel ls | head -3 → Ready (não Error)
-[ ] Se backend Python: git push origin main:master + railway logs
+[ ] Se backend Python: git push origin main:master + logs Coolify
 ```
 
 **Pós-deploy VPS (qualquer projeto):**

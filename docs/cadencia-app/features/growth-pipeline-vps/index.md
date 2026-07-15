@@ -17,7 +17,7 @@
 
 ## O que é
 
-Pipeline de geração de conteúdo Growth que roda na VPS ao aprovar uma ideia no frontend. Responsável por gerar blog, email Seinfeld, LinkedIn e Instagram — tudo que não é carrossel (carrossel fica no Railway).
+Pipeline de geração de conteúdo Growth que roda na VPS ao aprovar uma ideia no frontend. Responsável por gerar blog, email Seinfeld, LinkedIn e Instagram — tudo que não é carrossel (carrossel fica nos workers Coolify VPS Master; Railway DESLIGADO).
 
 ---
 

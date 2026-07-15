@@ -21,7 +21,7 @@
 ```
 content_idea aprovada (frontend)
   └─► POST /api/app/trigger-generation (Vercel)
-       └─► filtra carrossel → Railway workers
+       └─► filtra carrossel → workers Coolify VPS Master
             └─► pipeline-orchestrator (7 steps):
                  1. research_agent
                  2. model_selector (29 YAML)

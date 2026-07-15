@@ -50,7 +50,7 @@
 
 **Pipeline (interno Cadência)** — Sequência diária de geração por tenant, orquestrada por `growth_pipeline.py` (cron 11h BRT VPS). Ordem: `sync → blog → seinfeld --generate → seinfeld --dispatch → newsletter → linkedin → instagram`. Carrossel/reels NÃO entram no pipeline VPS — vão por Railway. Ver [ADR-0004](docs/adr/0004-carrossel-railway-resto-vps.md).
 
-**Trigger on-demand** — Geração disparada quando usuário aprova uma ideia. Endpoint `/api/app/trigger-generation` (Vercel) filtra canais: `carrossel`/`reels` → Railway workers; resto → `VPS:39090/trigger`. Newsletter é **silenciosamente ignorada** no trigger (G002).
+**Trigger on-demand** — Geração disparada quando usuário aprova uma ideia. Endpoint `/api/app/trigger-generation` (Vercel) filtra canais: `carrossel`/`reels` → workers Coolify VPS Master; resto → `VPS:39090/trigger`. Newsletter é **silenciosamente ignorada** no trigger (G002).
 
 **Generation queue** — Tabela `generation_queue` (planejada para refator PDL-171) para coordenar jobs entre workers e VPS. Hoje a coordenação é por mistura de `trigger_server.py` + cron + status em `published_posts`.
 
@@ -70,9 +70,9 @@
 
 **Mission Control** — Dashboard HTML em VPS:8768 (`/cadencia/mission_control.py`) para Felipe ver estado dos tenants em tempo real.
 
-## Workers (Railway)
+## Workers (Coolify VPS Master — Railway DESLIGADO)
 
-**Orchestrator** — Worker principal `pipeline-orchestrator` (7 steps) que coordena geração de carrossel/reels via Railway. Diferente do `growth_pipeline.py` (que roda VPS e cobre blog/seinfeld/linkedin/instagram).
+**Orchestrator** — Worker principal `pipeline-orchestrator` (7 steps) que coordena geração de carrossel/reels via workers Coolify VPS Master (Railway DESLIGADO). Diferente do `growth_pipeline.py` (que roda VPS e cobre blog/seinfeld/linkedin/instagram).
 
 **Theme engine** — Worker que escolhe tema visual para um post baseado no dossier + editorial + sub-preset.
 
@@ -99,7 +99,7 @@
 - ⚠️ **"Pipeline"** pode significar (a) pipeline interno Cadência de geração, (b) pipeline GHL (funil comercial). Sempre desambiguar pelo contexto.
 - ⚠️ **"Token"** sem qualificador é ambíguo. Sempre dizer: `api_key`, `location_pit_token`, `agency_oauth_token`, `supabase_service_role`, `stripe_secret`.
 - ⚠️ **"GHL"** pode ser (a) a location central da Cadência, (b) a location do tenant. Sempre dizer "GHL central" vs "GHL do tenant".
-- ⚠️ **"Worker"** pode ser (a) worker Railway (`cadencia-workers/`), (b) script Python rodando na VPS (`/cadencia/`). VPS scripts são chamados de **growth scripts** quando o contexto exige desambiguação.
+- ⚠️ **"Worker"** pode ser (a) worker Coolify VPS Master (`cadencia-workers/`; Railway DESLIGADO), (b) script Python rodando na VPS growth (`/cadencia/`). VPS scripts são chamados de **growth scripts** quando o contexto exige desambiguação.
 - ⚠️ **"Generation"** sem canal é ambíguo. Sempre dizer: geração de carrossel, blog, seinfeld, linkedin, instagram, reels, newsletter.
 
 ## Relacionamentos

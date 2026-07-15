@@ -34,32 +34,13 @@ vercel project ls                      # Listar projetos
 - `NEXT_PUBLIC_APP_URL` = `https://cadencia.app.br`
 - `NEXT_PUBLIC_SUPABASE_URL` = URL do Supabase
 - `SUPABASE_SERVICE_ROLE_KEY` = service role (acesso admin ao banco)
-- `WORKERS_API_URL` = URL do Railway backend
+- `WORKERS_API_URL` = URL do backend Coolify VPS Master (`workers.cadencia.ia.br`; Railway DESLIGADO, DEV-638)
 
 ---
 
-## Railway (Backend Python)
+## Railway (Backend Python) — ❌ DESLIGADO
 
-### Comandos disponíveis
-```bash
-railway status                         # Ver serviço atual
-railway logs                           # Ver logs
-railway variables                      # Listar env vars
-railway variables set KEY=VALUE        # Setar variável
-railway up                             # Deploy manual
-```
-
-### Deploy automático
-- Railway deploya do branch `master`
-- Após push no main: `git push origin main:master`
-
-### Env vars importantes (via `railway variables`)
-- `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY` — acesso ao banco
-- `GEMINI_API_KEY`, `OPENAI_API_KEY`, `ANTHROPIC_API_KEY` — LLMs
-- `PEXELS_API_KEY` — fotos stock
-- `CRON_SECRET` — segredo do cron job
-
----
+> **Railway DESLIGADO.** Cutover pro Coolify VPS Master concluído (DEV-638), rollback validado e serviços cancelados (DEV-645/DEV-21). Comandos `railway *` são histórico — os workers rodam no Coolify (ver ADR-0012).
 
 ## Supabase (Banco de Dados)
 
@@ -89,8 +70,8 @@ curl -s -X POST "https://elefbabxkaigusjiiflu.supabase.co/rest/v1/rpc/FUNCTION_N
 ### Credenciais
 - **Project ref:** `elefbabxkaigusjiiflu`
 - **URL:** `https://elefbabxkaigusjiiflu.supabase.co`
-- **Service Role Key:** disponível via `railway variables` (campo `SUPABASE_SERVICE_ROLE_KEY`)
-- **JWT Secret:** disponível via `railway variables` (campo `SUPABASE_JWT_SECRET`)
+- **Service Role Key:** disponível nas env vars do Coolify VPS Master (campo `SUPABASE_SERVICE_ROLE_KEY`)
+- **JWT Secret:** disponível nas env vars do Coolify VPS Master (campo `SUPABASE_JWT_SECRET`)
 
 ### Supabase Management API (configurar auth, templates, etc.)
 - **Endpoint:** `https://api.supabase.com/v1/projects/elefbabxkaigusjiiflu/config/auth`
@@ -121,7 +102,7 @@ curl -s -X PATCH "https://api.supabase.com/v1/projects/elefbabxkaigusjiiflu/conf
 
 ```bash
 git push origin main              # Vercel deploya automaticamente
-git push origin main:master       # Railway deploya automaticamente
+git push origin main:master       # Coolify VPS Master (auto-deploy; manual se OFF — DEV-678)
 ```
 
 Sempre pushar para AMBOS após mudanças no backend Python.

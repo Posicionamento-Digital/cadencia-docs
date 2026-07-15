@@ -165,16 +165,16 @@ Implementar `find_available_slot()`:
 
 ### BATCH 5 — Carrossel → GHL Social Planner (60-90 min)
 **Depende de:** BATCH 0
-**Executor:** Claude (VPS + Railway)
+**Executor:** Claude (VPS growth + workers Coolify VPS Master)
 **Prioridade:** pós-demo se apertar o tempo
 
 Ao gerar carrossel, enviar PNGs automaticamente para o Social Planner do Instagram:
 
-1. No orchestrator (Railway): após render, chamar `/api/v1/carrossel/schedule-social` passando `doc_id` + `tenant_id`
+1. No orchestrator (Coolify VPS Master): após render, chamar `/api/v1/carrossel/schedule-social` passando `doc_id` + `tenant_id`
 2. No endpoint: download PNGs do Supabase → upload para GHL Media Library (zero-fill nos nomes) → criar post com `accountIds=[instagram_account_id]`
 3. `scheduleDate` via `find_available_slot()` reutilizando mesma lógica do LinkedIn
 
-⚠️ Atenção: Railway (`cadencia-workers/src/`) é gerenciado por outro agente. Verificar antes de modificar.
+⚠️ Atenção: os workers Coolify VPS Master (`cadencia-workers/src/`) são gerenciados por outro agente. Verificar antes de modificar. _(Railway DESLIGADO, DEV-638.)_
 
 ---
 

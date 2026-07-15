@@ -37,7 +37,7 @@ Ao clicar, cria uma `content_idea` real no banco e dispara o motor de geração 
 
 ```
 ChatIdeaSection.tsx
-  → POST /api/v1/chat/session (Railway)
+  → POST /api/v1/chat/session (workers Coolify VPS Master)
     → load_session_context() = Soul.md + dossier + editorias
     → INSERT chat_sessions → session_id + welcome
   → POST /api/v1/chat/message (SSE)

@@ -17,7 +17,7 @@
   - `src/app/api/auth/provision-tenant/route.ts`
   - `src/app/api/growth/oauth/callback/route.ts`
 - **Status:** ativo
-- **Deps:** Supabase (service_role), Workers Railway (GHL signup)
+- **Deps:** Supabase (service_role), Workers Coolify VPS Master (GHL signup)
 
 ## provision-tenant (POST /api/auth/provision-tenant)
 

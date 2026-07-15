@@ -17,7 +17,7 @@ Kickoff do cliente
         → Rastreamento de leads e scoring no CRM
 ```
 
-Toda a geração acontece em workers Python rodando na VPS Master (cron 11h BRT). Carrosséis e reels rodam em Railway (GPU). O frontend Next.js na Vercel é a interface do cliente e do admin.
+Toda a geração acontece em workers Python rodando na VPS Master (cron 11h BRT). Carrosséis e reels rodam nos workers Coolify VPS Master (Railway DESLIGADO — cutover concluído, DEV-638). O frontend Next.js na Vercel é a interface do cliente e do admin.
 
 ## Stack
 
@@ -26,7 +26,7 @@ Toda a geração acontece em workers Python rodando na VPS Master (cron 11h BRT)
 | Frontend | Next.js 14 (App Router) — Vercel |
 | Banco | Supabase (PostgreSQL + RLS + Realtime) |
 | Workers | Python — VPS Master (Coolify) |
-| Carrossel/Reels | Python + Pillow/FFmpeg — Railway |
+| Carrossel/Reels | Python + Pillow/FFmpeg — Coolify VPS Master (Railway DESLIGADO) |
 | CRM/automação | GoHighLevel (GHL) — motor invisível |
 | Email | GHL Conversations API |
 | IA | GPT-4o, Gemini 2.5 Flash, DALL-E 3 |

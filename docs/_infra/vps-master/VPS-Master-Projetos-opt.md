@@ -57,7 +57,7 @@ entities: ["[[Cadencia-Growth]]", "[[Cadencia]]", "[[marketing]]"]
 
 **Onde o Cadência realmente roda:**
 - Frontend: Vercel (`cadencia.app.br`)
-- Workers: Railway
+- Workers: Coolify VPS Master (Railway DESLIGADO, DEV-638)
 - Growth pipeline: `/cadencia/` nesta VPS
 
 **GitHub:** `felipeluissalgueiro/cadencia-app`

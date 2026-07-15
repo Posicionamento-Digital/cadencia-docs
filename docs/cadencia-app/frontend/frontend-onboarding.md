@@ -15,7 +15,7 @@ Fluxo linear multi-fase que coleta perfil do tenant e dispara geração de dossi
 - **Tipo:** Next.js 15 App Router
 - **Path:** `src/app/(onboarding)/`
 - **Status:** ativo
-- **Deps:** Workers Railway (onboarding endpoints), Supabase (`tenant_onboarding`)
+- **Deps:** Workers Coolify VPS Master (onboarding endpoints), Supabase (`tenant_onboarding`)
 
 ## Estrutura de fases
 

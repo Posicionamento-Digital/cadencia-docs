@@ -20,7 +20,7 @@ entities: ["[[Cadencia]]"]
 Backend Python da Cadência. Orchestrator 7-step + agents IA + renderer Playwright + integrations externas. Deploy Railway `master` hoje, migrando para Coolify VPS Master.
 
 **Repo:** `felipeluissalgueiro/cadencia-app` (parte `cadencia-workers/`).
-**Deploy hoje:** Railway via `git push origin main:master` (Dockerfile + healthcheck `/health` + restart on_failure 3 retries).
+**Deploy:** Coolify VPS Master via `git push origin main:master` (Dockerfile + healthcheck `/health`). _(Railway DESLIGADO, DEV-638.)_
 **Migração ativa:** Railway → Coolify VPS Master (cadeia PDL-18 a 23).
 
 ---
@@ -124,13 +124,13 @@ Healthcheck: `/health` (validado por Railway/Coolify).
 
 ## Workflows operacionais
 
-- **Deploy hoje:** `git push origin main:master` → Railway build + healthcheck `/health` Ready
+- **Deploy:** `git push origin main:master` → Coolify VPS Master build + healthcheck `/health` Ready
 - **Migração ativa:** Coolify VPS Master (cadeia PDL-18 a 23)
 - **Validação obrigatória:**
   - `npm run build` no monorepo zero erros
   - `python tests/visual/test_slide_contrast.py` 40/40 PASS (se mexeu renderer)
   - Rendi 1 post real local OU declarei NÃO testei
-  - Pós-push: `railway logs` sem erro, healthcheck Ready
+  - Pós-push: logs Coolify sem erro, healthcheck Ready
 - **Princípio (foundation/tech-principles.md #8):** Compilou ≠ testou.
 
 ---
@@ -149,10 +149,10 @@ Healthcheck: `/health` (validado por Railway/Coolify).
 |---|---|
 | **P1 — generation_queue schema (channel/channels)** | PDL-171 |
 | Migração Railway → Coolify cadeia | PDL-18 a 23 |
-| Liberar acesso Luiz Railway+Vercel | PDL-18 |
-| Levantar workers e crons Railway pré-migração | PDL-19 |
-| Migrar workers Railway → Docker Compose VPS | PDL-20 |
-| Validar race condition pós-migração + cancelar Railway | PDL-21 |
+| ~~Liberar acesso Luiz Railway+Vercel~~ obsoleto (DEV-638) | PDL-18 |
+| ~~Levantar workers e crons Railway pré-migração~~ concluído (DEV-638) | PDL-19 |
+| ~~Migrar workers Coolify VPS Master → Docker Compose VPS~~ concluído (DEV-638) | PDL-20 |
+| ~~Validar race condition pós-migração + cancelar Railway~~ concluído (DEV-638) | PDL-21 |
 | **Dívida Asaas** — código `integrations/asaas/` ainda existe | — |
 | PR #2 OpenRouter via `OPENAI_BASE_URL/OPENAI_MODEL` | PR aberto |
 
@@ -196,5 +196,5 @@ Antes de criar:
 - `../SOUL.md` § Princípios técnicos
 - `../foundation/tech-architecture.md` § Workers backend
 - Repo: `felipeluissalgueiro/cadencia-app/cadencia-workers/`
-- Logs Railway: `railway logs`
+- Logs Coolify: via Coolify API/dashboard (token 1P `Coolify - API - VPS Master`)
 - Healthcheck: `/health`

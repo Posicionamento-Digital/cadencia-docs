@@ -67,7 +67,7 @@ Voz: declarativa, parcimoniosa, sem entusiasmo vazio (alinhado SOUL Maga/Sábia)
 | Migração Railway → Coolify | PDL-18 a 23 (cadeia) | workers |
 | `/cadencia/` → `/opt/cadencia-growth/` | PDL-213 | growth |
 | Env vars Coolify 6 apps | PDL-215 (In Progress) | growth |
-| Acesso Luiz Railway+Vercel | PDL-18 (aguardando Felipe) | Squad pai |
+| ~~Acesso Luiz Railway+Vercel~~ obsoleto (Railway DESLIGADO, DEV-638) | PDL-18 | Squad pai |
 
 ## Projetos Linear
 

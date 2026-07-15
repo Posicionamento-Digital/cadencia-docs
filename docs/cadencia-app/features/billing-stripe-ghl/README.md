@@ -77,7 +77,7 @@ Cliente paga no Stripe → webhook do Cadencia recebe → libera créditos no Su
 [6] Switch event.type:
      case checkout.session.completed:
        - INSERT em tenant_plans (status=active, créditos liberados)
-       - Bridge GHL via Workers (Railway /api/v1/ghl/payment) — tag+pipeline
+       - Bridge GHL via Workers (Coolify VPS Master /api/v1/ghl/payment) — tag+pipeline _(GHL legado)_
        - mirrorPaidInvoiceToGhl():
          · stripe.customers.retrieve() → pega email
          · findContactByEmail() → busca Contact GHL

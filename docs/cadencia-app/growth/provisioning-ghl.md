@@ -21,7 +21,7 @@ Cria subconta GHL para novo tenant, configura campos customizados, pipeline de o
 
 1. Signup usuário → `POST /api/auth/provision-tenant` (Vercel)
    → cria `tenants` + `users` + `user_tenant_roles` + `tenant_onboarding` + `tenant_plans`
-2. Fire-and-forget: `POST /api/v1/ghl/signup` (workers Railway)
+2. Fire-and-forget: `POST /api/v1/ghl/signup` (workers Coolify VPS Master)
    → cria contato GHL na location central + oportunidade em trial
 3. `provision_tenant.py` na VPS (chamado por trigger `/provision`):
    - `_get_oauth_agency_token()` — lê de `ghl_agency_oauth` (PDL-25: tabela vazia = bloqueado)

@@ -15,7 +15,7 @@
 - **Tipo:** Next.js 15 App Router
 - **Path:** `src/app/(app)/app/admin/`
 - **Status:** ativo
-- **Deps:** Supabase (role `super_admin`), Workers Railway, VPS
+- **Deps:** Supabase (role `super_admin`), Workers Coolify VPS Master, VPS
 
 ## Rotas e funcionalidades
 

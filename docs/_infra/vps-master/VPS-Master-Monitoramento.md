@@ -153,7 +153,7 @@ sudo journalctl -f --since "5 minutes ago"
 **Hoje monitorado:** Cadência (Next.js frontend).
 
 **Projetos a conectar no futuro:**
-- cadencia-workers (Railway)
+- cadencia-workers (Coolify VPS Master — Railway DESLIGADO, DEV-638)
 - gci-go-whatsapp
 - ecuro-mcp
 
