@@ -50,7 +50,7 @@ tokens em documentação ou commits.
 
 ```bash
 python -m compileall -q -x 'prompts_before\.py' pipeline scoring scripts
-pytest -q tests
+python3 -m pytest tests/ --ignore=tests/visual -q
 ```
 
 `pipeline/prompts_before.py` é snapshot histórico congelado e fica fora do
