@@ -105,6 +105,12 @@ nav:
       - Manual do sistema: cadencia-app/Manual-do-Sistema-Cadencia.md
       - Runbooks: cadencia-app/runbooks/README.md
 
+    - Lara & CRM Conversacional:
+      - Agente Lara: cadencia-app/agente-lara.md
+      - Cadências de contatos: cadencia-app/cadencias-de-contatos.md
+      - Agenda da Lara: cadencia-app/agenda-lara.md
+      - Evolução transversal 2026-07: cadencia-app/evolucao-transversal-2026-07.md
+
     - Conteúdo Autônomo:
       - cadencia-app/growth/README.md
       - Pipeline de growth: cadencia-app/growth/growth-pipeline-runner.md
