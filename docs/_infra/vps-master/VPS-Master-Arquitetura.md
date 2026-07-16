@@ -7,7 +7,7 @@ entities: ["[[Cadencia]]", "[[marketing]]"]
 ---
 # VPS Master — Arquitetura Geral
 
-> Documento de referência da VPS de produção da Posicionamento Digital.
+> Documento de referência da VPS de produção da Cadencia.
 > Última atualização: 22/05/2026 — reconfiguração completa.
 
 ---
@@ -27,9 +27,9 @@ entities: ["[[Cadencia]]", "[[marketing]]"]
 
 ---
 
-## Papel na infraestrutura PD
+## Papel na infraestrutura Cadencia
 
-Esta VPS é o servidor de produção principal da Posicionamento Digital. Ela hospeda:
+Esta VPS é o servidor de produção principal da Cadencia. Ela hospeda:
 
 - **Lara AI** — assistente de atendimento para clientes Sorria (OpenClaw)
 - **Cadência Growth** — motor de geração de conteúdo para todos os tenants Cadência

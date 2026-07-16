@@ -5,7 +5,7 @@ moc: "[[MOC-Inbox]]"
 ---
 # Central de Aprendizado IA
 
-Central unificada de conhecimento sobre Inteligência Artificial, organizada para facilitar o aprendizado e aplicação prática de conceitos de IA na Posicionamento Digital.
+Central unificada de conhecimento sobre Inteligência Artificial, organizada para facilitar o aprendizado e a aplicação prática de conceitos de IA na Cadencia.
 
 ---
 

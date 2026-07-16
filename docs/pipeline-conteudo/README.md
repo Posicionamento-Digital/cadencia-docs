@@ -5,7 +5,7 @@ tags: [pipeline-conteudo, documentacao, tecnico, automacao, marketing, vps]
 
 # Docs — Pipeline de Conteúdo
 
-Documentação técnica do **pipeline automatizado de geração de conteúdo da Posicionamento Digital** — scripts na VPS que geram e publicam posts, newsletters e carrosséis.
+Documentação técnica do **pipeline automatizado de geração de conteúdo da Cadencia** — scripts na VPS que geram e publicam posts, newsletters e carrosséis.
 
 ## O que é
 

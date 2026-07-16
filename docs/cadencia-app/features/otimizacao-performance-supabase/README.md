@@ -23,7 +23,7 @@ Dashboard do Supabase reportava "Your project is currently exhausting multiple r
 
 ## Contexto
 
-Instância Cadência (`elefbabxkaigusjiiflu`) é **Compute Micro** (1 GB RAM, 2 vCPU shared, 87 MB/s baseline IO, 60 conexões diretas) na org `Posicionamento Digital` em plano **Pro**. Dashboard começou a sinalizar exaustão de recursos com app travando e Felipe reportando lentidão geral.
+Instância Cadência (`elefbabxkaigusjiiflu`) é **Compute Micro** (1 GB RAM, 2 vCPU shared, 87 MB/s baseline IO, 60 conexões diretas) na organização técnica legada `Posicionamento Digital` do Supabase, em plano **Pro**. Esse nome é apenas um identificador do console, não a marca atual. Dashboard começou a sinalizar exaustão de recursos com app travando e Felipe reportando lentidão geral.
 
 Antes de assumir que era falta de hardware (upgrade pra Small = +US$15/mês), investigação via Management API revelou que o problema era 100% de **uso ineficiente** — Micro aguentava de sobra com as queries otimizadas.
 

@@ -32,7 +32,7 @@ VPS Master
                               ┌────────────────┴────────────────┐
                               ▼                                 ▼
                      WhatsApp (Stevo)                  Linear (issue automática)
-                   +55 11 91491-2127                   team: Posicionamento Digital
+                   +55 11 91491-2127                   team: Produto & Dev
 ```
 
 ---

@@ -54,7 +54,7 @@ Cria issues no Linear com tudo que o Luiz precisa pra trabalhar na VPS sem depen
 
 | Recurso | Valor |
 |---|---|
-| Linear — Team | Posicionamento Digital (`3d9699c8-ee89-466d-804d-8237041080d1`) |
+| Linear — Team | Produto & Dev (`3d9699c8-ee89-466d-804d-8237041080d1`) |
 | Linear — Felipe (user ID) | `6feb76c7-f8f5-4d76-b1bc-d58496460cc7` |
 | Linear — Luiz (user ID) | `0085bb23-2b19-49ba-8179-8f41d499d969` |
 | Linear — Cycle W1 (18-25/05) | `ee8e4dd7-fc2c-4dc8-b281-7dbd06b86bba` |
@@ -80,7 +80,7 @@ Perguntar ao Felipe: **"Para qual projeto?"** (se não ficou claro da conversa).
 
 Buscar projeto no Linear:
 ```
-mcp__linear-server__list_projects  team="Posicionamento Digital"
+mcp__linear-server__list_projects  team="Produto & Dev"
 ```
 
 **Se projeto existe:** usar o ID. Não recriar.
@@ -130,7 +130,7 @@ Da instrução do Felipe, extrair para cada issue:
 ```
 mcp__linear-server__save_issue
   title: "[título]"
-  team: "Posicionamento Digital"
+  team: "Produto & Dev"
   project: "[ID do projeto]"
   cycle: "[ID do cycle ativo, se houver]"
   assignee: "[user ID]"
