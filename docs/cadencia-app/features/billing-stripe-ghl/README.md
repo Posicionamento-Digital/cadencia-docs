@@ -1,6 +1,4 @@
 ---
-
-> **ARQUIVO HISTORICO / LEGADO.** Preservado como memoria tecnica; nao descreve o runtime atual e nao deve ser usado como runbook operacional.
 feature: billing-stripe-ghl
 status: ✅ Produção
 implementado_em: 2026-05-11
@@ -18,6 +16,8 @@ commits:
   - 24e2634 fix(stripe): charge.refunded extrai tenant_id de subscription/payment_intent
   - 866e27b fix(ghl): mirror funciona pra one-time payments (addons)
 ---
+
+> **ARQUIVO HISTORICO / LEGADO.** Preservado como memoria tecnica; nao descreve o runtime atual e nao deve ser usado como runbook operacional.
 
 # Billing — Stripe + Espelhamento GHL
 
