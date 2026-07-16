@@ -1,12 +1,15 @@
 ---
 type: source
 source_kind: decisao
-date: 
+date:
 entities: ["[[Cadencia]]", "[[Central de Observabilidade]]", "[[PD Framework]]", "[[comercial]]", "[[dev]]", "[[meeting-transcriber]]", "[[qualidade]]"]
 tags: [decisao, wiki-backfill]
 moc: "[[MOC-Projetos]]"
 generated: wiki-backfill
 ---
+
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
+
 # Decisões — dev-memory
 
 # Decisões — Time Dev
@@ -49,6 +52,9 @@ generated: wiki-backfill
 **Quem decidiu:** Vitor (gate arquitetural) + Felipe (Modo A autorizado).
 
 ---
+
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
+
 
 ## 2026-07-07 — DEV-1213: `max_rows` do PostgREST sobrepõe `.limit()` do client — regra vale pra qualquer produto
 
@@ -101,6 +107,9 @@ generated: wiki-backfill
 
 ---
 
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
+
+
 ## 2026-07-06 — Trigger do corpus (DEV-1164) vive no C6 close_session, não num git-push hook
 
 **Contexto:** a issue pedia "hook no git push" pra sincronizar o corpus, mas não existe hook de git push no framework (só Claude Code hooks). Precisava ser agnóstico de runtime (Felipe: "tem que ser lido por qualquer harness — Codex, OpenCode, não só Claude").
@@ -129,6 +138,9 @@ generated: wiki-backfill
 
 ---
 
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
+
+
 ## 2026-07-04 — Sofia ganha skills Astryx para planejamento e bancada Storybook
 
 **Contexto:** depois de rodar o Storybook do Astryx localmente, Felipe definiu que o Time Dev deve aproveitar componentes/bibliotecas prontas, mas adaptando com identidade Cadência em vez de copiar visual genérico.
@@ -154,6 +166,9 @@ generated: wiki-backfill
 **Quem decidiu:** Felipe + Sofia/Vitor.
 
 ---
+
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
+
 
 ## 2026-07-03 — Auto-cost em delta por fonte + estado canônico no claims + decay fiado no Stop (validação viva)
 
@@ -182,6 +197,9 @@ generated: wiki-backfill
 **Quem decidiu:** Felipe + Vitor.
 
 ---
+
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
+
 
 ## 2026-07-02 — Adapter Codex #3: e2e FINAL PASSOU + 2 causas raiz do fail-open (Vitor)
 
@@ -227,6 +245,9 @@ Sessão de validação abrindo o adapter no `codex` CLI de verdade (não só smo
 
 ---
 
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
+
+
 ## 2026-07-01 — Adapter Codex #3: `codex_hooks` é under-development na 0.121.0 (errata da errata, DEV-1018)
 
 **Achado (Vitor, via `codex features list`):** a errata de 2026-06-30 afirmou que os hooks do Codex são "GA". **Isso é impreciso na versão instalada (codex-cli 0.121.0):** `codex features list` mostra `codex_hooks` como **`under development`, default `false`**. Os hooks só disparam após habilitar a flag:
@@ -268,6 +289,9 @@ E ao habilitar, o próprio Codex avisa: *"Under-development features are incompl
 
 ---
 
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
+
+
 ## 2026-06-27 — systemd timers CS: EnvironmentFile padrão + timezone explícito (DEV-897)
 
 **Contexto:** ao instalar 3 timers systemd na VPS Master pros workers CS (digest-diario, milestones, checkin-3-3), os `.service` originais no repo tinham só 1 `EnvironmentFile` apontando pro `.env` do worker, e os `.timer` usavam `OnCalendar=*-*-* 19:30:00` sem timezone — systemd interpreta isso como **UTC** por default, o que daria 16:30 BRT em vez do horário pretendido.
@@ -303,6 +327,9 @@ Aplicado em DEV-896 → DEV-903 (handler Tally em onboarding-webhooks) e DEV-838
 
 ---
 
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
+
+
 ## 2026-06-26 — Hook `pretooluse-session-branch` reconhece `MERGE_HEAD` como exceção (DEV-900)
 
 **Contexto:** o hook intercepta `git commit` na main do pd-framework e cria session-branch nova. Isso quebrava o passo final de `git merge --no-commit` + `git commit --no-edit` do `/encerrar-sessao`: o segundo comando era interceptado, descartando o `MERGE_HEAD` e criando session-branch zumbi.
@@ -330,6 +357,9 @@ Aplicado em DEV-896 → DEV-903 (handler Tally em onboarding-webhooks) e DEV-838
 **Quem decidiu:** Felipe.
 
 ---
+
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
+
 
 ## 2026-06-21 — Central de Observabilidade: arquitetura determinística Master + agente na Dev
 
@@ -361,6 +391,9 @@ Aplicado em DEV-896 → DEV-903 (handler Tally em onboarding-webhooks) e DEV-838
 
 ---
 
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
+
+
 ## 2026-06-20 — Code review padrão migrou pra OpenRouter (GLM 5.2 → Qwen 3.7 Max)
 
 **Contexto:** A cascata de dev exigia `/codex-review` como review padrão. Felipe pediu review via OpenRouter com GLM 5.2 obrigatório e fallback Qwen quando inconsistente.
@@ -378,6 +411,9 @@ Aplicado em DEV-896 → DEV-903 (handler Tally em onboarding-webhooks) e DEV-838
 **Quem decidiu:** Felipe.
 
 ---
+
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
+
 
 ## 2026-06-15 — Composio: escopo e limitações no stack PD
 
@@ -406,6 +442,9 @@ Aplicado em DEV-896 → DEV-903 (handler Tally em onboarding-webhooks) e DEV-838
 **Quem decidiu:** Felipe.
 
 ---
+
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
+
 
 ## 2026-06-02 — Taxonomia de incidents v1 (PDL-383)
 
@@ -479,6 +518,9 @@ Doc canônico: `times/dev/foundation/incident-taxonomy.md` (exemplo de cada cate
 
 
 ---
+
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
+
 
 ## 2026-06-05 — `/encerrar-sessao` como porta única de saída + hook checkout-warning (PDL-422)
 
@@ -606,6 +648,9 @@ Estendido ao vault Pessoal (separado do Empresa). **Natureza diferente:** sem ra
 **Epic DEV-955 completo:** F1 schema · F2 entities+piloto · F3 backfill (293 sources) · F4 ingest cron · F5 lint cron. + DEV-974 (Pessoal, 21 hubs + 30 sources). Os 2 vaults são wikis vivas auto-mantidas.
 
 ---
+
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
+
 
 ## 2026-06-30 — DEV-993: meeting-transcriber resiliente a Device Guard via fallback no .bat (Vitor)
 

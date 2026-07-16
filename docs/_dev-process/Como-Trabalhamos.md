@@ -23,7 +23,7 @@ Define a forma de trabalho da equipe PD: rituais, ferramentas, canais de comunic
 | Linear | Issues, sprints, acompanhamento de projetos |
 | Obsidian (Time PD) | Docs, runbooks, prompts, atas |
 | GitHub | Código, branches, PRs |
-| GHL | CRM, automações, comunicação com clientes |
+| CRM Cadencia | CRM, automações e comunicação com clientes |
 | N8N | Automações internas e de clientes |
 | WhatsApp | Comunicação rápida (não oficial) |
 

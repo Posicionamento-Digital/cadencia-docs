@@ -5,6 +5,9 @@ moc: "[[MOC-Projetos]]"
 type: source
 entities: ["[[Recovery Hertzner]]"]
 ---
+
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
+
 # Recovery Hertzner — Índice
 
 Arquivo completo da operação de recuperação da infraestrutura Hetzner após sequestro por Michael Jhonatan em 07/05/2026.

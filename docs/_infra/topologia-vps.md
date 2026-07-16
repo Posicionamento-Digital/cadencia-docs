@@ -26,7 +26,7 @@
 |---|---|---|
 | `grafana-webhook.service` | Webhook v2 Grafana → WhatsApp + Linear (com dedup fingerprint) | `/opt/grafana-webhook` (porta 9300) |
 | `cadencia-webhook.service` | Cadencia Growth Scoring Webhook Handler | (no monorepo Cadência) |
-| `scoring-webhook.service` | Scoring Webhook Handler — PD Marketing (origem GHL — **legado em desligamento**; scoring migra p/ webhook Resend do CRM Cadencia, ver `_core/GHL-TO-CADENCIA-MIGRATION.md`) | (`/root/pd-marketing/` ou similar) |
+| `scoring-webhook.service` | Scoring Webhook Handler — eventos Resend do CRM Cadencia | (`/root/pd-marketing/` ou similar) |
 | `stamper-bot.service` | Stamper Telegram Bot (Claude-powered) | `/opt/stamper-telegram-bot` |
 
 Nativos: alloy (Grafana agent), netdata, cloudflared, monarx-agent (security scanner Hostinger), containerd.

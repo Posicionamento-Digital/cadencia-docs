@@ -63,7 +63,7 @@ Cadência é a primeira resposta honesta para esse desejo.
 **Quem:** gestor de marketing ou dono PME com operação ativa
 **Faturamento:** R$150k+/mês
 **Volume lead:** 200+ leads/mês para gerenciar
-**Já usa:** GHL, RD Station, ActiveCampaign — frustrado com falta de integração
+**Já usa:** CRMs e ferramentas de automação — frustrado com falta de integração
 **Quer:** plataforma única (conteúdo + CRM + disparo)
 **Investimento:** R$199–R$1.497/mês (planos Essencial → Growth Pro)
 **Nível consciência:** 2 (Praticante acidental) ou 3 (Em transição)

@@ -4,6 +4,9 @@ tags: [ia, framework, pd, playbook, master]
 moc: "[[MOC-IA-Tecnologia]]"
 ---
 
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
+
+
 # PD Framework — Como funciona (playbook consolidado)
 
 > Mapa visual: [[PD Framework — Mapa Visual Master.canvas]]
@@ -17,6 +20,9 @@ moc: "[[MOC-IA-Tecnologia]]"
 Monorepo multi-agente onde o **Stamper** (Chief of Staff Felipe) orquestra **Times** (áreas da empresa) compostos por **Squads** (sub-áreas) com personas, skills, foundation docs e memory hierárquica.
 
 ---
+
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
+
 
 ## Hierarquia
 
@@ -57,6 +63,9 @@ Produtos adicionalmente têm `SOUL.md` (identidade imutável — missão/voz/val
 
 ---
 
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
+
+
 ## Memory híbrida A+B+C (determinística)
 
 Time pai precisa saber estado dos Squads filhos. **3 mecanismos, mesma função `aggregate_l1()`**:
@@ -83,6 +92,9 @@ Mesma função core garante consistência cross-mecanismo. Cron só reescreve se
 Personas têm voz distinta + tensão produtiva entre si — usado em `/<time>-debate` (party mode intra-Time) e `/debate` (cross-Time).
 
 ---
+
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
+
 
 ## Fluxo padrão do dia
 
@@ -112,6 +124,9 @@ Toda issue/projeto tem UM Squad dono. Resolução em cascata:
 8 skills Linear v2 integradas (criar/start/close/planejar/brief/atualizar/gestao). Project Types: 6 tipos (Cliente CRM-PD, Iniciativa interna, Novo produto, Feature, Operacional, Sprint temporário).
 
 ---
+
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
+
 
 ## Knowledge Lookup
 
@@ -152,6 +167,9 @@ Cobertura:
 **Produto-specific:** `/criar-tenant-agencia` (Cadência), `/tally-form-cadencia` (briefing marca), `/tally-form-briefing-cs`, `/compartilhar-nota`, `/despublicar-nota`
 
 ---
+
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
+
 
 ## Status atual (2026-05-25 madrugada)
 
@@ -195,6 +213,9 @@ Mapa completo de paths externos: `pd-framework/_core/PATHS.md`
 - Histórico: indexado via `_core/lookup.py`
 
 ---
+
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
+
 
 ## Comandos de setup nova máquina
 

@@ -1,16 +1,12 @@
-> **📄 Cópia local — fonte de verdade no GitHub.**
-> Origem: [`felipeluissalgueiro/cadencia-app` / `master` / `docs/features/growth-newsletter/index.md`](https://github.com/felipeluissalgueiro/cadencia-app/blob/master/docs/features/growth-newsletter/index.md)
-> Sincronizado via `sync_cadencia_docs.py` em 2026-05-29 (PDL-342).
-
----
-
 # Feature: Growth Newsletter
+
+> **ARQUIVO HISTORICO / LEGADO.** Preservado como memoria tecnica; nao descreve o runtime atual e nao deve ser usado como runbook operacional.
 
 Newsletter semanal compilada por IA com os posts da semana, disparada via GHL.
 
 **Status:** Produção — funcional
 **Última atualização:** 2026-05-19
-**Fonte:** `cadencia-growth/pipeline/newsletter_generate.py`
+**Fonte:** `pipeline/newsletter_generate.py` (repo canônico `Posicionamento-Digital/cadencia-growth`)
 
 ---
 

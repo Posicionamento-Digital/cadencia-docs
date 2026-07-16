@@ -4,7 +4,7 @@
 
 ## Por que foi construído assim
 
-As mudanças parecem independentes na interface, mas compartilham o mesmo objetivo técnico: retirar dependências implícitas do GHL e impedir perda de estado em fluxos assíncronos e multi-tenant. Configuração passou a usar merges atômicos; email ganhou domínio e identidade por tenant; eventos carregam a origem do conteúdo; a UI passou a refletir estado real em desktop e mobile.
+As mudanças parecem independentes na interface, mas compartilham o mesmo objetivo técnico: consolidar o CRM Cadência como fonte única e impedir perda de estado em fluxos assíncronos e multi-tenant. Configuração passou a usar merges atômicos; email ganhou domínio e identidade por tenant; eventos carregam a origem do conteúdo; a UI passou a refletir estado real em desktop e mobile.
 
 O caminho de email foi desenhado para tolerar callbacks duplicados e respostas incertas. O webhook responde cedo ao Svix, mas usa idempotência e processamento durável. O provider só é habilitado após verificação do domínio, e writers concorrentes não substituem o objeto inteiro de configuração.
 
@@ -16,7 +16,7 @@ O caminho de email foi desenhado para tolerar callbacks duplicados e respostas i
 | Configuração | PostgreSQL RPC, `tenant_config.config` JSONB |
 | Email | Resend, Cloudflare DNS, List-Unsubscribe |
 | Scoring | Webhook Svix, Python, Supabase `scoring_events` |
-| Integrações | GHL em transição, DataStone, OpenAI-compatible SDK |
+| Integrações | CRM Cadência, Resend/Svix, DataStone, OpenAI-compatible SDK |
 
 ## Como funciona
 
@@ -49,7 +49,7 @@ flowchart TD
         verified["Domínio está verificado?"]
         duplicate["svix-id já foi processado?"]
         tag["post_id veio na tag?"]
-        provider["Canal realmente depende de GHL?"]
+        provider["Seleciona provider próprio do canal"]
     end
     class verified,duplicate,tag,provider decision
 
@@ -83,7 +83,7 @@ No runtime de growth, o envio carrega tags, respeita rate limit e deduplica retr
 - Resend só vira provider após domínio verificado.
 - `post_id` atravessa sender, webhook e `scoring_events` para atribuição por conteúdo.
 - Responder 200 cedo ao Svix exige idempotência e processamento recuperável.
-- Canais que não usam GHL não passam pelo gate de credencial GHL.
+- Cada canal valida somente a credencial de seu provider atual.
 - A base mobile usa safe areas, `dvh`, overflow guard e ações contextuais.
 
 ## Gotchas & armadilhas
@@ -107,15 +107,14 @@ No runtime de growth, o envio carrega tags, respeita rate limit e deduplica retr
 
 ## FAQ
 
-**Por que existem chaves flat e `config.email` ao mesmo tempo?**  
+**Por que existem chaves flat e `config.email` ao mesmo tempo?**
 As flat mantêm leitores legados durante a migração. O objeto aninhado é a fonte canônica.
 
-**Responder 200 antes de processar não perde eventos?**  
+**Responder 200 antes de processar não perde eventos?**
 Não quando o worker mantém processamento durável e idempotência por `svix-id`; sem esses dois requisitos, perderia.
 
-**Todo canal ainda exige GHL?**  
-Não. Os gates agora são por provider/canal; Resend e LinkedIn direto não devem ser bloqueados por credencial GHL ausente.
+**Quais providers atendem os canais?**
+Email usa Resend, WhatsApp usa Lara/Evolution e os demais canais usam suas integrações próprias.
 
-**Como um evento é ligado ao email que o originou?**  
+**Como um evento é ligado ao email que o originou?**
 Pela tag `post_id`, persistida também em `scoring_events`, com fallback para a API do Resend.
-

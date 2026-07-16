@@ -48,7 +48,7 @@ graph TB
         Specs[Specs canônicas .md<br/>CONTEXT · RUNTIME-CONTRACT · DEV-WORKFLOW · SECURITY]
     end
     subgraph Shared ["_shared — Bibliotecas (86)"]
-        Clients[Clients de API<br/>ghl · linear · llm · stripe · asaas · evo · supabase · deploy_log]
+        Clients[Clients de API<br/>linear · llm · stripe · asaas · evo · supabase · deploy_log]
         Secrets[secrets.py — adapter 1P<br/>env → op.env → op CLI]
         Tests[tests/ — 19 tested_by edges]
     end

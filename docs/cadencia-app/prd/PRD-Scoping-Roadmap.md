@@ -5,6 +5,9 @@ moc: "[[MOC-Projetos]]"
 type: source
 entities: ["[[Cadencia]]", "[[qualidade]]"]
 ---
+
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
+
 # PRD — Scoping & Roadmap (Cadencia.app)
 
 ## MVP Strategy
@@ -41,6 +44,9 @@ entities: ["[[Cadencia]]", "[[qualidade]]"]
 
 ---
 
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
+
+
 ## Phase 2 — Growth (V1.1)
 
 Multi-canal (Reels, LinkedIn, blog), newsletter, dark mode, multi-client agência, escolha de estilo, Meta API, fotos IA experimental, WhatsApp, on-demand, admin dashboard, form pagamento embutido, OAuth Instagram.
@@ -64,6 +70,9 @@ Distribuição massiva, Reels gerados, performance insights, plano agência N te
 | Churn alto | Feedback detecta cedo |
 
 ---
+
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
+
 
 ## Landscape Competitivo
 

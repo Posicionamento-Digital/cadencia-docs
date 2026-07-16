@@ -1,16 +1,12 @@
-> **📄 Cópia local — fonte de verdade no GitHub.**
-> Origem: [`felipeluissalgueiro/cadencia-app` / `master` / `docs/features/growth-email-dispatch/index.md`](https://github.com/felipeluissalgueiro/cadencia-app/blob/master/docs/features/growth-email-dispatch/index.md)
-> Sincronizado via `sync_cadencia_docs.py` em 2026-05-29 (PDL-342).
-
----
-
 # Feature: Growth — Email Dispatch (Seinfeld + Newsletter)
+
+> **ARQUIVO HISTORICO / LEGADO.** Preservado como memoria tecnica; nao descreve o runtime atual e nao deve ser usado como runbook operacional.
 
 Pipeline completo de geração e envio de emails para tenants Growth via GHL.
 
 **Status:** Produção — Seinfeld e Newsletter funcionais
 **Última atualização:** 2026-05-19
-**Fontes:** `cadencia-growth/pipeline/seinfeld_generate.py`, `newsletter_generate.py`
+**Fontes:** `pipeline/seinfeld_generate.py` e `pipeline/newsletter_generate.py` (repo canônico `Posicionamento-Digital/cadencia-growth`)
 
 ---
 

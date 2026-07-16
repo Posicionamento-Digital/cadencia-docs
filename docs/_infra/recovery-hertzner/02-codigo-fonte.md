@@ -5,6 +5,9 @@ moc: "[[MOC-Projetos]]"
 type: source
 entities: ["[[ecuro-mcp]]"]
 ---
+
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
+
 # 02 — Código-Fonte Recuperado
 
 ## O que é

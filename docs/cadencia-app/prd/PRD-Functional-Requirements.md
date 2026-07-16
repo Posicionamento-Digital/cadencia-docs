@@ -5,6 +5,9 @@ moc: "[[MOC-Projetos]]"
 type: source
 entities: ["[[Cadencia]]", "[[qualidade]]"]
 ---
+
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
+
 # PRD — Functional Requirements (61 FRs)
 
 ## Onboarding & Tenant Setup

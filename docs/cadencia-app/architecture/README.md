@@ -6,7 +6,7 @@ Documentos que valem para o sistema como um todo, não para um componente isolad
 
 | Arquivo | O que tem | Quando ler |
 |---|---|---|
-| [CONTEXT.md](CONTEXT.md) | **Linguagem ubíqua** — definição direta de cada termo do domínio (tenant, editorial, dossier, location_pit_token, generation_queue, etc.) + relacionamentos + ambiguidades flagadas | **Primeiro contato** com o sistema. Sempre que ouvir um termo e não tiver certeza do que significa. |
+| [CONTEXT.md](CONTEXT.md) | **Linguagem ubíqua** — tenant, CRM, editorial, dossier, cadência, generation queue e demais contratos | **Primeiro contato** com o sistema. |
 | [architecture.md](architecture.md) | **Diagrama C4** (Context + Container) em mermaid + tabela de componentes por área + fluxos críticos (onboarding, geração diária, trigger on-demand, scoring) | Pra entender **o desenho** do sistema antes de mexer em código. |
 | [CHANGELOG.md](CHANGELOG.md) | Histórico de mudanças relevantes (migração Stripe, refator RLS, etc.) | Pra entender **o que mudou** desde a última vez que você viu o projeto. |
 

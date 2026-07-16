@@ -6,6 +6,9 @@ moc: "[[MOC-IA-Tecnologia]]"
 
 # PD Framework — Arquitetura DEFINITIVA consolidada
 
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
+
+
 > **Fonte de verdade definitiva** após Fase 0 (bootstrap) + Fase 0.7 em andamento (inventário) + auditorias VPS Master e VPS Dev em 25/05/2026.
 > Substitui notas anteriores como referência primária. Notas de 23-24/05 ficam como histórico de design.
 > Repo: https://github.com/felipeluissalgueiro/pd-framework (privado, pessoal Felipe)
@@ -216,8 +219,17 @@ Detalhes: `pd-framework/docs/git-sync-strategy.md`.
 ```bash
 op whoami
 # URL:               https://my.1password.com
+
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
+
 # Integration ID:    A3AU24DX3JCURHK2PZRVNDOTJU
+
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
+
 # User Type:         SERVICE_ACCOUNT
+
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
+
 ```
 
 Mapa real: `Hub Projetos/Credenciais/mapa-1password.md` (consultar sempre antes de `op item get`).

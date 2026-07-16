@@ -1,9 +1,3 @@
-> **📄 Cópia local — fonte de verdade no GitHub.**
-> Origem: [`felipeluissalgueiro/cadencia-app` / `master` / `src/app/api/CLAUDE.md`](https://github.com/felipeluissalgueiro/cadencia-app/blob/master/src/app/api/CLAUDE.md)
-> Sincronizar via `/documentar` ou `sync_to_framework.py`.
-
----
-
 # src/app/api — guia para agentes
 
 API routes do Next.js (Vercel). 9 grupos de rotas.
@@ -15,12 +9,11 @@ API routes do Next.js (Vercel). 9 grupos de rotas.
 | `app/` | `/api/app/*` | Operações do app autenticado (conteúdo, ideias, posts, créditos, admin, tickets, geração) |
 | `auth/` | `/api/auth/*` | Auth e provisioning de tenant (`provision-tenant` cria tenant+plano no signup) |
 | `capi/` | `/api/capi/*` | Meta Conversions API (eventos de conversão) |
-| `growth/` | `/api/growth/*` | OAuth GHL callback + rotas de growth |
 | `instagram/` | `/api/instagram/*` | Análise de perfil Instagram (Apify) |
 | `onboarding/` | `/api/onboarding/*` | Fluxo de onboarding (fases 1, 2, 3) |
 | `stevo/` | `/api/stevo/*` | WhatsApp via Stevo (notificações internas) |
 | `v1/` | `/api/v1/*` | API interna — workers Python chamam daqui |
-| `webhooks/` | `/api/webhooks/*` | Webhooks externos (Stripe pagamento, GHL eventos) |
+| `webhooks/` | `/api/webhooks/*` | Webhooks de pagamento Stripe |
 
 ## Rotas críticas
 
@@ -30,9 +23,7 @@ API routes do Next.js (Vercel). 9 grupos de rotas.
 | `POST /api/app/trigger-generation` | On-demand: filtra carrossel/reels (workers Coolify VPS Master) e envia restante ao VPS porta 39090 |
 | `GET /api/app/generation-queue` | Status da fila de geração |
 | `POST /api/app/content/[id]/publish` | Publica conteúdo aprovado |
-| `GET /api/growth/oauth/callback` | Troca code GHL por tokens, salva em `ghl_agency_oauth` |
-| `POST /api/v1/ghl/signup` | Workers: cria contato + oportunidade GHL na location central (fire-and-forget) |
-| `POST /api/webhooks/*` | Stripe (pagamento) + GHL (eventos) |
+| `POST /api/webhooks/stripe` | Processa pagamentos e créditos com idempotência |
 
 ## Fluxo trigger-generation
 
@@ -41,8 +32,6 @@ cron-job.org → POST /api/app/trigger-generation (Vercel)
   ├─ carrossel / reels → workers Coolify VPS Master
   └─ blog / seinfeld / linkedin / instagram → VPS porta 39090
 ```
-
-**GHL é motor invisível** — usuário nunca vê referências a GoHighLevel na UI.
 
 ## Como ler o código
 
@@ -55,13 +44,13 @@ gh api "repos/felipeluissalgueiro/cadencia-app/contents/src/app/api/<path>?ref=m
 
 ## Quando usar
 
-- Toda rota servidor do Next.js — 9 grupos. Mantém SoR (Vercel) entre frontend e workers/VPS/GHL/Stripe.
+- Toda rota servidor do Next.js mantém a fronteira entre frontend, workers, VPS, Supabase e Stripe.
 
 ## Quando NÃO usar
 
 - ❌ Para lógica que precisa de >10s — usar workers Coolify VPS Master (timeout Vercel).
 - ❌ Para acesso direto a DB de outro tenant — usar service_role com cuidado.
-- ❌ Substituir webhooks externos — Stripe/GHL chamam aqui, não o contrário.
+- ❌ Substituir webhooks externos — Stripe chama aqui, não o contrário.
 
 ## Por que funciona assim
 

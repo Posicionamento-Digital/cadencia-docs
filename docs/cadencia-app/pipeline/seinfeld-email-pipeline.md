@@ -1,13 +1,9 @@
-> **📄 Cópia local — fonte de verdade no GitHub.**
-> Origem: [`felipeluissalgueiro/cadencia-app` / `master` / `docs/pipeline/seinfeld-email-pipeline.md`](https://github.com/felipeluissalgueiro/cadencia-app/blob/master/docs/pipeline/seinfeld-email-pipeline.md)
-> Sincronizado via `sync_cadencia_docs.py` em 2026-05-29 (PDL-342).
-
----
-
 # Pipeline de Email Seinfeld — Documentação Técnica
 
+> **ARQUIVO HISTORICO / LEGADO.** Preservado como memoria tecnica; nao descreve o runtime atual e nao deve ser usado como runbook operacional.
+
 **Última atualização:** 2026-05-19
-**Fonte:** `cadencia-growth/pipeline/seinfeld_generate.py`
+**Fonte:** `pipeline/seinfeld_generate.py` (repo canônico `Posicionamento-Digital/cadencia-growth`)
 
 ---
 

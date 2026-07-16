@@ -20,7 +20,7 @@ Conjunto de scripts Python na VPS Hostinger que automatizam a criação e public
 ## O que fica aqui
 
 - Arquitetura do pipeline (scripts, crons, fluxo de dados)
-- Integração com Gemini, Google Drive, WordPress, GHL, Mailchimp
+- Integração com Gemini, CRM Cadencia e canais de publicação ativos
 - Configuração dos crons na VPS
 - Referência de variáveis de ambiente (referência ao .env)
 - Guia de onboarding para novo desenvolvedor

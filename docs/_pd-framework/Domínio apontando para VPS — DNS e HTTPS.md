@@ -6,6 +6,9 @@ moc: "[[MOC-IA-Tecnologia]]"
 
 # Domínio apontando para VPS — DNS e HTTPS
 
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
+
+
 ## O que significa
 
 Quando você acessa um site, o navegador converte o nome (`cadencia.ia.br`) em um endereço IP (`72.60.4.71`) via DNS, e aí faz a conexão. "Apontar um domínio pra VPS" = criar um registro DNS que diz: "quando alguém acessar `dev.posicionamentodigital.com.br`, manda pro IP da VPS dev".

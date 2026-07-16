@@ -3,6 +3,9 @@ date: 2026-05-19
 tags: [documentacao, recovery, hetzner, n8n, workflows, automacao, ia, tecnologia]
 moc: "[[MOC-Projetos]]"
 ---
+
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
+
 # 03 — N8N Workflows
 
 ## O que é

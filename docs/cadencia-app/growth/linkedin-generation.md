@@ -1,9 +1,3 @@
-> **📄 Cópia local — fonte de verdade no GitHub.**
-> Origem: [`Posicionamento-Digital/cadencia-growth` / `main` / `docs/linkedin-generation.md`](https://github.com/Posicionamento-Digital/cadencia-growth/blob/main/docs/linkedin-generation.md)
-> Sincronizar via `/documentar` ou `sync_to_framework.py`.
-
----
-
 # linkedin-generation — post LinkedIn
 
 ## TL;DR
@@ -55,13 +49,13 @@ Gera e agenda post para LinkedIn do tenant. Roda no cron diário (11h BRT) e no 
 
 - **Não** disparar LinkedIn antes do blog do dia ter rodado — sem insumo.
 - **Não** publicar sem CTA para o blog (link âncora).
-- **Não** marcar `scheduled_at` antes do GHL confirmar a programação.
+- **Não** marcar `scheduled_at` antes do provider confirmar a programação.
 
 ## 🪦 Já tentamos
 
 - **2026-04-25 — LinkedIn CTA link blog ausente**: ver `2026-04-25_linkedin-cta-link-blog-ausente.md`.
 - **2026-04-26 — LinkedIn research documents coluna errada**: ver `2026-04-26_linkedin-research-documents-coluna-errada.md`.
-- **2026-04-26 — LinkedIn scheduled_at antes de GHL confirmar**: corrida com confirmação. Ver `2026-04-26_linkedin-scheduled-at-antes-ghl-confirmar.md`.
+- **2026-04-26 — `scheduled_at` antes do provider confirmar**: corrida com confirmação. Ver o incidente histórico correspondente.
 - **2026-04-26 — LinkedIn tab filtro sent ocultava posts gerados**: bug UI. Ver `2026-04-26_linkedin-tab-filtro-sent-ocultava-posts-gerados.md`.
 
 ## 🔥 Troubleshooting

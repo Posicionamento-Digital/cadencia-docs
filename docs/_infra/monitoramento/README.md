@@ -13,7 +13,7 @@ Como a equipe PD monitora a saúde dos sistemas, pipelines e clientes. O objetiv
 - Alertas configurados e onde chegam (WhatsApp, email, Slack)
 - Como verificar saúde dos crons na VPS
 - Como verificar instâncias WhatsApp conectadas no HUB|PD
-- Como monitorar health de clientes no GHL (score de engajamento)
+- Como monitorar health de clientes no CRM Cadencia (score de engajamento)
 - O que fazer quando um sistema cai fora do horário comercial
 
 ## O que monitoramos
@@ -22,7 +22,7 @@ Como a equipe PD monitora a saúde dos sistemas, pipelines e clientes. O objetiv
 |---|---|---|
 | Crons da VPS | Diário | `crontab -l` + logs |
 | Instâncias WhatsApp | Diário | HUB\|PD painel |
-| Agente Lara | Diário | Conversas abertas no GHL |
+| Agente Lara | Diário | Conversas e agenda no CRM Cadencia |
 | Pipeline Cadência | Após cada geração | Log de output |
 | N8N workflows | Semanal | Execuções com erro |
 

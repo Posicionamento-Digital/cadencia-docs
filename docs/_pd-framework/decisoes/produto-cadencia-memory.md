@@ -1,12 +1,15 @@
 ---
 type: source
 source_kind: decisao
-date: 
+date:
 entities: ["[[Cadencia-Growth]]", "[[Cadencia]]", "[[PD Framework]]", "[[comercial]]", "[[marketing]]", "[[pd-portal]]", "[[produto]]", "[[qualidade]]"]
 tags: [decisao, wiki-backfill]
 moc: "[[MOC-Projetos]]"
 generated: wiki-backfill
 ---
+
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
+
 # Decisões — produto-cadencia-memory
 
 # Decisões — Squad Cadência
@@ -38,6 +41,9 @@ generated: wiki-backfill
 **Quem decidiu:** Felipe.
 
 ---
+
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
+
 
 ## 2026-07-02 — Google Fonts é enhancement, não dependência; dado legado se resolve no read-path; merge só rebase (G009)
 
@@ -102,6 +108,9 @@ generated: wiki-backfill
 
 ---
 
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
+
+
 ## 2026-06-24 — DEV-582 cancelada: HMAC/token de serviço é desnecessário pro uso interno da CLI
 
 **Contexto:** a `cadencia-cli` bloqueava ações com lógica de negócio (`enrich`, `dispatch`, carrossel) à espera da DEV-582 (endpoint público `/api/v1/automations/move-card` com HMAC + idempotency + rate-limit + token de serviço).
@@ -129,6 +138,9 @@ generated: wiki-backfill
 **Quem decidiu:** Felipe.
 
 ---
+
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
+
 
 ## 2026-06-23 — Unificação de perfil entre tenants pessoais (6bb2 → 832c)
 
@@ -158,6 +170,9 @@ generated: wiki-backfill
 
 ---
 
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
+
+
 ## 2026-06-23 — seed_tenant_crm nunca rodou para tenants antigos (DEV-762)
 
 **Contexto:** Migration `20260619150000_pipelines_v2_seed.sql` incluiu backfill mas com WHERE `slug='nutricao'` — só aplicou para o tenant do Felipe. Os outros 29 tenants ficaram sem os 4 pipelines obrigatórios do CRM (Geração de Demanda, Geração de Negócios, Nutrição, Ciclo de Vida do Cliente).
@@ -185,6 +200,9 @@ generated: wiki-backfill
 **Quem decidiu:** Felipe.
 
 ---
+
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
+
 
 ## 2026-06-20 — Fix do go-live de email (403), subdomínio por tenant automatizado (CAD-676), GHL desligado no provision (CAD-683)
 
@@ -223,6 +241,9 @@ generated: wiki-backfill
 
 ---
 
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
+
+
 ## 2026-06-17 (tarde/noite) — Redesign CRM estilo Linear + schema de produtos/lifecycle/perda/campos personalizados
 
 **Contexto:** após validar a pill Contatos e o épico Empresa na preview, Felipe pediu redesign completo do CRM (contatos/empresas) e várias features novas, validando item a item e acumulando ajustes.
@@ -256,6 +277,9 @@ generated: wiki-backfill
 **Refs:** `context/catalogo-features-call-hco-20260617.md` · issues CAD-618→636.
 
 ---
+
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
+
 
 ## 2026-06-17 — Execução E1 CRM próprio: 5 stories em prod + ampliação migração + processo
 
@@ -299,6 +323,9 @@ generated: wiki-backfill
 
 ---
 
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
+
+
 ## 2026-06-11 — OpenAI gpt-image-1 vira provider primário de capas; Gemini fallback (PDL-504)
 
 **Contexto:** Tenants COM fotos saíam sem capa: Mode B (person) só usava Gemini e por design não tinha fallback ("no generic fallback for real_face"). Quota Gemini esgotada desde 09/06 → falha silenciosa (caso real: 3 carrosséis da Mel sem cover.png).
@@ -318,6 +345,9 @@ generated: wiki-backfill
 **Quem decidiu:** Felipe.
 
 ---
+
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
+
 
 ## 2026-06-11 — Impersonation real de tenant via cookie httpOnly (PDL-503)
 
@@ -347,6 +377,9 @@ generated: wiki-backfill
 **Refs:** Commit `9ec7d60` master cadencia-app · PDL-475 (Done) · PDL-480 (Luiz, Pexels fallback) · Incidente `incidents/2026-06-09_capa-instagram-vazia-openai-key-openrouter-railway.md`.
 
 ---
+
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
+
 
 ## 2026-06-09 — Refinamento manual pós-workers como etapa obrigatória do `/criar-tenant-agencia`
 
@@ -382,6 +415,9 @@ generated: wiki-backfill
 **Quem decidiu:** Felipe + Catarina (após auditoria pós-onboarding Marinella).
 
 ---
+
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
+
 
 ## 2026-06-03 — `os.environ[k] = v` substitui `setdefault` em todo script Python que lê .env
 
@@ -423,6 +459,9 @@ Convenção nova: após mudar `/cadencia/.env`, OBRIGATÓRIO `sudo systemctl res
 
 ---
 
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
+
+
 ## 2026-06-03 — Cloudflare `proxied: False` em todo subdomínio Vercel
 
 **Contexto:** DNS records criados pelo `provision_tenant.py` com `proxied: True` (Cloudflare orange cloud ON). Vercel não conseguia validar HTTP-01 challenge do Let's Encrypt através do proxy → SSL nunca emitia na origem → HTTP 525 silencioso ao acessar blog. Confirmado em 3 tenants (Marinella, Horus, Alejandro).
@@ -453,6 +492,9 @@ Convenção nova: após mudar `/cadencia/.env`, OBRIGATÓRIO `sudo systemctl res
 
 ---
 
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
+
+
 ## 2026-06-03 — Webhook scoring: locationId via query string + event_type via path
 
 **Contexto:** GHL Agency PIT bloqueado pra `/contacts/*` (testado 401 em 4 variantes). Sem reverse-lookup, handler não consegue inferir tenant a partir do `contactId`. GHL Workflow Custom Data tampouco preenche `{{location.id}}` no body POST.
@@ -481,6 +523,9 @@ Convenção nova: após mudar `/cadencia/.env`, OBRIGATÓRIO `sudo systemctl res
 
 ---
 
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
+
+
 ## 2026-06-03 — Remover provision_tenant.py duplicado da raiz
 
 **Contexto:** repo `cadencia-growth` tinha duas cópias: `/provision_tenant.py` (raiz, desatualizada de 27/05) e `/pipeline/provision_tenant.py` (versão ativa). Documentação dizia "canonical" raiz mas auditoria mostrou nenhum script ativo apontava pra ela.
@@ -508,6 +553,9 @@ Convenção nova: após mudar `/cadencia/.env`, OBRIGATÓRIO `sudo systemctl res
 **Quem decidiu:** Felipe.
 
 ---
+
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
+
 
 ## 2026-06-02 — PDL-171 resolvido · `generation_queue.channels text[]` adicionado
 
@@ -542,6 +590,9 @@ Owner = `felipeluissalgueiro` (conta pessoal) porque **Vercel Hobby rejeita repo
 **Quem decidiu:** Felipe.
 
 ---
+
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
+
 
 ## 2026-06-02 — Padrão de branches nos repos do produto: commit direto em main
 
@@ -580,6 +631,9 @@ Owner = `felipeluissalgueiro` (conta pessoal) porque **Vercel Hobby rejeita repo
 **Quem decidiu:** Felipe.
 
 ---
+
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
+
 
 ## 2026-05-30 (madrugada) — Batch 2 paralelo (Modo B): 4 PDLs em sequência (351, 354, 347, 346)
 
@@ -671,6 +725,9 @@ Regra 4 reescrita: removidas equações `niche=cena` (advogado=historic, consult
 
 ---
 
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
+
+
 ## 2026-05-29 — Newsletter removida dos canais on-demand (PDL-353)
 
 **Contexto:** newsletter aparecia como canal selecionável on-demand em `/app/ideas` (drawer aprovação) e em `/app/perfil > Integrações`. Backend (`trigger_server.py`) ignora silenciosamente desde fix do incidente 06/05/2026 (newsletter = digest semanal cron Sex 15h BRT). Resultado: usuário pagava crédito por canal que nunca executava + lixo na `generation_queue`.
@@ -734,6 +791,9 @@ Sem o pipeline o dispatch quebraria com NameError no 1º contato (Codex) ou masc
 
 ---
 
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
+
+
 ## 2026-05-28 — Onboarding dialogado do tenant pessoal Felipe (PDL-332)
 
 **Contexto:** Felipe optou por fazer o onboarding do tenant pessoal `felipe@cadencia.ia.br` **dialogado com Catarina** em vez da UI padrão, porque produz resultado mais profundo (PME que responde Big5 com 1 clique vs Felipe que dialoga com nuance).
@@ -769,6 +829,9 @@ Sem o pipeline o dispatch quebraria com NameError no 1º contato (Codex) ou masc
 
 ---
 
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
+
+
 ## 2026-05-28 — EXPERTISE.md criada como leitura obrigatória do squad
 
 **Contexto:** Felipe cobrou — *"como líder do cadencia vc teria obrigação de saber tudo de cabo a rabo"*. Agente novo carregando contexto via ~50 docs separados é lento e propenso a perder detalhes críticos (gotchas, tokens GHL distintos, schema `tenant_config`, dependências cross-pipeline).
@@ -794,6 +857,9 @@ Sem o pipeline o dispatch quebraria com NameError no 1º contato (Codex) ou masc
 **Refs:** memory feedback `feedback_mentoria_alexandre_privada.md` no stamper
 
 ---
+
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
+
 
 ## 2026-05-27 — Documentação técnica completa via /documentar + 5 ADRs novas
 
@@ -853,6 +919,9 @@ Sem o pipeline o dispatch quebraria com NameError no 1º contato (Codex) ou masc
 
 ---
 
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
+
+
 ## 2026-05-25 — D02: Skills do Cadência migram pro framework (A1)
 
 **Contexto:** Skills locais (`cadencia-review-deploy`, `capi-test`, `gerenciar-plano`, `analytics-report`) viviam em `cadencia-app/.claude/skills/`. Felipe pode estar codando de qualquer cwd e precisa invocar skills do Cadência.
@@ -893,6 +962,9 @@ cd "Projetos BMAD/Cadencia/.claude/skills" && rm -rf cadencia-review-deploy capi
 **Quem decidiu:** Felipe
 
 ---
+
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
+
 
 ## 2026-06-18 — D04: CRM E2 + filtros/colunas/views (CAD-613/614/615/570/571/572/642)
 

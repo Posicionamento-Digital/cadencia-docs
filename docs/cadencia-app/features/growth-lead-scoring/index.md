@@ -1,16 +1,12 @@
-> **📄 Cópia local — fonte de verdade no GitHub.**
-> Origem: [`felipeluissalgueiro/cadencia-app` / `master` / `docs/features/growth-lead-scoring/index.md`](https://github.com/felipeluissalgueiro/cadencia-app/blob/master/docs/features/growth-lead-scoring/index.md)
-> Sincronizado via `sync_cadencia_docs.py` em 2026-05-29 (PDL-342).
-
----
-
 # Feature: Growth Lead Scoring
+
+> **ARQUIVO HISTORICO / LEGADO.** Preservado como memoria tecnica; nao descreve o runtime atual e nao deve ser usado como runbook operacional.
 
 Pontuação de comportamento de leads via webhook HTTP. Atualiza campo `score_ia` no contato GHL em tempo real.
 
 **Status:** Produção — webhook rodando na VPS, eventos email_opened/link_clicked ativos
 **Última atualização:** 2026-05-19
-**Fonte:** `cadencia-growth/scoring/webhook_handler.py`
+**Fonte:** `scoring/webhook_handler.py` (repo canônico `Posicionamento-Digital/cadencia-growth`)
 
 ---
 

@@ -1,38 +1,46 @@
----
-date: 2026-06-27
-tags: [doc, componente, cadencia-growth]
-moc: "[[MOC-Projetos]]"
-type: source
-entities: ["[[Cadencia-Growth]]", "[[Cadencia]]"]
----
-# cadencia-growth → pipeline/
+# pipeline/ — geração, dispatch e provisioning
 
-Núcleo do sistema — geradores por canal + provisioning + cadence_tick + trigger_server.
+## Responsabilidade
 
-## Identidade
-- **Tipo:** módulo de aplicação
-- **Stack:** Python 3.12 · openai · anthropic · supabase-py
-- **Path:** `pipeline/`
-- **Daemon:** trigger_server.py na porta `:39090`
-- **Status:** ativo
+Scripts Python que geram conteúdo, enviam email, executam cadências e
+provisionam recursos do tenant.
 
-## Arquivos chave
-- `blog_generate.py` / `seinfeld_generate.py` / `linkedin_generate.py` / `instagram_generate.py` / `newsletter_generate.py` — geradores por canal
-- `provision_tenant.py` — cria subconta GHL + subdomínio Resend
-- `cadence_tick.py` — motor de cadências (CAD-577/578)
-- `trigger_server.py` — daemon HTTP on-demand
-- `email_warmup.py` — cutover GHL→Resend per-tenant
-- `brand_template.py` / `prompts.py` / `lib_api.py` — utils compartilhados
+## Componentes
 
-## Como funciona
-1. Cron 14h BRT chama `growth_pipeline.py sync blog linkedin instagram`
-2. `sync_accounts` refresh tokens GHL
-3. Por tenant + por canal: gera prompt → LLM → salva em Supabase → dispatch (se aplicável)
+| Arquivo | Função |
+|---|---|
+| `trigger_server.py` | endpoint on-demand `:39090` |
+| `blog_generate.py` | geração/publicação de blog |
+| `seinfeld_generate.py` | geração + dispatch Resend |
+| `newsletter_generate.py` | newsletter semanal via Resend |
+| `linkedin_generate.py` | geração/publicação LinkedIn |
+| `instagram_generate.py` | geração/publicação Instagram |
+| `cadence_tick.py` | scheduler único de cadências |
+| `provision_tenant.py` | CRM, blog, domínio Resend e DNS |
+| `email_warmup.py` | warm-up, cap diário e priorização |
+| `sending_domains.py` | domínio/sender por tenant |
+| `lib_api.py` | helpers Supabase e integrações compartilhadas |
 
-## Don'ts
-- Não usar `urllib` pra GHL (Cloudflare bloqueia)
-- Não inline `sb_*` / `ghl_request` — usar `lib_api`
-- Não editar daemon `trigger_server.py` sem restart (`systemctl restart cadencia-trigger`)
+## Fluxo diário
 
-## Notas Relacionadas
-[[Projetos/Cadencia-Growth/Docs/README]] · [[Projetos/Cadencia-Growth/Docs/scoring]] · [[Projetos/Cadencia-Growth/Docs/crons]]
+1. carrega tenants/configuração;
+2. sincroniza o estado necessário do CRM Cadência;
+3. executa os canais solicitados isoladamente;
+4. aplica gates de provider e créditos;
+5. registra estado e erros sem abortar tenants independentes.
+
+## Regras
+
+- Toda query/mutação inclui `tenant_id`.
+- Email usa Resend e destinatários de `public.contacts`.
+- Credenciais vêm do ambiente/1Password, nunca do repositório.
+- Não duplicar helpers de `lib_api.py` em código novo.
+- Não marcar canal como enviado antes da confirmação do provider.
+- Não transformar erro técnico de insert em dedup legítimo.
+
+## Validação
+
+```bash
+python -m compileall -q -x 'prompts_before\.py' pipeline
+pytest -q tests
+```

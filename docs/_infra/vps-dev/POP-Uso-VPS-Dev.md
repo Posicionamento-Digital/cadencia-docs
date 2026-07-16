@@ -188,7 +188,7 @@ O `/linear-close-issue` vai:
 Exemplos de título:
 - `"PDL-45 — filtro de horário no pipeline Lara"`
 - `"PDL-52 e PDL-53 — refactor worker Cadência"`
-- `"debug conexão GHL — encontrado bug no token de subconta"`
+- `"debug conexão CRM — encontrado bug na autenticação do tenant"`
 
 - [ ] Log criado em `Rotina/sessions-log/YYYY-MM-DD/`
 - [ ] Título reflete o que foi feito, não só o número da issue

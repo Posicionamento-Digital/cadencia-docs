@@ -1,12 +1,15 @@
 ---
 type: source
 source_kind: decisao
-date: 
+date:
 entities: ["[[Cadencia]]", "[[PD Framework]]", "[[marketing]]", "[[produto]]"]
 tags: [decisao, wiki-backfill]
 moc: "[[MOC-Projetos]]"
 generated: wiki-backfill
 ---
+
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
+
 # Decisões — produto-cadencia-frontend-memory
 
 # Decisões — Sub-squad frontend Cadência
@@ -30,6 +33,9 @@ generated: wiki-backfill
 **Quem decidiu:** Felipe (priorizou blindar antes de Cadências) + helper por decisão Vitor (PRD §13 risco #8).
 
 ---
+
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
+
 
 ## 2026-06-18 — Campos estruturados de contato: lead_source, is_icp, datas (CAD-616)
 
@@ -61,6 +67,9 @@ generated: wiki-backfill
 **Quem decidiu:** Felipe (sequência do roadmap) + review Claude Opus headless (2 P1 corrigidos: REVOKE da RPC, `min(2)`/force-dynamic no endpoint).
 
 ---
+
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
+
 
 ## 2026-05-25 — Bootstrap sub-squad frontend (PDL-237)
 

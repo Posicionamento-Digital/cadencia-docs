@@ -1,9 +1,3 @@
-> **📄 Cópia local — fonte de verdade no GitHub.**
-> Origem: [`felipeluissalgueiro/cadencia-app` / `master` / `src/app/(marketing)/CLAUDE.md`](https://github.com/felipeluissalgueiro/cadencia-app/blob/master/src/app/(marketing)/CLAUDE.md)
-> Sincronizar via `/documentar` ou `sync_to_framework.py`.
-
----
-
 # frontend-marketing — landing pages e marketing
 
 ## TL;DR
@@ -28,7 +22,6 @@ Página pública (sem auth) para o cliente escanear QR code do WhatsApp via Stev
 
 ## Don'ts
 
-- GHL não deve aparecer em nenhuma página de marketing
 - `conectar-whatsapp` é pública — não expor informações sensíveis de tenant
 
 ---
@@ -42,7 +35,6 @@ Página pública (sem auth) para o cliente escanear QR code do WhatsApp via Stev
 
 - ❌ Para qualquer conteúdo que exige autenticação — usar `(app)/app/`.
 - ❌ Para conteúdo dinâmico por tenant — landing não conhece o tenant.
-- ❌ Expor "GoHighLevel" — [ADR-0003](../../../docs/adr/0003-ghl-motor-invisivel.md).
 
 ## Por que funciona assim
 
@@ -51,13 +43,11 @@ Página pública (sem auth) para o cliente escanear QR code do WhatsApp via Stev
 
 ## 🚫 Don'ts
 
-- **Não** referenciar GHL, GoHighLevel, MsgSndr em qualquer copy.
 - **Não** expor info sensível de tenants em `/conectar-whatsapp` (página é pública).
 - **Não** usar client-side data fetching para pricing — Stripe é fonte da verdade, render server-side.
 
 ## 🪦 Já tentamos
 
-- Landing com referência a GHL → cliente perguntou "vou pagar por outra ferramenta?". Razão do ADR-0003.
 
 ## 🔥 Troubleshooting
 
@@ -71,4 +61,3 @@ Página pública (sem auth) para o cliente escanear QR code do WhatsApp via Stev
 
 - [api-integrations](../../api/webhooks/CLAUDE.md) — `/api/stevo/*`
 - [payment-billing](../../api/app/billing/CLAUDE.md) — Stripe pricing
-- [ADR-0003](../../../../docs/adr/0003-ghl-motor-invisivel.md)
