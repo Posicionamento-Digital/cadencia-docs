@@ -105,15 +105,14 @@ Validação técnica: `pytest -q tests/test_cadence_tick.py tests/test_cadence_t
 
 ## FAQ
 
-**Ativar uma cadência matricula toda a base antiga?**  
+**Ativar uma cadência matricula toda a base antiga?**
 Não. O `since` define a fronteira temporal do gatilho.
 
-**Um contato pode receber o mesmo passo duas vezes?**  
+**Um contato pode receber o mesmo passo duas vezes?**
 O check idempotente impede repetição do mesmo passo/ciclo em condições normais.
 
-**O que acontece quando o lead responde no WhatsApp?**  
+**O que acontece quando o lead responde no WhatsApp?**
 A inscrição em andamento é pausada antes do próximo disparo.
 
-**Por que um passo de cinco minutos pode executar horas depois?**  
+**Por que um passo de cinco minutos pode executar horas depois?**
 Porque o scheduler atual é diário. O offset define vencimento, mas a frequência do cron define quando ele será observado.
-

@@ -107,15 +107,14 @@ Validação técnica: `npm run build` no `cadencia-app` e `pytest -q` no `cadenc
 
 ## FAQ
 
-**A Lara pode escolher outro tenant ou outra instância pelo payload?**  
+**A Lara pode escolher outro tenant ou outra instância pelo payload?**
 Não. A API de borda e o backend resolvem ambos no servidor.
 
-**O operador humano consegue assumir uma conversa?**  
+**O operador humano consegue assumir uma conversa?**
 Sim. O modo é persistido por conversa e o runtime deixa de responder enquanto estiver em atendimento humano.
 
-**Ferramentas MCP podem ser ativadas diretamente pelo cliente?**  
+**Ferramentas MCP podem ser ativadas diretamente pelo cliente?**
 Não quando exigem análise. Aprovação e kill switch são controles administrativos.
 
-**O que acontece se enviar a resposta e falhar antes do ACK?**  
+**O que acontece se enviar a resposta e falhar antes do ACK?**
 A mensagem permanece recuperável na fila; o fluxo foi desenhado para não confirmar trabalho incompleto.
-

@@ -104,15 +104,14 @@ Validação técnica: `pytest -q tests/scheduling tests/test_dev1270_skills.py` 
 
 ## FAQ
 
-**Quais provedores estão implementados?**  
+**Quais provedores estão implementados?**
 Google Calendar, Cal.com e Easy!Appointments.
 
-**Por que Easy!Appointments não aparece no formulário?**  
+**Por que Easy!Appointments não aparece no formulário?**
 O backend já suporta o provider, mas a tipagem e o dropdown atuais ainda não foram atualizados.
 
-**Posso repetir uma criação após timeout?**  
+**Posso repetir uma criação após timeout?**
 Não automaticamente. Primeiro confirme no provedor, pois a mutação pode ter sido aplicada.
 
-**Cadências usam essa agenda?**  
+**Cadências usam essa agenda?**
 Sim. Passos condicionais podem consultar disponibilidade pelo endpoint administrativo da Lara.
-
