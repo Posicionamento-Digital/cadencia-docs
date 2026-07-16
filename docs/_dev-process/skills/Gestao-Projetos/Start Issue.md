@@ -4,9 +4,11 @@ tags: [skill, gestao, linear, github, dev, ia, tecnologia, automacao]
 moc: "[[MOC-Skills]]"
 ---
 
-> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
 
 # Start Issue
+
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
+
 
 Lista issues do Linear atribuídas no ciclo atual, faz checkout da branch correspondente e marca como In Progress.
 
@@ -20,7 +22,6 @@ Lista issues do Linear atribuídas no ciclo atual, faz checkout da branch corres
 ```markdown
 ---
 
-> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
 
 name: start-issue
 description: >
@@ -39,7 +40,6 @@ description: >
 
 ---
 
-> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
 
 
 ## Configuração necessária
@@ -78,7 +78,6 @@ REPO_MAP = {
 
 ---
 
-> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
 
 
 ## Passo 1 — Carregar token e buscar issues
@@ -143,7 +142,6 @@ Prioridade: 1=URGENT 2=HIGH 3=MEDIUM 4=LOW
 
 ---
 
-> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
 
 
 ## Passo 3 — Detectar repo e branch
@@ -167,7 +165,6 @@ git status
 
 ---
 
-> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
 
 
 ## Passo 5 — Marcar In Progress no Linear
@@ -198,7 +195,6 @@ Ou: /close-issue PDL-11
 
 ---
 
-> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
 
 
 ## Regras

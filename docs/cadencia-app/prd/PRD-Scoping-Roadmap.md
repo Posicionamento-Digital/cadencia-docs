@@ -6,9 +6,11 @@ type: source
 entities: ["[[Cadencia]]", "[[qualidade]]"]
 ---
 
-> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
 
 # PRD — Scoping & Roadmap (Cadencia.app)
+
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
+
 
 ## MVP Strategy
 
@@ -44,7 +46,6 @@ entities: ["[[Cadencia]]", "[[qualidade]]"]
 
 ---
 
-> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
 
 
 ## Phase 2 — Growth (V1.1)
@@ -71,7 +72,6 @@ Distribuição massiva, Reels gerados, performance insights, plano agência N te
 
 ---
 
-> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
 
 
 ## Landscape Competitivo

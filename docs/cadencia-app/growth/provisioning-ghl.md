@@ -6,6 +6,8 @@
 
 # provisioning-ghl — provisionamento de tenant GHL
 
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória e auditoria. Não executar este runbook nem usar seu conteúdo como arquitetura atual.
+
 ## TL;DR
 
 Cria subconta GHL para novo tenant, configura campos customizados, pipeline de oportunidades e salva tokens em `tenant_config`. É o script mais crítico do onboarding.

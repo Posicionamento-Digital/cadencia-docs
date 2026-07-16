@@ -4,9 +4,11 @@ tags: [skill, gestao, linear, github, obsidian, ia, tecnologia, automacao]
 moc: "[[MOC-Skills]]"
 ---
 
-> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
 
 # Gestao Atividades Projeto
+
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
+
 
 Cria e gerencia issues no Linear — extrai tarefas de conversas, cria issues detalhadas, vincula ao projeto/cycle correto, atribui responsáveis, cria branch no GitHub, verifica espelhamento na VPS e documenta no Obsidian Time PD. Substitui o fluxo anterior do Notion.
 
@@ -20,7 +22,6 @@ Cria e gerencia issues no Linear — extrai tarefas de conversas, cria issues de
 ```markdown
 ---
 
-> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
 
 name: gestao-atividades-projeto
 description: >
@@ -47,7 +48,6 @@ Cria issues no Linear com tudo que o Luiz precisa pra trabalhar na VPS sem depen
 
 ---
 
-> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
 
 
 ## Configuração fixa
@@ -88,7 +88,6 @@ mcp__linear-server__list_projects  team="Posicionamento Digital"
 
 ---
 
-> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
 
 
 ## Passo 2 — Identificar cycle (sprint) atual
@@ -124,7 +123,6 @@ Da instrução do Felipe, extrair para cada issue:
 
 ---
 
-> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
 
 
 ## Passo 4 — Criar issues no Linear
@@ -164,7 +162,6 @@ Quem lê deve entender POR QUE essa issue existe sem ter participado da conversa
 
 ---
 
-> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
 
 
 ## Critério de aceite
@@ -184,7 +181,6 @@ Quem lê deve entender POR QUE essa issue existe sem ter participado da conversa
 
 ---
 
-> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
 
 
 ## Passo 5 — Criar branches no GitHub
@@ -238,7 +234,6 @@ ssh -i ~/.ssh/hostinger_pd root@72.60.4.71 \
 
 ---
 
-> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
 
 
 ## Passo 7 — Obsidian: criar/atualizar pasta do projeto
@@ -267,7 +262,6 @@ ssh -i ~/.ssh/hostinger_pd root@72.60.4.71 \
 
 ---
 
-> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
 
 
 ## Regras

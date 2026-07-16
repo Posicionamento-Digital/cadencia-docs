@@ -9,6 +9,8 @@ moc: "[[MOC-IA-Tecnologia]]"
 > **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
 
 
+
+
 > Sessão noite 24/05/2026. Consolida todas as decisões tomadas após varredura de Obsidian, VPS Master, VPS Dev, repos GitHub, pastas locais, processos comerciais/CS/marketing e OpenClaw legacy.
 > Substitui referências anteriores como fonte de verdade do mapa.
 

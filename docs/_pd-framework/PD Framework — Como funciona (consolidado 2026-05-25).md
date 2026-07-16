@@ -4,10 +4,12 @@ tags: [ia, framework, pd, playbook, master]
 moc: "[[MOC-IA-Tecnologia]]"
 ---
 
-> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
 
 
 # PD Framework — Como funciona (playbook consolidado)
+
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
+
 
 > Mapa visual: [[PD Framework — Mapa Visual Master.canvas]]
 > Constituição: `pd-framework/_core/CONSTITUICAO-TIMES.md`
@@ -21,7 +23,6 @@ Monorepo multi-agente onde o **Stamper** (Chief of Staff Felipe) orquestra **Tim
 
 ---
 
-> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
 
 
 ## Hierarquia
@@ -63,7 +64,6 @@ Produtos adicionalmente têm `SOUL.md` (identidade imutável — missão/voz/val
 
 ---
 
-> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
 
 
 ## Memory híbrida A+B+C (determinística)
@@ -93,7 +93,6 @@ Personas têm voz distinta + tensão produtiva entre si — usado em `/<time>-de
 
 ---
 
-> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
 
 
 ## Fluxo padrão do dia
@@ -125,7 +124,6 @@ Toda issue/projeto tem UM Squad dono. Resolução em cascata:
 
 ---
 
-> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
 
 
 ## Knowledge Lookup
@@ -168,7 +166,6 @@ Cobertura:
 
 ---
 
-> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
 
 
 ## Status atual (2026-05-25 madrugada)
@@ -214,7 +211,6 @@ Mapa completo de paths externos: `pd-framework/_core/PATHS.md`
 
 ---
 
-> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
 
 
 ## Comandos de setup nova máquina

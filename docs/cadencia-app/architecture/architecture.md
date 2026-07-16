@@ -164,6 +164,6 @@ Resend envia "email.opened"/"email.clicked"/"email.bounced"/"email.complained"
 
 ### Lara e cadências de contatos
 
-Ver [`features/agente-lara.md`](features/agente-lara.md) e
-[`features/cadencias-contatos.md`](features/cadencias-contatos.md). O scheduler único vive no
+Ver [`agente-lara.md`](../agente-lara.md) e
+[`cadencias-de-contatos.md`](../cadencias-de-contatos.md). O scheduler único vive no
 `cadencia-growth`; a Lara fornece o canal WhatsApp, disponibilidade e sinais inbound/reply.

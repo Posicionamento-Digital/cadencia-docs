@@ -8,9 +8,11 @@ moc: "[[MOC-Projetos]]"
 generated: wiki-backfill
 ---
 
-> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
 
 # Decisões — dev-memory
+
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
+
 
 # Decisões — Time Dev
 
@@ -53,7 +55,6 @@ generated: wiki-backfill
 
 ---
 
-> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
 
 
 ## 2026-07-07 — DEV-1213: `max_rows` do PostgREST sobrepõe `.limit()` do client — regra vale pra qualquer produto
@@ -107,7 +108,6 @@ generated: wiki-backfill
 
 ---
 
-> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
 
 
 ## 2026-07-06 — Trigger do corpus (DEV-1164) vive no C6 close_session, não num git-push hook
@@ -138,7 +138,6 @@ generated: wiki-backfill
 
 ---
 
-> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
 
 
 ## 2026-07-04 — Sofia ganha skills Astryx para planejamento e bancada Storybook
@@ -167,7 +166,6 @@ generated: wiki-backfill
 
 ---
 
-> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
 
 
 ## 2026-07-03 — Auto-cost em delta por fonte + estado canônico no claims + decay fiado no Stop (validação viva)
@@ -198,7 +196,6 @@ generated: wiki-backfill
 
 ---
 
-> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
 
 
 ## 2026-07-02 — Adapter Codex #3: e2e FINAL PASSOU + 2 causas raiz do fail-open (Vitor)
@@ -245,7 +242,6 @@ Sessão de validação abrindo o adapter no `codex` CLI de verdade (não só smo
 
 ---
 
-> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
 
 
 ## 2026-07-01 — Adapter Codex #3: `codex_hooks` é under-development na 0.121.0 (errata da errata, DEV-1018)
@@ -289,7 +285,6 @@ E ao habilitar, o próprio Codex avisa: *"Under-development features are incompl
 
 ---
 
-> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
 
 
 ## 2026-06-27 — systemd timers CS: EnvironmentFile padrão + timezone explícito (DEV-897)
@@ -327,7 +322,6 @@ Aplicado em DEV-896 → DEV-903 (handler Tally em onboarding-webhooks) e DEV-838
 
 ---
 
-> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
 
 
 ## 2026-06-26 — Hook `pretooluse-session-branch` reconhece `MERGE_HEAD` como exceção (DEV-900)
@@ -358,7 +352,6 @@ Aplicado em DEV-896 → DEV-903 (handler Tally em onboarding-webhooks) e DEV-838
 
 ---
 
-> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
 
 
 ## 2026-06-21 — Central de Observabilidade: arquitetura determinística Master + agente na Dev
@@ -391,7 +384,6 @@ Aplicado em DEV-896 → DEV-903 (handler Tally em onboarding-webhooks) e DEV-838
 
 ---
 
-> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
 
 
 ## 2026-06-20 — Code review padrão migrou pra OpenRouter (GLM 5.2 → Qwen 3.7 Max)
@@ -412,7 +404,6 @@ Aplicado em DEV-896 → DEV-903 (handler Tally em onboarding-webhooks) e DEV-838
 
 ---
 
-> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
 
 
 ## 2026-06-15 — Composio: escopo e limitações no stack PD
@@ -443,7 +434,6 @@ Aplicado em DEV-896 → DEV-903 (handler Tally em onboarding-webhooks) e DEV-838
 
 ---
 
-> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
 
 
 ## 2026-06-02 — Taxonomia de incidents v1 (PDL-383)
@@ -519,7 +509,6 @@ Doc canônico: `times/dev/foundation/incident-taxonomy.md` (exemplo de cada cate
 
 ---
 
-> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
 
 
 ## 2026-06-05 — `/encerrar-sessao` como porta única de saída + hook checkout-warning (PDL-422)
@@ -649,7 +638,6 @@ Estendido ao vault Pessoal (separado do Empresa). **Natureza diferente:** sem ra
 
 ---
 
-> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
 
 
 ## 2026-06-30 — DEV-993: meeting-transcriber resiliente a Device Guard via fallback no .bat (Vitor)

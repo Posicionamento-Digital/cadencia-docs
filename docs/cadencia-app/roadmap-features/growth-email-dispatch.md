@@ -8,6 +8,8 @@ entities: ["[[Cadencia-Growth]]", "[[Cadencia]]"]
 
 > **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
 
+
+
 ## Identidade
 - **Tipo:** pipeline de email / feature Growth
 - **Stack:** Python 3.12, OpenAI gpt-5.4, GHL API

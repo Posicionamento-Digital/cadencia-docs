@@ -8,9 +8,11 @@ moc: "[[MOC-Projetos]]"
 generated: wiki-backfill
 ---
 
-> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
 
 # Decisões — dev-vitor-memory
+
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
+
 
 # Decisões — Squad Vitor
 
@@ -32,7 +34,6 @@ generated: wiki-backfill
 
 ---
 
-> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
 
 
 ## 2026-07-06 — DEV-1201: isolamento de sessões concorrentes por worktree
@@ -77,7 +78,6 @@ generated: wiki-backfill
 
 ---
 
-> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
 
 
 ## 2026-07-01 — Gate técnico "Cadencia: Gestão de Tráfego" (DEV-1046 a DEV-1052)
@@ -120,7 +120,6 @@ generated: wiki-backfill
 
 ---
 
-> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
 
 
 ## 2026-06-27 — CLAUDE.md vs AGENTS.md: não duplicar por squad (decisão Felipe)
@@ -166,7 +165,6 @@ generated: wiki-backfill
 
 ---
 
-> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
 
 
 ## 2026-06-27 — DEV-886 gate Vitor + claude-review inline (fechamento)
@@ -222,7 +220,6 @@ Invariantes do contrato (C3-C6) auditados linha-a-linha:
 
 ---
 
-> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
 
 
 ## 2026-06-26 — Runtime-Agnosticismo: gate do PRD + fatiamento em 7 Epics (DEV-883→889)
@@ -268,7 +265,6 @@ Invariantes do contrato (C3-C6) auditados linha-a-linha:
 
 ---
 
-> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
 
 
 ## 2026-06-26 — DEV-873: Client Activity Logger — fonte única = Linear, não JSONL local
@@ -310,7 +306,6 @@ Invariantes do contrato (C3-C6) auditados linha-a-linha:
 
 ---
 
-> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
 
 
 ## 2026-06-10 — generation_queue: semântica única + dedupe como invariante (PDL-171)
@@ -342,7 +337,6 @@ Squad Vitor criado como parte do bootstrap do Time Dev. Sem decisões arquitetur
 
 ---
 
-> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
 
 
 ## 2026-06-05 — `/encerrar-sessao` como porta única de saída + hook checkout-warning (PDL-422)
@@ -385,7 +379,6 @@ Squad Vitor criado como parte do bootstrap do Time Dev. Sem decisões arquitetur
 
 ---
 
-> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
 
 
 ## 2026-07-02 — Gestão de Tráfego: adendo do gate de 01/07 REVOGADO — credencial Meta Ads via Composio

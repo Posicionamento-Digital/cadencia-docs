@@ -10,6 +10,8 @@ entities: ["[[Cadencia]]", "[[PD Framework]]", "[[comercial]]", "[[financeiro]]"
 > **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
 
 
+
+
 > Documentação consolidada do que foi construído na PDL-241 (Fase 0.7) — inventário, frameworks de referência, personas, padrões. Data: 2026-05-25.
 
 ## Resumo executivo

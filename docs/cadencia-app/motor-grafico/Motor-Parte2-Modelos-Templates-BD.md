@@ -7,7 +7,9 @@ entities: ["[[Cadencia]]"]
 ---
 # Motor Gráfico — Parte 2: Modelos, Templates, Configurações e Banco de Dados
 
-> **ARQUIVO HISTÓRICO / LEGADO.** Preservado como memória da arquitetura anterior; a seção de variáveis não é um runbook atual.
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
+
+
 
 Como o visual é renderizado, os 29 modelos de carrossel, os templates HTML/CSS, as configurações do tenant e o schema do banco de dados.
 

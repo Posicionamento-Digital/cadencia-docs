@@ -9,6 +9,8 @@ moc: "[[MOC-IA-Tecnologia]]"
 > **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
 
 
+
+
 > Sessão de design 24/05/2026. Complementa as notas de 23/05.
 > Projeto Linear: PD Framework — Squads, Stamper, Memória Operacional
 
@@ -52,7 +54,6 @@ STATE.md   → situação atual do domínio (todos, obrigatório — muda todo d
 ```markdown
 # STATE — [Área] (atualizado YYYY-MM-DD HH:MM)
 
-> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
 
 
 ## [L1] Status agora

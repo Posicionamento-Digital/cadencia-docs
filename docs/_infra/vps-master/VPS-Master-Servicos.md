@@ -10,6 +10,8 @@ entities: ["[[Cadencia]]", "[[marketing]]"]
 > **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
 
 
+
+
 ---
 
 ## Containers Docker em execução
@@ -122,13 +124,11 @@ Recebe webhooks de scoring do sistema Cadência. Porta 8766.
 ```bash
 # Status
 
-> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
 
 sudo systemctl status cadencia-webhook.service
 
 # Logs
 
-> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
 
 sudo journalctl -u cadencia-webhook.service -f
 ```
@@ -216,49 +216,41 @@ Log: `/var/log/monitor-vps.log`
 ```bash
 # Ver todos os containers
 
-> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
 
 docker ps --format 'table {{.Names}}\t{{.Status}}\t{{.Ports}}'
 
 # Logs de um container
 
-> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
 
 docker logs <nome> --tail 100 -f
 
 # Reiniciar um container (com cuidado)
 
-> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
 
 docker restart <nome>
 
 # Ver consumo de recursos
 
-> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
 
 docker stats --no-stream
 
 # Ver logs do sistema
 
-> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
 
 sudo journalctl -f
 
 # Verificar crons do root
 
-> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
 
 sudo crontab -l
 
 # Verificar crons do master
 
-> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
 
 crontab -l
 
 # Status dos serviços systemd
 
-> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
 
 systemctl list-units --type=service --state=running
 ```

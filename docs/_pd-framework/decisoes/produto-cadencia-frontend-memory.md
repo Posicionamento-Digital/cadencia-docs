@@ -8,9 +8,11 @@ moc: "[[MOC-Projetos]]"
 generated: wiki-backfill
 ---
 
-> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
 
 # Decisões — produto-cadencia-frontend-memory
+
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
+
 
 # Decisões — Sub-squad frontend Cadência
 
@@ -34,7 +36,6 @@ generated: wiki-backfill
 
 ---
 
-> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
 
 
 ## 2026-06-18 — Campos estruturados de contato: lead_source, is_icp, datas (CAD-616)
@@ -68,7 +69,6 @@ generated: wiki-backfill
 
 ---
 
-> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
 
 
 ## 2026-05-25 — Bootstrap sub-squad frontend (PDL-237)

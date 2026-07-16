@@ -8,9 +8,11 @@ moc: "[[MOC-Projetos]]"
 generated: wiki-backfill
 ---
 
-> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
 
 # Decisões — infra-memory
+
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
+
 
 # Decisões — Squad Infra
 
@@ -80,7 +82,6 @@ Append-only. Mais recente em cima.
 
 ---
 
-> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
 
 
 ## 2026-06-29 — Health check: notificar resolução (loop fechado) + canal por tipo de evento
@@ -117,7 +118,6 @@ Append-only. Mais recente em cima.
 
 ---
 
-> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
 
 
 ## 2026-06-24 — Health check de automatismos na VPS Master (24/7) + auto-correção autônoma
@@ -160,7 +160,6 @@ Append-only. Mais recente em cima.
 
 ---
 
-> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
 
 
 ## 2026-06-09 — Projeto Linear dedicado "Infraestrutura — VPS, Monitoramento & Deploy" criado
@@ -189,7 +188,6 @@ Append-only. Mais recente em cima.
 
 ---
 
-> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
 
 
 ## 2026-06-05 — vault-watcher: watchdog local para Obsidian Sync
@@ -237,7 +235,6 @@ Append-only. Mais recente em cima.
 
 ---
 
-> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
 
 
 ## 2026-05-25 — Squad Infra bootstrap + ALLOWLIST inicial
@@ -283,7 +280,6 @@ Append-only. Mais recente em cima.
 
 ---
 
-> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
 
 
 ## 2026-05-24 — Webhook v2 reconfigurado

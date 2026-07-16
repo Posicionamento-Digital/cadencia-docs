@@ -4,9 +4,11 @@ tags: [documentacao, recovery, hetzner, n8n, workflows, automacao, ia, tecnologi
 moc: "[[MOC-Projetos]]"
 ---
 
-> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
 
 # 03 — N8N Workflows
+
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
+
 
 ## O que é
 Backup completo das automações n8n capturadas em 09/05/2026. 188 workflows + 92 credenciais, prontos para importar.
