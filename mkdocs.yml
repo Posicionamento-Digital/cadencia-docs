@@ -214,6 +214,7 @@ nav:
     - Motor Autônomo:
       - _pd-framework/motor-autonomo/motor-autonomo.md
       - Loop: _pd-framework/motor-autonomo/motor-loop.md
+      - Stale-Claim Reaper: _pd-framework/motor-autonomo/stale-claim-reaper.md
       - Supervisor: _pd-framework/motor-autonomo/motor-supervisor.md
       - Auto-enqueue: _pd-framework/motor-autonomo/motor-auto-enqueue.md
       - Outcomes: _pd-framework/motor-autonomo/outcomes.md
