@@ -7,10 +7,10 @@ entities: ["[[PD Framework]]", "[[Motor-Autonomo]]"]
 ---
 # Stale-Claim Reaper
 
-> Vigia de claims: recupera issues `own:agente` presas em In Progress quando o executor morreu sem devolver — pinga, espera, e devolve pra fila. Em produção desde 2026-07-16 (DEV-1344).
+> Vigia de claims: recupera issues `own:agente`/`own:motor` presas em In Progress quando o executor morreu sem devolver — pinga, espera, e devolve pra fila. Em produção desde 2026-07-16 (DEV-1344).
 
 **Path:** `_core/stale_claim_reaper.py` + wrapper `_core/stale_claim_reaper_cron.sh`
-**Issues:** DEV-1131 (spec) · DEV-1286 (implementação, PR #57) · DEV-1344 (agendamento em produção)
+**Issues:** DEV-1131 (spec) · DEV-1286 (implementação, PR #57) · DEV-1344 (agendamento em produção) · DEV-1350 (cobertura da fila do motor)
 
 ## Por que foi construído assim
 
@@ -28,7 +28,7 @@ O fluxo do reaper aparece no diagrama do [Motor Loop](motor-loop.md#como-funcion
 
 ## Como funciona
 
-1. Varre issues **In Progress** com label `own:agente` (a identidade de agente vem da label — o assignee é sempre o Felipe, não há usuário-bot).
+1. Varre issues **In Progress** com label `own:agente` (fila do autofix/observabilidade) **ou** `own:motor` (fila de curadoria do Motor Autônomo) — a identidade de agente vem da label, o assignee é sempre o Felipe (não há usuário-bot).
 2. Sinal de vida = `updatedAt` + comentários mais novos que o próprio ping.
 3. **Estágio 1** — 48h sem atividade: comenta "⏳ stale-claim-reaper: ping — ainda ativa?".
 4. **Estágio 2** — 24h após o ping sem resposta: `release(reason="stale: sem atividade")` — a issue volta pra fila. Nunca cancela nem reatribui.
@@ -44,7 +44,8 @@ O fluxo do reaper aparece no diagrama do [Motor Loop](motor-loop.md#como-funcion
 
 - **Rate-limit do 1Password derruba o run** — o erro sai explícito no log (`op CLI falhou: Too many requests`). O run seguinte recupera; **não** encurtar o intervalo do cron pra compensar — martelar agrava.
 - **`In Review` é intocável** — trabalho legítimo em revisão nunca é pingado.
-- **Issues `aguardando`/`bloqueado` são isentas** — espera legítima é estado válido.
+- **Issues `aguardando`/`bloqueado` são isentas** — espera legítima é estado válido. Isso também protege o **estacionamento do motor**: `park_blocked` marca `bloqueado`, então issue estacionada de propósito nunca é devolvida pelo reaper.
+- **`own:motor` é curadoria, não claim** (DEV-1350) — o `linear_claims.claim()` não adiciona label nenhuma; o claim órfão do motor fica In Progress só com a label de curadoria. Foi por isso que o reaper original (só `own:agente`) era cego pra fila do motor — achado do Felipe em 2026-07-16, corrigido no mesmo dia.
 
 ## Como operar
 
