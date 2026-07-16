@@ -31,7 +31,7 @@ Cria usuário em subconta GHL com perfil predefinido + salva credencial no 1Pass
 
 Mapa em `locations.json` (mesma pasta). Slugs e aliases:
 - `clinica-og` (og, dra nathalia)
-- `pd` (cadencia, posicionamento digital)
+- `pd` (identificador técnico legado da Cadencia)
 - `hco`
 - `sorria-ceilandia` (sorria cei, ceilandia)
 - `sorria-central` (sorria central, central)

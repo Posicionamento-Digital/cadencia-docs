@@ -5,7 +5,7 @@ tags: [infra, vps, hostinger]
 
 # Infra — VPS Hostinger
 
-Documentação da infraestrutura VPS da Posicionamento Digital (Hostinger).
+Documentação da infraestrutura VPS da Cadencia (Hostinger).
 
 ## Servidores
 
