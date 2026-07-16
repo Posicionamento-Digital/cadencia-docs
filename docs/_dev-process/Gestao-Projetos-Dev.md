@@ -401,7 +401,7 @@ Resultado:
 ```
 
 Ou via Linear direto:
-1. Acessa linear.app/posicionamento-digital
+1. Acessa `linear.app/posicionamento-digital` (slug técnico legado do workspace)
 2. Cria issue no time **Produto & Dev**
 3. Define: título, descrição, prioridade, assignee (Luiz), label de repo e epic
 4. Vincula ao projeto correto

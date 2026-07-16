@@ -27,7 +27,7 @@ entities: ["[[Cadencia]]", "[[marketing]]"]
 
 ---
 
-## Papel na infraestrutura PD
+## Papel na infraestrutura Cadencia
 
 Esta VPS é o servidor de produção principal da Cadencia. Ela hospeda:
 

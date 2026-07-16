@@ -5,6 +5,8 @@ moc: "[[MOC-Skills]]"
 ---
 # Criar User GHL
 
+> **LEGADO HISTÓRICO — NÃO EXECUTAR.** O GHL foi descontinuado. O conteúdo abaixo preserva o contrato e os aliases da antiga skill somente para auditoria.
+
 Cria usuário em subconta GHL usando perfis predefinidos (secretaria, proprietaria), gera senha forte, salva no 1Password vault Clientes e devolve o ID.
 
 ## Quando usar
@@ -31,7 +33,7 @@ Cria usuário em subconta GHL com perfil predefinido + salva credencial no 1Pass
 
 Mapa em `locations.json` (mesma pasta). Slugs e aliases:
 - `clinica-og` (og, dra nathalia)
-- `pd` (identificador técnico legado da Cadencia)
+- `pd` (cadencia, posicionamento digital)
 - `hco`
 - `sorria-ceilandia` (sorria cei, ceilandia)
 - `sorria-central` (sorria central, central)
