@@ -2,6 +2,8 @@
 
 > Como um novo dev entra na VPS Dev conectado ao `pd-framework` real — com acesso só às pastas relevantes pro trabalho dele, e sem alçada de merge direto em `main` até ganhar confiança.
 
+> **Ver também:** [`onboarding-dev-conta-bot-cross-repo.md`](./onboarding-dev-conta-bot-cross-repo.md) — padrão pra devs que tocam **produtos Cadencia** (14 repos), com conta GitHub bot dedicada + classic PAT. Este doc cobre single-repo (`pd-framework`) com deploy key + fine-grained PAT.
+
 ## Por que foi construído assim
 
 GitHub não tem controle de leitura por pasta em nenhum mecanismo — deploy key, PAT fine-grained e collaborator liberam sempre o repo inteiro pra quem tem a credencial. Um servidor git próprio (Gitea/Forgejo ou espelho local) resolveria isso de forma real, mas é infraestrutura desproporcional ao ganho neste estágio.
