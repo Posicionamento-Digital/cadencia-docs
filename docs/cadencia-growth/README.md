@@ -1,38 +1,65 @@
----
-date: 2026-06-27
-tags: [doc, projeto, cadencia-growth]
-moc: "[[MOC-Projetos]]"
----
+# cadencia-growth
 
-# cadencia-growth — Playbook
+Pipeline de growth do Cadência na VPS Master (`/cadencia`): geração e dispatch
+de blog, email Seinfeld, LinkedIn, Instagram e newsletter; scoring de leads;
+cadências de contatos; e provisionamento de domínio de email.
 
-Pipeline de growth do Cadência (Python 3.12). Roda hoje em `/cadencia` na VPS Master, com plano de migração pro Coolify projeto Cadencia documentado.
+## O que faz
 
-## Identidade
-- **Tipo:** backend / daemons / crons (multi-componente)
-- **Stack:** Python 3.12 · openai · anthropic · supabase · resend · ghl
-- **Repo:** [Posicionamento-Digital/cadencia-growth](https://github.com/Posicionamento-Digital/cadencia-growth)
-- **Path VPS atual:** `/cadencia`
-- **Status:** ativo (produção)
+1. carrega tenants e estado do CRM Cadência;
+2. gera e publica conteúdo pelos providers de cada canal;
+3. envia Seinfeld/newsletter via Resend;
+4. recebe eventos Resend/Svix e atualiza score, temperatura e supressão;
+5. executa o motor de cadências e integra WhatsApp/agenda pela Lara;
+6. provisiona subdomínio Resend e DNS para tenants novos.
 
-## O que é
-Geração e dispatch de conteúdo multi-canal multi-tenant + scoring de leads + provisioning GHL. 5 componentes: pipeline, scoring, crons, scripts, mission_control.
+## Stack
 
-## Componentes documentados
-- [[Projetos/Cadencia-Growth/Docs/pipeline]] — geradores + provisioning + cadence_tick + trigger_server :39090
-- [[Projetos/Cadencia-Growth/Docs/scoring]] — webhooks GHL :8766 + Resend :8767
-- [[Projetos/Cadencia-Growth/Docs/crons]] — orquestrador + retry + cleanup
-- [[Projetos/Cadencia-Growth/Docs/scripts]] — operacionais + drift_check
-- [[Projetos/Cadencia-Growth/Docs/mission-control]] — dashboard infra :8768
+| Camada | Tecnologia |
+|---|---|
+| Runtime | Python 3.12, cron e daemons HTTP |
+| Dados/CRM | Supabase PostgreSQL |
+| Email/scoring | Resend + Svix |
+| WhatsApp/agenda | cadencia-lara |
+| DNS | Cloudflare |
+| Conteúdo | OpenAI/OpenRouter + providers dos canais |
 
-## Migração planejada
-Documento completo em [docs/migracao-coolify.md](https://github.com/Posicionamento-Digital/cadencia-growth/blob/main/docs/migracao-coolify.md). 9 etapas, ordem obrigatória. Quando Felipe decidir executar.
+## Estrutura
 
-## Links
-- [Repo GitHub](https://github.com/Posicionamento-Digital/cadencia-growth)
-- [CLAUDE.md](https://github.com/Posicionamento-Digital/cadencia-growth/blob/main/CLAUDE.md) — regras DURAS anti-drift
-- [CONTEXT.md](https://github.com/Posicionamento-Digital/cadencia-growth/blob/main/CONTEXT.md) — vocabulário ubíquo
-- [Architecture diagram](https://github.com/Posicionamento-Digital/cadencia-growth/blob/main/docs/architecture.md)
+| Pasta | Responsabilidade |
+|---|---|
+| `crons/` | orquestração diária, retry e manutenção |
+| `pipeline/` | geração, dispatch, cadências e provisioning |
+| `scoring/` | webhook Resend/Svix |
+| `scripts/` | auditoria, recovery e migrações one-shot históricas |
+| `docs/` | arquitetura, componentes e runbooks |
+| `tests/` | suíte automatizada |
 
-## Notas Relacionadas
-[[Infra/VPS-Hostinger/VPS-Master/VPS-Master-Coolify]] · [[Infra/VPS-Hostinger/VPS-Master/VPS-Master-Servicos]]
+## Serviços
+
+| Porta | Serviço |
+|---|---|
+| `39090` | trigger on-demand |
+| `8767` | webhook Resend/Svix |
+| `8768` | Mission Control |
+
+## Setup local
+
+Use `.env.example` como mapa e resolva credenciais pelo 1Password. Nunca grave
+tokens em documentação ou commits.
+
+```bash
+python -m compileall -q -x 'prompts_before\.py' pipeline scoring scripts
+python3 -m pytest tests/ --ignore=tests/visual -q
+```
+
+`pipeline/prompts_before.py` é snapshot histórico congelado e fica fora do
+compile gate.
+
+## Documentação
+
+- [docs/README.md](docs/README.md)
+- [docs/architecture.md](docs/architecture.md)
+- [docs/growth-pipeline-runner.md](docs/growth-pipeline-runner.md)
+- [docs/scoring-leads.md](docs/scoring-leads.md)
+- [docs/cadence-engine.md](docs/cadence-engine.md)

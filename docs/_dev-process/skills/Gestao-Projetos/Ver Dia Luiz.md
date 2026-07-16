@@ -3,7 +3,12 @@ date: 2026-05-14
 tags: [skill, gestao, linear, github, luiz, ia, tecnologia, automacao]
 moc: "[[MOC-Skills]]"
 ---
+
+
 # Ver Dia Luiz
+
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
+
 
 O que Luiz fez hoje — commits por repositório e movimentações de issues no Linear.
 
@@ -16,6 +21,8 @@ O que Luiz fez hoje — commits por repositório e movimentações de issues no 
 
 ```markdown
 ---
+
+
 name: ver-dia-luiz
 description: >
   O que Luiz fez hoje — commits por repo e movimentações de issues no Linear.
@@ -31,6 +38,8 @@ description: >
 - `/ver-dia-luiz 2026-05-12` — data específica
 
 ---
+
+
 
 ## Configuração necessária
 
@@ -70,6 +79,8 @@ GH_TOKEN = subprocess.check_output('gh auth token', shell=True, text=True).strip
 ```
 
 ---
+
+
 
 ## Passo 2 — Commits do Luiz no GitHub
 
@@ -120,6 +131,8 @@ QUERY = f"""
 ```
 
 ---
+
+
 
 ## Passo 4 — Formatar e exibir
 

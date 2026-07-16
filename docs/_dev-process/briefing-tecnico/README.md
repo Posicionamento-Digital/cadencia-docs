@@ -20,7 +20,7 @@ Template e processo de briefing técnico para novos clientes da PD. Executado en
 | Produto | O que coletar |
 |---|---|
 | Agente de atendimento | Tom de voz, FAQ, horários, responsável |
-| CRM / GHL | Funis atuais, etapas, responsáveis |
+| CRM Cadencia | Funis atuais, etapas e responsáveis |
 | SDR com IA | ICP, mercado, script atual, objeções |
 | Cadência (carrossel) | Nicho, público, temas, paleta |
 

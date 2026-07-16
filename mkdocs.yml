@@ -105,6 +105,12 @@ nav:
       - Manual do sistema: cadencia-app/Manual-do-Sistema-Cadencia.md
       - Runbooks: cadencia-app/runbooks/README.md
 
+    - Lara & CRM Conversacional:
+      - Agente Lara: cadencia-app/agente-lara.md
+      - Cadências de contatos: cadencia-app/cadencias-de-contatos.md
+      - Agenda da Lara: cadencia-app/agenda-lara.md
+      - Evolução transversal 2026-07: cadencia-app/evolucao-transversal-2026-07.md
+
     - Conteúdo Autônomo:
       - cadencia-app/growth/README.md
       - Pipeline de growth: cadencia-app/growth/growth-pipeline-runner.md
@@ -113,7 +119,7 @@ nav:
       - LinkedIn: cadencia-app/growth/linkedin-generation.md
       - Seinfeld Email: cadencia-app/growth/seinfeld-email.md
       - Scoring de leads: cadencia-app/growth/scoring-leads.md
-      - Provisionamento GHL: cadencia-app/growth/provisioning-ghl.md
+      - "Historico: provisionamento GHL desativado": cadencia-app/growth/provisioning-ghl.md
       - Cadencia Growth — pipeline: cadencia-growth/pipeline.md
       - Mission control: cadencia-growth/mission-control.md
       - Crons: cadencia-growth/crons.md
@@ -164,7 +170,7 @@ nav:
       - cadencia-app/adr/README.md
       - ADR-0001 Stripe vs Asaas: cadencia-app/adr/0001-stripe-em-vez-de-asaas.md
       - ADR-0002 Chat agent: cadencia-app/adr/0002-chat-agent-design.md
-      - ADR-0003 GHL motor invisível: cadencia-app/adr/0003-ghl-motor-invisivel.md
+      - "Historico: ADR-0003 GHL superseded": cadencia-app/adr/0003-ghl-motor-invisivel.md
       - ADR-0004 Carrossel Railway: cadencia-app/adr/0004-carrossel-railway-resto-vps.md
       - ADR-0005 Location PIT token: cadencia-app/adr/0005-location-pit-token-por-tenant.md
       - ADR-0006 Multi-tenant RLS: cadencia-app/adr/0006-multi-tenant-rls-supabase.md

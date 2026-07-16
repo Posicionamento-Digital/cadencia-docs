@@ -6,7 +6,9 @@
 
 # ADR-0003 — GHL como motor invisível
 
-**Status:** aceito · **Data:** 2026-05-27
+> **REGISTRO HISTÓRICO / SUPERSEDED.** Preserva a decisão original; o CRM nativo Cadencia é a arquitetura atual.
+
+**Status:** superseded · **Data:** 2026-05-27
 
 ## Contexto
 

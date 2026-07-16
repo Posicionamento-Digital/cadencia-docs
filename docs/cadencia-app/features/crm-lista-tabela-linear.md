@@ -13,7 +13,7 @@ entities: ["[[Cadencia]]"]
 - **Issues:** CAD-570, CAD-571, CAD-573, CAD-613, CAD-642
 
 ## O que é
-Sistema de tabela estilo Linear/Notion para as listas de **Contatos** e **Empresas** do CRM nativo do Cadência (substitui o antigo embed white-label do GHL). Contatos é a fonte canônica dos componentes; Empresas reusa tudo.
+Sistema de tabela estilo Linear/Notion para as listas de **Contatos** e **Empresas** do CRM nativo do Cadência. Contatos é a fonte canônica dos componentes; Empresas reusa tudo.
 
 ## Para que serve
 Dar ao cliente uma lista rica e configurável: filtrar, escolher/reordenar/redimensionar colunas, alternar Lista/Board, agrupar (colunas + swimlanes), salvar visualizações, editar inline e carregar em lotes — sem sair da tela.

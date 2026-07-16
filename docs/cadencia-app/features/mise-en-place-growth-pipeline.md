@@ -1,10 +1,6 @@
-> **📄 Cópia local — fonte de verdade no GitHub.**
-> Origem: [`felipeluissalgueiro/cadencia-app` / `master` / `docs/features/mise-en-place-growth-pipeline.md`](https://github.com/felipeluissalgueiro/cadencia-app/blob/master/docs/features/mise-en-place-growth-pipeline.md)
-> Sincronizado via `sync_cadencia_docs.py` em 2026-05-29 (PDL-342).
-
----
-
 # Mise en place — Growth Pipeline completo (CertaDoc demo 28/04)
+
+> **ARQUIVO HISTORICO / LEGADO.** Preservado como memoria tecnica; nao descreve o runtime atual e nao deve ser usado como runbook operacional.
 
 **Data:** 2026-04-25
 **Demo:** 2026-04-28 (Fabiano / CertaDoc)

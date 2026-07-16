@@ -1,9 +1,3 @@
-> **📄 Cópia local — fonte de verdade no GitHub.**
-> Origem: [`Posicionamento-Digital/cadencia-growth` / `main` / `docs/growth-pipeline-runner.md`](https://github.com/Posicionamento-Digital/cadencia-growth/blob/main/docs/growth-pipeline-runner.md)
-> Sincronizar via `/documentar` ou `sync_to_framework.py`.
-
----
-
 # growth-pipeline-runner — cron diário + trigger on-demand
 
 ## TL;DR
@@ -33,7 +27,7 @@
 - **Porta:** 39090 (reboot automático via @reboot cron)
 - Endpoints: `POST /trigger`, `POST /provision`, `POST /newsletter`, `GET /status`
 - `/trigger` executa em thread separada: sync → blog → seinfeld `--generate` → linkedin → instagram
-- Newsletter **explicitamente pulada** no trigger on-demand (só roda pelo cron sexta)
+- Newsletter **explicitamente pulada** no trigger on-demand (só roda pelo cron sexta); se `channels` incluir `newsletter`, o 202 devolve `warnings` avisando o motivo (DEV-496/G002) — antes ficava silencioso
 - Se blog falha → abort (não roda seinfeld/linkedin com conteúdo stale)
 
 ## Fluxo carrossel/reels (NÃO passa aqui)
@@ -50,6 +44,10 @@ VPS: recebe APENAS blog/seinfeld/linkedin/instagram
 - G005: processa TODOS os tenants — sem filtro onboarding_completed
 - G006: trial/essencial não recebem seinfeld, só 2x/sem os outros
 - Newsletter nunca roda no trigger on-demand (G002)
+- **Gate por provider (DEV-1040):** o runner valida somente a configuração do
+  canal solicitado. Email/newsletter usam Resend e contatos do CRM; LinkedIn e
+  Instagram usam suas integrações próprias. Espelha o gate de
+  `trigger-generation/route.ts` (cadencia-app).
 
 ---
 
@@ -104,5 +102,4 @@ VPS: recebe APENAS blog/seinfeld/linkedin/instagram
 - [linkedin-generation](linkedin-generation.md)
 - [blog-instagram-gen](blog-instagram-gen.md)
 - [scoring-leads](scoring-leads.md)
-- [provisioning-ghl](provisioning-ghl.md)
-- ADRs: [0004 Railway/VPS](https://github.com/felipeluissalgueiro/cadencia-app/blob/master/docs/adr/0004-carrossel-railway-resto-vps.md), [0005 location_pit_token](https://github.com/felipeluissalgueiro/cadencia-app/blob/master/docs/adr/0005-location-pit-token-por-tenant.md)
+- ADR: [0004 Railway/VPS](https://github.com/felipeluissalgueiro/cadencia-app/blob/master/docs/adr/0004-carrossel-railway-resto-vps.md)

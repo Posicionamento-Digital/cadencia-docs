@@ -7,6 +7,11 @@ entities: ["[[Cadencia-Growth]]", "[[Cadencia]]", "[[marketing]]"]
 ---
 # VPS Master — Projetos em /opt/
 
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
+
+
+
+
 > Todos os projetos em `/opt/` têm dono `master`. Acesso: `ssh vps-master` → arquivos em `/opt/<projeto>/`.
 
 ---
@@ -182,9 +187,13 @@ docker logs lara-ceilandia --tail 100 -f
 
 ```bash
 # Rodar manualmente
+
+
 sudo /opt/scripts/monitor-vps.sh
 
 # Ver últimas entradas do log
+
+
 tail -20 /var/log/monitor-vps.log
 ```
 

@@ -1,9 +1,3 @@
-> **📄 Cópia local — fonte de verdade no GitHub.**
-> Origem: [`felipeluissalgueiro/cadencia-app` / `master` / `supabase/CLAUDE.md`](https://github.com/felipeluissalgueiro/cadencia-app/blob/master/supabase/CLAUDE.md)
-> Sincronizar via `/documentar` ou `sync_to_framework.py`.
-
----
-
 # supabase-schema — banco de dados (55 tabelas PostgreSQL)
 
 ## TL;DR
@@ -25,7 +19,7 @@ PostgreSQL via Supabase Cloud. 55 tabelas com RLS. Project ref: `elefbabxkaigusj
 | `tenants` | Tenant cadastrado (slug, nome, status) |
 | `users` | Tabela pública de usuários (FK para `auth.users`) |
 | `user_tenant_roles` | Roles por tenant (owner, admin, member) |
-| `tenant_config` | JSON config por tenant (GHL tokens, visual, flags, SOUL) |
+| `tenant_config` | JSON config por tenant (email, visual, flags, SOUL) |
 | `tenant_plans` | Planos e créditos por tenant (pode ter múltiplos ativos) |
 | `tenant_onboarding` | Fase atual do onboarding |
 | `tenant_dossier` | Dossier de marca gerado pelos workers |
@@ -39,7 +33,6 @@ PostgreSQL via Supabase Cloud. 55 tabelas com RLS. Project ref: `elefbabxkaigusj
 | `tenant_themes` | Cache do theme engine por tenant |
 | `style_configs` | Configurações visuais por Big5 + signaling |
 | `scoring_events` | Log de eventos de scoring (fire-and-forget) |
-| `ghl_agency_oauth` | Token OAuth da agência GHL (company-level) — 1 registro |
 | `api_call_logs` | Log de chamadas LLM (custo tracking) |
 
 ## Acesso

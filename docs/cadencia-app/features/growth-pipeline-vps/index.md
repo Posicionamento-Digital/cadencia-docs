@@ -1,16 +1,12 @@
-> **📄 Cópia local — fonte de verdade no GitHub.**
-> Origem: [`felipeluissalgueiro/cadencia-app` / `master` / `docs/features/growth-pipeline-vps/index.md`](https://github.com/felipeluissalgueiro/cadencia-app/blob/master/docs/features/growth-pipeline-vps/index.md)
-> Sincronizado via `sync_cadencia_docs.py` em 2026-05-29 (PDL-342).
-
----
-
 # Growth Pipeline VPS — Geração Multi-Canal
 
-**Tipo:** Backend Python (VPS Hostinger)  
-**Path na VPS:** `/cadencia/pipeline/`  
-**Path no repo:** `cadencia-growth/pipeline/`  
-**Status:** Ativo em produção  
-**Porta do trigger server:** `39090` (UFW aberta)  
+> **ARQUIVO HISTORICO / LEGADO.** Preservado como memoria tecnica; nao descreve o runtime atual e nao deve ser usado como runbook operacional.
+
+**Tipo:** Backend Python (VPS Hostinger)
+**Path na VPS:** `/cadencia/pipeline/`
+**Path no repo:** repo canônico `Posicionamento-Digital/cadencia-growth`, dir `pipeline/`
+**Status:** Ativo em produção
+**Porta do trigger server:** `39090` (UFW aberta)
 **Atualizado em:** 15/05/2026 (PDL-67/87/89/90/91)
 
 ---
@@ -46,7 +42,7 @@ Crontab VPS (automático — sem trigger manual)
 
 ## trigger_server.py
 
-**Porta:** `39090` | **PID:** via `ps aux | grep trigger_server`  
+**Porta:** `39090` | **PID:** via `ps aux | grep trigger_server`
 **Processo:** `nohup python3 /cadencia/pipeline/trigger_server.py >> /cadencia/logs/trigger_server.log 2>&1 &`
 
 ### Endpoints

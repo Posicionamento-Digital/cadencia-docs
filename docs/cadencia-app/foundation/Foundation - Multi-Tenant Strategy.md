@@ -18,7 +18,7 @@ entities: ["[[Cadencia]]", "[[Karina Vieira]]", "[[marketing]]"]
 
 **Cada tenant é uma marca independente** com:
 - Dados isolados (RLS Supabase + storage segregado)
-- CRM próprio (subconta GHL brancada)
+- CRM nativo com contatos, empresas, oportunidades, pipelines e cadências
 - Blog próprio (instância Vercel do template)
 - Identidade visual própria (VI gerado por tenant)
 - Dossiê de marca próprio (Big5 + DPR + Kane + Archetypes)
@@ -64,13 +64,14 @@ CREATE POLICY "tenant_isolation" ON public.<tabela>
 - Multi-conta agência (PDL-100 — Todo): um login → N tenants (futuro)
 - Onboarding personalizado por Felipe pra clientes de agência (PDL-101 — Done)
 
-### 4. CRM — GHL subconta brancada
+### 4. CRM e comunicação por tenant
 
-- **Cada tenant tem subconta GHL própria** (criada no onboarding)
-- Felipe/equipe não acessam diretamente a subconta — automação via API
-- Email, WhatsApp, Social Planner isolados por subconta
-- **Bug ativo PDL-202** (P1): subconta GHL não criada no onboarding tenant
-- **Pendência PDL-25:** migração OAuth nova agência GHL
+- Contatos, empresas, oportunidades, pipelines, tags e cadências vivem no Supabase.
+- Toda leitura e escrita inclui `tenant_id`; RLS protege os paths de usuário.
+- Email usa domínio e sender Resend por tenant, com eventos validados via Svix.
+- WhatsApp usa uma instância Evolution vinculada ao tenant e operada pela Lara.
+- Canais sociais usam integrações próprias e preservam o mesmo escopo de tenant.
+- Provisioning parcial é idempotente e registra cada recurso criado.
 
 ### 5. Blog — Vercel template multi-tenant
 
@@ -104,7 +105,7 @@ CREATE POLICY "tenant_isolation" ON public.<tabela>
 ### A) Onboarding default (Tour RPG 12 steps)
 
 - Tenant self-service via `(onboarding)/` no frontend
-- Magic link → preenchimento guiado → provisioning automático (subconta GHL + blog Vercel + identity visual + dossier)
+- Magic link → preenchimento guiado → provisioning automático (CRM, email, blog Vercel, identidade visual e dossiê)
 - Usado por: clientes que entram via marketing direto
 
 ### B) White-glove agência (skill `/criar-tenant-agencia`)
@@ -170,7 +171,7 @@ CREATE POLICY "tenant_isolation" ON public.<tabela>
 - PDL-162 In Progress — validar economia CPU pós-deploy
 
 **Custos operacionais (Visão Produto):**
-- ~$10-25/tenant/mês infra (GHL incluído ~$97 plano agência, OpenAI $5-15, Gemini $2-5, Supabase $0-5, Vercel free)
+- O custo por tenant combina uso de LLMs, Resend, Supabase, Vercel, storage e canais contratados.
 - Custo por carrossel: $0.15-$0.25
 
 ---

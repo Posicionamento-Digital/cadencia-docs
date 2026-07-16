@@ -3,7 +3,12 @@ date: 2026-05-19
 tags: [documentacao, recovery, hetzner]
 moc: "[[MOC-Projetos]]"
 ---
+
+
 # 01 — Documentação da Recuperação
+
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
+
 
 ## O que é
 Registros da operação: comunicações com Hetzner, inventário dos dados capturados, credenciais e reconhecimento dos servidores.

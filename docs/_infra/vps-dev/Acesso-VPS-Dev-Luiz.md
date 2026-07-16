@@ -127,7 +127,6 @@ op item get "Nome da Key" --fields credential
 
 # Exemplos:
 op item get "Anthropic API Key" --fields credential
-op item get "GHL - Agency API Key" --fields credential
 op item get "Supabase - gci-go" --fields credential
 ```
 

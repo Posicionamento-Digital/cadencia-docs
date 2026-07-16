@@ -1,13 +1,18 @@
 ---
 type: source
 source_kind: decisao
-date: 
+date:
 entities: ["[[Cadencia]]", "[[Iasmin Lopes Pinto]]", "[[PD Framework]]", "[[comercial]]", "[[dev]]", "[[marketing]]"]
 tags: [decisao, wiki-backfill]
 moc: "[[MOC-Projetos]]"
 generated: wiki-backfill
 ---
+
+
 # Decisões — dev-vitor-memory
+
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
+
 
 # Decisões — Squad Vitor
 
@@ -28,6 +33,8 @@ generated: wiki-backfill
 **Quem decidiu:** Vitor (gate) + Felipe (aprovou plano).
 
 ---
+
+
 
 ## 2026-07-06 — DEV-1201: isolamento de sessões concorrentes por worktree
 
@@ -71,6 +78,8 @@ generated: wiki-backfill
 
 ---
 
+
+
 ## 2026-07-01 — Gate técnico "Cadencia: Gestão de Tráfego" (DEV-1046 a DEV-1052)
 
 **Contexto:** PRD de nova feature multi-tenant do Cadencia (aba "Gestão de Tráfego", tenant piloto Iasmin Lopes Pinto/Agência Brokers), portando a engine de Meta Ads já validada em produção na conta própria da Cadencia (`/pd-marketing/.claude/scripts/meta-ads/`, VPS Master). PRD original (Paloma) tratava isso como "adaptação" — gate técnico encontrou 3 riscos subestimados.
@@ -110,6 +119,8 @@ generated: wiki-backfill
 **Próximo passo natural:** DEV-910 (deploy VPS Dev) + DEV-889 (paridade real cross-runtime, depende do Felipe rodar nos 2 runtimes).
 
 ---
+
+
 
 ## 2026-06-27 — CLAUDE.md vs AGENTS.md: não duplicar por squad (decisão Felipe)
 
@@ -153,6 +164,8 @@ generated: wiki-backfill
 **DEV-888 (low risk):** pode fechar como Done direto — C7 stub + O1 soft não quebra contrato.
 
 ---
+
+
 
 ## 2026-06-27 — DEV-886 gate Vitor + claude-review inline (fechamento)
 
@@ -207,6 +220,8 @@ Invariantes do contrato (C3-C6) auditados linha-a-linha:
 
 ---
 
+
+
 ## 2026-06-26 — Runtime-Agnosticismo: gate do PRD + fatiamento em 7 Epics (DEV-883→889)
 
 **Contexto:** etapa "Runtime-Agnosticismo & Adapter OpenCode" do projeto guarda-chuva PD Framework (`7c31c484`). PRD pela Paloma (`times/dev/context/prd-runtime-agnostico.md` + Linear Document `4729d90f8743`). Continuação de DEV-869 (F0 Done). Gate do PRD + derivação de Epics.
@@ -250,6 +265,8 @@ Invariantes do contrato (C3-C6) auditados linha-a-linha:
 
 ---
 
+
+
 ## 2026-06-26 — DEV-873: Client Activity Logger — fonte única = Linear, não JSONL local
 
 **Contexto:** plano técnico do logger (Passo 0 do DEV-868). O logger é chamado de **múltiplos hosts**: Felipe local (Windows) via `/log-sessao`, VPS Dev, VPS Master (workers/consumer). O digest (DEV-881) roda só na Master.
@@ -289,6 +306,8 @@ Invariantes do contrato (C3-C6) auditados linha-a-linha:
 
 ---
 
+
+
 ## 2026-06-10 — generation_queue: semântica única + dedupe como invariante (PDL-171)
 
 **Contexto:** `generation_queue` operava com 2 semânticas na mesma tabela — fila de jobs do Railway (carrossel, consumida por `queue_id`) e bookkeeping de aprovação multi-canal do frontend (rows com `channels[]`, sem consumidor). Resultado: órfãs `pending` acumulando, cron da VPS consumindo rows alheias e gerando blog duplicado em prod (3 pares confirmados no tenant felipe-salgueiro), drift de schema desde abril.
@@ -317,6 +336,8 @@ Squad Vitor criado como parte do bootstrap do Time Dev. Sem decisões arquitetur
 
 
 ---
+
+
 
 ## 2026-06-05 — `/encerrar-sessao` como porta única de saída + hook checkout-warning (PDL-422)
 
@@ -357,6 +378,8 @@ Squad Vitor criado como parte do bootstrap do Time Dev. Sem decisões arquitetur
 **Plano completo:** `times/produto/cadencia/context/plano-PDL-28.md`
 
 ---
+
+
 
 ## 2026-07-02 — Gestão de Tráfego: adendo do gate de 01/07 REVOGADO — credencial Meta Ads via Composio
 

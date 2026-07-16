@@ -48,7 +48,7 @@ entities: ["[[Cadencia]]", "[[marketing]]"]
 - Sentry (errors externos)
 - Mixpanel/PostHog/GA4 (analytics — duplicação esperada)
 - Stripe (transações com source of truth próprio)
-- GHL (CRM brancado é externo por design)
+- Resend, Stripe e providers de canal (cada um é fonte de verdade dos próprios eventos externos)
 
 ---
 
@@ -68,23 +68,23 @@ entities: ["[[Cadencia]]", "[[marketing]]"]
 
 ---
 
-## 4. GHL como CRM/email/WhatsApp/Social Planner brancado
+## 4. CRM nativo e provider por canal
 
-**Princípio:** não construir CRM próprio. GHL é motor invisível embutido.
+**Princípio:** o CRM Cadência é a fonte de verdade; cada canal usa uma integração especializada atrás de contratos próprios.
 
-**Por quê:** GHL cobre CRM + email + WhatsApp + Social Planner + workflows num produto maduro. Construir do zero gastaria ano-equipe sem entregar mais valor. GHL plano agência permite N subcontas (~$97/mês incluso).
+**Por quê:** contatos, empresas, oportunidades, pipelines, tags, scoring e cadências precisam compartilhar o mesmo modelo multi-tenant e as mesmas garantias de RLS. Email, WhatsApp e publicação social têm requisitos externos diferentes e evoluem sem reescrever o CRM.
 
 **Como aplicar:**
-- CRM → GHL subconta por tenant
-- Email transacional + marketing → GHL Workflows
-- WhatsApp broadcast/atendimento → GHL
-- Social Planner (Instagram pub) → GHL
-- Tenant nunca sabe que existe GHL — UI Cadência abstrai 100%
+- CRM e cadências → Supabase PostgreSQL
+- Email transacional e marketing → Resend, com eventos Svix
+- WhatsApp e agenda → Lara/Evolution, sempre por tenant
+- Social → provider específico do canal
+- Estado só avança depois da confirmação do writer ou provider
 
 **Anti-padrões:**
-- ❌ Expor "GoHighLevel" na UI
-- ❌ Tentar substituir GHL por código próprio sem ADR
-- ❌ Sincronizar dados redundantemente entre Cadência e GHL — usar GHL como cache do que faz sentido
+- ❌ Duplicar o estado canônico do CRM em um provider
+- ❌ Usar credencial, sender ou instância global como fallback entre tenants
+- ❌ Marcar envio, publicação ou etapa como concluída antes da confirmação externa
 
 ---
 

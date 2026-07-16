@@ -1,9 +1,3 @@
-> **📄 Cópia local — fonte de verdade no GitHub.**
-> Origem: [`felipeluissalgueiro/cadencia-app` / `master` / `cadencia-workers/src/workers/rag-memory/CLAUDE.md`](https://github.com/felipeluissalgueiro/cadencia-app/blob/master/cadencia-workers/src/workers/rag-memory/CLAUDE.md)
-> Sincronizar via `/documentar` ou `sync_to_framework.py`.
-
----
-
 # rag-memory — RAG, memória de agente e refresh de tokens
 
 ## TL;DR
@@ -54,7 +48,7 @@ Renova `instagram_access_token` e outros tokens OAuth antes de expirar. Chamado 
 
 - **Não** indexar conteúdo de outro tenant no namespace errado.
 - **Não** logar embeddings em texto claro — dados de marca confidenciais.
-- **Não** ignorar TTL de refresh — tokens GHL expiram silenciosamente.
+- **Não** ignorar TTL de refresh de integrações externas; renovar antes da expiração.
 
 ## 🪦 Já tentamos
 

@@ -5,6 +5,11 @@ moc: "[[MOC-Projetos]]"
 type: source
 entities: ["[[Cadencia-Growth]]", "[[Cadencia]]", "[[marketing]]"]
 ---
+
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
+
+
+
 ## Identidade
 - **Tipo:** feature Growth — scoring de leads
 - **Stack:** Python 3.12, HTTPServer, GHL API

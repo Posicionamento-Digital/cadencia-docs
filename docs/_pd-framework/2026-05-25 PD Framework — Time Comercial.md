@@ -6,6 +6,11 @@ moc: "[[MOC-IA-Tecnologia]]"
 
 # PD Framework — Time Comercial
 
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
+
+
+
+
 > Documentação humana do bootstrap. Fonte canônica: `pd-framework/times/comercial/`
 > Linear: [PDL-262](https://linear.app/posicionamento-digital/issue/PDL-262) (bootstrap) · [PDL-263](https://linear.app/posicionamento-digital/issue/PDL-263) (Blueprint Sistema Comercial PD) · [PDL-264](https://linear.app/posicionamento-digital/issue/PDL-264) (Implementação Fase 1)
 > Commits: `a5f7eed` (bootstrap) · `6eace35` (comercial-debate + PERSONAS + Linear issues) · `bc17810` (confirmação inspirações)

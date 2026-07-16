@@ -5,7 +5,12 @@ moc: "[[MOC-Projetos]]"
 type: source
 entities: ["[[ecuro-mcp]]"]
 ---
+
+
 # 02 — Código-Fonte Recuperado
+
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
+
 
 ## O que é
 11 projetos GitHub clonados da conta `creeai` (Jhonatan) em 11/05/2026.

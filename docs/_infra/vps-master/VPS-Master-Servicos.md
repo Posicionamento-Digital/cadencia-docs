@@ -7,6 +7,11 @@ entities: ["[[Cadencia]]", "[[marketing]]"]
 ---
 # VPS Master — Serviços, Containers e Crons
 
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
+
+
+
+
 ---
 
 ## Containers Docker em execução
@@ -118,9 +123,13 @@ Recebe webhooks de scoring do sistema Cadência. Porta 8766.
 
 ```bash
 # Status
+
+
 sudo systemctl status cadencia-webhook.service
 
 # Logs
+
+
 sudo journalctl -u cadencia-webhook.service -f
 ```
 
@@ -206,27 +215,43 @@ Log: `/var/log/monitor-vps.log`
 
 ```bash
 # Ver todos os containers
+
+
 docker ps --format 'table {{.Names}}\t{{.Status}}\t{{.Ports}}'
 
 # Logs de um container
+
+
 docker logs <nome> --tail 100 -f
 
 # Reiniciar um container (com cuidado)
+
+
 docker restart <nome>
 
 # Ver consumo de recursos
+
+
 docker stats --no-stream
 
 # Ver logs do sistema
+
+
 sudo journalctl -f
 
 # Verificar crons do root
+
+
 sudo crontab -l
 
 # Verificar crons do master
+
+
 crontab -l
 
 # Status dos serviços systemd
+
+
 systemctl list-units --type=service --state=running
 ```
 

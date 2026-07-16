@@ -7,6 +7,11 @@ entities: ["[[Cadencia]]"]
 ---
 # Brief — prod: Cadência — Roadmap
 
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
+
+
+
+
 **Projeto Linear:** https://linear.app/posicionamento-digital/project/prod-cadencia-roadmap-6475d91c6139
 **Atualizado em:** 2026-05-16
 **Preenchido por:** Felipe

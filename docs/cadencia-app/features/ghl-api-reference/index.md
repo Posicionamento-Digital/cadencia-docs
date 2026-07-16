@@ -1,10 +1,6 @@
-> **📄 Cópia local — fonte de verdade no GitHub.**
-> Origem: [`felipeluissalgueiro/cadencia-app` / `master` / `docs/features/ghl-api-reference/index.md`](https://github.com/felipeluissalgueiro/cadencia-app/blob/master/docs/features/ghl-api-reference/index.md)
-> Sincronizado via `sync_cadencia_docs.py` em 2026-05-29 (PDL-342).
-
----
-
 # GHL API — Referência técnica verificada
+
+> **ARQUIVO HISTORICO / LEGADO.** Preservado como memoria tecnica; nao descreve o runtime atual e nao deve ser usado como runbook operacional.
 
 Base URL: `https://services.leadconnectorhq.com`
 API Version header: `Version: 2021-07-28`

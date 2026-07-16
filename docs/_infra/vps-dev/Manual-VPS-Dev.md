@@ -66,7 +66,6 @@ op item get "Nome da credencial" --fields credential
 Exemplos:
 ```bash
 op item get "Anthropic API Key" --fields credential
-op item get "GHL - API Key PD" --fields credential
 ```
 
 Você nunca vê as credenciais diretamente no código — sempre via `op`. Felipe adiciona novos itens no vault conforme você precisar.

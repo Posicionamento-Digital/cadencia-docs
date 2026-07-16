@@ -11,7 +11,7 @@ Plataforma de automação low-code usada pela PD para orquestrar workflows de at
 
 Instância self-hosted do N8N onde rodam os workflows que conectam:
 - Agentes de IA (Lara, SDR, confirmação) ↔ WhatsApp (via HUB|PD)
-- GHL ↔ sistemas dos clientes (Ecuro, planilhas, CRMs)
+- CRM Cadencia ↔ sistemas dos clientes (Ecuro, planilhas, CRMs)
 - Notificações internas da equipe
 - Integrações com APIs externas (Apollo, Meta, etc.)
 

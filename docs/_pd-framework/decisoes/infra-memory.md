@@ -1,13 +1,18 @@
 ---
 type: source
 source_kind: decisao
-date: 
+date:
 entities: ["[[Cadencia-Growth]]", "[[Cadencia]]", "[[comercial]]", "[[infra]]", "[[marketing]]"]
 tags: [decisao, wiki-backfill]
 moc: "[[MOC-Projetos]]"
 generated: wiki-backfill
 ---
+
+
 # Decisões — infra-memory
+
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
+
 
 # Decisões — Squad Infra
 
@@ -77,6 +82,8 @@ Append-only. Mais recente em cima.
 
 ---
 
+
+
 ## 2026-06-29 — Health check: notificar resolução (loop fechado) + canal por tipo de evento
 
 **Contexto:** o watchdog avisava quando um crítico caía (🟢→🔴), mas a recuperação (🔴→🟢) era silenciosa — só zerava o state. Felipe pediu ser avisado também quando algo se resolve. Investigação paralela: o digest de 28/06 acusou `cadencia-webhook` como CRÍTICO, mas o serviço foi aposentado de propósito (envios migraram p/ Resend); e o `HealthCheck-Digest` se auto-acusava por causa do código `267009`.
@@ -110,6 +117,8 @@ Append-only. Mais recente em cima.
 **Quem decidiu:** Felipe.
 
 ---
+
+
 
 ## 2026-06-24 — Health check de automatismos na VPS Master (24/7) + auto-correção autônoma
 
@@ -151,6 +160,8 @@ Append-only. Mais recente em cima.
 
 ---
 
+
+
 ## 2026-06-09 — Projeto Linear dedicado "Infraestrutura — VPS, Monitoramento & Deploy" criado
 
 **Contexto:** Antes desta sessão, issues de infra ficavam dispersas sem projeto dedicado. PDL-440 estava no backlog geral sem agrupamento.
@@ -176,6 +187,8 @@ Append-only. Mais recente em cima.
 **Quem decidiu:** Felipe.
 
 ---
+
+
 
 ## 2026-06-05 — vault-watcher: watchdog local para Obsidian Sync
 
@@ -222,6 +235,8 @@ Append-only. Mais recente em cima.
 
 ---
 
+
+
 ## 2026-05-25 — Squad Infra bootstrap + ALLOWLIST inicial
 
 **Contexto:** Fase 2 PDL-226 — primeiro squad operacional populado. Webhook v2 já existia em produção, faltava enquadrar no framework + ALLOWLIST formal pra runbook-executor (PDL-223 Fase 4).
@@ -264,6 +279,8 @@ Append-only. Mais recente em cima.
 **Quem decidiu:** Felipe.
 
 ---
+
+
 
 ## 2026-05-24 — Webhook v2 reconfigurado
 

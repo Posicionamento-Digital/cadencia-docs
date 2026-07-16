@@ -5,6 +5,8 @@ tags: [gci-go, documentacao, tecnico, lara, agendamento, ecuro]
 
 # Docs — GCI-GO
 
+> **ARQUIVO HISTÓRICO.** Registro do projeto encerrado; não representa a stack operacional atual da Cadencia.
+
 Documentação técnica da implementação de IA para o **Grupo GCI — clínicas odontológicas em Goiás**.
 
 ## O que fica aqui

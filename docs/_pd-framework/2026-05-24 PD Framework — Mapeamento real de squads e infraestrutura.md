@@ -6,6 +6,11 @@ moc: "[[MOC-IA-Tecnologia]]"
 
 # PD Framework — Mapeamento Real de Squads e Infraestrutura
 
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
+
+
+
+
 > Levantamento feito em 24/05/2026. Varreu GitHub personal + corporate, VPS Master, VPS Dev, Hub Projetos local, Time PD vault, Linear, Vercel, Railway.
 > Complementa: [[IA-Tecnologia/2026-05-24 PD Framework — Arquitetura completa e mapeamento de stack]]
 

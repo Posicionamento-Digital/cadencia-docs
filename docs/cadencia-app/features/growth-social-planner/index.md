@@ -1,10 +1,6 @@
-> **📄 Cópia local — fonte de verdade no GitHub.**
-> Origem: [`felipeluissalgueiro/cadencia-app` / `master` / `docs/features/growth-social-planner/index.md`](https://github.com/felipeluissalgueiro/cadencia-app/blob/master/docs/features/growth-social-planner/index.md)
-> Sincronizado via `sync_cadencia_docs.py` em 2026-05-29 (PDL-342).
-
----
-
 # Feature: Growth Social Planner (LinkedIn / Carrossel Instagram)
+
+> **ARQUIVO HISTORICO / LEGADO.** Preservado como memoria tecnica; nao descreve o runtime atual e nao deve ser usado como runbook operacional.
 
 Agendamento de posts no GHL Social Planner via API.
 

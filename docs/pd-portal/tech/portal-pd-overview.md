@@ -26,8 +26,8 @@ Centralizar a entrega de conteudo para clientes da PD. Substitui envio por Whats
 - [[skills-portal]] - 5 skills de gestao
 
 ## Fluxo de onboarding de tenant
-1. Felipe roda /portal-setup-tenant <ghl_contact_id>
-2. Skill busca dados no GHL, cria pasta no repo, cria usuario Supabase
+1. Felipe roda `/portal-setup-tenant <cadencia_contact_id>`
+2. Skill busca dados no CRM Cadencia, cria pasta no repo e cria usuario Supabase
 3. Felipe roda /portal-wiki para publicar notas do Obsidian
 4. Felipe roda /portal-arquivos para upload de planilhas
 5. Portal no ar para o cliente

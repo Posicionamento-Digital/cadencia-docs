@@ -12,7 +12,7 @@ Processo completo de onboarding de novos clientes da PD, do fechamento do contra
 - Checklist de onboarding completo (etapas, responsáveis, prazos)
 - Template de kickoff (pauta, o que levar, o que definir)
 - Timeline padrão por tipo de produto
-- Como criar o ambiente do cliente no GHL
+- Como provisionar o tenant no CRM Cadencia
 - Como configurar instâncias WhatsApp no HUB|PD
 - Critérios de conclusão de onboarding (definition of done)
 
@@ -21,7 +21,7 @@ Processo completo de onboarding de novos clientes da PD, do fechamento do contra
 | Produto | Prazo até go-live |
 |---|---|
 | Agente de atendimento simples | 2 semanas |
-| CRM + automações GHL | 4 semanas |
+| CRM Cadencia + automações | 4 semanas |
 | SDR com IA + acompanhamento | 4 semanas |
 | Pacote completo (CRM + IA + CS) | 6 semanas |
 

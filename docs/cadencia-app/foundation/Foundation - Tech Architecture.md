@@ -30,9 +30,11 @@ entities: ["[[Cadencia-Growth]]", "[[Cadencia]]", "[[marketing]]"]
    [OpenAI]   [Gemini]   [Playwright]
    conteúdo   capas      HTML→PNG
                     ↓
-             [GHL (brancado)]
-             CRM + email + WhatsApp + Social Planner
-                    ↓
+        ┌──────────┼──────────┐
+        ↓          ↓          ↓
+ [Resend/Svix] [Lara/Evolution] [Providers sociais]
+        └──────────┼──────────┘
+                   ↓
              [Blog Vercel por tenant (cadencia-blog-template)]
                     ↓
         ┌──────────┴──────────┐
@@ -75,9 +77,9 @@ entities: ["[[Cadencia-Growth]]", "[[Cadencia]]", "[[marketing]]"]
 - `onboarding/` — fluxo onboarding
 - `stevo/` — integração WhatsApp Stevo (multi-tenant)
 - `v1/` — endpoints versionados
-- `webhooks/` — webhooks externos (Stripe, GHL, Asaas legacy)
+- `webhooks/` — webhooks externos ativos, incluindo Stripe
 
-**Lib (`src/lib/`):** analytics, animations, api, ghl, ghl-oauth, instagram, meta-pixel, mixpanel, plans, posthog, stripe, supabase, utm
+**Lib (`src/lib/`):** analytics, animations, api, instagram, meta-pixel, mixpanel, plans, posthog, stripe, supabase, utm
 
 **Deploy:** push `main` → Vercel build automático.
 
@@ -111,7 +113,7 @@ entities: ["[[Cadencia-Growth]]", "[[Cadencia]]", "[[marketing]]"]
 
 **Templates:** 7 famílias HTML (action / editorial / engagement / narrative / proof / statement / structured) + 29 modelos YAML.
 
-**Integrations:** `asaas/` (legacy), `ghl/`, `llm/`, `pexels.py`, `supabase.py`.
+**Integrations:** `asaas/` (legacy), `llm/`, `pexels.py`, `supabase.py`.
 
 **Tests:** orchestrator, slide_renderer, model_selector, cover_generation, llm_client, carousel_agent, model_config, nuclear_coverage, health + `visual/`.
 
@@ -138,7 +140,7 @@ entities: ["[[Cadencia-Growth]]", "[[Cadencia]]", "[[marketing]]"]
 
 **Scoring (`scoring/`):**
 - `cadencia-webhook.service` (systemd unit)
-- `webhook_handler.py` — eventos GHL → lead scoring (+2/+5/+8/+20)
+- `resend_webhook.py` — eventos Resend/Svix → lead scoring e supressão
 
 **Migrações Supabase (`migrations/`):**
 - `001_seinfeld_scheduled_at.sql` (única hoje)
@@ -159,12 +161,13 @@ entities: ["[[Cadencia-Growth]]", "[[Cadencia]]", "[[marketing]]"]
 
 ---
 
-## CRM brancado — GHL (GoHighLevel)
+## CRM e canais nativos
 
-- **Motor invisível** — usuário NUNCA sabe que existe GHL por baixo
-- Cada tenant tem **subconta GHL** (provisionada no onboarding — bug ativo PDL-202)
-- Email, WhatsApp, Social Planner via GHL
-- OAuth: migração para nova agência pendente PDL-25 (aguardando Felipe)
+- Supabase é a fonte de verdade para contatos, empresas, oportunidades, pipelines, tags, scoring e cadências.
+- Resend envia email transacional e de marketing; Svix autentica os eventos recebidos.
+- Lara integra WhatsApp por instância Evolution e expõe agenda e tools com escopo de tenant.
+- Publicação social usa o provider específico de cada canal.
+- Estado compartilhado só muda após confirmação do writer ou provider responsável.
 
 ---
 

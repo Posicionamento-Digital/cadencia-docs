@@ -3,7 +3,12 @@ date: 2026-05-14
 tags: [skill, gestao, linear, github, dev, ia, tecnologia, automacao]
 moc: "[[MOC-Skills]]"
 ---
+
+
 # Start Issue
+
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
+
 
 Lista issues do Linear atribuídas no ciclo atual, faz checkout da branch correspondente e marca como In Progress.
 
@@ -16,6 +21,8 @@ Lista issues do Linear atribuídas no ciclo atual, faz checkout da branch corres
 
 ```markdown
 ---
+
+
 name: start-issue
 description: >
   Lista issues do Linear atribuídas ao usuário no ciclo atual, faz checkout da
@@ -32,6 +39,8 @@ description: >
 - "qual minha próxima issue", "o que eu faço hoje", "começa a PDL-11"
 
 ---
+
+
 
 ## Configuração necessária
 
@@ -68,6 +77,8 @@ REPO_MAP = {
 ```
 
 ---
+
+
 
 ## Passo 1 — Carregar token e buscar issues
 
@@ -131,6 +142,8 @@ Prioridade: 1=URGENT 2=HIGH 3=MEDIUM 4=LOW
 
 ---
 
+
+
 ## Passo 3 — Detectar repo e branch
 
 ```python
@@ -151,6 +164,8 @@ git status
 ```
 
 ---
+
+
 
 ## Passo 5 — Marcar In Progress no Linear
 
@@ -179,6 +194,8 @@ Ou: /close-issue PDL-11
 ```
 
 ---
+
+
 
 ## Regras
 

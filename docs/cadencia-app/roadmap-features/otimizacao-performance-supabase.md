@@ -9,6 +9,11 @@ entities: ["[[Cadencia]]"]
 ---
 # Otimização de Performance Supabase — Cadência
 
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
+
+
+
+
 > Conjunto de mudanças que reduziu ~75% do consumo de CPU do banco e melhorou latência geral do app. Aplicado em 2026-05-19.
 
 ## Identidade

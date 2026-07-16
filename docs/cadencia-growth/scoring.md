@@ -1,32 +1,38 @@
----
-date: 2026-06-27
-tags: [doc, componente, cadencia-growth]
-moc: "[[MOC-Projetos]]"
-type: source
-entities: ["[[Cadencia-Growth]]", "[[Cadencia]]"]
----
-# cadencia-growth → scoring/
+# scoring/ — eventos Resend/Svix
 
-2 daemons HTTP recebendo webhooks externos.
+## Responsabilidade
 
-## Identidade
-- **Tipo:** daemons HTTP
-- **Stack:** Python 3.12 · http.server stdlib · svix
-- **Path:** `scoring/`
-- **Portas:** `:8766` (GHL) + `:8767` (Resend)
-- **Status:** ativo
+Receber eventos de email e atualizar score, temperatura, atribuição e supressão
+dos contatos no CRM Cadência.
 
-## Arquivos
-- `webhook_handler.py` :8766 — GHL agency webhook (EmailOpen/Click → score_ia/temperature/tags em Supabase)
-- `resend_webhook.py` :8767 — Resend Svix-signed webhook (mesmo scoring)
+## Serviço ativo
 
-## Auth
-- GHL: header signature validation
-- Resend: HMAC Svix com `RESEND_WEBHOOK_SECRET`
+| Arquivo | Porta | Função |
+|---|---|---|
+| `resend_webhook.py` | `8767` | recebe Resend/Svix, valida assinatura, deduplica e atualiza Supabase |
 
-## Don'ts
-- Não confiar payload sem validar signature
-- Não escrever direto na `contacts` fora do scoring
+O handler antigo da porta `8766` é resíduo histórico e não deve receber tráfego.
 
-## Notas Relacionadas
-[[Projetos/Cadencia-Growth/Docs/README]] · [[Projetos/Cadencia-Growth/Docs/pipeline]]
+## Fluxo
+
+1. valida assinatura Svix;
+2. deduplica por `svix-id`;
+3. normaliza opened/clicked/bounced/complained;
+4. resolve `tenant_id`, `contact_id` e `post_id` pelas tags;
+5. usa `GET /emails/{id}` como fallback de tags;
+6. atualiza `contacts` e grava `scoring_events`;
+7. responde cedo e drena trabalho no shutdown.
+
+## Regras
+
+- Sem assinatura válida, rejeitar.
+- Não confiar na ordem dos eventos.
+- Patches concorrentes precisam ser condicionais.
+- Bounce/complaint suprimem novos envios.
+- Não registrar payloads com PII desnecessária.
+
+## Testes
+
+```bash
+pytest -q tests/test_resend_webhook.py
+```

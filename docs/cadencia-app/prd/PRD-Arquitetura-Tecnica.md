@@ -5,7 +5,12 @@ moc: "[[MOC-Projetos]]"
 type: source
 entities: ["[[Cadencia]]"]
 ---
+
+
 # PRD — Arquitetura Técnica (Cadencia.app)
+
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
+
 
 ## Stack
 
@@ -41,6 +46,8 @@ Conteúdo Pronto
 
 ---
 
+
+
 ## Model Router
 
 - Config em Supabase (troca sem deploy)
@@ -59,6 +66,8 @@ Conteúdo Pronto
 - Seleção por regras determinísticas (if/else em tabela Supabase)
 
 ---
+
+
 
 ## Billing
 

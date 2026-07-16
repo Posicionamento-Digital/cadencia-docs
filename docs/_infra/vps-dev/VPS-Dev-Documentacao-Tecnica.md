@@ -120,7 +120,7 @@ export GH_TOKEN="..."
 - O Luiz nunca vê os valores — só acessa via CLI
 
 ### Vault `Hostinger VPS`
-Populate pelo Felipe com as keys que o Luiz precisa (Anthropic, GHL, Stevo, Supabase, etc.)
+Popular via 1Password com as chaves que o Luiz precisa (Anthropic, Stevo, Supabase etc.).
 
 ---
 

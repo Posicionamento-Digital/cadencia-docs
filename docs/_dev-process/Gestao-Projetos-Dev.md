@@ -5,6 +5,11 @@ moc: "[[MOC-Inbox]]"
 ---
 # Gestão de Projetos de Desenvolvimento — Time PD
 
+> **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
+
+
+
+
 Processo completo de como projetos de desenvolvimento são criados, acompanhados e entregues no time PD (Felipe + Luiz).
 
 ## Notas Relacionadas
@@ -186,8 +191,12 @@ ssh root@72.60.4.71
 cd /root/gci-go-whatsapp
 claude   # abre Claude Code
 # dentro do Claude Code:
+
+
 /start-issue PDL-58
 # ... implementa ...
+
+
 /close-issue PDL-58
 ```
 
@@ -297,17 +306,25 @@ claude
 
 ```bash
 # Ver o que mudou
+
+
 git status
 
 # Adicionar arquivos específicos (nunca git add -A)
+
+
 git add src/agents/lara.py tests/test_lara.py
 
 # Commitar
+
+
 git commit -m "feat(lara): implementar tool criar_agendamento direto
 
 Closes PDL-58"
 
 # Pushar a branch
+
+
 git push origin luiz/pdl-58-validacao-ghl-stevo-webhook-supabase
 ```
 

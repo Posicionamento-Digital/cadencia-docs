@@ -1,9 +1,3 @@
-> **📄 Cópia local — fonte de verdade no GitHub.**
-> Origem: [`felipeluissalgueiro/cadencia-app` / `master` / `docs/features/billing-stripe-ghl/README.md`](https://github.com/felipeluissalgueiro/cadencia-app/blob/master/docs/features/billing-stripe-ghl/README.md)
-> Sincronizado via `sync_cadencia_docs.py` em 2026-05-29 (PDL-342).
-
----
-
 ---
 feature: billing-stripe-ghl
 status: ✅ Produção
@@ -23,7 +17,11 @@ commits:
   - 866e27b fix(ghl): mirror funciona pra one-time payments (addons)
 ---
 
+> **ARQUIVO HISTORICO / LEGADO.** Preservado como memoria tecnica; nao descreve o runtime atual e nao deve ser usado como runbook operacional.
+
 # Billing — Stripe + Espelhamento GHL
+
+> ⚠️ **Doc pré-PDL-505 (11/06/2026).** Este doc foi escrito quando o Cadência tinha planos recorrentes via Stripe Subscription. **Isso não existe mais** — o modelo migrou pra créditos puros (só `mode: "payment"` one-time, `CREDIT_PACKS` em `plans.ts`; sem `mode: "subscription"`, sem "Essencial/Profissional/Business/Growth Pro"). Fonte única do modelo atual: `times/produto/cadencia/MODELO-CREDITOS.md` (pd-framework). As seções abaixo que mencionam "assinar plano"/`mode=subscription` descrevem o fluxo **antigo** — mantidas como referência histórica do fluxo de webhook/GHL (que em boa parte ainda se aplica), mas **não confiar na parte de planos**.
 
 ## 📍 Identidade
 
@@ -42,23 +40,23 @@ Cliente paga no Stripe → webhook do Cadencia recebe → libera créditos no Su
 
 ## 🎯 Pra que serve
 
-- Cobrar planos recorrentes do SaaS Cadencia (Essencial/Profissional/Business/Growth Pro)
-- Cobrar addons one-time (+10/+30/+60 créditos)
+- ~~Cobrar planos recorrentes do SaaS Cadencia~~ **REMOVIDO (PDL-505)** — Cadência é créditos puros, sem assinatura
+- Cobrar pacotes de créditos one-time (+10/+30/+60 créditos, `CREDIT_PACKS` em `plans.ts`)
 - Cobrar clientes B2B de consultoria (GCI GO, Nathalia, Rogéria, Alvina) com regras específicas (cancel_at, send_invoice por boleto, parcelamento)
 - Visualizar pagamentos/refunds no GHL Cadencia (CRM) sem código no GHL — webhook custom faz o trabalho
 
 ## ⚙️ Como funciona — fluxo end-to-end
 
-### Pagamento (signup, renovação, addon)
+### Pagamento (compra de créditos — fluxo atual, pós-PDL-505)
 
 ```
-[1] Cliente em /app/plans clica "Assinar Essencial"
+[1] Cliente em /app/plans clica num pacote de créditos (+10/+30/+60)
     ↓
 [2] POST /api/app/checkout
-     • Lê plano de PLANS / ADDONS (plans.ts)
+     • Lê pacote de CREDIT_PACKS (plans.ts)
      • findOrCreateCustomer(stripe) — cria/recupera Customer
      • createCheckoutSession(stripe)
-       - mode=subscription (plano) ou mode=payment (addon)
+       - mode=payment (sempre — sem subscription desde PDL-505)
        - line_items: price stripe_price_id
        - metadata: {tenant_id, plan_slug}
      • Salva stripe_customer_id em tenant_config.config
