@@ -78,6 +78,36 @@ markdown_extensions:
 nav:
   - Home: index.md
 
+  # ── COMERCIAL ─────────────────────────────────────────────────────────────
+  - Comercial:
+      - comercial/index.md
+      - Posicionamento: comercial/posicionamento.md
+      - ICP: comercial/icp.md
+      - Anti-ICP: comercial/anti-icp.md
+      - REP-G: comercial/rep-g.md
+      - Cadência 10D: comercial/cadencia-10d.md
+      - 7 Chaves — Framework Call: comercial/framework-7-chaves.md
+      - Playbook Objeções: comercial/playbook-objecoes.md
+      - Aposta de Oferta: comercial/aposta-de-oferta.md
+      - Princípios Cauduro: comercial/principios-cauduro.md
+      - Leitura de Sinais: comercial/leitura-de-sinais.md
+      - Programa Indicação: comercial/programa-indicacao.md
+      - Pipeline Structure: comercial/pipeline-structure.md
+      - Rituais Solo: comercial/rituais-solo.md
+      - Conta do Cenário: comercial/conta-do-cenario.md
+
+  # ── MARKETING ─────────────────────────────────────────────────────────────
+  - Marketing:
+      - marketing/index.md
+      - Posicionamento: marketing/posicionamento.md
+      - ICP: marketing/icp.md
+      - Anti-ICP: marketing/anti-icp.md
+      - Brand: marketing/brand.md
+      - Central de Marca: marketing/central-marca.md
+      - Narrativa: marketing/narrativa.md
+      - Método Histórias: marketing/metodo-historias.md
+      - Tom de Voz: marketing/tom-de-voz.md
+
   # ── CADENCIA (por sistema, não por repo) ──────────────────────────────────
   - Cadencia:
     - cadencia-app/README.md
