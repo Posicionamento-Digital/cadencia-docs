@@ -122,6 +122,12 @@ nav:
       - Precificação e Margens: financeiro/precificacao-margens.md
       - Reconciliação Bancária: financeiro/reconciliacao-bancaria.md
 
+  # ── OPERACIONAL ───────────────────────────────────────────────────────────
+  - Operacional:
+      - operacional/index.md
+      - RH — Contratação (AFM): operacional/rh-contratacao-afm.md
+      - Leituras — Desenho do Time: operacional/leituras-inspiracao-desenho-time.md
+
   # ── CADENCIA (por sistema, não por repo) ──────────────────────────────────
   - Cadencia:
     - cadencia-app/README.md
