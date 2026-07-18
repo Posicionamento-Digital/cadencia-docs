@@ -108,6 +108,20 @@ nav:
       - Método Histórias: marketing/metodo-historias.md
       - Tom de Voz: marketing/tom-de-voz.md
 
+  # ── FINANCEIRO ────────────────────────────────────────────────────────────
+  - Financeiro:
+      - financeiro/index.md
+      - Anti-ICP: financeiro/anti-icp.md
+      - Política Fiscal: financeiro/politica-fiscal.md
+      - NFS-e Barueri: financeiro/nfse-barueri.md
+      - DRE Structure: financeiro/dre-structure.md
+      - Ciclo de Faturamento: financeiro/ciclo-faturamento.md
+      - Integrações de Cobrança: financeiro/integracoes-cobranca.md
+      - Contratos Modelo: financeiro/contratos-modelo.md
+      - Fluxo de Caixa: financeiro/fluxo-caixa.md
+      - Precificação e Margens: financeiro/precificacao-margens.md
+      - Reconciliação Bancária: financeiro/reconciliacao-bancaria.md
+
   # ── CADENCIA (por sistema, não por repo) ──────────────────────────────────
   - Cadencia:
     - cadencia-app/README.md
