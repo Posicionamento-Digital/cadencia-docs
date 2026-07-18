@@ -5,6 +5,9 @@ tags: [financeiro, canon]
 
 # Contratos Modelo — PD
 
+> **Nota (2026-07-17):** Trilha **Franquia / Cadencia Gestores de IA / PD Gestores de IA** descontinuada em 2026-07. As menções abaixo ficam preservadas para referência histórica; ofertas ativas hoje são **PD Consultorias** e **Cadencia SaaS**.
+
+
 > Ponteiro pros 3 contratos modelo no Obsidian Time PD + quando usar cada.
 > **Fonte da verdade:** `Time PD/Financeiro/Contratos/`.
 

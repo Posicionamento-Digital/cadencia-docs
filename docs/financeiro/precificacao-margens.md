@@ -81,7 +81,9 @@ Churn mensal = Clientes que cancelaram no mês / Clientes ativos no início do m
 - Margem alvo: ___ %
 - Desconto máximo permitido sem aprovação: ___ %
 
-### PD Gestores de IA
+### PD Gestores de IA (descontinuado em 2026-07)
+> Trilha Franquia (Cadencia Gestores de IA / PD Gestores de IA) descontinuada em 2026-07-17. Bloco mantido para referência histórica de precificação.
+
 - Modelo: _______
 - Mensalidade: R$ _______
 - Margem alvo: ___ %

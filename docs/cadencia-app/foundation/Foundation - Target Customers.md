@@ -10,6 +10,9 @@ entities: ["[[Cadencia]]", "[[Karina Vieira]]", "[[inteligencia]]", "[[marketing
 
 # Target Customers — Cadência
 
+> **Nota (2026-07-17):** Trilha **Franquia / Cadencia Gestores de IA / PD Gestores de IA** descontinuada em 2026-07. As menções abaixo ficam preservadas para referência histórica; ofertas ativas hoje são **PD Consultorias** e **Cadencia SaaS**.
+
+
 > ICP refinado do PRODUTO Cadência. Distinto de `times/marketing/foundation/icp.md` (que é ICP PD agregado). Cadência atende a **Trilha 2 (Ferramentas IA)** do ICP PD, com perfil específico "Tiazinha Véia".
 
 ---

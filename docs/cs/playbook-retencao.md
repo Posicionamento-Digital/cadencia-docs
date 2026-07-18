@@ -5,6 +5,9 @@ tags: [cs, canon]
 
 # Playbook de Retenção — Sinais de Churn e Ações Preventivas
 
+> **Nota (2026-07-17):** Trilha **Franquia / Cadencia Gestores de IA / PD Gestores de IA** descontinuada em 2026-07. As menções abaixo ficam preservadas para referência histórica; ofertas ativas hoje são **PD Consultorias** e **Cadencia SaaS**.
+
+
 > Doc constitutivo. Identificação proativa de risco de churn + ações por sinal. Proposta-baseline 2026-05-25 — dados históricos da Cadencia ainda precisam ser consolidados pra refinar.
 
 ---

@@ -5,6 +5,9 @@ tags: [cs, canon]
 
 # Política de Expansão — Upsell, Cross-sell e Indicação
 
+> **Nota (2026-07-17):** Trilha **Franquia / Cadencia Gestores de IA / PD Gestores de IA** descontinuada em 2026-07. As menções abaixo ficam preservadas para referência histórica; ofertas ativas hoje são **PD Consultorias** e **Cadencia SaaS**.
+
+
 > Doc constitutivo. Política de expansão de receita por cliente ativo. Proposta-baseline 2026-05-25 — comissionamentos finais e critérios de handoff precisam validação Felipe.
 
 ---
