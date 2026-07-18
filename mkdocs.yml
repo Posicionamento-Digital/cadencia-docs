@@ -21,11 +21,14 @@ theme:
       primary: custom
       accent: custom
   features:
+    - navigation.tabs
+    - navigation.tabs.sticky
     - navigation.sections
     - navigation.path
     - navigation.top
     - navigation.footer
     - navigation.indexes
+    - navigation.prune
     - search.highlight
     - search.suggest
     - search.share
@@ -78,76 +81,9 @@ markdown_extensions:
 nav:
   - Home: index.md
 
-  # ── COMERCIAL ─────────────────────────────────────────────────────────────
-  - Comercial:
-      - comercial/index.md
-      - Posicionamento: comercial/posicionamento.md
-      - ICP: comercial/icp.md
-      - Anti-ICP: comercial/anti-icp.md
-      - REP-G: comercial/rep-g.md
-      - Cadência 10D: comercial/cadencia-10d.md
-      - 7 Chaves — Framework Call: comercial/framework-7-chaves.md
-      - Playbook Objeções: comercial/playbook-objecoes.md
-      - Aposta de Oferta: comercial/aposta-de-oferta.md
-      - Princípios Cauduro: comercial/principios-cauduro.md
-      - Leitura de Sinais: comercial/leitura-de-sinais.md
-      - Programa Indicação: comercial/programa-indicacao.md
-      - Pipeline Structure: comercial/pipeline-structure.md
-      - Rituais Solo: comercial/rituais-solo.md
-      - Conta do Cenário: comercial/conta-do-cenario.md
-
-  # ── MARKETING ─────────────────────────────────────────────────────────────
-  - Marketing:
-      - marketing/index.md
-      - Posicionamento: marketing/posicionamento.md
-      - ICP: marketing/icp.md
-      - Anti-ICP: marketing/anti-icp.md
-      - Brand: marketing/brand.md
-      - Central de Marca: marketing/central-marca.md
-      - Narrativa: marketing/narrativa.md
-      - Método Histórias: marketing/metodo-historias.md
-      - Tom de Voz: marketing/tom-de-voz.md
-
-  # ── CS & ENTREGA ──────────────────────────────────────────────────────────
-  - CS:
-      - cs/index.md
-      - Playbook Implementação 11 Fases: cs/playbook-implementacao-11-fases.md
-      - Playbook Retenção: cs/playbook-retencao.md
-      - Playbook Treinamento Claude Code 30d: cs/playbook-treinamento-claude-code-30d.md
-      - Rotina CS + KPIs: cs/rotina-cs.md
-      - Separação CS vs Suporte: cs/separacao-cs-suporte.md
-      - SLA de Suporte: cs/sla-suporte.md
-      - Política de Expansão: cs/politica-expansao.md
-      - Matriz de Responsabilidades: cs/matriz-responsabilidades.md
-      - Sistema de Comunicação com Cliente: cs/sistema-comunicacao-cliente.md
-      - Protocolo de Aquecimento de Chip 14d: cs/protocolo-aquecimento-chip-14d.md
-      - Padrão Pasta de Cliente: cs/padrao-pasta-cliente.md
-      - Checklist Briefing: cs/checklist-briefing.md
-      - Checklist Briefing Treinamento Claude Code: cs/checklist-briefing-treinamento-claude-code.md
-      - Template Checklist Projeto Linear: cs/template-checklist-projeto-linear.md
-      - Template Manual da Marca: cs/template-manual-da-marca.md
-
-  # ── FINANCEIRO ────────────────────────────────────────────────────────────
-  - Financeiro:
-      - financeiro/index.md
-      - Anti-ICP: financeiro/anti-icp.md
-      - Política Fiscal: financeiro/politica-fiscal.md
-      - NFS-e Barueri: financeiro/nfse-barueri.md
-      - DRE Structure: financeiro/dre-structure.md
-      - Ciclo de Faturamento: financeiro/ciclo-faturamento.md
-      - Integrações de Cobrança: financeiro/integracoes-cobranca.md
-      - Contratos Modelo: financeiro/contratos-modelo.md
-      - Fluxo de Caixa: financeiro/fluxo-caixa.md
-      - Precificação e Margens: financeiro/precificacao-margens.md
-      - Reconciliação Bancária: financeiro/reconciliacao-bancaria.md
-
-  # ── OPERACIONAL ───────────────────────────────────────────────────────────
-  - Operacional:
-      - operacional/index.md
-      - RH — Contratação (AFM): operacional/rh-contratacao-afm.md
-      - Leituras — Desenho do Time: operacional/leituras-inspiracao-desenho-time.md
-
-  # ── CADENCIA (por sistema, não por repo) ──────────────────────────────────
+  # ═══════════════════════════════════════════════════════════════════════════
+  # CADENCIA — o Produto
+  # ═══════════════════════════════════════════════════════════════════════════
   - Cadencia:
     - cadencia-app/README.md
     - App — Sistema Principal:
@@ -155,6 +91,8 @@ nav:
       - Arquitetura técnica: cadencia-app/architecture/architecture.md
       - Contexto do sistema: cadencia-app/architecture/CONTEXT.md
       - Changelog: cadencia-app/architecture/CHANGELOG.md
+      - Manual do sistema: cadencia-app/Manual-do-Sistema-Cadencia.md
+      - Infra CLI access: cadencia-app/infra-cli-access.md
       - Foundation — Visão de produto: cadencia-app/foundation/Foundation - Product Vision.md
       - Foundation — Clientes alvo: cadencia-app/foundation/Foundation - Target Customers.md
       - Foundation — Arquitetura técnica: cadencia-app/foundation/Foundation - Tech Architecture.md
@@ -171,16 +109,13 @@ nav:
       - Billing & Créditos: cadencia-app/lib/payment-billing.md
       - Blog por tenant: cadencia-app/lib/blog-tenant.md
       - Tracking & Analytics: cadencia-app/lib/tracking-analytics.md
-      - Manual do sistema: cadencia-app/Manual-do-Sistema-Cadencia.md
       - Runbooks: cadencia-app/runbooks/README.md
-
     - Lara & CRM Conversacional:
       - Agente Lara: cadencia-app/agente-lara.md
       - Cadências de contatos: cadencia-app/cadencias-de-contatos.md
       - Agenda da Lara: cadencia-app/agenda-lara.md
       - Evolução transversal 2026-07: cadencia-app/evolucao-transversal-2026-07.md
-
-    - Conteúdo Autônomo:
+    - Conteúdo Autônomo (Growth):
       - cadencia-app/growth/README.md
       - Pipeline de growth: cadencia-app/growth/growth-pipeline-runner.md
       - Blog & Instagram: cadencia-app/growth/blog-instagram-gen.md
@@ -188,38 +123,17 @@ nav:
       - LinkedIn: cadencia-app/growth/linkedin-generation.md
       - Seinfeld Email: cadencia-app/growth/seinfeld-email.md
       - Scoring de leads: cadencia-app/growth/scoring-leads.md
-      - "Historico: provisionamento GHL desativado": cadencia-app/growth/provisioning-ghl.md
+      - "Histórico: provisionamento GHL desativado": cadencia-app/growth/provisioning-ghl.md
+      - Playbook conteúdo via CLI: cadencia-app/playbook-conteudo-via-cli.md
       - Cadencia Growth — pipeline: cadencia-growth/pipeline.md
       - Mission control: cadencia-growth/mission-control.md
       - Crons: cadencia-growth/crons.md
+      - Scoring: cadencia-growth/scoring.md
       - Scripts: cadencia-growth/scripts.md
-
-    - Onboarding de Clientes:
-      - central-cs-onboarding/00-Visao-Geral.md
-      - Infra & Deploy: central-cs-onboarding/01-Infra-Deploy.md
-      - Receiver: central-cs-onboarding/02-Receiver.md
-      - Consumer: central-cs-onboarding/03-Consumer.md
-      - Consolidador: central-cs-onboarding/04-Consolidador.md
-      - Doc Generator: central-cs-onboarding/05-Doc-Generator.md
-      - Stakeholders: central-cs-onboarding/06-Stakeholders.md
-      - Evo Client: central-cs-onboarding/07-Evo-Client.md
-      - Workers de acompanhamento: central-cs-onboarding/08-Workers-Acompanhamento.md
-      - Referência técnica: central-cs-onboarding/13-Referencia-Tecnica-Componentes-2026-07-05.md
-
-    - Observabilidade:
-      - central-observabilidade/README.md
-      - Audit cross-tenant: central-observabilidade/audit-cross-tenant.md
-      - Deploy watcher: central-observabilidade/deploy-log-e-deploy-watcher.md
-      - Gate de triagem: central-observabilidade/gate-de-triagem.md
-      - Hostinger watcher: central-observabilidade/hostinger-watcher.md
-      - Self-test suite: central-observabilidade/self-test-suite.md
-      - Botão de suporte: central-observabilidade/suporte-botao-ajuda.md
-
     - Motor Gráfico:
-      - cadencia-app/motor-grafico/Motor-Grafico-Carrosseis-Doc-Tecnica.md
-      - Pipeline, agentes e prompts: cadencia-app/motor-grafico/Motor-Parte1-Pipeline-Agentes-Prompts.md
-      - Modelos e templates: cadencia-app/motor-grafico/Motor-Parte2-Modelos-Templates-BD.md
-
+      - Doc técnica: cadencia-app/motor-grafico/Motor-Grafico-Carrosseis-Doc-Tecnica.md
+      - Parte 1 — Pipeline, agentes e prompts: cadencia-app/motor-grafico/Motor-Parte1-Pipeline-Agentes-Prompts.md
+      - Parte 2 — Modelos e templates: cadencia-app/motor-grafico/Motor-Parte2-Modelos-Templates-BD.md
     - Workers:
       - cadencia-app/workers/README.md
       - Chat de ideias: cadencia-app/workers/chat-ideias.md
@@ -229,21 +143,23 @@ nav:
       - Pipeline orchestrator: cadencia-app/workers/pipeline-orchestrator.md
       - RAG memory: cadencia-app/workers/rag-memory.md
       - Theme engine: cadencia-app/workers/theme-engine.md
-
+    - Pipeline:
+      - Seinfeld Email pipeline: cadencia-app/pipeline/seinfeld-email-pipeline.md
+    - Features:
+      - CRM — Lista Tabela Linear: cadencia-app/features/crm-lista-tabela-linear.md
+      - Mise en place — Growth pipeline: cadencia-app/features/mise-en-place-growth-pipeline.md
     - CLI & MCP:
-      - cadencia-app/cli-mcp/cadencia-cli.md
+      - Cadencia CLI: cadencia-app/cli-mcp/cadencia-cli.md
       - Comandos: cadencia-app/cli-mcp/Comandos-cadencia-cli.md
       - PRD CLI/MCP: cadencia-app/cli-mcp/PRD-cli-mcp.md
-
     - Decisões técnicas (ADRs):
       - cadencia-app/adr/README.md
       - ADR-0001 Stripe vs Asaas: cadencia-app/adr/0001-stripe-em-vez-de-asaas.md
       - ADR-0002 Chat agent: cadencia-app/adr/0002-chat-agent-design.md
-      - "Historico: ADR-0003 GHL superseded": cadencia-app/adr/0003-ghl-motor-invisivel.md
+      - "Histórico: ADR-0003 GHL superseded": cadencia-app/adr/0003-ghl-motor-invisivel.md
       - ADR-0004 Carrossel Railway: cadencia-app/adr/0004-carrossel-railway-resto-vps.md
       - ADR-0005 Location PIT token: cadencia-app/adr/0005-location-pit-token-por-tenant.md
       - ADR-0006 Multi-tenant RLS: cadencia-app/adr/0006-multi-tenant-rls-supabase.md
-
     - Roadmap & PRD:
       - PRD — Resumo executivo: cadencia-app/prd/PRD-Executive-Summary.md
       - PRD — Arquitetura: cadencia-app/prd/PRD-Arquitetura-Tecnica.md
@@ -251,106 +167,332 @@ nav:
       - PRD — Jornadas: cadencia-app/prd/PRD-User-Journeys.md
       - Roadmap 2026: cadencia-app/prd/Roadmap-Produto-2026.md
       - Epics e stories: cadencia-app/prd/Epics-Stories-Visao-Geral.md
+      - Brief — Roadmap features: cadencia-app/roadmap-features/Brief.md
+      - Brief — Feature "Tenho uma ideia": cadencia-app/roadmap-features/Brief-Feature-Tenho-Uma-Ideia.md
+      - Chat "Tenho uma ideia": cadencia-app/roadmap-features/chat-tenho-uma-ideia.md
+      - Criar tenant agência: cadencia-app/roadmap-features/criar-tenant-agencia.md
+      - Growth email dispatch: cadencia-app/roadmap-features/growth-email-dispatch.md
+      - Growth lead scoring: cadencia-app/roadmap-features/growth-lead-scoring.md
+      - Growth newsletter: cadencia-app/roadmap-features/growth-newsletter.md
+      - Otimização performance Supabase: cadencia-app/roadmap-features/otimizacao-performance-supabase.md
 
-  # ── PROCESSOS DA EMPRESA ──────────────────────────────────────────────────
-  - Processos:
-    - processos/README.md
-    - Onboarding dev acesso restrito: processos/onboarding-dev-acesso-restrito.md
+  # ═══════════════════════════════════════════════════════════════════════════
+  # COMERCIAL
+  # ═══════════════════════════════════════════════════════════════════════════
+  - Comercial:
+    - comercial/index.md
+    - Fundamentos:
+      - Posicionamento: comercial/posicionamento.md
+      - ICP: comercial/icp.md
+      - Anti-ICP: comercial/anti-icp.md
+      - Princípios Cauduro: comercial/principios-cauduro.md
+    - Geração de Demanda:
+      - REP-G: comercial/rep-g.md
+      - Cadência 10D: comercial/cadencia-10d.md
+      - Pipeline Structure: comercial/pipeline-structure.md
+      - Programa Indicação: comercial/programa-indicacao.md
+    - Geração de Negócios:
+      - 7 Chaves — Framework Call: comercial/framework-7-chaves.md
+      - Playbook Objeções: comercial/playbook-objecoes.md
+      - Aposta de Oferta: comercial/aposta-de-oferta.md
+      - Leitura de Sinais: comercial/leitura-de-sinais.md
+      - Conta do Cenário: comercial/conta-do-cenario.md
+    - Operação:
+      - Rituais Solo: comercial/rituais-solo.md
 
-  # ── INFRA ─────────────────────────────────────────────────────────────────
-  - Infra:
-    - _infra/README.md
-    - Topologia: _infra/topologia-vps.md
-    - VPS Master:
-      - Arquitetura: _infra/vps-master/VPS-Master-Arquitetura.md
-      - Serviços: _infra/vps-master/VPS-Master-Servicos.md
-      - Coolify: _infra/vps-master/VPS-Master-Coolify.md
-      - Acesso & usuários: _infra/vps-master/VPS-Master-Acesso-e-Usuarios.md
-      - Segurança: _infra/vps-master/VPS-Master-Seguranca.md
-      - Monitoramento: _infra/vps-master/VPS-Master-Monitoramento.md
-    - VPS Dev:
-      - Manual técnico: _infra/vps-dev/VPS-Dev-Documentacao-Tecnica.md
-      - POP de uso: _infra/vps-dev/POP-Uso-VPS-Dev.md
-      - Provisionar: _infra/vps-dev/Playbook-Provisionar-VPS-Dev.md
-    - Cloudflare: _infra/cloudflare/README.md
-    - N8N: _infra/n8n/README.md
+  # ═══════════════════════════════════════════════════════════════════════════
+  # MARKETING
+  # ═══════════════════════════════════════════════════════════════════════════
+  - Marketing:
+    - marketing/index.md
+    - Fundamentos:
+      - Posicionamento: marketing/posicionamento.md
+      - ICP: marketing/icp.md
+      - Anti-ICP: marketing/anti-icp.md
+    - Marca:
+      - Brand: marketing/brand.md
+      - Central de Marca: marketing/central-marca.md
+      - Narrativa: marketing/narrativa.md
+      - Método Histórias: marketing/metodo-historias.md
+      - Tom de Voz: marketing/tom-de-voz.md
+    - Comunicação:
+      - Pipeline de Conteúdo:
+        - pipeline-conteudo/README.md
+        - Pipeline Cortes — Guia: pipeline-conteudo/pipeline-cortes-guia.md
 
-  # ── PD FRAMEWORK ─────────────────────────────────────────────────────────
-  - PD Framework:
-    - Como funciona: "_pd-framework/PD Framework — Como funciona (consolidado 2026-05-25).md"
-    - Framework 2.0: "_pd-framework/2026-07-08 PD Framework 2.0 — Apresentação (Motor Autônomo).md"
-    - AI Founder Mode: _pd-framework/AI-Founder-Mode.md
-    - Arquitetura:
-      - Arquitetura definitiva: "_pd-framework/2026-05-25 PD Framework — Arquitetura DEFINITIVA consolidada.md"
-      - Hierarquia & memória: "_pd-framework/2026-05-25 PD Framework — Hierarquia Time-Squad e memory híbrida.md"
-      - Memória entre sessões: "_pd-framework/2026-05-26 PD Framework — Memória permanente entre sessões (3 camadas + A+B+C).md"
-      - Framework agnóstico: "_pd-framework/2026-06-26 PD Framework Agnostico — core, contrato e adapters.md"
-      - Stamper: "_pd-framework/2026-05-25 Stamper — Chief of Staff PD Framework.md"
-    - Motor Autônomo:
-      - _pd-framework/motor-autonomo/motor-autonomo.md
-      - Loop: _pd-framework/motor-autonomo/motor-loop.md
-      - Stale-Claim Reaper: _pd-framework/motor-autonomo/stale-claim-reaper.md
-      - Supervisor: _pd-framework/motor-autonomo/motor-supervisor.md
-      - Auto-enqueue: _pd-framework/motor-autonomo/motor-auto-enqueue.md
-      - Outcomes: _pd-framework/motor-autonomo/outcomes.md
-      - Operação: _pd-framework/motor-autonomo/motor-autonomo-operacao.md
-    - Framework Interno:
-      - _pd-framework/framework-interno/README.md
-      - Knowledge graph: _pd-framework/framework-interno/arquitetura-knowledge-graph.md
-      - Memory engine: _pd-framework/framework-interno/memory-engine.md
-      - Session recorder: _pd-framework/framework-interno/session-recorder.md
-      - Skills & tooling: _pd-framework/framework-interno/skills-tooling.md
-      - Model map: _pd-framework/framework-interno/model-map.md
-    - Times & squads:
-      - Time Dev: "_pd-framework/2026-05-25 PD Framework — Time Dev.md"
-      - Time Infra: "_pd-framework/2026-05-25 PD Framework — Time infra.md"
-      - Time Comercial: "_pd-framework/2026-05-25 PD Framework — Time Comercial.md"
-      - Time Marketing: "_pd-framework/2026-05-25 PD Framework — Time marketing.md"
-    - AGENTS.md: _pd-framework/AGENTS.md
+  # ═══════════════════════════════════════════════════════════════════════════
+  # CUSTOMER SUCCESS
+  # ═══════════════════════════════════════════════════════════════════════════
+  - Customer Success:
+    - cs/index.md
+    - Fundamentos:
+      - Rotina CS + KPIs: cs/rotina-cs.md
+      - Separação CS vs Suporte: cs/separacao-cs-suporte.md
+      - Matriz de Responsabilidades: cs/matriz-responsabilidades.md
+    - Onboarding:
+      - Playbook 11 Fases: cs/playbook-implementacao-11-fases.md
+      - Playbook Treinamento Claude Code 30d: cs/playbook-treinamento-claude-code-30d.md
+      - Checklist Briefing: cs/checklist-briefing.md
+      - Checklist Briefing Treinamento: cs/checklist-briefing-treinamento-claude-code.md
+      - Padrão Pasta de Cliente: cs/padrao-pasta-cliente.md
+      - Template Checklist Linear: cs/template-checklist-projeto-linear.md
+      - Template Manual da Marca: cs/template-manual-da-marca.md
+      - Sistema de Onboarding (autônomo):
+        - Visão Geral: central-cs-onboarding/00-Visao-Geral.md
+        - Infra & Deploy: central-cs-onboarding/01-Infra-Deploy.md
+        - Receiver: central-cs-onboarding/02-Receiver.md
+        - Consumer: central-cs-onboarding/03-Consumer.md
+        - Consolidador: central-cs-onboarding/04-Consolidador.md
+        - Doc Generator: central-cs-onboarding/05-Doc-Generator.md
+        - Stakeholders: central-cs-onboarding/06-Stakeholders.md
+        - Evo Client: central-cs-onboarding/07-Evo-Client.md
+        - Workers Acompanhamento: central-cs-onboarding/08-Workers-Acompanhamento.md
+        - Coolify Migration: central-cs-onboarding/09-Coolify-Migration-2026-06-27.md
+        - Gate A6 Treinamento: central-cs-onboarding/10-Gate-A6-Treinamento-Kit-Cadencia-2026-06-28.md
+        - Retrofit Mel Quevedo: central-cs-onboarding/11-Retrofit-Mel-Quevedo-13-Issues-2026-07-01.md
+        - Hardening Billing: central-cs-onboarding/12-Hardening-Billing-Observabilidade-2026-07-04.md
+        - Referência Técnica: central-cs-onboarding/13-Referencia-Tecnica-Componentes-2026-07-05.md
+        - Pós-Kickoff Validação: central-cs-onboarding/14-Pos-Kickoff-Validacao-Prompt-2026-07-07.md
+        - "Robustez ativar-cliente DEV-956": "central-cs-onboarding/Robustez ativar-cliente DEV-956.md"
+    - Relacionamento:
+      - Playbook Retenção: cs/playbook-retencao.md
+      - Política de Expansão: cs/politica-expansao.md
+      - Sistema Comunicação Cliente: cs/sistema-comunicacao-cliente.md
+      - Protocolo Aquecimento Chip 14d: cs/protocolo-aquecimento-chip-14d.md
+    - Suporte:
+      - SLA de Suporte: cs/sla-suporte.md
 
-  # ── DEV ───────────────────────────────────────────────────────────────────
-  - Dev:
-    - Como trabalhamos: _dev-process/Como-Trabalhamos.md
-    - Princípios de programação: _dev-process/Principios-de-Programacao.md
-    - Gestão de projetos: _dev-process/Gestao-Projetos-Dev.md
-    - Processo de desenvolvimento: "_dev-process/Processo - Desenvolvimento (Time Dev).md"
-    - PR & Deploy Vercel: "_dev-process/Processo - PR e Deploy na Vercel.md"
-    - Auth API — Bearer vs HMAC: "_dev-process/Autenticacao de API - Bearer vs HMAC.md"
+  # ═══════════════════════════════════════════════════════════════════════════
+  # FINANCEIRO
+  # ═══════════════════════════════════════════════════════════════════════════
+  - Financeiro:
+    - financeiro/index.md
+    - Fiscal:
+      - Política Fiscal: financeiro/politica-fiscal.md
+      - NFS-e Barueri: financeiro/nfse-barueri.md
+      - DRE Structure: financeiro/dre-structure.md
+    - Operação:
+      - Ciclo de Faturamento: financeiro/ciclo-faturamento.md
+      - Integrações de Cobrança: financeiro/integracoes-cobranca.md
+      - Fluxo de Caixa: financeiro/fluxo-caixa.md
+      - Reconciliação Bancária: financeiro/reconciliacao-bancaria.md
+    - Comercial:
+      - Contratos Modelo: financeiro/contratos-modelo.md
+      - Precificação e Margens: financeiro/precificacao-margens.md
+      - Anti-ICP: financeiro/anti-icp.md
+
+  # ═══════════════════════════════════════════════════════════════════════════
+  # JURÍDICO
+  # ═══════════════════════════════════════════════════════════════════════════
+  - Jurídico:
+    - juridico/index.md
+    - Mapa Produto → Contrato: juridico/map-contratos.md
+
+  # ═══════════════════════════════════════════════════════════════════════════
+  # OPERACIONAL
+  # ═══════════════════════════════════════════════════════════════════════════
+  - Operacional:
+    - operacional/index.md
+    - RH — Contratação (AFM): operacional/rh-contratacao-afm.md
+    - Leituras — Desenho do Time: operacional/leituras-inspiracao-desenho-time.md
+
+  # ═══════════════════════════════════════════════════════════════════════════
+  # DESENVOLVIMENTO — área que agrupa Dev + Infra + PD Framework + Sistemas
+  # ═══════════════════════════════════════════════════════════════════════════
+  - Desenvolvimento:
+    - Como Trabalhamos:
+      - Visão geral: _dev-process/Como-Trabalhamos.md
+      - Princípios de Programação: _dev-process/Principios-de-Programacao.md
+      - Gestão de Projetos: _dev-process/Gestao-Projetos-Dev.md
+      - Processo de Desenvolvimento: "_dev-process/Processo - Desenvolvimento (Time Dev).md"
+      - PR & Deploy Vercel: "_dev-process/Processo - PR e Deploy na Vercel.md"
+      - Auth API — Bearer vs HMAC: "_dev-process/Autenticacao de API - Bearer vs HMAC.md"
+      - Documentação Dev VPS: _dev-process/Documentacao-Dev-VPS-para-Obsidian.md
+      - "Worktrees fora do OneDrive": "_dev-process/2026-06-25 Worktrees fora do OneDrive (junction).md"
+      - "Estudo ruflo — Motor Autônomo": "_dev-process/Estudo ruflo — análise completa e decisões (Motor Autônomo).md"
+    - Onboarding Dev:
+      - _onboarding/README.md
+      - Setup para Dev: _onboarding/Onboarding-Dev.md
+      - Trabalhar com IA:
+        - Central de Aprendizado IA: _onboarding/ia/Central-Aprendizado-IA.md
+        - Engenharia de Prompts: _onboarding/ia/Engenharia-de-Prompts-Manual-Completo.md
+        - Criar Prompts Humanizados: _onboarding/ia/Como-Criar-Prompts-Agentes-Humanizados.md
+        - Método Aprendizado Felipe: _onboarding/ia/Metodo-Aprendizado-Felipe.md
+        - Prompts Áudio TTS: _onboarding/ia/Prompts-Audio-TTS.md
+      - Harness:
+        - "O que é um harness": "_onboarding/harness/O que é um harness.md"
+        - Passo a Passo Montar: "_onboarding/harness/Passo a Passo Montar Harness.md"
+        - "Por que o harness é urgente": "_onboarding/harness/Por que o harness é urgente — custos de inferência.md"
+        - NoCode Startup Live 01 V2: "_onboarding/harness/NoCode Startup - Live-01- Harness-IA V2.md"
+        - "NoCode Startup Live 01 (legacy)": "_onboarding/harness/NoCode Startup - Live-01- Harness-IA (legacy).md"
+    - Infra:
+      - _infra/README.md
+      - Topologia: _infra/topologia-vps.md
+      - "Refator PDL-257 Time Infra": "_infra/2026-05-25 Time Infra — Estrutura PD Framework (refator PDL-257).md"
+      - Obsidian README: _infra/obsidian-README.md
+      - VPS Master:
+        - Arquitetura: _infra/vps-master/VPS-Master-Arquitetura.md
+        - Serviços: _infra/vps-master/VPS-Master-Servicos.md
+        - Projetos /opt: _infra/vps-master/VPS-Master-Projetos-opt.md
+        - Coolify: _infra/vps-master/VPS-Master-Coolify.md
+        - Acesso & Usuários: _infra/vps-master/VPS-Master-Acesso-e-Usuarios.md
+        - Credenciais: _infra/vps-master/VPS-Master-Credenciais.md
+        - Segurança: _infra/vps-master/VPS-Master-Seguranca.md
+        - Monitoramento: _infra/vps-master/VPS-Master-Monitoramento.md
+      - VPS Dev:
+        - Manual Técnico: _infra/vps-dev/VPS-Dev-Documentacao-Tecnica.md
+        - Manual VPS Dev: _infra/vps-dev/Manual-VPS-Dev.md
+        - POP de Uso: _infra/vps-dev/POP-Uso-VPS-Dev.md
+        - Provisionar: _infra/vps-dev/Playbook-Provisionar-VPS-Dev.md
+        - Acesso Luiz: _infra/vps-dev/Acesso-VPS-Dev-Luiz.md
+      - Observabilidade:
+        - Central Observabilidade — README: central-observabilidade/README.md
+        - Central Observabilidade: _infra/Central-Observabilidade.md
+        - Central Observabilidade Loop: _infra/Central-Observabilidade-Loop.md
+        - Health Check Auto-Correção: _infra/Health-Check-Auto-Correcao.md
+        - Observabilidade: _infra/observabilidade.md
+        - Stack Monitoramento VPS Master: _infra/Stack-Monitoramento-VPS-Master.md
+        - Audit Cross-Tenant: central-observabilidade/audit-cross-tenant.md
+        - Deploy Watcher: central-observabilidade/deploy-log-e-deploy-watcher.md
+        - Gate de Triagem: central-observabilidade/gate-de-triagem.md
+        - Hostinger Watcher: central-observabilidade/hostinger-watcher.md
+        - Self-test Suite: central-observabilidade/self-test-suite.md
+        - Botão de Suporte: central-observabilidade/suporte-botao-ajuda.md
+        - Monitoramento — README: _infra/monitoramento/README.md
+      - Cloudflare: _infra/cloudflare/README.md
+      - N8N: _infra/n8n/README.md
+      - Hostinger:
+        - _infra/hostinger/README.md
+        - VPS Hostinger: _infra/VPS-Hostinger-README.md
+      - Recovery Hetzner:
+        - Índice: _infra/recovery-hertzner/00-indice.md
+        - Documentação: _infra/recovery-hertzner/01-documentacao.md
+        - Código-fonte: _infra/recovery-hertzner/02-codigo-fonte.md
+        - N8N Workflows: _infra/recovery-hertzner/03-n8n-workflows.md
+        - Banco de Dados: _infra/recovery-hertzner/04-banco-dados.md
+        - Infraestrutura: _infra/recovery-hertzner/05-infraestrutura.md
+        - Backups Brutos: _infra/recovery-hertzner/06-backups-brutos.md
+    - PD Framework:
+      - "Como funciona (consolidado)": "_pd-framework/PD Framework — Como funciona (consolidado 2026-05-25).md"
+      - "Framework 2.0 (Motor Autônomo)": "_pd-framework/2026-07-08 PD Framework 2.0 — Apresentação (Motor Autônomo).md"
+      - AI Founder Mode: _pd-framework/AI-Founder-Mode.md
+      - AGENTS.md: _pd-framework/AGENTS.md
+      - wiki-lint: _pd-framework/wiki-lint.md
+      - Arquitetura:
+        - "Arquitetura Definitiva": "_pd-framework/2026-05-25 PD Framework — Arquitetura DEFINITIVA consolidada.md"
+        - "Arquitetura Completa e Stack": "_pd-framework/2026-05-24 PD Framework — Arquitetura completa e mapeamento de stack.md"
+        - "Hierarquia & Memória": "_pd-framework/2026-05-25 PD Framework — Hierarquia Time-Squad e memory híbrida.md"
+        - "Memória entre Sessões": "_pd-framework/2026-05-26 PD Framework — Memória permanente entre sessões (3 camadas + A+B+C).md"
+        - "Framework Agnóstico": "_pd-framework/2026-06-26 PD Framework Agnostico — core, contrato e adapters.md"
+        - "Estratégia Sync Git VPS": "_pd-framework/2026-05-24 PD Framework — Estratégia de sync Git VPS e local.md"
+        - "Mapa final e decisões": "_pd-framework/2026-05-24 PD Framework — Mapa final e decisões consolidadas.md"
+        - "Mapeamento real squads": "_pd-framework/2026-05-24 PD Framework — Mapeamento real de squads e infraestrutura.md"
+        - "Constituição dos Times": "_pd-framework/2026-05-25 PD Framework — Constituição dos Times.md"
+        - "Fase 4 plano técnico": "_pd-framework/2026-05-25 PD Framework — Fase 4 plano técnico (Auto-fix observabilidade).md"
+        - "Pronto para uso diário": "_pd-framework/2026-05-25 PD Framework — Pronto para uso diário.md"
+        - "Stamper — Chief of Staff": "_pd-framework/2026-05-25 Stamper — Chief of Staff PD Framework.md"
+      - Motor Autônomo:
+        - Visão geral: _pd-framework/motor-autonomo/motor-autonomo.md
+        - Brief: _pd-framework/motor-autonomo/Brief.md
+        - Loop: _pd-framework/motor-autonomo/motor-loop.md
+        - Stale-Claim Reaper: _pd-framework/motor-autonomo/stale-claim-reaper.md
+        - Supervisor: _pd-framework/motor-autonomo/motor-supervisor.md
+        - Auto-enqueue: _pd-framework/motor-autonomo/motor-auto-enqueue.md
+        - Outcomes: _pd-framework/motor-autonomo/outcomes.md
+        - Operação: _pd-framework/motor-autonomo/motor-autonomo-operacao.md
+        - "Cascata completa e go-live": "_pd-framework/motor-autonomo/2026-07-07 Cascata completa e go-live.md"
+      - Framework Interno:
+        - _pd-framework/framework-interno/README.md
+        - Knowledge Graph: _pd-framework/framework-interno/arquitetura-knowledge-graph.md
+        - Memory Engine: _pd-framework/framework-interno/memory-engine.md
+        - Session Recorder: _pd-framework/framework-interno/session-recorder.md
+        - Skills & Tooling: _pd-framework/framework-interno/skills-tooling.md
+        - Model Map: _pd-framework/framework-interno/model-map.md
+        - Adapter Codex: _pd-framework/framework-interno/adapter-codex.md
+        - Astryx Sofia UI Standard: _pd-framework/framework-interno/astryx-sofia-ui-standard.md
+        - Interface Claims: _pd-framework/framework-interno/interface-claims.md
+        - Modelos Locais: "_pd-framework/framework-interno/Modelos locais.md"
+        - Outcomes Cost: _pd-framework/framework-interno/outcomes-cost.md
+        - Wiki Pattern: _pd-framework/framework-interno/wiki-pattern.md
+        - "Fase 0 Inventário e Decisões": "_pd-framework/framework-interno/2026-05-25 PD Framework - Estrutura Completa Fase 0 Inventário e Decisões.md"
+      - Squads (mapa):
+        - Dev: _pd-framework/squads/dev.md
+        - Infra: _pd-framework/squads/infra.md
+        - Produto: _pd-framework/squads/produto.md
+      - "Memórias & Decisões (por squad)":
+        - Dev — memória: _pd-framework/decisoes/dev-memory.md
+        - Dev — Amélia: _pd-framework/decisoes/dev-amelia-memory.md
+        - Dev — Bruno: _pd-framework/decisoes/dev-bruno-memory.md
+        - Dev — Camila: _pd-framework/decisoes/dev-camila-memory.md
+        - Dev — João: _pd-framework/decisoes/dev-joao-memory.md
+        - Dev — Paloma: _pd-framework/decisoes/dev-paloma-memory.md
+        - Dev — Paula: _pd-framework/decisoes/dev-paula-memory.md
+        - Dev — Sofia: _pd-framework/decisoes/dev-sofia-memory.md
+        - Dev — Vitor: _pd-framework/decisoes/dev-vitor-memory.md
+        - Infra — memória: _pd-framework/decisoes/infra-memory.md
+        - Marketing Produto — memória: _pd-framework/decisoes/marketing-marketing-produto-memory.md
+        - Produto Cadencia — memória: _pd-framework/decisoes/produto-cadencia-memory.md
+        - Produto Cadencia Frontend — memória: _pd-framework/decisoes/produto-cadencia-frontend-memory.md
+        - Produto Cadencia Growth — memória: _pd-framework/decisoes/produto-cadencia-growth-memory.md
+        - Produto Cadencia Workers — memória: _pd-framework/decisoes/produto-cadencia-workers-memory.md
+        - Consultorias — Iasmim Lopes: _pd-framework/decisoes/produto-consultorias-iasmim-lopes-memory.md
+        - Consultorias — Padaria Milionária: _pd-framework/decisoes/produto-consultorias-padaria-milionaria-memory.md
+        - Treinamentos — memória: _pd-framework/decisoes/produto-treinamentos-memory.md
+      - Times & Squads (notas):
+        - Time Dev: "_pd-framework/2026-05-25 PD Framework — Time Dev.md"
+        - Time Infra: "_pd-framework/2026-05-25 PD Framework — Time infra.md"
+        - Time Comercial: "_pd-framework/2026-05-25 PD Framework — Time Comercial.md"
+        - Time Marketing: "_pd-framework/2026-05-25 PD Framework — Time marketing.md"
+      - Notas Diversas:
+        - "Aprendizados VPS Dev": "_pd-framework/2026-05-21 Aprendizados — Configuração VPS de Desenvolvimento.md"
+        - "Vault Watcher — Organizador Obsidian": "_pd-framework/2026-06-05 Vault Watcher — Organizador Automatico Obsidian.md"
+        - "Smoke vs Dry-run vs E2E": "_pd-framework/2026-06-26 Smoke test vs Dry run vs Teste E2E.md"
+        - "IDEs para Claude Code": "_pd-framework/2026-06-29 IDEs para rodar Claude Code Cursor vs VS Code vs Zed.md"
+        - "LLM Cost Tracking": "_pd-framework/2026-07-02 LLM Cost Tracking — Repos Avaliados.md"
+        - "Whisper cache reaproveitável": "_pd-framework/2026-07-02 Whisper cache de modelo reaproveitavel entre projetos.md"
+        - "Teste central tráfego": "_pd-framework/2026-07-03 Teste central tráfego.md"
+        - "Domínio → VPS (DNS/HTTPS)": "_pd-framework/Domínio apontando para VPS — DNS e HTTPS.md"
+        - Symlink no Linux: "_pd-framework/Symlink no Linux — atalho que aponta para arquivo original.md"
+    - Sistemas:
+      - PD Portal:
+        - pd-portal/README.md
+        - Brief: pd-portal/Brief.md
+        - PD Portal: pd-portal/pd-portal.md
+    - Processos Internos:
+      - processos/README.md
+      - Onboarding dev — acesso restrito: processos/onboarding-dev-acesso-restrito.md
+      - Onboarding dev — conta bot cross-repo: processos/onboarding-dev-conta-bot-cross-repo.md
     - Gotchas:
       - Dev: _dev-process/gotchas/dev.md
       - Comercial: _dev-process/gotchas/comercial.md
+      - Comercial — Geração de Demanda: _dev-process/gotchas/comercial-geracao-de-demanda.md
+      - Comercial — Geração de Negócios: _dev-process/gotchas/comercial-geracao-de-negocios.md
     - Incidentes:
       - _dev-process/incidentes/index.md
-      - _dev-process/incidentes/2026-05-29 2026-05-29-cadencia-16-bugs-provisioning-tenant-fe.md
-      - _dev-process/incidentes/2026-05-29 2026-05-29-cadencia-bugs-reais-growth-pipeline.md
-      - _dev-process/incidentes/2026-06-02 2026-06-02-cadencia-aprovou-e-nao-gerou-4-causas-r.md
-      - _dev-process/incidentes/2026-06-02 2026-06-02-cadencia-dual-write-log-falso-cron-somb.md
-      - _dev-process/incidentes/2026-06-03 2026-06-03-cadencia-cloudflare-proxied-bloqueia-ss.md
-      - _dev-process/incidentes/2026-06-03 2026-06-03-cadencia-trigger-server-env-stale-syste.md
-      - _dev-process/incidentes/2026-06-10 2026-06-10-cadencia-generation-queue-4-defeitos-de.md
-      - _dev-process/incidentes/2026-06-24 2026-06-24-cadencia-cli-lifecycle-enum-en-vs-pt.md
-      - _dev-process/incidentes/2026-06-25 2026-06-25-deploy-cadencia-workers-coolify-doc-rai.md
-      - _dev-process/incidentes/2026-06-26 2026-06-26-onedrive-removeu-git-corrompeu-repo-pd-.md
-      - _dev-process/incidentes/2026-06-27 2026-06-27-cadencia-deploy-blocked-git-author-luiz.md
-      - _dev-process/incidentes/2026-07-01 2026-07-01-cadencia-playwright-timeout-google-font.md
+      - "2026-05-29 — Cadencia 16 bugs provisioning": "_dev-process/incidentes/2026-05-29 2026-05-29-cadencia-16-bugs-provisioning-tenant-fe.md"
+      - "2026-05-29 — Cadencia bugs growth pipeline": "_dev-process/incidentes/2026-05-29 2026-05-29-cadencia-bugs-reais-growth-pipeline.md"
+      - "2026-06-02 — Aprovou e não gerou (4 causas)": "_dev-process/incidentes/2026-06-02 2026-06-02-cadencia-aprovou-e-nao-gerou-4-causas-r.md"
+      - "2026-06-02 — Dual-write log falso cron sombra": "_dev-process/incidentes/2026-06-02 2026-06-02-cadencia-dual-write-log-falso-cron-somb.md"
+      - "2026-06-03 — Cloudflare proxied bloqueia SSL": "_dev-process/incidentes/2026-06-03 2026-06-03-cadencia-cloudflare-proxied-bloqueia-ss.md"
+      - "2026-06-03 — Trigger server env stale system": "_dev-process/incidentes/2026-06-03 2026-06-03-cadencia-trigger-server-env-stale-syste.md"
+      - "2026-06-10 — Generation queue 4 defeitos": "_dev-process/incidentes/2026-06-10 2026-06-10-cadencia-generation-queue-4-defeitos-de.md"
+      - "2026-06-11 — Leads PDL-28 gotchas APIs externas": "_dev-process/incidentes/2026-06-11 2026-06-11-cadencia-leads-pdl28-gotchas-apis-exter.md"
+      - "2026-06-24 — CLI lifecycle enum en vs pt": "_dev-process/incidentes/2026-06-24 2026-06-24-cadencia-cli-lifecycle-enum-en-vs-pt.md"
+      - "2026-06-25 — Deploy workers Coolify doc Railway": "_dev-process/incidentes/2026-06-25 2026-06-25-deploy-cadencia-workers-coolify-doc-rai.md"
+      - "2026-06-26 — OneDrive removeu git corrompeu repo": "_dev-process/incidentes/2026-06-26 2026-06-26-onedrive-removeu-git-corrompeu-repo-pd-.md"
+      - "2026-06-27 — Deploy blocked git author Luiz": "_dev-process/incidentes/2026-06-27 2026-06-27-cadencia-deploy-blocked-git-author-luiz.md"
+      - "2026-06-30 — Meeting transcriber OneDrive desidratado": "_dev-process/incidentes/2026-06-30 2026-06-30-meeting-transcriber-onedrive-desidratad.md"
+      - "2026-07-01 — Playwright timeout Google Fonts": "_dev-process/incidentes/2026-07-01 2026-07-01-cadencia-playwright-timeout-google-font.md"
+      - "2026-07-01 — Render slides OK com uploads": "_dev-process/incidentes/2026-07-01 2026-07-01-cadencia-render-slides-ok-com-uploads-v.md"
+      - "2026-07-02 — Whisper writer segfault cuBLAS Windows": "_dev-process/incidentes/2026-07-02 2026-07-02-whisper-writer-segfault-cublas-windows.md"
     - Skills:
-      - Code Review — Claude: _dev-process/skills/Code-Review/Claude Review.md
-      - Code Review — Codex: _dev-process/skills/Code-Review/Codex Review.md
-      - Code Review — Gemini: _dev-process/skills/Code-Review/Gemini Review.md
-      - Debug — Diagnose: _dev-process/skills/Debug-Dev/Mp Diagnose.md
-      - Debug — TDD: _dev-process/skills/Debug-Dev/Mp TDD.md
-      - Linear — Start Issue: _dev-process/skills/Gestao-Projetos/Start Issue.md
-      - Linear — Close Issue: _dev-process/skills/Gestao-Projetos/Close Issue.md
-
-  # ── ONBOARDING ────────────────────────────────────────────────────────────
-  - Onboarding:
-    - _onboarding/README.md
-    - Setup para dev: _onboarding/Onboarding-Dev.md
-    - Trabalhar com IA:
-      - Central de aprendizado: _onboarding/ia/Central-Aprendizado-IA.md
-      - Engenharia de prompts: _onboarding/ia/Engenharia-de-Prompts-Manual-Completo.md
-      - Criar prompts humanizados: _onboarding/ia/Como-Criar-Prompts-Agentes-Humanizados.md
-    - Harness:
-      - "O que é um harness": "_onboarding/harness/O que \xe9 um harness.md"
-      - Passo a passo: _onboarding/harness/Passo a Passo Montar Harness.md
-      - "Por que é urgente": "_onboarding/harness/Por que o harness \xe9 urgente — custos de infer\xeancia.md"
+      - "Code Review — Claude": "_dev-process/skills/Code-Review/Claude Review.md"
+      - "Code Review — Codex": "_dev-process/skills/Code-Review/Codex Review.md"
+      - "Code Review — Gemini": "_dev-process/skills/Code-Review/Gemini Review.md"
+      - "Debug — Diagnose": "_dev-process/skills/Debug-Dev/Mp Diagnose.md"
+      - "Debug — TDD": "_dev-process/skills/Debug-Dev/Mp TDD.md"
+      - "Linear — Start Issue": "_dev-process/skills/Gestao-Projetos/Start Issue.md"
+      - "Linear — Close Issue": "_dev-process/skills/Gestao-Projetos/Close Issue.md"
+    - Sistemas Legados:
+      - "ecuro-mcp": ecuro-mcp/README.md
+      - "GCI-GO": gci-go/README.md
