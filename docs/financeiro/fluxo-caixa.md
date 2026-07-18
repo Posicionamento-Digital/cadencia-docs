@@ -113,7 +113,7 @@ Bárbara decide olhando o pessimista. Se runway no pessimista < 6 meses, **pausa
 3. **Sempre 3 cenários.** Nunca decidir só com o cenário base.
 4. **Runway < 6 meses (pessimista) → modo defensivo.** Bárbara avisa Felipe imediatamente.
 5. **Pró-labore Felipe entra no fluxo.** Mesmo que variável.
-6. **Receita Cadência (Stripe direto):** consultar dashboard Cadencia — não é a mesma cobrança das outras trilhas.
+6. **Receita Cadencia SaaS (Stripe direto):** consultar dashboard Cadencia — não é a mesma cobrança das outras trilhas.
 
 ---
 
@@ -121,7 +121,7 @@ Bárbara decide olhando o pessimista. Se runway no pessimista < 6 meses, **pausa
 
 Worker que:
 - Lê saldo atual dos bancos (manual upload ou Open Finance)
-- Lê MRR e churn do dashboard Cadência + extrato Stripe/Asaas
+- Lê MRR e churn do dashboard Cadencia + extrato Stripe/Asaas
 - Calcula 3 cenários (base/otimista/pessimista) com runway de cada
 - Gera alerta automático se pessimista < 6 meses
 - Cadência: mensal (fechamento)
