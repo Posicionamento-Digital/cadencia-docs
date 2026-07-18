@@ -78,7 +78,7 @@ A skill apresenta o Bloco A e aguarda cada bloco antes de executar qualquer cois
 
 - Skill fonte: `C:\Users\felip\.claude\skills\criar-tenant-agencia\SKILL.md`
 - Doc completa no repo: `docs/features/criar-tenant-agencia/README.md`
-- Wiki HTML: `docs/wiki/criar-tenant-agencia.html`
+- cadencia-docs (fonte de verdade): publicado em `docs/cadencia-app/features/criar-tenant-agencia.md`
 
 ## Notas Relacionadas
 [[Readme]] - [[Documentar]] - [[Skill]] - [[Brief]] - [[Criar-Tenant-Agencia]]

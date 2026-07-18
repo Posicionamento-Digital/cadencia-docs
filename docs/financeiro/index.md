@@ -19,7 +19,7 @@ O Time opera transversalmente — não tem squads filhos. Cobre cobrança, conta
 - Cobrança e contas a receber/pagar (Stripe + Asaas legado; lifecycle em CRM Cadencia `contacts`)
 - Emissão NFSe (Grupo GCI + futuros clientes PJ)
 - Reconciliação bancária (extratos + faturas cartões + comprovantes)
-- DRE por trilha (Cadencia Consultorias, Cadencia Gestores de IA, Cadência SaaS)
+- DRE por trilha (Cadencia Consultorias, Cadencia Gestores de IA, Cadencia SaaS)
 - Fluxo de caixa, runway, burn mensal
 - Precificação (LHI, CAC, LTV, payback, churn)
 - Política de descontos, plano econômico, ajustes de fila/capacidade
@@ -37,7 +37,7 @@ O Time opera transversalmente — não tem squads filhos. Cobre cobrança, conta
 1. **Foundation antes de qualquer asset financeiro.** Especialmente [`politica-fiscal`](politica-fiscal.md) antes de emitir NF.
 2. **NFSe Grupo GCI:** cada CNPJ tem nota individual — nunca agrupar serviços de unidades diferentes.
 3. **Cobrança nova:** sempre passar por [`integracoes-cobranca`](integracoes-cobranca.md) pra decidir gateway antes de emitir cobrança.
-4. **DRE por trilha:** receita SEMPRE separada em Cadencia Consultorias / Cadencia Gestores de IA / Cadência SaaS — nunca misturar.
+4. **DRE por trilha:** receita SEMPRE separada em Cadencia Consultorias / Cadencia Gestores de IA / Cadencia SaaS — nunca misturar.
 5. **Cadência B2C (Stripe direto):** não cobrar nem reconciliar aqui — Squad Cadência opera.
 6. **Credenciais:** Stripe/Asaas/banco SEMPRE via 1Password. Nunca em arquivos commitados.
 7. **Código na emissão de NF (Talissa):** empresa é tributada como **treinamento (8599, ~6%)**, não TI. Ao emitir, **usar o código alinhado ao DAS que a Talissa indicar** — nunca 115013000 (TI) por padrão.

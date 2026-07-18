@@ -24,7 +24,7 @@ provisionam recursos do tenant.
 ## Fluxo diário
 
 1. carrega tenants/configuração;
-2. sincroniza o estado necessário do CRM Cadência;
+2. sincroniza o estado necessário do CRM Cadencia;
 3. executa os canais solicitados isoladamente;
 4. aplica gates de provider e créditos;
 5. registra estado e erros sem abortar tenants independentes.

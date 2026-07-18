@@ -1,6 +1,6 @@
 > **📄 Cópia local — fonte de verdade no GitHub.**
 > Origem: [`felipeluissalgueiro/cadencia-app` / `master` / `src/app/(onboarding)/CLAUDE.md`](https://github.com/felipeluissalgueiro/cadencia-app/blob/master/src/app/(onboarding)/CLAUDE.md)
-> Sincronizar via `/documentar` ou `sync_to_framework.py`.
+> Sincronizar via `/documentar-software` ou `sync_to_framework.py`.
 
 ---
 

@@ -256,7 +256,7 @@ No Modo A (3 passos), o REP inteiro é comprimido no Passo 3 (Assentamento) — 
 
 ---
 
-## Adaptação de Tom por Fase da Cadência 10D (Modo B)
+## Adaptação de Tom por Fase da Cadencia 10D (Modo B)
 
 | Fase | G aplicável | Tom |
 |---|---|---|

@@ -15,7 +15,7 @@ graph TB
     Apify[(Apify<br/>análise Instagram)]
     Cron[(cron-job.org)]
 
-    subgraph Cadencia [Cadência SaaS]
+    subgraph Cadencia [Cadencia SaaS]
         App[Plataforma Cadência<br/>web + workers + pipeline]
     end
 
@@ -158,7 +158,7 @@ Resend envia "email.opened"/"email.clicked"/"email.bounced"/"email.complained"
   └─ POST no handler Svix :8767
        ├─ valida assinatura e deduplica por Svix ID
        ├─ resolve tenant/contato/post pelas tags do envio
-       ├─ atualiza score e temperatura no CRM Cadência
+       ├─ atualiza score e temperatura no CRM Cadencia
        └─ persiste a atribuição em scoring_events
 ```
 

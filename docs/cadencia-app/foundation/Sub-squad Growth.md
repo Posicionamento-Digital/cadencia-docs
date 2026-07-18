@@ -12,7 +12,7 @@ LinkedIn e Instagram; scoring Resend/Svix; cadências e provisioning de email.
 
 ## Regras
 
-- CRM Cadência/Supabase é a fonte de contatos e estado.
+- CRM Cadencia/Supabase é a fonte de contatos e estado.
 - Email usa Resend com domínio por tenant.
 - Flags só mudam após confirmação do provider.
 - Webhooks e dispatches são idempotentes.

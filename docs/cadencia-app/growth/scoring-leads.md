@@ -4,7 +4,7 @@
 
 O daemon `scoring/resend_webhook.py` recebe eventos de email do Resend na porta
 `8767`, valida a assinatura Svix, resolve tenant/contato/post pelas tags do envio
-e atualiza score, temperatura e supressão no CRM Cadência (Supabase).
+e atualiza score, temperatura e supressão no CRM Cadencia (Supabase).
 
 O antigo handler da porta `8766` é código histórico até o cleanup e não deve
 receber tráfego nem ser reativado.
@@ -34,7 +34,7 @@ perda de eventos concorrentes.
 
 ## Limite atual
 
-O scoring atualiza score, banda e eventos no CRM Cadência. Movimento automático
+O scoring atualiza score, banda e eventos no CRM Cadencia. Movimento automático
 de oportunidade deve usar as automações do CRM próprio; não existe fallback ou
 ação a jusante em serviço externo.
 

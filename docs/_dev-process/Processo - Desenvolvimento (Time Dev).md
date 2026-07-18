@@ -73,7 +73,7 @@ Agente trabalha a issue de ponta a ponta **mas PARA antes do deploy**:
 
 ## Documentação obrigatória (fim de feature)
 
-Antes do merge final `feature → main`, a **Paula** (Tech Writer) roda `/documentar` — gera/atualiza MDs no repo + Wiki HTML + Playbook Obsidian. **Vitor** valida que a doc reflete a arquitetura real. Pula só em hotfix trivial.
+Antes do merge final `feature → main`, a **Paula** (Tech Writer) roda `/documentar-software` — gera/atualiza a documentação no **cadencia-docs** (fonte de verdade cross-time). **Vitor** valida que a doc reflete a arquitetura real. Pula só em hotfix trivial.
 
 ## Personas do Time Dev
 

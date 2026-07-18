@@ -4,7 +4,7 @@
 
 Wrappers TypeScript usados pelo frontend e pelas API routes para Stripe,
 Instagram, analytics e serviços internos. Contatos, oportunidades e pipelines
-usam o CRM Cadência via Supabase; email usa Resend no growth pipeline.
+usam o CRM Cadencia via Supabase; email usa Resend no growth pipeline.
 
 ## Arquivos principais
 

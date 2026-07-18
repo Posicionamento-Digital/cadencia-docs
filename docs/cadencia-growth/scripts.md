@@ -58,5 +58,5 @@ Scripts de recovery e auditoria continuam úteis como Scheduled Task ou one-shot
 ## Histórico
 
 - `migrate_ghl_contacts.py` e `migrate_ghl_opportunities.py` são artefatos da migração concluída. Preservar para auditoria; não executar novamente.
-- 2026-06-27: README criado via `/documentar`
+- 2026-06-27: README criado via `/documentar-software`
 - 2026-06-17: scripts atualizados em batch (ver commits)

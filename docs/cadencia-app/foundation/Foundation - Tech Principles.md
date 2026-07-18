@@ -70,7 +70,7 @@ entities: ["[[Cadencia]]", "[[marketing]]"]
 
 ## 4. CRM nativo e provider por canal
 
-**Princípio:** o CRM Cadência é a fonte de verdade; cada canal usa uma integração especializada atrás de contratos próprios.
+**Princípio:** o CRM Cadencia é a fonte de verdade; cada canal usa uma integração especializada atrás de contratos próprios.
 
 **Por quê:** contatos, empresas, oportunidades, pipelines, tags, scoring e cadências precisam compartilhar o mesmo modelo multi-tenant e as mesmas garantias de RLS. Email, WhatsApp e publicação social têm requisitos externos diferentes e evoluem sem reescrever o CRM.
 

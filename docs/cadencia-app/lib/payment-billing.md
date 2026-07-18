@@ -1,6 +1,6 @@
 > **📄 Cópia local — fonte de verdade no GitHub.**
 > Origem: [`felipeluissalgueiro/cadencia-app` / `master` / `src/app/api/app/billing/CLAUDE.md`](https://github.com/felipeluissalgueiro/cadencia-app/blob/master/src/app/api/app/billing/CLAUDE.md)
-> Sincronizar via `/documentar` ou `sync_to_framework.py`.
+> Sincronizar via `/documentar-software` ou `sync_to_framework.py`.
 
 > ⚠️ **Vocabulário desatualizado (DEV-989, 2026-06-30):** este doc descreve o fluxo em termos de "planos" — modelo anterior ao PDL-505 (11/06/2026). **Cadência não tem planos**, é créditos puros. Fonte única de vocabulário/modelo: `times/produto/cadencia/MODELO-CREDITOS.md`. A tabela "Planos e créditos" abaixo é **referência histórica dos price tiers do Stripe** (pode não refletir os produtos Stripe atuais — conferir `plans.ts`) — ao falar do modelo de negócio, usar sempre "carteira de créditos"/"créditos comprados", nunca "plano X". Correção completa do fluxo técnico (se o código ainda usa nomenclatura de plano internamente) é escopo de uma sincronização real com o repo `cadencia-app`, fora deste sweep de framework.
 

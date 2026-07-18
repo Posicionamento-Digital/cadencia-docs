@@ -45,6 +45,6 @@ Aliases 8K sao recriados pelos Modelfiles `ollama-qwen3-4b-8k.Modelfile` e `olla
 ## Refs tecnicas
 
 - Docs componentes: `C:\dev\pd-framework\docs\modelos-locais\`
-- Wiki HTML: `C:\dev\pd-framework\docs\modelos-locais\index.html`
+- cadencia-docs (fonte de verdade): `docs/_pd-framework/framework-interno/Modelos locais.md`
 - Config OpenCode: `C:\dev\pd-framework\opencode.json`
 - Canvas: `[[Modelos locais.canvas]]`

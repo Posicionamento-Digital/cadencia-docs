@@ -29,7 +29,7 @@ mantido_por: Vitória (Time Jurídico) + Felipe
 | 2 | **Consultoria de Gestão Empresarial** (5 fases) | Cadencia consultora, cliente implementa | `consultoria-gestao/V01-Contrato-Consultoria-Treinamento-Gestao-Empresarial-5fases.docx` | ✅ ativo |
 | 3 | **Desenvolvimento de Agente IA Modular** (Agente + CRM + Agendamento + Tráfego) | Cadencia entrega software, cliente opera | `agente-ia/Contrato-Desenvolvimento-Agente-IA-Modular-Template-2025-12-18.docx` | ✅ ativo |
 | 4 | **Jornada do Gestor de IA** (3 meses + revenue share) | Cadencia capacita cliente pra revender Cadencia | (versão Nicole 2025-12-18 em `contratos-emitidos/historico/`) | ⚠️ falta template puro |
-| 5 | **Cadência SaaS** (plano self-service) | Cadencia oferece SaaS, cliente assina | (não há contrato escrito hoje — usa termo de uso/política) | ❌ pendente decisão |
+| 5 | **Cadencia SaaS** (plano self-service) | Cadencia oferece SaaS, cliente assina | (não há contrato escrito hoje — usa termo de uso/política) | ❌ pendente decisão |
 | 9 | **Cadência Bundle** (acesso + implantação + créditos + suporte CS + consultoria mensal) | Cadencia entrega onboarding white-glove + licença 6m com créditos inclusos | `cadencia-bundle/Contrato-Cadencia-Bundle-6meses-Template.md` (gerado caso Mel Quevedo 2026-06) | ✅ ativo |
 | 6 | **Tráfego Pago** | Cadencia nunca prestou — só **contratou** Vortex | n/a (só `contratos-recebidos/`) | n/a |
 | 7 | **Mentoria / Acompanhamento avulso** (caso Daniela Lima 2024) | Cadencia orienta marca pessoal | (legado em `contratos-emitidos/historico/Daniela-Lima-...`) | ⚠️ sem template puro |
@@ -161,7 +161,7 @@ Se algum dia a Cadencia passar a vender tráfego pago: criar template novo em `t
 1. Tentar separar em **2 contratos** (template 2 + template 3) — escopos jurídicos diferentes (consultoria = obrigação de meio; agente = entrega de produto).
 2. Se cliente insistir em 1 contrato único: criar **versão combinada nova** (Vitória redige, Marcelo carimba) e salvar como template novo em `templates/contratos/consultoria-mais-agente-ia/`. Documentar a fusão nesse mapa.
 
-### Cliente contrata Cadência SaaS + Agente IA customizado
+### Cliente contrata Cadencia SaaS + Agente IA customizado
 
 Misturar SaaS com entrega customizada é arriscado juridicamente (regimes de responsabilidade muito diferentes). **Recomendação:** dois instrumentos separados:
 - Termos de Uso Cadência (sem assinatura)

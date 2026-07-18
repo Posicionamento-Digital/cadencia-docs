@@ -168,7 +168,7 @@ Padrão S-1 reporta por **segmento E geografia** (linhas separadas).
 | **Clinics (Healthcare AI)** | Clínicas com contrato mensalidade padrão |
 | **Other Recurring** | Mensalidades não-clínica |
 | **Professional Services** | Projetos pontuais (não-segmento, linha separada) |
-| **Cadência SaaS** | (futuro — quando MRR Stripe materializar > 10% revenue, vira segmento próprio) |
+| **Cadencia SaaS** | (futuro — quando MRR Stripe materializar > 10% revenue, vira segmento próprio) |
 
 ### Por geografia
 

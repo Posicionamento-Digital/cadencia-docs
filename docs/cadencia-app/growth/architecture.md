@@ -7,7 +7,7 @@ graph LR
     App[cadencia-app] -->|trigger tenant + canais| Trigger[trigger_server :39090]
     Cron[Cron] --> Runner[growth_pipeline]
     Trigger --> Runner
-    Runner --> CRM[(Supabase / CRM Cadência)]
+    Runner --> CRM[(Supabase / CRM Cadencia)]
     Runner --> Resend[Resend]
     Runner --> Social[Providers LinkedIn/Instagram]
     Runner --> Lara[cadencia-lara]

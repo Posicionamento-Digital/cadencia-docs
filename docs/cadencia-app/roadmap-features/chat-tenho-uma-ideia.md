@@ -8,7 +8,7 @@ entities: ["[[Cadencia]]", "[[Karina Vieira]]"]
 # Chat — "Tenho uma Ideia"
 
 > Documentação técnica completa: `Cadencia/docs/features/chat-tenho-uma-ideia/README.md`
-> Wiki HTML: `Cadencia/docs/wiki/chat-tenho-uma-ideia.html`
+> cadencia-docs (fonte de verdade): `docs/cadencia-app/workers/chat-ideias.md`
 > ADR: [[ADR-0002 Chat Agent Design]]
 
 ## O que é

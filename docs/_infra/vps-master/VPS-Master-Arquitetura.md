@@ -107,7 +107,7 @@ VPS 72.60.4.71
 
 | Container / Serviço | Motivo |
 |---|---|
-| `cadencia-n8n-main`, workers, postgres, redis | Cadência — cliente ativo |
+| `cadencia-n8n-main`, workers, postgres, redis | Cadencia — cliente ativo |
 | `cloudflared` (pid ativo) | Tunnel do ecuro — derrubar quebra a API |
 | `lara-central`, `lara-ceilandia` | Cliente Sorria ativo — atendimento em produção |
 | `ecuromiddleware-*` | Criado pelo Luiz — não mexer sem ele |

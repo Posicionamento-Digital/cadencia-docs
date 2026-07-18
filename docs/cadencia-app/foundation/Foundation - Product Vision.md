@@ -88,7 +88,7 @@ Cadência é esse sistema — a Máquina de Posicionamento
 
 **A ponte:** PD constrói estratégia. Cadência executa.
 - Quem passou pelo PD e travou na execução → cliente natural Cadência
-- Quem não tem estrutura pra consultoria → vai direto pra Cadência
+- Quem não tem estrutura pra consultoria → vai direto pra Cadencia
 
 ---
 

@@ -7,7 +7,7 @@ entities: ["[[Cadencia]]", "[[Central de Observabilidade]]", "[[PD Framework]]",
 ---
 # Arquitetura — PD Framework
 
-> Gerado por `/documentar` alimentado pelo knowledge graph (`.understand-anything/knowledge-graph.json`, 04/07/2026 — 415 arquivos, 1.309 nós, 1.671 arestas, 8 camadas). Doc canônica de decisões: `CONTEXT.md` (raiz) + `_core/RUNTIME-CONTRACT.md`. Este arquivo é a visão C4 derivada do código real.
+> Gerado por `/documentar-software` alimentado pelo knowledge graph (`.understand-anything/knowledge-graph.json`, 04/07/2026 — 415 arquivos, 1.309 nós, 1.671 arestas, 8 camadas). Doc canônica de decisões: `CONTEXT.md` (raiz) + `_core/RUNTIME-CONTRACT.md`. Este arquivo é a visão C4 derivada do código real.
 
 ## Nível 1 — Contexto
 

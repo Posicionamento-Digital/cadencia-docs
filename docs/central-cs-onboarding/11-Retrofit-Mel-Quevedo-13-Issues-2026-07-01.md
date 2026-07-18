@@ -19,7 +19,7 @@ O retrofit da Mel revelou que a skill `/ativar-cliente` (já robustecida em DEV-
 - **`contrato_fases.py`** (novo) — detecta a fase contratual (Onboarding/Operação Assistida/Autônoma) pelo T-0 do contrato. Validado: Mel em Fase 1, dia 11/15.
 - **`importar_base_cliente.py`** (novo) — generaliza o ETL manual de reativação de base (dedup, e-mails compartilhados, gate de tenant crítico, enriquecimento). Validado contra dados reais: 222 titulares/190 PJ, números idênticos ao original.
 - **Worker `recarga-creditos-mensal`** — reset automático de créditos no dia do ciclo. **Deployado na VPS Master** (systemd timer 18:25 BRT), mantido em dry_run (billing crítico) até validação ao vivo do Felipe.
-- **Fix real no `cadencia-cli`** — `tenants provision` criava tenant em `status=trial` (conceito que não existe mais no Cadência, créditos puros). Corrigido pra sempre `active`; tenant real da Mel corrigido em produção. PR #20 mergeada.
+- **Fix real no `cadencia-cli`** — `tenants provision` criava tenant em `status=trial` (conceito que não existe mais no Cadencia, créditos puros). Corrigido pra sempre `active`; tenant real da Mel corrigido em produção. PR #20 mergeada.
 - **Sweep "planos→créditos" em 2 repos** (`pd-framework` + `cadencia-app`) — achado mais crítico: a **landing page pública** (`cadencia-app`) tinha um **erro de preço real** na FAQ ("Planos a partir de R$199,90/mês" quando o modelo real é pacotes avulsos). Corrigido, revisado (Opus, 0 P1) e **deployado em produção**.
 - **Bloco F (Relacionamento por fase)** + 7 gates novos/reforçados na skill `/ativar-cliente` (e-mail ausente, Asaas customer_id, briefing heurística, ata de vendas, pipelines de pós-venda, dados de contato, referência de reuniões no Linear).
 

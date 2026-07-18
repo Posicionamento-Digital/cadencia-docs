@@ -1,10 +1,10 @@
-# Evolução transversal do Cadência — ciclo Luiz 2026-06/07
+# Evolução transversal do Cadencia — ciclo Luiz 2026-06/07
 
 > Consolidação das entregas de CRM/scoring, email por tenant, onboarding atômico, UX mobile e confiabilidade que acompanharam Lara, agenda e cadências.
 
 ## Por que foi construído assim
 
-As mudanças parecem independentes na interface, mas compartilham o mesmo objetivo técnico: consolidar o CRM Cadência como fonte única e impedir perda de estado em fluxos assíncronos e multi-tenant. Configuração passou a usar merges atômicos; email ganhou domínio e identidade por tenant; eventos carregam a origem do conteúdo; a UI passou a refletir estado real em desktop e mobile.
+As mudanças parecem independentes na interface, mas compartilham o mesmo objetivo técnico: consolidar o CRM Cadencia como fonte única e impedir perda de estado em fluxos assíncronos e multi-tenant. Configuração passou a usar merges atômicos; email ganhou domínio e identidade por tenant; eventos carregam a origem do conteúdo; a UI passou a refletir estado real em desktop e mobile.
 
 O caminho de email foi desenhado para tolerar callbacks duplicados e respostas incertas. O webhook responde cedo ao Svix, mas usa idempotência e processamento durável. O provider só é habilitado após verificação do domínio, e writers concorrentes não substituem o objeto inteiro de configuração.
 
@@ -16,7 +16,7 @@ O caminho de email foi desenhado para tolerar callbacks duplicados e respostas i
 | Configuração | PostgreSQL RPC, `tenant_config.config` JSONB |
 | Email | Resend, Cloudflare DNS, List-Unsubscribe |
 | Scoring | Webhook Svix, Python, Supabase `scoring_events` |
-| Integrações | CRM Cadência, Resend/Svix, DataStone, OpenAI-compatible SDK |
+| Integrações | CRM Cadencia, Resend/Svix, DataStone, OpenAI-compatible SDK |
 
 ## Como funciona
 

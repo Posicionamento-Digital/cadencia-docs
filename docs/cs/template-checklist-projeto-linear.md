@@ -46,7 +46,7 @@ Princípio: **o checklist é sempre o mesmo na origem; o que muda é quais bloco
 | `F7` | Treinamento e Adoção | playbook Fase 7 |
 | `F8` | Acompanhamento de Implementação | playbook Fase 8 |
 
-Conteúdo detalhado de cada bloco: copiar os itens `- [ ]` correspondentes de `checklist-briefing.md` / `playbook-implementacao-11-fases.md`. Adaptar o texto dos itens ao vocabulário do produto (ex: "leads" → "conteúdo" no Cadência).
+Conteúdo detalhado de cada bloco: copiar os itens `- [ ]` correspondentes de `checklist-briefing.md` / `playbook-implementacao-11-fases.md`. Adaptar o texto dos itens ao vocabulário do produto (ex: "leads" → "conteúdo" no Cadencia).
 
 ---
 

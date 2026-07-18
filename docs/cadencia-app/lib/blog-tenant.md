@@ -1,6 +1,6 @@
 > **📄 Cópia local — fonte de verdade no GitHub.**
 > Origem: [`felipeluissalgueiro/cadencia-app` / `master` / `cadencia-blog/CLAUDE.md`](https://github.com/felipeluissalgueiro/cadencia-app/blob/master/cadencia-blog/CLAUDE.md)
-> Sincronizar via `/documentar` ou `sync_to_framework.py`.
+> Sincronizar via `/documentar-software` ou `sync_to_framework.py`.
 
 ---
 
@@ -57,7 +57,7 @@ Injetada via variáveis de ambiente Vercel por instância:
 
 ## Quando NÃO usar
 
-- ❌ Como blog institucional da Cadência — esse é `(marketing)/` no app principal.
+- ❌ Como blog institucional da Cadencia — esse é `(marketing)/` no app principal.
 - ❌ Tenant sem deploy Vercel configurado — falha silenciosa.
 - ❌ Sem `BLOG_PUBLISH_SECRET` — qualquer um poderia publicar.
 

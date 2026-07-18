@@ -5,7 +5,7 @@ moc: "[[MOC-Projetos]]"
 type: source
 entities: ["[[Cadencia]]", "[[marketing]]"]
 ---
-# Cadência — Roadmap Produto (Jun-Jul/2026)
+# Cadencia — Roadmap Produto (Jun-Jul/2026)
 
 **Status:** Em planejamento
 **Período:** 2026-06-01 → 2026-07-31

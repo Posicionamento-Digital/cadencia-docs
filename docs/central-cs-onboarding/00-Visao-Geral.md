@@ -65,7 +65,7 @@ flowchart LR
 - [Linear — Automação do Onboarding CS (Fases 1-7)](https://linear.app/cadencia/project/automacao-do-onboarding-cs-fases-1-7-b37d1d5ef0d7)
 - Mapa vivo: `pd-framework/times/cs/context/mapa-automacao-onboarding.md`
 - Handoff: `pd-framework/times/cs/context/handoff-central-cs-2026-06-24.md`
-- Wiki HTML: `pd-framework/docs/wiki/central-cs-onboarding/index.html`
+- cadencia-docs (fonte de verdade): `docs/central-cs-onboarding/00-Visao-Geral.md`
 - Detalhe: [[13-Referencia-Tecnica-Componentes-2026-07-05]] · [[14-Pos-Kickoff-Validacao-Prompt-2026-07-07]]
 
 ## Histórico

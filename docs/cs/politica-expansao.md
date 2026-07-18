@@ -23,7 +23,7 @@ Comissionamento alinha incentivo entre Felipe (CS Lead) e quem fechar a venda ex
 Cliente Cadencia Consultorias que contratou implementação inicial → adiciona Mentoria Mensal de Processos, ou Expansão IA pra novo canal, ou consultoria comercial separada.
 
 ### 2. Cross-sell — Produto adjacente
-Cliente Cadencia Consultorias → Cadência SaaS (cliente da consultoria que adotou Cadência como ferramenta operacional).
+Cliente Cadencia Consultorias → Cadencia SaaS (cliente da consultoria que adotou Cadência como ferramenta operacional).
 Cliente Cadência → Cadencia Consultorias (cliente do produto que precisa de mão na operação).
 Cliente Cadência self-serve → Franquia Gestor de IA (perfil empreendedor que quer escalar no segmento).
 
@@ -57,7 +57,7 @@ Se algum critério falha → adiar upsell, continuar nutrição de relacionament
 | **Novas Automações** (R$5-15k one-shot) | 15% one-shot | 0% (CS conduz) |
 | **Expansão IA** (novo canal/produto) | 10% nos 3 primeiros meses | 0% (CS conduz) |
 | **Cadencia Consultorias nova** (R$10-50k/mês) — quando cliente Cadência migra pra Consultoria | 5% nos 3 primeiros meses | 15% (Eduardo conduz fechamento) |
-| **Cadência SaaS** (R$119-499/mês) — cliente Consultoria adota Cadência | 5% nos 6 primeiros meses | 5% (Eduardo apoia, CS conduz) |
+| **Cadencia SaaS** (R$119-499/mês) — cliente Consultoria adota Cadência | 5% nos 6 primeiros meses | 5% (Eduardo apoia, CS conduz) |
 | **Franquia Gestor de IA** (R$15k/3 meses) — perfil empreendedor | 5% one-shot | 20% (Eduardo conduz totalmente) |
 
 **Regra de handoff:**
@@ -128,12 +128,12 @@ Enviar **link do formulário oficial** do Programa de Indicação Comercial (ver
 
 ## Cross-sell entre produtos Cadencia
 
-### Cadencia Consultorias → Cadência SaaS
+### Cadencia Consultorias → Cadencia SaaS
 Cliente Consultoria que tem dor de marketing recorrente (postagem, nutrição, scoring) → Cadência cobre.
 **Quando ofertar:** após Fase 8 (Acompanhamento) consolidada, ~3-6 meses.
 **Comissão:** CS 5% + Comercial 5% nos primeiros 6 meses.
 
-### Cadência SaaS → Cadencia Consultorias
+### Cadencia SaaS → Cadencia Consultorias
 Cliente Cadência que escala e precisa de mão estratégica na operação → Consultoria.
 **Quando ofertar:** cliente Cadência ativo há 6+ meses, faturamento >R$300k/mês (sinal de que pode investir em consultoria).
 **Comissão:** CS 5% + Comercial 15% (Eduardo conduz fechamento).

@@ -22,7 +22,7 @@ Toda a geração acontece em workers Python rodando na VPS Master (cron 11h BRT)
 | Banco | Supabase (PostgreSQL + RLS + Realtime) |
 | Workers | Python — VPS Master (Coolify) |
 | Carrossel/Reels | Python + Pillow/FFmpeg — Coolify VPS Master (Railway DESLIGADO) |
-| CRM/automação | CRM Cadência (Supabase + automações tenant-scoped) |
+| CRM/automação | CRM Cadencia (Supabase + automações tenant-scoped) |
 | Email | Resend + webhooks Svix |
 | IA | GPT-4o, Gemini 2.5 Flash, DALL-E 3 |
 | Billing | Stripe + créditos internos |
@@ -46,7 +46,7 @@ Toda a geração acontece em workers Python rodando na VPS Master (cron 11h BRT)
 | `ideas_generator.py` | Gera ideias de conteúdo automaticamente |
 | `dossier.py` | Gera dossier de marca no onboarding |
 | `editorials.py` | Define os 3 pilares editoriais do tenant |
-| `resend_webhook.py` | Atualiza score e temperatura no CRM Cadência |
+| `resend_webhook.py` | Atualiza score e temperatura no CRM Cadencia |
 
 ### Lib compartilhada (`/lib`)
 - `supabase.ts` — cliente e helpers
@@ -62,7 +62,7 @@ Toda a geração acontece em workers Python rodando na VPS Master (cron 11h BRT)
 
 **Editorial** — 1 dos 3 pilares de conteúdo do tenant. Toda ideia pertence a 1 editorial.
 
-**CRM Cadência** — contatos, empresas, oportunidades, pipelines, tags, scoring e cadências isolados por tenant no Supabase.
+**CRM Cadencia** — contatos, empresas, oportunidades, pipelines, tags, scoring e cadências isolados por tenant no Supabase.
 
 **Pipeline** — sequência diária de geração: `sync → blog → seinfeld → newsletter → linkedin → instagram`. Só roda para tenants com `onboarding_completed`.
 

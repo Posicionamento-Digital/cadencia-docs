@@ -97,7 +97,7 @@ Quando deixar ir: encerrar **sem queimar ponte**. Cliente bem encerrado pode ind
 
 Análise pendente:
 - Quais clientes cancelaram últimos 12 meses?
-- Por categoria de produto (Consultoria, Cadência SaaS, Franquia)?
+- Por categoria de produto (Consultoria, Cadencia SaaS, Franquia)?
 - Por motivo (verbalizado vs inferido)?
 - Quais sinais precoces apareceram?
 - Quanto tempo entre primeiro sinal e churn efetivo?

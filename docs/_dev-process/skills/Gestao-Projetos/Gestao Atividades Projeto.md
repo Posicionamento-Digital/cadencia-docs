@@ -67,7 +67,7 @@ Cria issues no Linear com tudo que o Luiz precisa pra trabalhar na VPS sem depen
 
 | Projeto Linear | Repo GitHub | Path na VPS |
 |---|---|---|
-| Cadência — App | `felipeluissalgueiro/cadencia-app` | `/root/cadencia-app` |
+| Cadencia — App | `felipeluissalgueiro/cadencia-app` | `/root/cadencia-app` |
 | GCI-GO | `Posicionamento-Digital/gci-go-whatsapp` | `/root/gci-go-whatsapp` |
 | ecuro-mcp | `Posicionamento-Digital/ecuro-mcp` | `/root/ecuro-mcp` |
 | Pipeline-Conteudo | (VPS direto, sem repo GitHub) | `/root/pipeline-conteudo` |

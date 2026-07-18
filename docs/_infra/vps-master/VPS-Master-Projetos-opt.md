@@ -250,7 +250,7 @@ sudo journalctl -u stamper-bot.service -f
 
 **Status atual:** scripts quebrados — API key GHL inválida (PDL-156). SOAP ATO 3 em andamento até 29/05.
 
-**Decisão pendente:** migrar para Cadência como tenant OU refatorar como container próprio.
+**Decisão pendente:** migrar para Cadencia como tenant OU refatorar como container próprio.
 
 **Ver:** Linear → Pipeline Marketing PD — Refatoração + Containerização + Restauração
 

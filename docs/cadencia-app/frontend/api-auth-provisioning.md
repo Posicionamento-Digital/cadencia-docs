@@ -3,7 +3,7 @@
 ## TL;DR
 
 `POST /api/auth/provision-tenant` cria o tenant do usuário autenticado e inicia
-o provisionamento do CRM Cadência, da carteira de créditos e dos recursos de
+o provisionamento do CRM Cadencia, da carteira de créditos e dos recursos de
 onboarding.
 
 ## Identidade

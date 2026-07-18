@@ -11,7 +11,7 @@ Processo automático que sincroniza documentação técnica gerada na VPS dev co
 ## Fluxo completo
 
 ```
-Dev roda /documentar na VPS
+Dev roda /documentar-software na VPS
         ↓
 Docs criadas no repo do projeto (CONTEXT.md, README.md, ADRs)
         ↓
@@ -28,8 +28,8 @@ WhatsApp Stevo para Felipe com resumo dos arquivos sincronizados
 
 | Componente | Path | Responsável |
 |---|---|---|
-| Skill `/documentar` (Felipe) | `/home/felipe/.claude/skills/documentar/` | VPS dev |
-| Skill `/documentar` (Luiz) | `/home/luiz/.claude/skills/documentar/` | VPS dev |
+| Skill `/documentar-software` (Felipe) | `/home/felipe/.claude/skills/documentar-software/` | VPS dev |
+| Skill `/documentar-software` (Luiz) | `/home/luiz/.claude/skills/documentar-software/` | VPS dev |
 | Pasta compartilhada | `/opt/dev-docs/` | VPS dev |
 | Script sync VPS | `/opt/sync-dev-docs.py` | VPS dev (cron 23h) |
 | Script sync Windows | `~/.claude/workers/sync-dev-docs-vault.py` | Windows (23:30) |
@@ -39,7 +39,7 @@ WhatsApp Stevo para Felipe com resumo dos arquivos sincronizados
 ## Como usar (devs)
 
 1. Terminar uma feature, fix ou componente
-2. Rodar `/documentar` no Claude Code dentro do projeto
+2. Rodar `/documentar-software` no Claude Code dentro do projeto
 3. O Claude pergunta o escopo (projeto inteiro / sessão atual / componente específico)
 4. Gera docs no repo + copia para `/opt/dev-docs/`
 5. Às 23h commita automaticamente — às 23:30 aparece no Obsidian

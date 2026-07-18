@@ -26,7 +26,7 @@
 
 **Provisioning** — Criação do tenant, carteira inicial, pipelines/stages/tags/campos do CRM próprio, domínio Resend/DNS e artefatos de marca. Orquestrado pelo app e por `provision_tenant.py`.
 
-## CRM Cadência
+## CRM Cadencia
 
 **Contato** — Pessoa do CRM em `public.contacts`, sempre isolada por `tenant_id`.
 
@@ -34,7 +34,7 @@
 
 **Pipeline** — Funil comercial do tenant, identificado por slug estável e composto por stages ordenados.
 
-**Stage** — Fase dentro de um pipeline do CRM Cadência. Automações usam slugs, não IDs externos.
+**Stage** — Fase dentro de um pipeline do CRM Cadencia. Automações usam slugs, não IDs externos.
 
 **Oportunidade** — Relação comercial entre contato, pipeline e stage, com valor, status e atividades.
 
@@ -46,7 +46,7 @@
 
 **Generation queue** — Tabela `generation_queue` (planejada para refator PDL-171) para coordenar jobs entre workers e VPS. Hoje a coordenação é por mistura de `trigger_server.py` + cron + status em `published_posts`.
 
-**Sync** — Step que carrega o estado do tenant e do CRM Cadência antes de gerar. Sempre roda primeiro.
+**Sync** — Step que carrega o estado do tenant e do CRM Cadencia antes de gerar. Sempre roda primeiro.
 
 **Dispatch (Seinfeld)** — Envio real do email Seinfeld via Resend. Acontece no cron diário e retoma o item vencido mais antigo sem duplicar por contato/post.
 
@@ -100,7 +100,7 @@
 ```
 Tenant ── tem ──► Tenant config ── configura ──► Canais e email
    │
-   ├── tem ──► CRM Cadência ──► contatos / empresas / oportunidades / cadências
+   ├── tem ──► CRM Cadencia ──► contatos / empresas / oportunidades / cadências
    ├── tem ──► Dossier
    ├── tem ──► 3 Editoriais ──┐
    ├── gera ──► Content ideas◄┘

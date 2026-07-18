@@ -15,7 +15,7 @@ tags: [financeiro, canon]
 | Cenário | Gateway |
 |---|---|
 | PD Consultorias / Gestores IA (cobrança lead→cliente) | **Stripe** (novo) / **Asaas** (recorrência legada). Lifecycle de billing no CRM Cadencia `contacts` — ⏳ CAD-600 |
-| Cadência SaaS (B2C, checkout direto no produto) | **Stripe** |
+| Cadencia SaaS (B2C, checkout direto no produto) | **Stripe** |
 | Novo cliente B2B BR/intl pós-2026-05-11 | **Stripe** |
 | Cobrança recorrente B2B legada (pré-migração) | **Asaas** (descontinuação) |
 | Cliente internacional (USD/EUR) | **Stripe** |
@@ -34,7 +34,7 @@ tags: [financeiro, canon]
 
 ## Stripe
 
-- **Uso:** Cadência SaaS (B2C) + nova padrão BR/intl pós-2026-05-11.
+- **Uso:** Cadencia SaaS (B2C) + nova padrão BR/intl pós-2026-05-11.
 - **Decisão:** Stripe é o gateway da Cadencia; Asaas permanece onde o contrato do cliente exigir.
 - **Credencial:** 1Password vault `databases` ou similar — consultar mapa.
 - **Código real:** integração já implementada na Cadência. Reusar:
@@ -58,7 +58,7 @@ tags: [financeiro, canon]
 ## Regras absolutas
 
 1. **Credencial só via 1Password.** Nunca em `.env`, código, logs ou notas.
-2. **Não duplicar integração.** Stripe/Asaas já têm cliente implementado na Cadência — reusar.
+2. **Não duplicar integração.** Stripe/Asaas já têm cliente implementado na Cadencia — reusar.
 3. **Webhook é fonte da verdade.** Não consultar status de cobrança via polling se webhook resolve.
 4. **Validar gateway antes de cobrança nova.** O gateway varia por cliente.
 5. **Reconciliação cruza os 3.** Ver `reconciliacao-bancaria.md` (EM REVISÃO).

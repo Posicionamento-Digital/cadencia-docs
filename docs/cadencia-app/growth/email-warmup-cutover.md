@@ -40,7 +40,7 @@
 - **`/api/unsubscribe`** live (307) · CNAME `redirect` de tracking existe.
 
 ## ⚠️ Rollout dos legados (pendente — fazer depois)
-Risco histórico do cutover: tenants sem contatos migrados ficavam sem audiência. A migração foi concluída; hoje a fonte única é `public.contacts`. Monitorar audiência vazia diretamente no CRM Cadência.
+Risco histórico do cutover: tenants sem contatos migrados ficavam sem audiência. A migração foi concluída; hoje a fonte única é `public.contacts`. Monitorar audiência vazia diretamente no CRM Cadencia.
 
 ## Direção futura (CAD-676)
 Domínio compartilhado `cadencia.app.br` é interim. Modelo final: **subdomínio Cadência auto-provisionado por tenant** (`<slug>.cadencia.app.br`, DNS via Cloudflare API + Resend Domains API, reputação isolada) + opção de domínio próprio. Resolve o risco de reputação compartilhada.

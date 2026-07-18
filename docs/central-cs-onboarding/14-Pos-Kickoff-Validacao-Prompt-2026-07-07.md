@@ -7,7 +7,7 @@ entities: ["[[Cadencia]]", "[[Central CS Onboarding]]", "[[OP-Odontopenha]]"]
 ---
 # Central de CS — Pacote Pós-Kickoff / Validação de Prompt (07/07/2026)
 
-> Gerado por `/documentar` sobre o trabalho da sessão de 07/07/2026: 8 Epics do projeto Linear "Automação do Onboarding CS (Fases 1-7)" (DEV-1237/1227/1232/1241/1247/1252/1258/1219), executados em Modo A, validados end-to-end em produção real com **OP Odontopenha** antes de existir automação (fizemos manual primeiro, depois automatizamos o que provou funcionar). Complementa [[13-Referencia-Tecnica-Componentes-2026-07-05]] — cobre as Fases 5-7 que lá ainda não tinham módulo próprio.
+> Gerado por `/documentar-software` sobre o trabalho da sessão de 07/07/2026: 8 Epics do projeto Linear "Automação do Onboarding CS (Fases 1-7)" (DEV-1237/1227/1232/1241/1247/1252/1258/1219), executados em Modo A, validados end-to-end em produção real com **OP Odontopenha** antes de existir automação (fizemos manual primeiro, depois automatizamos o que provou funcionar). Complementa [[13-Referencia-Tecnica-Componentes-2026-07-05]] — cobre as Fases 5-7 que lá ainda não tinham módulo próprio.
 
 ## O que é
 

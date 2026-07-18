@@ -10,7 +10,7 @@
 - **Stack:** React 19 + Tailwind + shadcn/ui + Serwist (PWA)
 - **Path:** `src/app/(app)/app/`
 - **Status:** ativo (Vercel, auto-deploy `master`)
-- **Deps:** Supabase Auth, CRM Cadência, Workers Coolify VPS Master e VPS growth
+- **Deps:** Supabase Auth, CRM Cadencia, Workers Coolify VPS Master e VPS growth
 
 ## Rotas principais
 
@@ -29,7 +29,7 @@
 | `/app/feedback/[id]` | FeedbackView | Feedback por conteúdo |
 | `/app/preparing` | PreparingView | Polling pós-onboarding (aguarda 5 ideias) |
 | `/app/growth/calendario` | CalendarioClient | Calendário de conteúdo e entregas |
-| `/app/growth/contatos` | ContactsView | Contatos do CRM Cadência |
+| `/app/growth/contatos` | ContactsView | Contatos do CRM Cadencia |
 | `/app/growth/nutricao` | NutricaoClient | Nutrição baseada em score/eventos do CRM |
 
 ## Componentes críticos
@@ -42,7 +42,7 @@
 ## CRM e Growth nativos
 
 Contatos, empresas, oportunidades, pipelines, tags, campos, score e temperatura
-vêm do CRM Cadência. Toda consulta e mutação deve resolver o tenant antes de
+vêm do CRM Cadencia. Toda consulta e mutação deve resolver o tenant antes de
 acessar o Supabase.
 
 ## Don'ts

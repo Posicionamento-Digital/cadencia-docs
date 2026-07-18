@@ -5,10 +5,10 @@ moc: "[[MOC-Skills]]"
 ---
 # Documentar
 
-Gera ou atualiza documentação completa de projeto em 3 destinos: MDs por componente (no repo, para agentes), Wiki HTML navegável (no repo), Playbook Obsidian no vault Time PD.
+Gera ou atualiza documentação completa de projeto no cadencia-docs (fonte de verdade cross-time, MkDocs Material) + espelho para os agentes no repo do projeto.
 
 ## Quando usar
-"/documentar", "documenta o projeto", "gera doc", "playbook do projeto", "atualiza a documentação", "documenta o que fiz nessa sessão", "documenta o cadencia".
+"/documentar-software", "documenta o projeto", "gera doc", "playbook do projeto", "atualiza a documentação", "documenta o que fiz nessa sessão", "documenta o cadencia".
 
 ---
 
@@ -18,20 +18,19 @@ Gera ou atualiza documentação completa de projeto em 3 destinos: MDs por compo
 ---
 name: documentar
 description: >
-  Gera ou atualiza documentação completa de um projeto em 3 destinos sincronizados:
-  MDs por componente (no repo, pra agentes), Wiki HTML navegável (no repo, pra Felipe ler),
-  e Playbook Obsidian no vault Time PD (pasta Projetos/[nome]/Docs/).
+  Gera ou atualiza documentação completa de um projeto no cadencia-docs
+  (fonte de verdade cross-time, MkDocs Material publicado em docs.cadencia.ia.br)
+  + espelho para os agentes no repo do projeto (CLAUDE.md + docs/).
 ---
 
-# /documentar — Documentação Completa de Projeto/Feature/Componente
+# /documentar-software — Documentação Completa de Projeto/Feature/Componente
 
 Gera ou atualiza documentação técnica de software em **3 destinos sincronizados** a partir da mesma fonte de verdade (código + interação com Felipe):
 
 | Destino | Pra quem | Formato |
 |---|---|---|
-| MDs no repo (`src/<componente>/README.md`, `docs/`, `CONTEXT.md`, `docs/adr/`) | Agentes IA + dev navegando código | Markdown denso, paths absolutos |
-| Wiki HTML em `docs/wiki/` | Felipe (leitura humana) | HTML dark mode com TOC lateral e busca |
-| Notas Obsidian no vault Time PD (`Projetos/[nome]/Docs/`) | Felipe (playbook externo consultável) | Markdown com frontmatter + wikilinks |
+| cadencia-docs (fonte de verdade cross-time, MkDocs Material) | Felipe + time + agentes navegando doc | Markdown com navegação, busca, dark mode |
+| MDs no repo (`src/<componente>/README.md`, `CONTEXT.md`, `docs/adr/`) | Agentes IA + dev navegando código | Markdown denso, paths absolutos |
 
 **Princípios não-negociáveis:**
 

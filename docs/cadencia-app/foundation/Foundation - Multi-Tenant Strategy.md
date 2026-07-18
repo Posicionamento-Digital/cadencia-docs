@@ -127,9 +127,9 @@ CREATE POLICY "tenant_isolation" ON public.<tabela>
 
 ## Soul.md por tenant (PDL-93 Done, PDL-117/118 pendentes)
 
-**Cada tenant tem seu próprio Soul.md** — distinto do SOUL.md do produto Cadência. Funciona como:
+**Cada tenant tem seu próprio Soul.md** — distinto do SOUL.md do produto Cadencia. Funciona como:
 - Missão do negócio do tenant
-- Voz/tom do tenant (não da Cadência)
+- Voz/tom do tenant (não da Cadencia)
 - Valores e princípios do tenant
 - Input pro chat "Tenho uma Ideia" (PDL-92 Done)
 - Storage: `tenant_config.soul_md` no Supabase

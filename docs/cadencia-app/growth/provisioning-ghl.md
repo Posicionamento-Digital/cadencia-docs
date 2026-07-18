@@ -1,6 +1,6 @@
 > **📄 Cópia local — fonte de verdade no GitHub.**
 > Origem: [`Posicionamento-Digital/cadencia-growth` / `main` / `docs/provisioning-ghl.md`](https://github.com/Posicionamento-Digital/cadencia-growth/blob/main/docs/provisioning-ghl.md)
-> Sincronizar via `/documentar` ou `sync_to_framework.py`.
+> Sincronizar via `/documentar-software` ou `sync_to_framework.py`.
 
 ---
 

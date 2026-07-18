@@ -6,7 +6,7 @@ cadências de contatos; e provisionamento de domínio de email.
 
 ## O que faz
 
-1. carrega tenants e estado do CRM Cadência;
+1. carrega tenants e estado do CRM Cadencia;
 2. gera e publica conteúdo pelos providers de cada canal;
 3. envia Seinfeld/newsletter via Resend;
 4. recebe eventos Resend/Svix e atualiza score, temperatura e supressão;

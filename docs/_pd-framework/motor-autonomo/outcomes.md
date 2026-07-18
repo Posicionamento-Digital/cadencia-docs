@@ -43,7 +43,7 @@ DEV-1104 deve preencher o campo `cost`; DEV-1105 deve consumir esse sinal para b
 ## Refs tecnicas
 
 - Docs componentes: `_core/docs/outcomes.md`
-- Wiki HTML: `_core/docs/index.html`
+- cadencia-docs (fonte de verdade): `docs/_pd-framework/motor-autonomo/outcomes.md`
 - Contrato: `_core/OUTCOMES.md`
 - Runtime review: `times/dev/context/review-DEV-1103-runtime.md`
 - Decisions Squad: `times/dev/memory/decisions.md`

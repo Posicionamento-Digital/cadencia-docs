@@ -3,7 +3,7 @@
 ## TL;DR
 
 Gera email narrativo a partir de `published_posts`, agenda e envia via Resend
-para contatos assinantes do CRM Cadência.
+para contatos assinantes do CRM Cadencia.
 
 ## Identidade
 

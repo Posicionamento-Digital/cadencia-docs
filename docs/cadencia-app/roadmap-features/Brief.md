@@ -5,7 +5,7 @@ moc: "[[MOC-Projetos]]"
 type: source
 entities: ["[[Cadencia]]"]
 ---
-# Brief — prod: Cadência — Roadmap
+# Brief — prod: Cadencia — Roadmap
 
 > **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
 

@@ -7,7 +7,7 @@ entities: ["[[Cadencia]]", "[[Central CS Onboarding]]", "[[comercial]]"]
 ---
 # Central de CS — Referência Técnica por Componente (05/07/2026)
 
-> Gerado por `/documentar` sobre o knowledge-graph atualizado (camada "Central de CS", 44 nós, commit 5cfed981). A doc técnica completa vive **no repo** (`times/cs/docs/`) — esta nota é o índice navegável + visão de arquitetura. Não duplica o conteúdo dos componentes.
+> Gerado por `/documentar-software` sobre o knowledge-graph atualizado (camada "Central de CS", 44 nós, commit 5cfed981). A doc técnica completa vive **no repo** (`times/cs/docs/`) — esta nota é o índice navegável + visão de arquitetura. Não duplica o conteúdo dos componentes.
 
 ## O que é a Central de CS
 

@@ -51,7 +51,7 @@ Nativos: alloy (Grafana agent), netdata, cloudflared, monarx-agent (security sca
 - `scoring/inatividade_job.py` (06h)
 - `meta-ads/orchestrator.py daily` (14h)
 
-**Lançamento Cadência — entries cron mas NÃO operacional** (Felipe confirmou 25/05):
+**Lançamento Cadencia — entries cron mas NÃO operacional** (Felipe confirmou 25/05):
 - `disparo-soap.py` (datas 4-29/05, ato 1-3 × email 1-5) — não dispara
 - `dispatch/wa-broadcast-worker.py` (intercalado) — não dispara
 - Implicação: NÃO bloqueia migração `/root/pd-marketing/`

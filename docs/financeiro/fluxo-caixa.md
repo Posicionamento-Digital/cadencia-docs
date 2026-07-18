@@ -34,7 +34,7 @@ Runway < 3 meses → emergência, decisões diárias.
 
 ```
 Mês M+N:
-  + MRR recorrente (Consultorias + Gestores IA + Cadência SaaS)
+  + MRR recorrente (Consultorias + Gestores IA + Cadencia SaaS)
   + Receita projetada de fechamentos no mês (pipeline × taxa fechamento)
   + Recebimentos parcelados em aberto
   - Churn projetado
@@ -113,7 +113,7 @@ Bárbara decide olhando o pessimista. Se runway no pessimista < 6 meses, **pausa
 3. **Sempre 3 cenários.** Nunca decidir só com o cenário base.
 4. **Runway < 6 meses (pessimista) → modo defensivo.** Bárbara avisa Felipe imediatamente.
 5. **Pró-labore Felipe entra no fluxo.** Mesmo que variável.
-6. **Receita Cadência (Stripe direto):** consultar dashboard Cadência — não é a mesma cobrança das outras trilhas.
+6. **Receita Cadência (Stripe direto):** consultar dashboard Cadencia — não é a mesma cobrança das outras trilhas.
 
 ---
 

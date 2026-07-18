@@ -3,7 +3,7 @@
 ## Responsabilidade
 
 Receber eventos de email e atualizar score, temperatura, atribuição e supressão
-dos contatos no CRM Cadência.
+dos contatos no CRM Cadencia.
 
 ## Serviço ativo
 

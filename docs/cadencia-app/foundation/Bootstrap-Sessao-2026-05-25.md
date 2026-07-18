@@ -26,7 +26,7 @@ entities: ["[[Cadencia-Framework]]", "[[Cadencia]]", "[[PD Framework]]", "[[mark
 
 1. **D01 — Bootstrap Squad Cadência completo**: Squad pai PRODUTO com SOUL.md + foundation + 3 sub-squads + 1 feature. Persona Catarina (PM/Owner — inspiração Marty Cagan + Teresa Torres). Distinta de Paloma (PO Dev transversal).
 
-2. **D02 — Skills migram pro framework (A1)**: 4 skills do repo `cadencia-app/.claude/skills/` foram copiadas pra `times/produto/cadencia/skills/` com `CADENCIA_REPO` path absoluto. `/cadencia-debate` foi criada nova. Sandbox bloqueou deleção no repo Cadência — Felipe precisa rodar manual.
+2. **D02 — Skills migram pro framework (A1)**: 4 skills do repo `cadencia-app/.claude/skills/` foram copiadas pra `times/produto/cadencia/skills/` com `CADENCIA_REPO` path absoluto. `/cadencia-debate` foi criada nova. Sandbox bloqueou deleção no repo Cadencia — Felipe precisa rodar manual.
 
 3. **D03 — Blog rebaixado de sub-squad para feature**: blog não tem ritmo/workers próprios — geração vive em `workers/`, deploy via Vercel template estático. Virou `features/blog/README.md`.
 
@@ -63,11 +63,11 @@ entities: ["[[Cadencia-Framework]]", "[[Cadencia]]", "[[PD Framework]]", "[[mark
 
 ## Surpresas durante a sessão
 
-1. **n8n stack `cadencia-n8n-*` na VPS Master** não tem haver com produto Cadência — só compartilha nome (Felipe esclareceu)
+1. **n8n stack `cadencia-n8n-*` na VPS Master** não tem haver com produto Cadencia — só compartilha nome (Felipe esclareceu)
 2. **`assessoria-imprensa-cadencia`** vive em Marketing/Comunicação, não no Squad Cadência
 3. **Blog rebaixado** pra feature ao invés de sub-squad (D03)
 4. **Catarina** ao invés de Luana (Felipe vetou Luana)
-5. **Skills `/deletar-user` + `/visual-test`** vazias no repo Cadência — viram backlog PDL-275
+5. **Skills `/deletar-user` + `/visual-test`** vazias no repo Cadencia — viram backlog PDL-275
 6. **Bug no `state-aggregator.py`** — pulava `workers/` por convenção hardcoded de nome. Fixado pra detectar via presença de CLAUDE.md.
 
 ## Pendências pós-sessão

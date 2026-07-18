@@ -1,6 +1,6 @@
 # Cobertura das entregas do Luiz — cadencia-growth
 
-Baseline documental: `0c1c332` (execução de `/documentar` em 27/06/2026). Commits funcionais do ciclo posterior estão agrupados abaixo.
+Baseline documental: `0c1c332` (execução de `/documentar-software` em 27/06/2026). Commits funcionais do ciclo posterior estão agrupados abaixo.
 
 | Documento | Capacidades | Commits |
 |---|---|---|

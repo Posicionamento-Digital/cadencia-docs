@@ -38,7 +38,7 @@ Marketing/Comercial                  Stripe / Asaas (gateways) + CRM Cadencia (l
 
 - Gateway escolhido conforme produto — ver `integracoes-cobranca.md`.
 - **PD Consultorias / Gestores IA:** lifecycle de billing no CRM Cadencia (`contacts`); cobrança financeira via gateway (Asaas/Stripe).
-- **Cadência SaaS:** Stripe (direto no produto — Squad Cadência opera).
+- **Cadencia SaaS:** Stripe (direto no produto — Squad Cadência opera).
 - **Recorrência B2B legado:** Asaas (em descontinuação).
 - **Frequência:** conforme contrato (mensal padrão, anual eventual com desconto).
 

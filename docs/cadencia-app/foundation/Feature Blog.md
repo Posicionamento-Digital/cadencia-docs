@@ -16,7 +16,7 @@ entities: ["[[Cadencia]]"]
 
 ## O que é
 
-Template **multi-tenant** de blog Next.js + Supabase. Cada tenant da Cadência tem uma instância própria deste template deployada no Vercel automaticamente. Conteúdo gerado pelo orchestrator (sub-squad `workers/`) → publicado via webhook → blog do tenant rebuilda.
+Template **multi-tenant** de blog Next.js + Supabase. Cada tenant da Cadencia tem uma instância própria deste template deployada no Vercel automaticamente. Conteúdo gerado pelo orchestrator (sub-squad `workers/`) → publicado via webhook → blog do tenant rebuilda.
 
 ---
 

@@ -30,7 +30,7 @@ Sentry  ──►  bridge (cria issue own:triagem)  ──►  gate (classifica)
 ### 1 + 2. `sentry-linear-bridge` — bridge + gate
 
 - **Repo:** `felipeluissalgueiro/sentry-linear-bridge` · **Deploy:** Coolify VPS Master (app `cadencia/sentry-linear-bridge`), `https://sentry-bridge.cadencia.app.br`, auto-deploy on-commit no `main`.
-- **`POST /`** (bridge): recebe webhook do Sentry (valida HMAC), cria issue Linear em `own:triagem` + `tipo:bug` no projeto *maint: Cadência — Bugs e suporte*. Dedup por marcador `[sentry:<id>]` no título.
+- **`POST /`** (bridge): recebe webhook do Sentry (valida HMAC), cria issue Linear em `own:triagem` + `tipo:bug` no projeto *maint: Cadencia — Bugs e suporte*. Dedup por marcador `[sentry:<id>]` no título.
 - **`POST /linear-webhook`** (gate, CAD-687): escuta o webhook do Linear (issue create/update). **Só age em `own:triagem`** (lock anti-loop). Chama `classify.py` e aplica o ownership.
 - **`classify.py`** — heurística **determinística, sem LLM** (a Master é determinística, SECURITY.md §1). Precedência **ruído > infra > bug**:
   - `ruído` → Canceled (markers de browser/service-worker: appendChild, ResizeObserver, AbortError, ChunkLoadError, **scriptURL**, etc.)

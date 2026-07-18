@@ -5,7 +5,7 @@ tags: [cadencia, runbook, operacional, deploy, vps]
 
 # Runbooks — Cadência
 
-Procedimentos operacionais passo a passo para o produto Cadência. Cada runbook descreve **como executar uma operação específica** sem precisar raciocinar do zero.
+Procedimentos operacionais passo a passo para o produto Cadencia. Cada runbook descreve **como executar uma operação específica** sem precisar raciocinar do zero.
 
 ## O que fica aqui
 

@@ -105,7 +105,7 @@ Personas têm voz distinta + tensão produtiva entre si — usado em `/<time>-de
    - Resolve Squad dono → auto-invoca `/abrir-squad` → checkout branch repo correto → marca In Progress → registra na [L2]
 4. **Trabalhar no código** — edits acontecem no repo do produto (cadencia-app, pd-portal, etc), MAS dentro da sessão do framework (skills do framework continuam disponíveis)
 5. **Decisões complexas** — `/debate <times>` (cross-Time) ou `/<time>-debate` (intra-Time)
-6. **Documentar feature** — `/documentar <feature>` (4 destinos sincronizados: MDs + Wiki + Canvas + Playbook)
+6. **Documentar feature** — `/documentar-software <feature>` (4 destinos sincronizados: MDs + Wiki + Canvas + Playbook)
 7. **Fechar issue** — `/linear-close-issue PDL-XX`
    - Commit "Closes PDL-XX" + merge main + deploy + remove [L2] + propaga L1 pro Time pai
 8. **Encerramento** — `/fechar-dia` (Stamper scorecard) + `/log-sessao` se sessão grande
@@ -152,7 +152,7 @@ Cobertura:
 
 **Code review:** `/codex-review`, `/claude-review`, `/gemini-review`, `/runtime-fix-review`, `/debug-polya`
 
-**Documentação:** `/documentar` (4 destinos: MDs + Wiki HTML + Canvas Obsidian + Playbook)
+**Documentação:** `/documentar-software` (destino: cadencia-docs — fonte de verdade cross-time)
 
 **VPS / Infra:** `/vps-master`, `/vps-dev`, `/conectar-vps`, `/espelhar-repo-vps`, `/validar-deploy-vps`, `/rotacionar-credencial`, `/hardening-check`, `/restart-container`
 
@@ -160,7 +160,7 @@ Cobertura:
 
 **Debate (party mode):** `/debate` (cross-Time, escolhe Times via argumento), `/<time>-debate` (intra-Time — marketing/comercial/cs/dev/infra/cadencia)
 
-**Personas invocáveis transversais:** `/joao` (challenger Dev), `/paula` (ref pra /documentar), `/bruno` (Quick-Dev modo opt-in)
+**Personas invocáveis transversais:** `/joao` (challenger Dev), `/paula` (ref pra /documentar-software), `/bruno` (Quick-Dev modo opt-in)
 
 **Produto-specific:** `/criar-tenant-agencia` (Cadência), `/tally-form-cadencia` (briefing marca), `/tally-form-briefing-cs`, `/compartilhar-nota`, `/despublicar-nota`
 

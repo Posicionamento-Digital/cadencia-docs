@@ -21,4 +21,4 @@ Esta seção documenta como a Cadencia opera — processos de negócio, rituais,
 ---
 
 !!! info "Em construção"
-    Esta seção está sendo montada. Processos documentados no Obsidian vault Empresa serão migrados para cá via skill `/documentar`.
+    Esta seção está sendo montada. Processos documentados no Obsidian vault Empresa serão migrados para cá via skill `/documentar-software`.

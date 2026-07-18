@@ -87,7 +87,7 @@ Churn mensal = Clientes que cancelaram no mês / Clientes ativos no início do m
 - Margem alvo: ___ %
 - Desconto programa antecipado / pagamento à vista: ___ %
 
-### Cadência SaaS
+### Cadencia SaaS
 - Planos: _______
 - MRR alvo por cliente: R$ _______
 - Margem alvo: ___ % (SaaS típico > 70%)

@@ -1,6 +1,6 @@
 # Migração de email GHL → Resend — runbook de go-live
 
-> **ARQUIVO HISTÓRICO — migração concluída.** GHL está desligado em todos os tenants e canais. Não executar os passos de rollout ou rollback deste documento; a operação atual é Resend + CRM Cadência.
+> **ARQUIVO HISTÓRICO — migração concluída.** GHL está desligado em todos os tenants e canais. Não executar os passos de rollout ou rollback deste documento; a operação atual é Resend + CRM Cadencia.
 
 Tira o **envio de email** e o **scoring** do GHL e coloca no **Resend + Supabase**.
 Contatos passaram a viver no Supabase e o provider ativo é Resend. As flags e
@@ -121,7 +121,7 @@ continuidade for crítica para algum tenant, rodar um backfill pontual
 ## Rollback
 
 O rollback para GHL foi aposentado e não deve ser usado. Em incidente, pausar o
-envio Resend e corrigir o CRM Cadência preservando dedup e flags.
+envio Resend e corrigir o CRM Cadencia preservando dedup e flags.
 
 ## Rollout
 
