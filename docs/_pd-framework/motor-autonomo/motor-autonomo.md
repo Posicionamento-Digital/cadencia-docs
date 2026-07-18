@@ -44,7 +44,7 @@ O motor pega issues marcadas `own:agente` do Linear, resolve o squad dono, lanç
 
 ## Decisões (todas 2026-07-04, guiadas com Felipe)
 
-- **Alçada por nível org** (agente/Luiz/CTO), auto-merge só em `feature/*` — `PR-ESCALATION-MATRIX.md`
+- **Alçada por nível org** (agente/dev externo/CTO), auto-merge só em `feature/*` — `PR-ESCALATION-MATRIX.md`
 - **Aprovação assíncrona não-bloqueante** + aba Reviews do Linear como canal
 - **Colisão** → agente pausa aquela issue e vai pra outra
 - **Budget** duplo ($ tiers→free; esforço pit-stop) — `BUDGET-GUARD.md`

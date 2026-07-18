@@ -19,7 +19,7 @@ tags: [cs, canon]
 | Resolve **insatisfação** | Resolve **bug técnico** |
 | Cuida do **relacionamento** | Cuida da **ferramenta** |
 | Métrica: NPS, Sentimento, Saúde Carteira | Métrica: tempo de resolução, recorrência |
-| **Felipe** (CS Lead) | **Luiz** (Dev) |
+| **Felipe** (CS Lead) | **dev externo** (Dev) |
 
 ---
 
@@ -46,24 +46,24 @@ Cliente relatou problema?
 ```
 
 Quando relatou problema, sub-classificação por **Tipo de Problema** (planilha CS):
-- **Técnico (Bug)** → Luiz (Suporte)
-- **IA (Alucinação)** → Luiz (Suporte) ou Felipe (Gestão), conforme severidade
+- **Técnico (Bug)** → dev externo (Suporte)
+- **IA (Alucinação)** → dev externo (Suporte) ou Felipe (Gestão), conforme severidade
 - **Dúvida** → CS resolve (treinamento, materiais de adoção)
 - **Processo** → CS resolve (orientação, ajuste de fluxo)
 
 E **Ação Tomada** (planilha CS):
 - **Resolvido na hora** → CS resolveu sozinho (ideal — KPI 5 > 60%)
-- **Escalado Suporte** (Luiz) → bug técnico
+- **Escalado Suporte** (dev externo) → bug técnico
 - **Escalado Gestão** (Felipe) → problema crítico/comercial/estratégico
 
 ---
 
 ## Erros comuns a evitar
 
-❌ **CS tentar debugar código.** Não é o papel. Coletar contexto e escalar pro Luiz.
+❌ **CS tentar debugar código.** Não é o papel. Coletar contexto e escalar pro dev externo.
 ❌ **Suporte tentar acalmar cliente irritado.** Não é o papel. Resolver o bug e devolver pro CS pra comunicação.
 ❌ **Mesma pessoa fazendo os dois.** Mesmo quando Felipe opera solo, MENTALMENTE separar os dois papéis. Hora "Felipe-CS" ≠ hora "Felipe-Suporte".
-❌ **Cliente reclamando direto pro Luiz.** Redirecionar pro canal CS — Luiz não é canal de atendimento, é canal de fix.
+❌ **Cliente reclamando direto pro dev externo.** Redirecionar pro canal CS — dev externo não é canal de atendimento, é canal de fix.
 
 ---
 
@@ -71,8 +71,8 @@ E **Ação Tomada** (planilha CS):
 
 - **Planilha CS** tem coluna "Ação Tomada" com as 3 opções (resolvido na hora / escalado Suporte / escalado Gestão)
 - **KPI 5 Eficiência de Resolução** mede quanto CS resolve sozinho (sem escalar) — meta >60%
-- **Hub/Esteira de Projetos** tem status visíveis (Pendente → Em Desenvolvimento → Concluído) — Luiz move o status técnico, CS comunica ao cliente
-- **Bot Telegram Suporte** é caso especial: CS opera (configurações, FAQ, treinamento), Dev (Luiz) corrige bugs. Não inverter.
+- **Hub/Esteira de Projetos** tem status visíveis (Pendente → Em Desenvolvimento → Concluído) — dev externo move o status técnico, CS comunica ao cliente
+- **Bot Telegram Suporte** é caso especial: CS opera (configurações, FAQ, treinamento), Dev (dev externo) corrige bugs. Não inverter.
 
 ---
 
@@ -80,14 +80,14 @@ E **Ação Tomada** (planilha CS):
 
 Sub-squad aninhado em `times/cs/suporte/bot-telegram-suporte/`. Mesma regra aplicada:
 
-| O que é do CS | O que é do Dev (Luiz) |
+| O que é do CS | O que é do Dev (dev externo) |
 |---|---|
 | Configurar bot pra novos clientes | Corrigir bugs de código |
 | Atualizar FAQ/base de conhecimento | Refatorar arquitetura |
 | Treinar cliente a usar bot | Deploy + infra |
 | Triagem de mensagens não respondidas | Implementar features novas |
 
-Quando CS detecta bug → abre chamado pro Dev (Luiz). Quando Dev corrige → comunica ao CS pra avisar cliente. Não pular etapas.
+Quando CS detecta bug → abre chamado pro Dev (dev externo). Quando Dev corrige → comunica ao CS pra avisar cliente. Não pular etapas.
 
 ---
 

@@ -31,7 +31,7 @@ Regra de ouro: **PRD existe antes de Epic; Epic antes de Story.** Nada de codar 
 | **Epics** (PRD → Epics) | `/linear-prd` | **Vitor** (Tech Lead) | Issues *Epic* (template Feature/Story + label `epic`) |
 | **Stories** (Epic → Stories) | `/linear-planejar-issue` | **Paloma** | Sub-issues *Story* (mesmo template + label `story`), vertical slices ≤2 dias |
 | Plano técnico da Story | `/linear-planejar-issue` | **Vitor** (gate) → **Amélia** | Plano + repo + branch `feat/<ID>` |
-| Executar | `/linear-start-issue` → codar | **Amélia** / Luiz | Branch com o ID da issue (webhook Linear) |
+| Executar | `/linear-start-issue` → codar | **Amélia** / dev externo | Branch com o ID da issue (webhook Linear) |
 | Fechar | `/linear-close-issue` | **Amélia** / **Vitor** | Merge na branch de produção + Done + deploy |
 
 > Os templates são lei (nunca improvisar): projeto = templates do Linear; issue = Feature/Story · Bug · Chore; documento = Brief · Briefing · PRD.

@@ -44,7 +44,7 @@ Sentry  ──►  bridge (cria issue own:triagem)  ──►  gate (classifica)
 - **Repo:** `felipeluissalgueiro/cadencia-autofix` · **Roda:** VPS Dev (`~/cadencia-autofix`), cron `*/15min` sob `flock` (1 instância). Deploy = `git pull` na Dev.
 - **Por que na Dev e não na Master:** a Master é proibida de rodar agente com tool use (SECURITY.md §1). O agente Claude headless roda na Dev.
 - **Fluxo:** `poll_agent_issues()` (own:agente em Triage) → `claim()` (→ In Progress) → `run_agent()` dispara `claude -p` headless no `~/cadencia-app` com **allowlist** de tools (default-deny).
-- **Sinal de sucesso:** `has_open_pr()` — PR aberto cuja branch referencia o identifier (regex de **fronteira ancorada** `(^|[^a-z0-9])ident([^0-9]|$)` pra não confundir `dev-94`/`dev-944`). Sucesso → `own:review`. Falha/cap → `own:luiz` + dossiê + WhatsApp pro Luiz (CAD-690).
+- **Sinal de sucesso:** `has_open_pr()` — PR aberto cuja branch referencia o identifier (regex de **fronteira ancorada** `(^|[^a-z0-9])ident([^0-9]|$)` pra não confundir `dev-94`/`dev-944`). Sucesso → `own:review`. Falha/cap → `own:luiz` + dossiê + WhatsApp pro dev externo (CAD-690).
 - **O worker controla os labels `own:*`, não o agente** (fonte única de verdade).
 
 ## A cascata do agente (prompt do worker, DEV-953)
@@ -89,7 +89,7 @@ Sintoma real (2026-06-29): issues `[sentry:...]` paradas em **own:triagem / Tria
    `docker exec <bridge> python -c "from app.classify import classify; print(classify('<title>','<culprit>','error'))"`
    — se devolve `incerto` pra um bug óbvio, é falha de classificação (foi a causa-raiz da DEV-952: culprit como rota HTTP não casava `CODE_HINTS`).
 2. **O worker está vivo?** `run.log` na Dev mostra `own:agente em Triage: N` a cada 15min. Se `N=0` sempre e há bug real em `own:agente`, ver poll/credencial.
-3. **Worker pega mas escala pro Luiz sempre?** Cheque `has_open_pr` — se a branch do agente não casa o identifier, o sucesso não é detectado.
+3. **Worker pega mas escala pro dev externo sempre?** Cheque `has_open_pr` — se a branch do agente não casa o identifier, o sucesso não é detectado.
 
 ## Histórico
 

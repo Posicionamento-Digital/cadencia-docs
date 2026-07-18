@@ -6,7 +6,7 @@ moc: "[[MOC-Dev]]"
 # Processo — PR e Deploy na Vercel (Time Dev)
 
 > Como mandar código pra produção nos projetos hospedados na Vercel da conta do Felipe
-> (hoje: **cadencia-app** → cadencia.ia.br). Vale pra Luiz e qualquer dev do time.
+> (hoje: **cadencia-app** → cadencia.ia.br). Vale pra dev externo e qualquer dev do time.
 
 ## Por que existe (leia, não pule)
 
@@ -16,12 +16,12 @@ A conta Vercel do Felipe é **plano Hobby**. Nele, o deploy de **produção** s�
 Quando **outro dev mergeia** um PR (ex: Luiz, conta `luizsidiao`), o merge commit fica autorado
 por essa conta → a Vercel marca o deploy de produção como **BLOCKED** e o site **não atualiza**.
 
-Já aconteceu: ~28 merges feitos pela conta do Luiz ficaram bloqueados e a produção do
+Já aconteceu: ~28 merges feitos pela conta do dev externo ficaram bloqueados e a produção do
 cadencia-app congelou por dias (previews funcionavam, só produção travava).
 
 **Regra de ouro:** quem mergeia na produção é o **Felipe**. O dev entrega via PR; o merge é do dono.
 
-## O que o dev (Luiz) FAZ
+## O que o dev (dev externo) FAZ
 
 1. **Trabalhe sempre numa branch**, nunca direto no `master`/`main`.
 	- Convenção: `feat/pdl-XX-descricao`, `fix/descricao`.

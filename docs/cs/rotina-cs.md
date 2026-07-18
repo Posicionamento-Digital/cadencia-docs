@@ -29,12 +29,12 @@ Estabelecer rotina **proativa** de Customer Success pra:
 ### FUPs
 - Retornar clientes com pendência do dia anterior
 - Follow-up de clientes com Sentimento Negativo/Crítico do dia anterior
-- Verificar status de problemas escalados (Luiz pra técnico; Felipe pra gestão) e atualizar cliente
+- Verificar status de problemas escalados (dev externo pra técnico; Felipe pra gestão) e atualizar cliente
 
 ### Suporte
 - Verificar chamados abertos no Hub e dar andamento
 - Verificar funcionamento dos produtos de cada cliente (IA, automações, CRM)
-- Escalar problemas técnicos pro Luiz
+- Escalar problemas técnicos pro dev externo
 - Escalar problemas de gestão pro Felipe
 - Verificar clientes desconectados e notificar
 
@@ -65,7 +65,7 @@ Cliente relatou problema?
 - Atualizar status de cada projeto antes dos follow-ups
 - Enviar resumo de resultados da semana pra cada parceiro
 - Verificar clientes com chamado aberto há mais de 48h sem retorno
-- Cobrar Luiz/Felipe sobre escalações pendentes
+- Cobrar dev externo/Felipe sobre escalações pendentes
 
 ### Formulários
 - Enviar link Tally **48h antes** da reunião (GCI GO + GCI RJ + outros clientes recorrentes)
@@ -175,7 +175,7 @@ Nota < 7 ou feedback crítico negativo?
 |---|---|
 | Houve Problema? | Sim / Não |
 | Tipo de Problema | Técnico (Bug) / IA (Alucinação) / Dúvida / Processo |
-| Ação Tomada | Resolvido na hora / Escalado Suporte (Luiz) / Escalado Gestão (Felipe) |
+| Ação Tomada | Resolvido na hora / Escalado Suporte (dev externo) / Escalado Gestão (Felipe) |
 
 **Grupo 5: Comercial**
 | Coluna | Opções |

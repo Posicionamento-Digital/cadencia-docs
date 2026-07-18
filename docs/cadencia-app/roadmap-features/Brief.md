@@ -28,7 +28,7 @@ Esteira contínua de evolução do produto Cadencia — concentra issues de ajus
 
 - **Felipe** — decisão final sobre o que entra e prioridade
 - **Clientes** — fonte de feedback e validação de demanda
-- **Luiz** — execução técnica e sugestões de arquitetura
+- **dev externo** — execução técnica e sugestões de arquitetura
 
 ---
 
@@ -54,7 +54,7 @@ _Não preenchido._
 
 ## O que NÃO fazer
 
-- **Não fragmentar o repo** sem estratégia definida: Luiz sugeriu repos independentes por feature ou categoria, mas a decisão ainda está em aberto. Nenhuma mudança estrutural de repo enquanto não houver um plano claro que não quebre o que está funcional.
+- **Não fragmentar o repo** sem estratégia definida: dev externo sugeriu repos independentes por feature ou categoria, mas a decisão ainda está em aberto. Nenhuma mudança estrutural de repo enquanto não houver um plano claro que não quebre o que está funcional.
 - **Sempre consultar** `Hub Projetos/Incidentes/` antes de qualquer mudança — há bugs e problemas já documentados que não devem ser repetidos no Cadencia.
 
 ---

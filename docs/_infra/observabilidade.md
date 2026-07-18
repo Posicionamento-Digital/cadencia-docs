@@ -75,7 +75,7 @@ Começar magro: `#alertas` + `#deploys` + `#heartbeat`. Expandir só se provar v
 | `#incidentes` | Sentry + Grafana estruturados | bridges existentes |
 | `#linear` | eventos de issue/PR | webhook nativo Linear↔Slack |
 | `#meu-dia` | plano do dia, lembretes | /abrir-dia, /agenda |
-| `#log-sessoes` | resumo /encerrar-sessao, handoff Luiz | skills de sessão |
+| `#log-sessoes` | resumo /encerrar-sessao, handoff dev externo | skills de sessão |
 
 ## Registry de jobs (os 12 sob vigilância)
 
@@ -94,7 +94,7 @@ Começar magro: `#alertas` + `#deploys` + `#heartbeat`. Expandir só se provar v
 | grafana-webhook.service | Master | long-running | systemd (é o dispatcher) |
 | sync-dev-docs.py | Dev | 23:00 | só log |
 | cadencia-autofix (CAD-689) | Dev | */15min | só log |
-| pr-watcher (Luiz) | Dev | */10min | log + WhatsApp |
+| pr-watcher (dev externo) | Dev | */10min | log + WhatsApp |
 
 > `analisar-post` (Windows) — **obsoleto, remover Task** (Felipe confirmou que não existe mais; acusa erro 0x8007010B à toa).
 

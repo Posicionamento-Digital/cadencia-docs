@@ -33,7 +33,7 @@
 
 ## Decisões-chave
 
-- **Por que cron script, não APScheduler:** o serviço já agenda por endpoint/cron (padrão `growth_pipeline`). APScheduler criaria 2 paradigmas + risco de lock multi-instância. Cron diário basta (cadência é por dia). Realinhado pro padrão do Luiz.
+- **Por que cron script, não APScheduler:** o serviço já agenda por endpoint/cron (padrão `growth_pipeline`). APScheduler criaria 2 paradigmas + risco de lock multi-instância. Cron diário basta (cadência é por dia). Realinhado pro padrão do dev externo.
 - **Idempotência no banco** (UNIQUE + 409), não em lógica frágil.
 - **Recuperação em `dup`:** o UNIQUE prova que aquele step/ciclo já teve check gravado. Se `advance` falhou depois desse insert, o próximo tick recebe 409, não reenvia nem recria o log e executa somente o avanço idempotente. O `log_activity` ocorre apenas no caminho de insert novo e depois do avanço.
 - **Erro técnico no insert** (`None`) → não avança, retoma no próximo tick.

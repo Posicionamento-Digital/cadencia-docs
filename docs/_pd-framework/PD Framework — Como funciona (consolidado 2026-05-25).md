@@ -178,7 +178,7 @@ Cobertura:
 - ✅ CS (PDL-265)
 - ✅ Financeiro (PDL-231)
 - ✅ Produto/Cadência (PDL-232 + 237/238/239/240)
-- ❌ Operacional (PDL-230 cancelado — empresa Felipe+Luiz sem demanda)
+- ❌ Operacional (PDL-230 cancelado — empresa Felipe+dev externo sem demanda)
 
 **Produtos pendentes (sessão guiada com Felipe):**
 - PD Portal (PDL-233)

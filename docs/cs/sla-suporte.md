@@ -24,7 +24,7 @@ tags: [cs, canon]
 **Canal obrigatório:** Telefone + WhatsApp pessoal Felipe (Stevo)
 **Tempo primeira resposta:** **30 min** (horário comercial 09h-17h30 BRT) / **2h** (fora desse horário, 18h-22h)
 **Tempo resolução alvo:** **4h** (horário comercial) / **próximo dia útil 09h** (fora)
-**Escalation imediata:** Felipe (gestão) + Luiz (técnica) em paralelo
+**Escalation imediata:** Felipe (gestão) + dev externo (técnica) em paralelo
 
 ### P2 — Alto
 **Definição:** funcionalidade core impactada, contorno possível mas degradado.
@@ -36,7 +36,7 @@ tags: [cs, canon]
 **Canal:** WhatsApp ou Hub
 **Tempo primeira resposta:** **2h** (horário comercial)
 **Tempo resolução alvo:** **1 dia útil**
-**Escalation:** Luiz (técnica). Felipe só se ultrapassar 1 dia.
+**Escalation:** dev externo (técnica). Felipe só se ultrapassar 1 dia.
 
 ### P3 — Médio
 **Definição:** bug não-bloqueante, irritante mas operacional.
@@ -48,7 +48,7 @@ tags: [cs, canon]
 **Canal:** Hub/Esteira (Obsidian — vault Time PD; Notion descontinuado)
 **Tempo primeira resposta:** **1 dia útil**
 **Tempo resolução alvo:** **3 dias úteis**
-**Escalation:** Luiz via Linear backlog.
+**Escalation:** dev externo via Linear backlog.
 
 ### P4 — Baixo
 **Definição:** melhoria, dúvida resolvível por FAQ, cosmético.
@@ -94,11 +94,11 @@ Triagem CS vs Suporte (separacao-cs-suporte.md)
                 P4 → CS resolve (FAQ/treinamento)
 ```
 
-**Quando CS escala pro Luiz:**
+**Quando CS escala pro dev externo:**
 - Sempre que demanda virar Suporte Técnico (bug técnico)
 - Sempre via Linear (registro), não WhatsApp direto
 
-**Quando Luiz escala pro Felipe:**
+**Quando dev externo escala pro Felipe:**
 - Bug que ele não consegue replicar
 - Decisão de prioridade conflitando com Cadência/PD Portal
 - Mudança que afeta múltiplos clientes (decisão de arquitetura)

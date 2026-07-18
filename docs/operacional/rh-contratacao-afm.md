@@ -154,7 +154,7 @@ Quando a vaga é legítima e o filtro passou, executar contratação assim:
 | Cargo candidato | Sinal de gatilho | Tipo |
 |---|---|---|
 | **Closer comercial** (ticket médio, NÃO SDR — SDR é agente) | Perder 3 deals seguidos por "Felipe não teve agenda" | IC comercial |
-| **Outro dev IC** (NUNCA tech lead, NUNCA CTO) | Luiz + agentes saturados em Cadência + projetos cliente (Lara, NSkin, GCI-GO) simultaneamente por 60+ dias | IC técnico |
+| **Outro dev IC** (NUNCA tech lead, NUNCA CTO) | dev externo + agentes saturados em Cadência + projetos cliente (Lara, NSkin, GCI-GO) simultaneamente por 60+ dias | IC técnico |
 | **Par operacional executivo** (estilo Hiroki Asai — executa o que Felipe desenha, não "assistente") | Felipe passando de ~40h/sem em tarefa não-criativa de forma sustentada | IC operacional sênior |
 
 Nenhum desses cargos tem subordinado. Todos são IC. Todos passam no filtro AFM.

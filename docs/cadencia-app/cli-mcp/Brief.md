@@ -24,7 +24,7 @@ Hoje o Cadencia só é operável pela UI (JWT de sessão) ou por acesso bruto (S
 ## Stakeholders
 
 - **Felipe** — owner / operador / decisões de produto e arquitetura
-- **Luiz Sidião** — dev (escopo `cadencia-app` + `pd-portal`)
+- **dev externo Sidião** — dev (escopo `cadencia-app` + `pd-portal`)
 - **Time Dev** — Vitor (arquitetura), Amélia (execução), Camila (QA), Paula (docs)
 
 ---

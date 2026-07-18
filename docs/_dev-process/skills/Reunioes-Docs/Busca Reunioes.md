@@ -166,9 +166,9 @@ for root_folder in ROOTS_LINKÁVEIS:
 | `Planejamento` | daily, check-in, planejamento, sprint, semana, review semanal |
 | `Clientes` | nome de cliente ativo (NSkin, H&Co, GCI, etc.), acompanhamento |
 | `Comercial` | diagnóstico, proposta, lead, prospect, vendas, call de vendas |
-| `Time` | nome de membro do time (Mateus, Luiz, Vanessa, Sandro, Romulo), 1:1 |
+| `Time` | nome de membro do time atual ou ex-membro, 1:1 |
 | `Produto` | Cadencia, OpenClaw, feature, roadmap, produto, dev, release |
-| `Parceiros` | parceiro, fornecedor, Michael, colaboração externa |
+| `Parceiros` | parceiro, fornecedor, colaboração externa |
 | `Suporte & Manutenção` | suporte, bug cliente, manutenção, incidente, correção |
 | `Operacional` | financeiro, jurídico, admin, infra, contrato |
 

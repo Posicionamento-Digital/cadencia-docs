@@ -12,7 +12,7 @@ Documentação da infraestrutura VPS da Cadencia (Hostinger).
 | Servidor | IP | Propósito | Docs |
 |---|---|---|---|
 | **VPS Master** | `72.60.4.71` | Produção — Lara, Cadência, n8n, pipelines | [[Infra/VPS-Hostinger/VPS-Master/VPS-Master-Arquitetura]] |
-| **VPS Dev** | `2.24.117.172` | Desenvolvimento — Luiz codifica aqui | [[Infra/VPS-Hostinger/VPS-Dev/VPS-Dev-Documentacao-Tecnica]] |
+| **VPS Dev** | `2.24.117.172` | Desenvolvimento — dev externo codifica aqui | [[Infra/VPS-Hostinger/VPS-Dev/VPS-Dev-Documentacao-Tecnica]] |
 
 ---
 

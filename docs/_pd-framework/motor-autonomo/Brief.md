@@ -29,7 +29,7 @@ Time Dev é o dono técnico da evolução. Paloma conduz o PRD e transforma a vi
 
 Squads consumidores: CS, Comercial, Infra e Produto Cadência. CS é beneficiário direto pelo fechamento do ciclo de onboarding autônomo ligado ao DEV-868. Comercial é beneficiário futuro por prospecção e follow-up via Eduardo/Cadência. Infra/Diego entra pela Central de Observabilidade, budget guard, workers determinísticos e regras de segurança da VPS Master.
 
-Luiz não toca o motor. O escopo dele continua limitado a `cadencia-app` e `pd-portal`; não propagar skills ou runtime do PD Framework para o ambiente dele.
+dev externo não toca o motor. O escopo dele continua limitado a `cadencia-app` e `pd-portal`; não propagar skills ou runtime do PD Framework para o ambiente dele.
 
 ## Estado atual
 

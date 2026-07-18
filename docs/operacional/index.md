@@ -38,7 +38,7 @@ Antes de qualquer decisão operacional na Cadencia:
 ## Refs cross-repo
 
 - `_core/AFM.md` (pd-framework) — princípio diretor
-- `_core/PEOPLE.md` (pd-framework) — Felipe + Luiz
+- `_core/PEOPLE.md` (pd-framework) — Felipe + dev externo
 - `_core/PERSONAS.md` (pd-framework) — 10 personas BR + Stamper
 - `_core/HIERARCHY.md` (pd-framework) — 4 camadas
 - `stamper/context/perfil-felipe.md` (pd-framework) — perfil completo Felipe

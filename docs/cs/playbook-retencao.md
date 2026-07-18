@@ -65,7 +65,7 @@ Cliente expressa diretamente.
 ### Sinal 🟡 Média — Ação CS dentro de 3 dias
 1. Mensagem proativa contextual ("vi que faltou X — está tudo bem?")
 2. Se não responder, ligar
-3. Se identificar gargalo, escalar pra Felipe ou Luiz conforme caso
+3. Se identificar gargalo, escalar pra Felipe ou dev externo conforme caso
 4. Marcar pra acompanhar próximas 2 semanas
 
 ### Quando envolver Felipe (escalation)

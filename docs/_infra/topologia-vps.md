@@ -81,11 +81,11 @@ UFW configurado pra aceitar tráfego de Cloudflare (subnet `172.16.0.0/12` + `10
 **Acesso:** `ssh -i ~/.ssh/hostinger_dev_felipe felipe@2.24.117.172`
 **Skill:** `/vps-dev`
 **Sistema:** Ubuntu 24.04 (kernel 6.8)
-**Users:** `felipe` (Felipe SSH), `luiz` (Luiz SSH)
+**Users:** `felipe` (Felipe SSH), `luiz` (dev externo SSH)
 
 ### Característica fundamental
 
-**Sem cron, sem systemd customizado.** Ambiente puro pra sessões SSH interativas com Claude Code (Felipe + Luiz). Toda automação determinística vive na Master.
+**Sem cron, sem systemd customizado.** Ambiente puro pra sessões SSH interativas com Claude Code (Felipe + dev externo). Toda automação determinística vive na Master.
 
 ### /home/felipe/
 
@@ -99,9 +99,9 @@ CLIs: claude (Code), codex, gemini, node v24.15 (nvm), python 3.12.3.
 ### /home/luiz/
 
 5 repos clonados:
-- `cadencia-app/` (Luiz dev ativo)
-- `pd-portal/` (Luiz dev ativo)
-- `claude-dev-skills/` (skills Luiz)
+- `cadencia-app/` (dev externo dev ativo)
+- `pd-portal/` (dev externo dev ativo)
+- `claude-dev-skills/` (skills dev externo)
 - `ecuro-mcp/` (integração Ecuro GCI)
 - `gci-go-whatsapp/` (WhatsApp GCI)
 
@@ -117,7 +117,7 @@ Vazio (só containerd do Docker engine).
 |---|---|
 | `/root/pd-marketing/` → `/opt/apps/pd-marketing/` | Workers Marketing precisam path estável antes de virar `times/marketing/workers/` |
 | `/cadencia/` → `/opt/cadencia-growth/` (PDL-213) | Sub-squad Cadência Growth depende |
-| PDL-215 (env vars Coolify 6 apps) | Squad Produto + Framework Luiz |
+| PDL-215 (env vars Coolify 6 apps) | Squad Produto + Framework dev externo |
 
 ---
 

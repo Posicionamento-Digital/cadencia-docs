@@ -209,7 +209,7 @@ Estabilizar operação e planejar próximos incrementos.
 
 ## Papéis típicos
 
-- **Cadencia:** CS, Gestor de IA, Dev (Luiz), Tráfego, Suporte
+- **Cadencia:** CS, Gestor de IA, Dev (dev externo), Tráfego, Suporte
 - **Cliente:** Responsável de projeto, Operação (ex: CRC no caso GCI), Marketing/Vendas, TI (se houver)
 
 ---

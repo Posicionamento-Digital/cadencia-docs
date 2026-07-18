@@ -11,7 +11,7 @@ Sistema que transforma erros e alertas das ferramentas (Sentry, Grafana, Supabas
 ## Componentes (multi-repo)
 - **bridge + gate + health-check + deploy-drift** — `sentry-linear-bridge` (Coolify VPS Master + cron Master 08h BRT)
 - **dispatcher Grafana + advisors Supabase** — `grafana-webhook` (systemd `:9300` + cron Master 09h BRT)
-- **agente autofix + handoff Luiz** — `cadencia-autofix` (cron VPS Dev `*/15min`)
+- **agente autofix + handoff dev externo** — `cadencia-autofix` (cron VPS Dev `*/15min`)
 
 ## Duas portas de entrada
 - **Sentry** (erro de código) → bridge → gate classifica → `own:agente` (agente corrige, abre PR) / `own:felipe` / ruído descartado

@@ -26,7 +26,7 @@ Usuários: clientes PD (consultorias, IAs personalizadas, sistemas, alunos de cu
 ## Stakeholders
 
 - Felipe (product lead, CS, conteúdo — gerencia tenants via skills Claude Code)
-- Luiz (dev — implementação)
+- dev externo (dev — implementação)
 - Clientes PD como usuários finais (não participam do desenvolvimento)
 
 ---

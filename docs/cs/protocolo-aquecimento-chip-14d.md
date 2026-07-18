@@ -107,7 +107,7 @@ NUNCA reutilizar aparelho banido sem limpeza completa — ban se propaga.
 | Parte | Responsabilidade |
 |---|---|
 | **Equipe do Cliente** | Executar protocolo diário; comparecer aos treinamentos; listar dúvidas; entregar número do Gestor de Tráfego à Cadencia ainda nessa fase |
-| **Cadencia (CS + Luiz)** | Conduzir treinamentos; **monitorar Quality Score**; acionar protocolo de crise se necessário; fazer conexão do número ao BM ao final dos 14 dias |
+| **Cadencia (CS + dev externo)** | Conduzir treinamentos; **monitorar Quality Score**; acionar protocolo de crise se necessário; fazer conexão do número ao BM ao final dos 14 dias |
 | **Gestor de Tráfego do Cliente** | Disponibilizar número; aguardar acionamento da Cadencia pra verificação do BM (Fase 5 do Playbook) |
 
 ---

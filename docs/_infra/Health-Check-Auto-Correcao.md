@@ -11,7 +11,7 @@ entities: ["[[Cadencia]]", "[[Central de Observabilidade]]"]
 
 ## O problema que resolve
 
-Sentry e Grafana avisam quando algo **dá erro**. Mas um job que simplesmente **para de rodar** não gera erro nenhum — morre calado. Foi assim que o `SyncDevDocsVault` ficou dias falhando e o brief diário do Luiz nunca chegava, sem ninguém perceber. Este sistema monitora se as coisas **estão rodando**, não só se quebraram.
+Sentry e Grafana avisam quando algo **dá erro**. Mas um job que simplesmente **para de rodar** não gera erro nenhum — morre calado. Foi assim que o `SyncDevDocsVault` ficou dias falhando e o brief diário do dev externo nunca chegava, sem ninguém perceber. Este sistema monitora se as coisas **estão rodando**, não só se quebraram.
 
 ## Como funciona (visão geral)
 
@@ -26,7 +26,7 @@ Roda na máquina do Felipe (Windows) — único ponto que alcança os 3 ambiente
 | Situação | Ação automática |
 |---|---|
 | **Serviço/processo parou** | Reconfirma que está mesmo parado → **reinicia sozinho**. Se falhar 2x, escala pra um humano. |
-| **Bug de código** | Abre uma tarefa pro **agente de auto-correção** (Luiz/IA) resolver e mandar PR. |
+| **Bug de código** | Abre uma tarefa pro **agente de auto-correção** (dev externo/IA) resolver e mandar PR. |
 | **Falso alarme** | Se na reconfirmação o serviço está vivo, **não faz nada** (não duplica processo). |
 
 ## Onde as notificações chegam (Slack)
@@ -34,7 +34,7 @@ Roda na máquina do Felipe (Windows) — único ponto que alcança os 3 ambiente
 | Canal | O que chega |
 |---|---|
 | `#saude-sistemas` | Resumo diário (18h30) + alerta na hora se um sistema crítico cair |
-| `#diario` | O que o Luiz trabalhou no dia |
+| `#diario` | O que o dev externo trabalhou no dia |
 | `#rotina` | PRs prontos pra revisar, deploys |
 | `#urgente` | Urgências (espelha no WhatsApp) |
 
