@@ -108,6 +108,25 @@ nav:
       - Método Histórias: marketing/metodo-historias.md
       - Tom de Voz: marketing/tom-de-voz.md
 
+  # ── CS & ENTREGA ──────────────────────────────────────────────────────────
+  - CS:
+      - cs/index.md
+      - Playbook Implementação 11 Fases: cs/playbook-implementacao-11-fases.md
+      - Playbook Retenção: cs/playbook-retencao.md
+      - Playbook Treinamento Claude Code 30d: cs/playbook-treinamento-claude-code-30d.md
+      - Rotina CS + KPIs: cs/rotina-cs.md
+      - Separação CS vs Suporte: cs/separacao-cs-suporte.md
+      - SLA de Suporte: cs/sla-suporte.md
+      - Política de Expansão: cs/politica-expansao.md
+      - Matriz de Responsabilidades: cs/matriz-responsabilidades.md
+      - Sistema de Comunicação com Cliente: cs/sistema-comunicacao-cliente.md
+      - Protocolo de Aquecimento de Chip 14d: cs/protocolo-aquecimento-chip-14d.md
+      - Padrão Pasta de Cliente: cs/padrao-pasta-cliente.md
+      - Checklist Briefing: cs/checklist-briefing.md
+      - Checklist Briefing Treinamento Claude Code: cs/checklist-briefing-treinamento-claude-code.md
+      - Template Checklist Projeto Linear: cs/template-checklist-projeto-linear.md
+      - Template Manual da Marca: cs/template-manual-da-marca.md
+
   # ── FINANCEIRO ────────────────────────────────────────────────────────────
   - Financeiro:
       - financeiro/index.md
