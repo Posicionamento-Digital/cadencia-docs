@@ -2,7 +2,7 @@
     App[cadencia-app] --&gt;|trigger tenant + canais| Trigger[trigger_server :39090]
     Cron[Cron] --&gt; Runner[growth_pipeline]
     Trigger --&gt; Runner
-    Runner --&gt; CRM[(Supabase / CRM Cadência)]
+    Runner --&gt; CRM[(Supabase / CRM Cadencia)]
     Runner --&gt; Resend[Resend]
     Runner --&gt; Social[Providers LinkedIn/Instagram]
     Runner --&gt; Lara[cadencia-lara]
