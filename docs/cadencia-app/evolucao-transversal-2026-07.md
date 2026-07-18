@@ -1,4 +1,4 @@
-# Evolução transversal do Cadencia — ciclo Luiz 2026-06/07
+# Evolução transversal do Cadencia — ciclo dev externo 2026-06/07
 
 > Consolidação das entregas de CRM/scoring, email por tenant, onboarding atômico, UX mobile e confiabilidade que acompanharam Lara, agenda e cadências.
 

@@ -41,7 +41,7 @@ Quando um cliente abre uma demanda, perguntar (no fluxograma da Rotina Diária):
 Cliente relatou problema?
   ├─ SIM → É urgente?
   │         ├─ SIM → Escalar Gestão (Felipe)
-  │         └─ NÃO → Suporte Técnico (Luiz)
+  │         └─ NÃO → Suporte Técnico (dev externo)
   └─ NÃO → Registrar como ponto de contato positivo
 ```
 

@@ -5,10 +5,10 @@ moc: "[[MOC-Skills]]"
 ---
 # Espelhar Repo VPS
 
-Provisiona clone git autenticado de repositório privado na VPS para que Luiz trabalhe via SSH + Claude Code com git pull/push funcionando sem autenticação manual. Usa deploy key SSH ed25519 exclusiva.
+Provisiona clone git autenticado de repositório privado na VPS para que dev externo trabalhe via SSH + Claude Code com git pull/push funcionando sem autenticação manual. Usa deploy key SSH ed25519 exclusiva.
 
 ## Quando usar
-"/espelhar-repo-vps", "espelha esse repo na vps", "gera deploy key pra vps", "quero o Luiz codar direto na vps", "clone na vps".
+"/espelhar-repo-vps", "espelha esse repo na vps", "gera deploy key pra vps", "quero o dev externo codar direto na vps", "clone na vps".
 
 ---
 
@@ -19,7 +19,7 @@ Provisiona clone git autenticado de repositório privado na VPS para que Luiz tr
 name: espelhar-repo-vps
 description: >
   Provisiona um clone git autenticado de um repositório privado numa VPS pra
-  permitir que um dev (ex: Luiz) trabalhe direto lá via SSH + Claude Code, com
+  permitir que um dev (ex: dev externo) trabalhe direto lá via SSH + Claude Code, com
   git pull/push funcionando sem autenticação manual. Usa deploy key SSH ed25519
   exclusiva por VPS (Felipe cola no repo GitHub uma única vez).
 ---

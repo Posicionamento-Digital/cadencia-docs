@@ -15,7 +15,7 @@ entities: ["[[Cadencia]]", "[[ecuro-mcp]]"]
 |---|---|---|
 | **Netdata** | Métricas em tempo real (CPU, RAM, containers, rede) | SSH tunnel → localhost:19999 |
 | **Cockpit** | Gerenciamento do servidor (processos, disco, logs, terminal) | SSH tunnel → localhost:9090 |
-| **Grafana Cloud** | Métricas históricas + traces (Alloy coletando desde 11/05) | Conta Luiz — login pendente |
+| **Grafana Cloud** | Métricas históricas + traces (Alloy coletando desde 11/05) | Conta dev externo — login pendente |
 | **Script monitor-vps.sh** | Alertas proativos (load, CLOSE_WAIT, RAM Traefik) | WhatsApp automático |
 
 ---
@@ -75,7 +75,7 @@ ssh -L 9090:localhost:9090 vps-master
 
 **API key:** configurada via environment variable no systemd (`/etc/systemd/system/alloy.service.d/env.conf`) — não exposta neste documento.
 
-**Login Grafana Cloud:** conta criada pelo Luiz (email pendente de confirmação). Acessar: `https://grafana.com`
+**Login Grafana Cloud:** conta criada pelo dev externo (email pendente de confirmação). Acessar: `https://grafana.com`
 
 **Para conectar mais projetos ao OTLP receiver:**
 Qualquer serviço pode enviar traces/metrics para `http://host.docker.internal:4318` (HTTP) ou `host.docker.internal:4317` (gRPC). O Alloy repassa automaticamente para o Grafana Cloud.

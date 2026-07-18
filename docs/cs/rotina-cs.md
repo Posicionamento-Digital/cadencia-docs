@@ -53,7 +53,7 @@ Mensagem pra cada parceiro
 Cliente relatou problema?
    ├─ SIM → É urgente?
    │         ├─ SIM → Escalar Felipe
-   │         └─ NÃO → Suporte (Luiz)
+   │         └─ NÃO → Suporte (dev externo)
    └─ NÃO → Registrar ponto de contato positivo
 ```
 

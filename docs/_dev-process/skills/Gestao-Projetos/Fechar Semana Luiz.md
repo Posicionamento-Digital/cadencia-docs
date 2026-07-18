@@ -5,7 +5,7 @@ moc: "[[MOC-Skills]]"
 ---
 # Fechar Semana Luiz
 
-Fim de semana — resumo do que Luiz entregou, o que está em andamento e o que está atrasado. Útil para Felipe acompanhar a produção do time.
+Fim de semana — resumo do que dev externo entregou, o que está em andamento e o que está atrasado. Útil para Felipe acompanhar a produção do time.
 
 ## Quando usar
 "/fechar-semana-luiz", "resumo da semana do Luiz", "o que o Luiz entregou", "fechamento semanal".
@@ -17,7 +17,7 @@ Fim de semana — resumo do que Luiz entregou, o que está em andamento e o que 
 ```markdown
 ---
 name: fechar-semana-luiz
-description: Fim de semana — resumo do que Luiz entregou, em andamento e atrasado. Util para Felipe.
+description: Fim de semana — resumo do que dev externo entregou, em andamento e atrasado. Util para Felipe.
 ---
 
 # /fechar-semana-luiz
@@ -79,7 +79,7 @@ atrasadas = [i for i in abertas if i.get('dueDate') and i['dueDate'] < hoje_str]
 em_andamento = [i for i in abertas if i.get('state',{}).get('type')=='started']
 aguardando = [i for i in abertas if any(l['name']=='aguardando-felipe' for l in i.get('labels',{}).get('nodes',[]))]
 
-print(f"SEMANA {segunda.strftime('%d/%m')} a {hoje.strftime('%d/%m/%Y')} — Luiz\n")
+print(f"SEMANA {segunda.strftime('%d/%m')} a {hoje.strftime('%d/%m/%Y')} — dev externo\n")
 
 print(f"ENTREGUE ({len(completadas)})")
 for i in completadas:
@@ -105,7 +105,7 @@ print(f"\nRESUMO: {len(completadas)} entregues | {len(em_andamento)} em andament
 ```
 
 ## Regras
-1. `aguardando-felipe` = não conta como falha do Luiz
+1. `aguardando-felipe` = não conta como falha do dev externo
 2. `branchName` (não `gitBranchName`)
 3. `orderBy: priority` não existe — não usar
 4. LUIZ_ID fixo: `0085bb23-2b19-49ba-8179-8f41d499d969`

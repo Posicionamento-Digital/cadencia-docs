@@ -11,7 +11,7 @@ entities: ["[[Cadencia-Growth]]", "[[Cadencia]]", "[[ecuro-mcp]]", "[[pd-portal]
 
 ## O que é o Coolify
 
-Painel self-hosted de deploy automático (alternativa ao Vercel/Railway na própria VPS). Quando Luiz faz push para `main` em um repo GitHub, o Coolify detecta via webhook e faz o deploy automático.
+Painel self-hosted de deploy automático (alternativa ao Vercel/Railway na própria VPS). Quando dev externo faz push para `main` em um repo GitHub, o Coolify detecta via webhook e faz o deploy automático.
 
 **URL:** `https://coolify.cadencia.ia.br`
 
@@ -99,13 +99,13 @@ Pra apps rodando hoje em `/cadencia`, `/opt/<projeto>`, `/root/<projeto>` direto
 | cadencia-growth | Posicionamento-Digital/cadencia-growth | j5xc8t3rcj37jtk2fonqhguh | docker-compose | ✅ 16 vars | Pronto para deploy |
 | lara-ai | Posicionamento-Digital/lara-ai | iyqwooh6qlfyz2gyl4ajm6kp | docker-compose | ✅ 46 vars | Pronto para deploy |
 | insight-artificial | Posicionamento-Digital/insight-artificial | lj10dgkkeo74rbxlcj3omwt0 | dockerfile | ✅ 6 vars | Pronto para deploy |
-| gci-go-whatsapp | Posicionamento-Digital/gci-go-whatsapp | uzh34wi3iqsmhbpezihbbujp | docker-compose | ⚠️ pendente Luiz | Aguardando env vars |
-| ecuro-mcp | Posicionamento-Digital/ecuro-mcp | al3me08q5svp9sqh5m91ik21 | docker-compose | ⚠️ pendente Luiz | Aguardando env vars |
+| gci-go-whatsapp | Posicionamento-Digital/gci-go-whatsapp | uzh34wi3iqsmhbpezihbbujp | docker-compose | ⚠️ pendente dev externo | Aguardando env vars |
+| ecuro-mcp | Posicionamento-Digital/ecuro-mcp | al3me08q5svp9sqh5m91ik21 | docker-compose | ⚠️ pendente dev externo | Aguardando env vars |
 | pd-portal | Posicionamento-Digital/pd-portal | c26ri7dkjtg9a11y376re4i0 | docker-compose | ⚠️ verificar repo | Aguardando env vars |
 
 > ⚠️ **IMPORTANTE:** nenhuma aplicação foi deployada pelo Coolify ainda. Os containers que estão rodando foram iniciados manualmente. Antes do primeiro deploy pelo Coolify, verificar env vars e testar começando pelo **insight-artificial** (menor risco).
 >
-> **Para gci-go-whatsapp e ecuro-mcp:** pedir vars ao Luiz → configurar em `coolify.cadencia.ia.br` → VPS Master PD → app → Environment Variables.
+> **Para gci-go-whatsapp e ecuro-mcp:** pedir vars ao dev externo → configurar em `coolify.cadencia.ia.br` → VPS Master PD → app → Environment Variables.
 
 ---
 
@@ -123,7 +123,7 @@ Para cada aplicação que quiser migrar para o Coolify:
 ### Fluxo automático após setup
 
 ```
-Luiz faz commit + push para main
+dev externo faz commit + push para main
        ↓
 GitHub dispara webhook para coolify.cadencia.ia.br
        ↓
@@ -156,7 +156,7 @@ Substitui o anterior sem downtime (rolling deploy)
 **Status atual:** não implementado (plano gratuito GitHub não suporta em repos privados).
 
 **Processo acordado enquanto isso:**
-1. Luiz cria uma branch para sua feature
+1. dev externo cria uma branch para sua feature
 2. Abre PR para `main`
 3. Felipe revisa e aprova
 4. Merge na `main` → Coolify deploya automaticamente

@@ -5,7 +5,7 @@ moc: "[[MOC-Skills]]"
 ---
 # Daily Luiz
 
-Abre a daily com Luiz — mostra o que está em andamento, planejado para hoje (por prioridade), bloqueios e overdue. Formato compacto para leitura rápida.
+Abre a daily com dev externo — mostra o que está em andamento, planejado para hoje (por prioridade), bloqueios e overdue. Formato compacto para leitura rápida.
 
 ## Quando usar
 "abre a daily", "prepara a daily do Luiz", "daily de hoje", "/daily-luiz". Antes ou durante a call diária com Luiz.
@@ -18,7 +18,7 @@ Abre a daily com Luiz — mostra o que está em andamento, planejado para hoje (
 ---
 name: daily-luiz
 description: >
-  Abre a daily com Luiz — mostra o que está em andamento, o que está planejado
+  Abre a daily com dev externo — mostra o que está em andamento, o que está planejado
   para hoje (por prioridade), bloqueios e overdue. Formato compacto para leitura rápida.
   Uso: /daily-luiz
 ---
@@ -28,7 +28,7 @@ description: >
 ## Quando ativar
 
 - "abre a daily", "prepara a daily do Luiz", "daily de hoje", "/daily-luiz"
-- Antes ou durante a call diária com Luiz
+- Antes ou durante a call diária com dev externo
 
 ---
 

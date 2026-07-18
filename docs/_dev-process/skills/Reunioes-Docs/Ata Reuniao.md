@@ -44,7 +44,7 @@ description: >
 | Cliente (NSkin, H&Co, GCI GO) | Pessoal | `Clientes/[NomeCliente]/` |
 | Comercial / vendas / proposta | Pessoal | `Comercial/Propostas/` |
 | Reunião interna PD | Pessoal | `Reunioes/` |
-| Reunião técnica com Luiz / time dev | Time PD | `Time/Reunioes/` |
+| Reunião técnica com dev externo / time dev | Time PD | `Time/Reunioes/` |
 | Dúvida → usar | Pessoal | `Reunioes/` |
 
 ---

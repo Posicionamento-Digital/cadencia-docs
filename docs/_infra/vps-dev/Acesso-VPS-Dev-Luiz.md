@@ -5,9 +5,9 @@ moc: "[[MOC-Infra]]"
 type: source
 entities: ["[[Cadencia]]", "[[ecuro-mcp]]", "[[pd-portal]]"]
 ---
-# Acesso à VPS de Desenvolvimento — Luiz
+# Acesso à VPS de Desenvolvimento — dev externo
 
-> Referência completa para o Luiz acessar e trabalhar na VPS dev. Atualizar sempre que mudar chave, IP ou permissão.
+> Referência completa para o dev externo acessar e trabalhar na VPS dev. Atualizar sempre que mudar chave, IP ou permissão.
 
 ---
 
@@ -119,7 +119,7 @@ Se um CLI não aparecer no PATH, rodar: `source ~/.profile`
 
 ## 1Password na VPS
 
-O `op` está instalado e autenticado com um **Service Account read-only** no vault `Hostinger VPS`. O Luiz não vê os valores — só acessa via CLI.
+O `op` está instalado e autenticado com um **Service Account read-only** no vault `Hostinger VPS`. O dev externo não vê os valores — só acessa via CLI.
 
 ```bash
 # Pegar credencial pelo nome do item
@@ -214,7 +214,7 @@ Skills disponíveis (20):
 
 ## Docker
 
-Luiz tem acesso ao Docker sem sudo:
+dev externo tem acesso ao Docker sem sudo:
 
 ```bash
 docker compose up -d          # subir containers
@@ -232,7 +232,7 @@ docker stats                  # uso de recurso
 |---|---|
 | `sudo` — sem permissão | segurança; se precisar de pacote, avisar Felipe |
 | `/home/felipe/` — sem acesso | isolamento de usuário |
-| VPS de produção (`72.60.4.71`) — sem acesso shell | Luiz não tem chave para produção |
+| VPS de produção (`72.60.4.71`) — sem acesso shell | dev externo não tem chave para produção |
 | Credenciais em texto claro — proibido | só via `op item get` |
 | Commit direto na `main` — proibido | fluxo é `feature/pdl-XX` → PR → merge |
 

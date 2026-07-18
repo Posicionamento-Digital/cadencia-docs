@@ -7,7 +7,7 @@ entities: ["[[Cadencia]]"]
 ---
 # POP — Uso da VPS de Desenvolvimento
 
-**Responsável:** Dev (Luiz ou qualquer colaborador com acesso)
+**Responsável:** Dev (dev externo ou qualquer colaborador com acesso)
 **Gatilho de entrada:** Início de qualquer sessão de trabalho na VPS
 **Objetivo:** Garantir que todo trabalho na VPS segue o fluxo correto — da conexão ao fechamento da issue — sem deixar processo solto, credencial exposta ou sessão sem log.
 

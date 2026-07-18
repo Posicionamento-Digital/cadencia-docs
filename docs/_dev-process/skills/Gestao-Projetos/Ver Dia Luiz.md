@@ -10,7 +10,7 @@ moc: "[[MOC-Skills]]"
 > **ARQUIVO HISTÓRICO / LEGADO.** Preservado para memória, auditoria e contexto de decisões. Não usar como documentação operacional atual.
 
 
-O que Luiz fez hoje — commits por repositório e movimentações de issues no Linear.
+O que dev externo fez hoje — commits por repositório e movimentações de issues no Linear.
 
 ## Quando usar
 "/ver-dia-luiz" (hoje), "/ver-dia-luiz 2026-05-12" (data específica), "o que o Luiz fez hoje", "resumo do Luiz".
@@ -25,7 +25,7 @@ O que Luiz fez hoje — commits por repositório e movimentações de issues no 
 
 name: ver-dia-luiz
 description: >
-  O que Luiz fez hoje — commits por repo e movimentações de issues no Linear.
+  O que dev externo fez hoje — commits por repo e movimentações de issues no Linear.
   Uso: /ver-dia-luiz (hoje) ou /ver-dia-luiz 2026-05-12 (data específica).
 ---
 
@@ -33,7 +33,7 @@ description: >
 
 ## Quando ativar
 
-- "o que o Luiz fez hoje", "me mostra o dia do Luiz", "resumo do Luiz"
+- "o que o dev externo fez hoje", "me mostra o dia do dev externo", "resumo do dev externo"
 - `/ver-dia-luiz` — dia atual
 - `/ver-dia-luiz 2026-05-12` — data específica
 
@@ -82,7 +82,7 @@ GH_TOKEN = subprocess.check_output('gh auth token', shell=True, text=True).strip
 
 
 
-## Passo 2 — Commits do Luiz no GitHub
+## Passo 2 — Commits do dev externo no GitHub
 
 ```python
 def get_commits(repo, date):
@@ -137,7 +137,7 @@ QUERY = f"""
 ## Passo 4 — Formatar e exibir
 
 ```
-📅 Luiz — {TARGET_DATE}
+📅 dev externo — {TARGET_DATE}
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 💻 COMMITS ({total_commits})
@@ -163,7 +163,7 @@ cadencia-app:
 
 Se nenhum commit e nenhuma issue movimentada:
 ```
-📅 Luiz — {TARGET_DATE}
+📅 dev externo — {TARGET_DATE}
 Nenhuma atividade registrada no GitHub ou Linear hoje.
 ```
 

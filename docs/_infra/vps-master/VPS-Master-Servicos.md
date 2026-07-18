@@ -61,7 +61,7 @@ Ambos construídos da imagem `openclaw-openclaw` (código em `/opt/openclaw/repo
 | `ecuromiddleware-ecuro-postgres-1` | postgres:16-alpine | 5432 (interno) | Banco do ecuro middleware |
 | `ecuromiddleware-postgres-1` | postgres:16-alpine | 5432 (interno) | Banco auxiliar |
 
-> Criado e mantido pelo Luiz. Não modificar sem consultá-lo. Composes em `/opt/lara-ai/ECURO Middleware/`.
+> Criado e mantido pelo dev externo. Não modificar sem consultá-lo. Composes em `/opt/lara-ai/ECURO Middleware/`.
 
 ---
 
@@ -155,7 +155,7 @@ sudo journalctl -u stamper-bot.service -f
 Grafana Alloy — coleta métricas e envia para Grafana Cloud.
 
 - Config: `/etc/alloy/config.alloy`
-- Destino: Grafana Cloud stack 1632821 (conta do Luiz — verificar credenciais)
+- Destino: Grafana Cloud stack 1632821 (conta do dev externo — verificar credenciais)
 - Coleta: métricas GCI GO WhatsApp via OTLP (portas 4317/4318)
 
 ---

@@ -5,7 +5,7 @@ moc: "[[MOC-Time]]"
 type: source
 entities: ["[[Cadencia]]", "[[ecuro-mcp]]", "[[pd-portal]]"]
 ---
-# Manual da VPS de Desenvolvimento — Luiz
+# Manual da VPS de Desenvolvimento — dev externo
 
 > Tudo que você precisa saber para trabalhar na VPS dev.
 

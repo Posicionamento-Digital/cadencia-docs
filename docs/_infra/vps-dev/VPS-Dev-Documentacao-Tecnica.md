@@ -113,14 +113,14 @@ export GH_TOKEN="..."
 
 ## 1Password
 
-### Service Account do Luiz
+### Service Account do dev externo
 - **Nome:** `Hostinger VPS - Acessos & Credenciais`
 - **Escopo:** Read-only no vault `Hostinger VPS`
 - **Como usar:** `op item get "Nome da Key" --fields credential`
-- O Luiz nunca vê os valores — só acessa via CLI
+- O dev externo nunca vê os valores — só acessa via CLI
 
 ### Vault `Hostinger VPS`
-Popular via 1Password com as chaves que o Luiz precisa (Anthropic, Stevo, Supabase etc.).
+Popular via 1Password com as chaves que o dev externo precisa (Anthropic, Stevo, Supabase etc.).
 
 ---
 
@@ -141,13 +141,13 @@ Ambos os usuários têm os mesmos MCPs:
 ### Felipe (46 skills)
 Todas as skills do setup local — incluindo gestão pessoal (abrir-dia, fechar-dia, chefe-de-staff), Linear completo, reviews, infra, Obsidian, WhatsApp.
 
-### Luiz (20 skills)
+### dev externo (20 skills)
 Skills de desenvolvimento e gestão de tarefas:
 `log-sessao`, `linear-start-issue`, `linear-close-issue`, `linear-planejar-issue`, `linear-atualizar-issue`, `linear-criar-issue`, `linear-gestao-atividades`, `gemini-review`, `claude-review`, `codex-review`, `debug-polya`, `runtime-fix-review`, `espelhar-repo-vps`, `registrar-incidente`, `credencial`, `validar-deploy-vps`, `status`, `ja-fiz`, `issue-semana`, `handoff-sessao`
 
 ---
 
-## Repos clonados (Luiz)
+## Repos clonados (dev externo)
 
 | Repo | Path | Org/Owner |
 |---|---|---|
@@ -186,16 +186,16 @@ Outras portas são liberadas conforme serviços subirem (webhooks, HTTP, HTTPS).
                                                | build + deploy containers
 ```
 
-Luiz não tem acesso shell à VPS master.
+dev externo não tem acesso shell à VPS master.
 
 ---
 
 ## Pendências
 
 - [ ] Configurar branch protection nos repos quando fluxo de revisão for necessário
-- [ ] Adicionar domínio + HTTPS quando Luiz precisar testar webhooks externos
-- [ ] Popular vault `Hostinger VPS` no 1P com todas as keys que Luiz precisa
-- [ ] Configurar Railway token quando Luiz precisar do CLI
+- [ ] Adicionar domínio + HTTPS quando dev externo precisar testar webhooks externos
+- [ ] Popular vault `Hostinger VPS` no 1P com todas as keys que dev externo precisa
+- [ ] Configurar Railway token quando dev externo precisar do CLI
 - [ ] Instalar Coolify na VPS master para fechar o loop de deploy
 
 ---

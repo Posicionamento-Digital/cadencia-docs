@@ -321,7 +321,7 @@ Repetir via `ssh ... luiz@<IP>`.
 
 ## Etapa 12 — Configurar Service Account 1Password
 
-O colaborador (Luiz) usa um Service Account read-only para acessar credenciais sem precisar de biometria ou senha.
+O colaborador (dev externo) usa um Service Account read-only para acessar credenciais sem precisar de biometria ou senha.
 
 ### Manual
 
@@ -330,7 +330,7 @@ O colaborador (Luiz) usa um Service Account read-only para acessar credenciais s
 3. Escopo: vault `Hostinger VPS` (read-only)
 4. Copiar o token gerado (`ops_...`)
 5. Salvar o token no 1Password (vault `Hosts`, item `Hostinger VPS - SA - luiz`)
-6. No `.profile` do Luiz na VPS (ver Etapa 13), adicionar:
+6. No `.profile` do dev externo na VPS (ver Etapa 13), adicionar:
    ```bash
    export OP_SERVICE_ACCOUNT_TOKEN="ops_..."
    ```
@@ -442,7 +442,7 @@ git clone git@github.com:Posicionamento-Digital/claude-dev-skills.git
 cp -r ~/claude-dev-skills/skills/* ~/.claude/skills/
 ```
 
-**Skills para Luiz (20):**
+**Skills para dev externo (20):**
 `log-sessao`, `linear-start-issue`, `linear-close-issue`, `linear-planejar-issue`, `linear-atualizar-issue`, `linear-criar-issue`, `linear-gestao-atividades`, `gemini-review`, `claude-review`, `codex-review`, `debug-polya`, `runtime-fix-review`, `espelhar-repo-vps`, `registrar-incidente`, `credencial`, `validar-deploy-vps`, `status`, `ja-fiz`, `issue-semana`, `handoff-sessao`
 
 **Skills para Felipe (46):**
@@ -501,11 +501,11 @@ op whoami   # deve retornar o SA ou conta autenticada
 # MCPs
 cat ~/.claude/settings.json   # confirmar estrutura
 
-# Repos (Luiz)
+# Repos (dev externo)
 ls ~/gci-go-whatsapp ~/cadencia-app ~/pd-portal
 
 # Skills
-ls ~/.claude/skills/ | wc -l   # 20 para Luiz, 46 para Felipe
+ls ~/.claude/skills/ | wc -l   # 20 para dev externo, 46 para Felipe
 
 # Firewall
 ufw status   # porta 22 ALLOW, demais DENY
@@ -536,7 +536,7 @@ ufw status   # porta 22 ALLOW, demais DENY
 
 - **Sem Coolify na dev** — só na VPS master (produção) quando provisionar
 - **Skills por cópia, não symlink** — independência entre usuários; cada um pode customizar sem afetar o outro
-- **Sem branch protection** — Luiz pode fazer push direto para `main` por enquanto; revisar quando o volume de commits aumentar
+- **Sem branch protection** — dev externo pode fazer push direto para `main` por enquanto; revisar quando o volume de commits aumentar
 - **cadencia-app** está na conta pessoal `felipeluissalgueiro`, não na org; necessário clonar com esse remote
 - **SA token 1P no `.profile`, não `.bashrc`** — `.bashrc` não carrega em sessões não-interativas (cron, scripts)
 - **GH fine-grained PAT bloqueado para a org** — usar classic PAT; rever quando org migrar

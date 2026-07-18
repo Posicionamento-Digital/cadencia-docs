@@ -68,13 +68,13 @@ Gerada automaticamente pelo Linear baseado no título da issue.
 ```
 Felipe cria issue no Linear
         ↓
-Luiz roda /start-issue PDL-XX
+dev externo roda /start-issue PDL-XX
         ↓
 Branch criada + issue → In Progress
         ↓
-Luiz implementa + commita na branch
+dev externo implementa + commita na branch
         ↓
-Luiz roda /close-issue PDL-XX
+dev externo roda /close-issue PDL-XX
         ↓
 Merge na main + issue → Done
 ```

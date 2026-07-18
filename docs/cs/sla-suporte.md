@@ -88,9 +88,9 @@ Triagem CS vs Suporte (separacao-cs-suporte.md)
    ↓       ↓
    CS    Suporte → Severidade P1-P4
                        ↓
-                P1 → Felipe (gestão) + Luiz (técnica) imediato
-                P2 → Luiz via Linear, Felipe se exceder SLA
-                P3 → Luiz backlog
+                P1 → Felipe (gestão) + dev externo (técnica) imediato
+                P2 → dev externo via Linear, Felipe se exceder SLA
+                P3 → dev externo backlog
                 P4 → CS resolve (FAQ/treinamento)
 ```
 

@@ -13,7 +13,7 @@ moc: "[[MOC-Skills]]"
 Cria e gerencia issues no Linear — extrai tarefas de conversas, cria issues detalhadas, vincula ao projeto/cycle correto, atribui responsáveis, cria branch no GitHub, verifica espelhamento na VPS e documenta no Obsidian Time PD. Substitui o fluxo anterior do Notion.
 
 ## Quando usar
-"cria atividades pro projeto X", "cria issue pra [tarefa]", "registra essas tarefas no linear", "cria tasks dessa conversa pro Luiz", "/gestao-atividades".
+"cria atividades pro projeto X", "cria issue pra [tarefa]", "registra essas tarefas no linear", "cria tasks dessa conversa pro dev externo", "/gestao-atividades".
 
 ---
 
@@ -35,7 +35,7 @@ description: >
 
 # /gestao-atividades-projeto
 
-Cria issues no Linear com tudo que o Luiz precisa pra trabalhar na VPS sem depender de explicação verbal.
+Cria issues no Linear com tudo que o dev externo precisa pra trabalhar na VPS sem depender de explicação verbal.
 
 ## Quando ativar
 
@@ -43,7 +43,7 @@ Cria issues no Linear com tudo que o Luiz precisa pra trabalhar na VPS sem depen
 - "cria issue pra [tarefa]"
 - "registra essas tarefas no linear"
 - "coloca isso como issue do [projeto/repo]"
-- "cria tasks dessa conversa pro Luiz"
+- "cria tasks dessa conversa pro dev externo"
 - "/gestao-atividades"
 
 ---
@@ -56,7 +56,7 @@ Cria issues no Linear com tudo que o Luiz precisa pra trabalhar na VPS sem depen
 |---|---|
 | Linear — Team | Produto & Dev (`3d9699c8-ee89-466d-804d-8237041080d1`) |
 | Linear — Felipe (user ID) | `6feb76c7-f8f5-4d76-b1bc-d58496460cc7` |
-| Linear — Luiz (user ID) | `0085bb23-2b19-49ba-8179-8f41d499d969` |
+| Linear — dev externo (user ID) | `0085bb23-2b19-49ba-8179-8f41d499d969` |
 | Linear — Cycle W1 (18-25/05) | `ee8e4dd7-fc2c-4dc8-b281-7dbd06b86bba` |
 | VPS IP | `72.60.4.71` |
 | VPS SSH key | `~/.ssh/hostinger_pd` |
@@ -108,7 +108,7 @@ Da instrução do Felipe, extrair para cada issue:
 | Campo | Descrição | Obrigatório |
 |---|---|---|
 | Título | Ação clara: verbo + objeto | Sim |
-| Responsável | Luiz ou Felipe | Sim |
+| Responsável | dev externo ou Felipe | Sim |
 | Prioridade | Urgent / High / Medium / Low | Sim |
 | Label(s) | `trilha:sprint` / `trilha:manutencao` / `trilha:rotina` + `repo:[nome]` | Sim |
 | Prazo (due date) | Data limite | Sim |
@@ -177,7 +177,7 @@ Quem lê deve entender POR QUE essa issue existe sem ter participado da conversa
 - Origem: [conversa/reunião/data]
 ```
 
-**REGRA:** Descrição com menos de 3 seções preenchidas é inútil pra Luiz. Não criar assim.
+**REGRA:** Descrição com menos de 3 seções preenchidas é inútil pra dev externo. Não criar assim.
 
 ---
 
@@ -185,14 +185,14 @@ Quem lê deve entender POR QUE essa issue existe sem ter participado da conversa
 
 ## Passo 5 — Criar branches no GitHub
 
-**Só para issues atribuídas ao Luiz.**
+**Só para issues atribuídas ao dev externo.**
 
 ```bash
 OP="C:\Users\felip\AppData\Local\Microsoft\WinGet\Packages\AgileBits.1Password.CLI_Microsoft.Winget.Source_8wekyb3d8bbwe\op.exe"
 PAT=$($OP item get "Git Hub - ClaudeCode_Skill - Repo_VPS" --vault "Serviços & Tools" --field credencial --reveal)
 ```
 
-Para cada issue do Luiz:
+Para cada issue do dev externo:
 
 **5a. Pegar SHA do branch base (main):**
 ```bash
@@ -221,7 +221,7 @@ curl -s -X POST \
 
 ## Passo 6 — Verificar repo na VPS
 
-**Só para issues atribuídas ao Luiz.**
+**Só para issues atribuídas ao dev externo.**
 
 Verificar se deploy key existe:
 ```bash
@@ -250,7 +250,7 @@ ssh -i ~/.ssh/hostinger_pd root@72.60.4.71 \
 
 | Issue | Título | Responsável | Prazo | Prioridade | Branch |
 |---|---|---|---|---|---|
-| PDL-10 | ... | Luiz | 17/05 | High | luiz/pdl-10-... |
+| PDL-10 | ... | dev externo | 17/05 | High | luiz/pdl-10-... |
 
 🔗 Projeto Linear: [URL]
 
@@ -266,10 +266,10 @@ ssh -i ~/.ssh/hostinger_pd root@72.60.4.71 \
 
 ## Regras
 
-1. **NUNCA criar issue sem descrição completa.** Issue com título apenas é inútil pra Luiz.
+1. **NUNCA criar issue sem descrição completa.** Issue com título apenas é inútil pra dev externo.
 2. **Sempre associar ao projeto e ao cycle ativo** (se existir).
-3. **Sempre criar branch no GitHub** para issues do Luiz antes de reportar.
-4. **Verificar VPS antes de finalizar** — Luiz não pode trabalhar se o repo não estiver lá.
+3. **Sempre criar branch no GitHub** para issues do dev externo antes de reportar.
+4. **Verificar VPS antes de finalizar** — dev externo não pode trabalhar se o repo não estiver lá.
 5. **Se Obsidian falhar:** avisar mas não abortar.
 6. **Se a issue for do Felipe:** não criar branch, não verificar VPS.
 7. **Labels de repo são obrigatórias** para issues técnicas.

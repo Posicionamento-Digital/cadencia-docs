@@ -14,7 +14,7 @@ entities: ["[[Cadencia]]", "[[Central de Observabilidade]]", "[[PD Framework]]",
 ```mermaid
 graph TB
     Felipe[Felipe<br/>decisor + executor]
-    Luiz[Luiz<br/>dev cadencia-app/pd-portal]
+    dev externo[dev externo<br/>dev cadencia-app/pd-portal]
     Linear[(Linear<br/>fonte de verdade do trabalho)]
     OneP[(1Password<br/>fonte única de secrets)]
     Slack[(Slack<br/>notificação de máquina)]
@@ -35,7 +35,7 @@ graph TB
     FW -->|sinks: deploys, audit, corpus| Supabase
     FW -->|workers cron/systemd, deploy| VPSs
     FW -->|notas, wiki| Obsidian
-    Luiz -->|framework próprio, espelhado via luiz_state| FW
+    dev externo -->|framework próprio, espelhado via luiz_state| FW
 ```
 
 ## Nível 2 — Containers (as 8 camadas do grafo)

@@ -87,7 +87,7 @@ VPS 72.60.4.71
 └── Observabilidade
     ├── Netdata (porta 19999, só via SSH tunnel)
     ├── Cockpit (porta 9090, só via SSH tunnel)
-    └── Grafana Alloy → Grafana Cloud (conta Luiz, stack 1632821)
+    └── Grafana Alloy → Grafana Cloud (conta dev externo, stack 1632821)
 ```
 
 ---
@@ -110,7 +110,7 @@ VPS 72.60.4.71
 | `cadencia-n8n-main`, workers, postgres, redis | Cadencia — cliente ativo |
 | `cloudflared` (pid ativo) | Tunnel do ecuro — derrubar quebra a API |
 | `lara-central`, `lara-ceilandia` | Cliente Sorria ativo — atendimento em produção |
-| `ecuromiddleware-*` | Criado pelo Luiz — não mexer sem ele |
+| `ecuromiddleware-*` | Criado pelo dev externo — não mexer sem ele |
 | `gci-go-whatsapp` (em `/root/`) | Cliente GCI GO — ativo |
 | Crons SOAP em `/root/pd-marketing/` | Lançamento Cadência em andamento até 29/05 |
 

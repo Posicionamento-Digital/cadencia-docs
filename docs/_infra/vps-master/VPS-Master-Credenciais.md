@@ -85,9 +85,9 @@ op item get "Coolify - API - VPS Master" --vault Hosts --fields password --revea
 
 | Credencial | Vault | Item |
 |---|---|---|
-| API key Grafana Cloud (Alloy) | Configurado no systemd da VPS | Verificar com Luiz |
+| API key Grafana Cloud (Alloy) | Configurado no systemd da VPS | Verificar com dev externo |
 
-> O valor está no `env.conf` do systemd em `/etc/systemd/system/alloy.service.d/env.conf`. A conta Grafana Cloud foi criada pelo Luiz — login pendente de confirmação.
+> O valor está no `env.conf` do systemd em `/etc/systemd/system/alloy.service.d/env.conf`. A conta Grafana Cloud foi criada pelo dev externo — login pendente de confirmação.
 
 ---
 
@@ -112,7 +112,7 @@ URL: `https://sm-canguru.stevo.chat`
 
 ## Pending — itens a registrar
 
-- [ ] Credenciais Grafana Cloud (após Luiz confirmar email)
+- [ ] Credenciais Grafana Cloud (após dev externo confirmar email)
 - [ ] Env vars do pd-marketing (60+ variáveis) — mover para 1P quando containerizar
 
 ---

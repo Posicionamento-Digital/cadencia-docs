@@ -121,7 +121,7 @@ python3 scripts/cron_publish.py
 ```
 /opt/lara-ai/
 └── ECURO Middleware/
-    └── docker-compose.yml   → compose do ecuro middleware (Luiz)
+    └── docker-compose.yml   → compose do ecuro middleware (dev externo)
 ```
 
 > Atenção: os containers `lara-central` e `lara-ceilandia` NÃO são iniciados a partir daqui. Eles são iniciados pelo compose em `/opt/openclaw/docker-compose.yml`.
