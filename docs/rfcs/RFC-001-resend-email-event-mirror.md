@@ -81,8 +81,10 @@ recupera detalhes/tags e grava os envios. Tags legadas sem `channel` e
 `campaign_id` são resolvidas pelo post/assunto canônico, sem fallback em erro
 técnico. `last_event` não é transformado em evento porque a listagem não fornece
 seu timestamp; usar o horário do envio falsearia o gráfico. Aberturas e cliques
-históricos são reconciliados de `scoring_events`, que preserva contato, post e
-timestamp real, para o `email_id` mais recente anterior ao evento. Replays do
+históricos anteriores ao cutoff explícito de go-live podem ser reconciliados de
+`scoring_events`. A atribuição só ocorre quando há exatamente um `email_id`
+candidato para tenant/post/contato; casos ambíguos são contabilizados e pulados.
+O dashboard identifica essa cobertura histórica como parcial. Replays do
 webhook continuam aceitos e idempotentes.
 
 Durante a transição, a API pode usar o ledger `seinfeld_daily_sent` apenas para
