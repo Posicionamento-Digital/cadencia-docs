@@ -31,7 +31,8 @@ usuário ou tenant será fixado no código.
 `resend_email_events` representa cada evento recebido:
 
 - `svix_id` (PK/idempotência), `email_id`, `event_type`;
-- `occurred_at`, `created_at` e metadados não sensíveis necessários à UI.
+- `occurred_at`, `created_at` e metadados não sensíveis necessários à UI. URLs
+  clicadas não são copiadas, pois podem conter identificadores ou tokens.
 
 As tabelas não armazenam corpo do email. Email do destinatário não é
 necessário para analytics e não será copiado. Acesso de `anon` e
@@ -76,12 +77,13 @@ clientes de email.
 ## Backfill
 
 Um comando idempotente lista emails do Resend dentro da retenção disponível,
-recupera detalhes/tags e grava os envios. `last_event` não é transformado em
-evento porque a listagem não fornece seu timestamp; usar o horário do envio
-falsearia o gráfico. Payloads históricos entram apenas por replay do webhook,
-preservando o timestamp real. Dados que o provider já não retém permanecem
-explicitamente fora do espelho; não serão reconstruídos a partir de
-`published_at`.
+recupera detalhes/tags e grava os envios. Tags legadas sem `channel` e
+`campaign_id` são resolvidas pelo post/assunto canônico, sem fallback em erro
+técnico. `last_event` não é transformado em evento porque a listagem não fornece
+seu timestamp; usar o horário do envio falsearia o gráfico. Aberturas e cliques
+históricos são reconciliados de `scoring_events`, que preserva contato, post e
+timestamp real, para o `email_id` mais recente anterior ao evento. Replays do
+webhook continuam aceitos e idempotentes.
 
 Durante a transição, a API pode usar o ledger `seinfeld_daily_sent` apenas para
 explicar lacunas de envios antigos, com marcador de fonte. Ele não substitui o
