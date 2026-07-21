@@ -1,0 +1,7 @@
+{
+  "name": "cadencia-docs",
+  "private": true,
+  "dependencies": {
+    "@vercel/edge": "^1.2.1"
+  }
+}
