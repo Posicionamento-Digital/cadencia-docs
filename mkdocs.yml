@@ -200,6 +200,10 @@ nav:
       - Conta do Cenário: comercial/conta-do-cenario.md
     - Operação:
       - Rituais Solo: comercial/rituais-solo.md
+    - Programa de Revenda:
+      - comercial/programa-revenda/index.md
+      - Processo de Vendas: comercial/programa-revenda/processo-vendas.md
+      - Kit do Revendedor: comercial/programa-revenda/kit-revendedor.md
 
   # ═══════════════════════════════════════════════════════════════════════════
   # MARKETING
