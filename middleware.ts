@@ -65,14 +65,15 @@ export default async function middleware(request: Request): Promise<Response> {
     if (!ok) return redirectToLogin(request.url);
 
     // Redireciona para URL limpa (sem token) e seta cookie próprio
+    // NOTA: Response.redirect() cria headers imutáveis no Edge — usar new Response()
     url.searchParams.delete("access_token");
-    const cleanUrl = url.toString();
-    const res = Response.redirect(cleanUrl, 302);
-    res.headers.set(
-      "Set-Cookie",
-      `docs_session=${encodeURIComponent(accessToken)}; Path=/; HttpOnly; Secure; SameSite=Lax; Max-Age=3600`
-    );
-    return res;
+    return new Response(null, {
+      status: 302,
+      headers: {
+        "Location": url.toString(),
+        "Set-Cookie": `docs_session=${encodeURIComponent(accessToken)}; Path=/; HttpOnly; Secure; SameSite=Lax; Max-Age=3600`,
+      },
+    });
   }
 
   // Fluxo 2: cookie docs_session (sessão já estabelecida)
