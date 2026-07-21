@@ -1,0 +1,41 @@
+{% extends "main.html" %}
+
+{% block tabs %}{% endblock %}
+{% block site_nav %}{% endblock %}
+
+{% block content %}
+<style>
+  /* Remove grid columns reservadas para sidebar esquerda e TOC direita */
+  .md-main__inner {
+    display: block !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    grid-template-columns: none !important;
+    grid-template-rows: none !important;
+  }
+  /* Oculta TOC lateral direita (md-sidebar--secondary) */
+  .md-sidebar--secondary { display: none !important; }
+  /* Conteúdo ocupa 100% da largura disponível */
+  .md-content {
+    max-width: 100% !important;
+    flex: 1 !important;
+    min-width: 0 !important;
+  }
+  /* Inner centralizado com largura máxima generosa */
+  .md-content__inner {
+    max-width: 1200px !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    padding: 48px 56px 80px !important;
+    box-sizing: border-box !important;
+  }
+  @media (max-width: 960px) {
+    .md-content__inner { padding: 32px 32px 64px !important; }
+  }
+  @media (max-width: 600px) {
+    .md-content__inner { padding: 24px 20px 48px !important; }
+  }
+</style>
+{{ page.content }}
+{% endblock %}
