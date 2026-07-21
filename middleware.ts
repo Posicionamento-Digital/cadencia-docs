@@ -18,9 +18,9 @@ export const config = {
   matcher: ["/((?!assets/|search/|404\\.html|sitemap\\.xml|robots\\.txt).*)"],
 };
 
-const SUPABASE_URL = process.env.SUPABASE_URL!;
-const SUPABASE_ANON_KEY = process.env.SUPABASE_ANON_KEY!;
-const APP_URL = process.env.CADENCIA_APP_URL ?? "https://cadencia.app.br";
+const SUPABASE_URL = process.env.SUPABASE_URL!.trim();
+const SUPABASE_ANON_KEY = process.env.SUPABASE_ANON_KEY!.trim();
+const APP_URL = (process.env.CADENCIA_APP_URL ?? "https://cadencia.app.br").trim();
 
 function getCookieValue(header: string | null, name: string): string | null {
   if (!header) return null;
