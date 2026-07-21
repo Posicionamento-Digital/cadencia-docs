@@ -98,8 +98,17 @@
 .md-search__icon { color: var(--muted) !important; }
 
 /* ── Sidebar ── */
-.md-sidebar { background: var(--surface) !important; }
-.md-sidebar--primary { border-right: 1px solid var(--border) !important; }
+.md-sidebar {
+  background: var(--surface) !important;
+  /* Garante que a sidebar preencha toda a altura disponível da viewport */
+  min-height: 100vh !important;
+  height: auto !important;
+}
+.md-sidebar--primary {
+  border-right: 1px solid var(--border) !important;
+  /* Alinha com o topo da viewport (sem margem acima do header) */
+  top: 0 !important;
+}
 /* Esconde TOC secundário — conteúdo usa toda a largura disponível */
 .md-sidebar--secondary { display: none !important; }
 
