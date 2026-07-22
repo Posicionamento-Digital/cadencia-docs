@@ -97,6 +97,14 @@
 /* Remove duplicate search icon color bleed */
 .md-search__icon { color: var(--muted) !important; }
 
+/* ── Layout grid — colar sidebar na borda esquerda ── */
+/* MkDocs Material usa .md-grid com max-width: 61rem + margin:0 auto no header
+   e no main-inner. Isso deixa um vão à esquerda da sidebar em telas largas.
+   Zeramos o max-width pra sidebar encostar na borda e o conteúdo ganhar largura
+   (o max-width real do texto vive em .md-content__inner, abaixo). */
+.md-grid { max-width: none !important; }
+.md-main__inner { margin-top: 0 !important; }
+
 /* ── Sidebar ── */
 .md-sidebar {
   background: var(--surface) !important;
@@ -108,6 +116,9 @@
   border-right: 1px solid var(--border) !important;
   /* Alinha com o topo da viewport (sem margem acima do header) */
   top: 0 !important;
+  /* Encosta na borda esquerda — sem margin herdada do grid */
+  left: 0 !important;
+  margin-left: 0 !important;
 }
 /* Esconde TOC secundário — conteúdo usa toda a largura disponível */
 .md-sidebar--secondary { display: none !important; }
