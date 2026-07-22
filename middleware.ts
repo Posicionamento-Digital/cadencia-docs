@@ -13,6 +13,7 @@ export const config = {
 
 const SUPABASE_URL = process.env.SUPABASE_URL!;
 const SUPABASE_ANON_KEY = process.env.SUPABASE_ANON_KEY!;
+const SUPABASE_SERVICE_ROLE = process.env.SUPABASE_SERVICE_ROLE_KEY!;
 const PROJECT_REF = process.env.SUPABASE_PROJECT_REF!;
 const APP_URL = process.env.CADENCIA_APP_URL ?? "https://cadencia.app.br";
 
@@ -80,9 +81,12 @@ export default async function middleware(request: Request): Promise<Response> {
     ? "member,admin,owner,super_admin"
     : "admin,owner,super_admin";
 
+  // Lookup de role com service_role: RLS de user_tenant_roles tem recursão
+  // (policy super_admin faz SELECT na própria tabela). JWT do usuário já foi
+  // validado acima via /auth/v1/user — o lookup privilegiado é só p/ ler o role.
   const roleRes = await fetch(
     `${SUPABASE_URL}/rest/v1/user_tenant_roles?user_id=eq.${user.id}&role=in.(${rolesIn})&limit=1&select=role`,
-    { headers: { Authorization: `Bearer ${accessToken}`, apikey: SUPABASE_ANON_KEY } }
+    { headers: { Authorization: `Bearer ${SUPABASE_SERVICE_ROLE}`, apikey: SUPABASE_SERVICE_ROLE } }
   );
   if (!roleRes.ok) return redirectToLogin(request.url);
   const roles: { role: string }[] = await roleRes.json();
