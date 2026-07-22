@@ -298,6 +298,7 @@ nav:
   # ═══════════════════════════════════════════════════════════════════════════
   - Operacional:
     - operacional/index.md
+    - Criar página ou site novo: operacional/criar-pagina-cadencia.md
     - RH — Contratação (AFM): operacional/rh-contratacao-afm.md
     - Leituras — Desenho do Time: operacional/leituras-inspiracao-desenho-time.md
 
