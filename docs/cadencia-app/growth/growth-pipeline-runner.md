@@ -33,7 +33,8 @@
 ## Fluxo carrossel/reels (NÃO passa aqui)
 
 ```
-cron-job.org → POST /api/app/trigger-generation (Vercel)
+Scheduler externo (disparador não confirmado — ver Foundation - Tech Architecture §Cron jobs)
+  → POST /api/app/trigger-generation (Vercel)
   ↓
 Vercel filtra carrossel/reels → workers Coolify VPS Master
 VPS: recebe APENAS blog/seinfeld/linkedin/instagram

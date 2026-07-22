@@ -13,7 +13,7 @@ graph TB
     LLM[(OpenAI / Gemini<br/>geração de conteúdo)]
     Mixpanel[(Mixpanel / PostHog<br/>GA4 / Meta)]
     Apify[(Apify<br/>análise Instagram)]
-    Cron[(cron-job.org)]
+    Cron[(Scheduler externo<br/>disparador não confirmado<br/>ver Foundation - Tech Architecture §Cron jobs)]
 
     subgraph Cadencia [Cadencia SaaS]
         App[Plataforma Cadência<br/>web + workers + pipeline]
@@ -38,7 +38,7 @@ graph TB
     Resend[(Resend)]
     Stripe[(Stripe)]
     LLM[(OpenAI / Gemini)]
-    Cron[(cron-job.org)]
+    Cron[(Scheduler externo<br/>disparador não confirmado<br/>ver Foundation - Tech Architecture §Cron jobs)]
 
     subgraph Vercel [Vercel — Next.js]
         Frontend[Frontend<br/>Next.js 15 + React 19<br/>app + admin + marketing + onboarding]

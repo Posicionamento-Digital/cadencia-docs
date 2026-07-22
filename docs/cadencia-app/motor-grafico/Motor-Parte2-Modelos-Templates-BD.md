@@ -268,7 +268,7 @@ Gerada automaticamente a partir do logo no onboarding. Armazenada em `tenant_vis
 
 ### Cron Diário
 
-**Endpoint:** `POST /api/v1/cron/daily` com header `x-cron-secret` (chamado pelo cron-job.org às 8h BRT)
+**Endpoint:** `POST /api/v1/cron/daily` com header `x-cron-secret` (chamado por scheduler externo às 8h BRT — disparador exato não confirmado, ver Foundation - Tech Architecture §Cron jobs)
 
 **Fluxo:**
 1. Verifica secret

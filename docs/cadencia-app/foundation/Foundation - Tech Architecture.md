@@ -209,8 +209,15 @@ entities: ["[[Cadencia-Growth]]", "[[Cadencia]]", "[[marketing]]"]
 
 ## Cron jobs
 
-- **Hoje:** cron-job.org → triggers workers Coolify VPS Master
-- **Migração:** Coolify cron nativo OU cron VPS Master
+**Estado ATUAL (verificado 2026-07-22, DEV-1447):**
+
+- **`crontab` do host VPS Master (root)** — pipeline growth: `growth_pipeline.py` (blog/seinfeld/linkedin/instagram 14h, newsletter sex 18h), `cadence_tick.py` (5 em 5 min), `retry_provisioning.py`, `cleanup_orphan_ideas.py`, healthcheck, advisors Supabase, drift_check. Fonte: `sudo crontab -l` na VPS.
+- **`crontab` do user master** — cadeia PD Framework (state-aggregator 6h, deploy-watcher 10min, self-test 7h30, hostinger-watcher 8h, health-check 21h30) + conferência cobrança 21h15.
+- **Systemd services** — `cadencia-trigger.service` (trigger_server porta 39090, on-demand), `resend_webhook.py` (@reboot), `mission_control.py` (@reboot).
+- **`/api/v1/cron/rerender-slides` (workers Coolify)** — disparador **inconclusivo**. Doc antiga afirmava cron-job.org (1min interval). Investigação 2026-07-22 (DEV-1447) descartou: crontab master, crontab root, cron dentro do container, Coolify Scheduled Task, systemd, APScheduler. Logs mostram POST de `127.0.0.1` a cada ~1min — hipótese não confirmada: cron-job.org ainda ativo com IP mascarado por Traefik host-network. **Interval do disparador ficou irrelevante desde DEV-1447 fix:** o endpoint agora processa batch (cap 8 jobs / timeout 25s) e drena a fila inteira por call.
+- **`/api/v1/cron/daily` (workers Coolify)** — mesmo endpoint pattern; disparador não verificado nesta investigação.
+
+**Não use mais como referência:** "cron-job.org é o único disparador de workers". A frase está em drift desde a migração pra Coolify VPS Master (CAD-638). Cada disparo tem que ser confirmado por observação direta, não por doc.
 
 ---
 

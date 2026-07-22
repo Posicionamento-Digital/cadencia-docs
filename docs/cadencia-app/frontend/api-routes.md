@@ -28,7 +28,8 @@ API routes do Next.js (Vercel). 9 grupos de rotas.
 ## Fluxo trigger-generation
 
 ```
-cron-job.org → POST /api/app/trigger-generation (Vercel)
+Scheduler externo (disparador não confirmado — ver Foundation - Tech Architecture §Cron jobs)
+  → POST /api/app/trigger-generation (Vercel)
   ├─ carrossel / reels → workers Coolify VPS Master
   └─ blog / seinfeld / linkedin / instagram → VPS porta 39090
 ```
