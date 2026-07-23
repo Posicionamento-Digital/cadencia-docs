@@ -384,6 +384,7 @@ nav:
       - AI Founder Mode: _pd-framework/AI-Founder-Mode.md
       - AGENTS.md: _pd-framework/AGENTS.md
       - wiki-lint: _pd-framework/wiki-lint.md
+      - "Hardening auth cross-runtime (OPS-75)": _pd-framework/hardening-auth-cross-runtime.md
       - Arquitetura:
         - "Arquitetura Definitiva": "_pd-framework/2026-05-25 PD Framework — Arquitetura DEFINITIVA consolidada.md"
         - "Arquitetura Completa e Stack": "_pd-framework/2026-05-24 PD Framework — Arquitetura completa e mapeamento de stack.md"
