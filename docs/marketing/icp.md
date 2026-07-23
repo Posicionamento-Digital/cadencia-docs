@@ -1,12 +1,44 @@
 ---
 title: ICP — Marketing
 tags: [marketing, canon]
+atualizado: 2026-07-22
 ---
+
+> **Fonte de verdade:** este arquivo. Cópias em pd-framework e Obsidian espelham este conteúdo.
 
 # ICP — Ideal Customer Profile
 
 > Framework: Value Proposition Canvas (Osterwalder) + dados reais da Cadencia.
-> Fonte: "Público Alvo" (7 módulos) + "ICP por Categoria de Produto" (Notion). Consolidado 2026-05-25.
+> Revisado em 2026-07-22 com base em análise de 17 calls de vendas (jun–jul 2026) e dados de 72 tenants no Supabase.
+
+---
+
+## ICP revisado — dados de pipeline (22/07/2026)
+
+**ICP primário: agência de marketing** que opera marketing de múltiplos clientes e precisa escalar produção sem contratar.
+
+- Opera conteúdo de N clientes simultaneamente
+- Custo marginal por cliente novo é headcount (designer, redator, social media)
+- Alternativa atual: time próprio + Canva + ChatGPT genérico por cliente (sem memória de marca)
+- Objeção de entrada: fricção de adoção ("mais uma ferramenta na rotina"), não preço
+- **Por que Cadencia é melhor:** já sabe quem é o cliente — não precisa reexplicar a cada prompt. Mesmo squad atende mais clientes.
+- **Argumento de venda:** ganho de escala (não "IA gera conteúdo" — ICP tem vergonha de admitir que usa IA)
+- Exemplos no pipeline: Vayne Sacaro (fechou Podologia + Zemix), Karina Vieira
+
+**ICP secundário: empresa em transição** que dispensou agência e ainda não tem time formado.
+
+- Janela temporária — quando crescer, vai contratar nova agência (que vai usar Cadencia)
+- Tem área de marketing, quer ferramenta, não serviço
+- Exemplos: WGL, SZ Soluções, H&Co
+- Ticket: R$2.990–5.000/mês
+
+**Modelo Done-for-You:** empresa sem agência e sem time (quer resultado, não quer operar).
+
+- A Cadencia opera como agência usando o próprio SaaS
+- Canal de caixa e laboratório de produto — não é ICP de produto escalonável
+- Exemplos: OP Odontopenha, Mel Quevedo, Ariane Farrapo
+
+**Anti-ICP confirmado:** dono de PME operando sozinho sem área de marketing. Quer o resultado, não quer operar a ferramenta. Rodolfo é o caso-referência: entusiasta, cadastrado, nunca ativou.
 
 ---
 
@@ -37,7 +69,7 @@ tags: [marketing, canon]
 5. **Imprevisibilidade financeira** — não conseguem projetar crescimento com segurança
 
 **Crenças que bloqueiam ação:**
-- "Conteúdo é perda de tempo" — só vendo por indicação
+- "Conteúdo é perda de tempo" — só vende por indicação
 - "Sucesso não precisa de marketing" — validado pelo passado, não pelo futuro
 - "Marketing é artificial" — medo de parecer inautêntico
 - "Automação substitui atendimento humano" — medo de perder o toque pessoal
@@ -64,21 +96,33 @@ tags: [marketing, canon]
 
 ---
 
-### Trilha 2 — Ferramentas IA (Cadencia SaaS)
+### Trilha 2 — Cadencia SaaS (revisada 22/07/2026)
 
-**Quem é:**
-- Gestor de marketing ou dono com operação de marketing ativa
-- Faturamento: R$150.000+/mês
-- 200+ leads/mês para gerenciar
-- Já usa alguma ferramenta de automação ou CRM
-- Frustrado com soluções que não se integram
-- Quer plataforma que une geração de conteúdo + CRM + disparos
+> ⚠️ ICP revisado após análise de pipeline. O perfil anterior ("gestor de marketing ou dono com operação ativa") é ICP secundário — não primário.
 
-**Job to be done:** "Quero aparecer consistentemente sem depender de agência."
+**ICP primário desta trilha: agência de marketing / reseller**
 
-**Disposto a investir:** R$1.000–R$5.000/mês em plataforma + suporte
+- Diretora ou sócia de agência com 5–25 clientes ativos
+- Custo marginal atual: headcount por cliente novo (designer, redator, social media)
+- Já usa Canva + ChatGPT mas reexplica quem é cada cliente a cada uso
+- Travada em ~15 clientes por limitação de processo, não de talento
+- Objeção real: fricção de adoção (mudança de rotina), não preço
 
-**Nível de consciência típico de entrada:** 2 (Praticante acidental) ou 3 (Em transição)
+**Job to be done:** "Quero atender mais clientes sem crescer o time proporcionalmente."
+
+**Disposto a investir:** créditos proporcionais à carteira (modelo reseller — compra insumo, vende resultado com margem)
+
+**ICP secundário desta trilha: empresa em transição**
+
+- Empresa que dispensou agência e ainda não tem time interno formado
+- Tem gestor de marketing interno, quer operar a ferramenta
+- Janela temporária — tende a contratar agência quando crescer
+
+**Job to be done:** "Minha equipe produz com consistência enquanto decido o próximo passo."
+
+**Disposto a investir:** R$2.990–5.000/mês
+
+**Nível de consciência típico de entrada:** 3 (Em transição) ou 4 (Avaliando soluções)
 
 ---
 
@@ -88,7 +132,7 @@ tags: [marketing, canon]
 
 ## O que NÃO funciona no modelo Cadencia
 
-**Regra crítica:** o produto Cadencia só funciona com **cliente engajado do outro lado**. Não é self-service.
+**Regra crítica:** o produto Cadencia só funciona com **cliente engajado do outro lado**. Não é self-service passivo.
 
 - Não funciona para quem quer "solução que roda sozinha sem interação"
 - Não funciona para quem não tem processo mínimo estabelecido
@@ -101,19 +145,16 @@ tags: [marketing, canon]
 
 Referência: Teoria de Preferências e Gatilhos (Brendan Kane) — 6 tipos de consumidor por forma de processar informação. Detalhe em `metodo-historias.md`.
 
-Cada trilha do ICP tem combinação dominante distinta. Use pra calibrar tom de gancho, gatilho mental e tipo de prova:
-
 | Trilha | Estilos dominantes | Implicação na comunicação |
 |---|---|---|
-| **Cadencia Consultorias** | Fatos (25%) + Imaginação (10%) + Ação (5%) | Dados, ROI, comparações + visão "como seria se funcionasse" + comandos diretos. Evita apelos emocionais puros. |
-| **Cadencia SaaS (Ferramentas IA)** | Fatos + Imaginação + Sentimentos (limítrofe) | Demonstração de produto + "imagina sua operação assim" + alívio emocional (deixar de fazer manual). |
-
-> Trilha Franquia Gestor de IA descontinuada em 2026-07-17. Snapshot: `_legacy/marketing/foundation/trilha-franquia-snapshot.md`
+| **Cadencia Consultorias** | Fatos (25%) + Imaginação (10%) + Ação (5%) | Dados, ROI, comparações + visão "como seria se funcionasse" + comandos diretos. |
+| **Cadencia SaaS — agência/reseller** | Fatos + Ação | Resultado concreto (N clientes com mesmo time) + comando direto. Sentimento é secundário. |
+| **Cadencia SaaS — empresa em transição** | Fatos + Imaginação + Sentimentos (limítrofe) | Demonstração de produto + alívio emocional (deixar de depender de agência). |
 
 **Anti-padrões transversais:**
-- Apelar pra Diversão pura (20% da pop. geral, mas baixíssimo no público Cadencia) — humor é tempero, não eixo
+- Apelar pra Diversão pura — humor é tempero, não eixo
 - Foco em Sentimentos sem entregar Fato (público Cadencia desconfia)
-- Argumento puro de Valores sem ROI (não converte sozinho — complementa)
+- Lista de features como argumento de venda — gera objeções, não converte
 
 **Como aplicar em assets:**
 - **Hook:** ver `ganchos.md` tabela "Combo com perfis"
@@ -130,8 +171,7 @@ Cada trilha do ICP tem combinação dominante distinta. Use pra calibrar tom de 
 | Inteligência Artificial | "Ferramenta inteligente que resolve problemas" |
 | Pipeline de Vendas | "Caminho organizado para fechar negócios" |
 | CRM | "Sistema para organizar seus contatos" |
-| IA como assistente | "Um braço direito digital que trabalha 24/7" |
-| No-show | "Diminui atrasos e faltas" |
+| Ganho de escala | "Atender mais clientes com o mesmo time" |
 | Integração de dados | "Tudo que você precisa em um lugar só" |
 
 Mais termos em `foundation/tom-de-voz.md`.
