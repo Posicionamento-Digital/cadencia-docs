@@ -25,7 +25,12 @@ tags: [comercial, revenda, canon]
 
 ### O que é o Cadencia
 
-O Cadencia é uma plataforma de inteligência artificial para empresas que querem gerar conteúdo para redes sociais de forma consistente e automatizada — e converter esse conteúdo em leads e vendas por e-mail e WhatsApp.
+O Cadencia é uma **plataforma de produção e distribuição de conteúdo** com IA — para profissionais e empresas que precisam produzir conteúdo calibrado para múltiplos clientes e distribuí-lo em múltiplos canais com consistência.
+
+**Frame do funil de produção:**
+> Cadencia **gera** (início) → outras ferramentas lapidam (meio: ChatGPT, Perplexity, Gemini, NotebookLM) → Cadencia **distribui** (fim). Nenhuma outra ferramenta cobre as duas pontas.
+
+O único concorrente direto é o Manus (também gera saída de conteúdo). ChatGPT, Gemini, Perplexity e NotebookLM ficam no meio — não substituem, ficam no mesmo stack.
 
 **O que ele faz:**
 
@@ -57,9 +62,9 @@ O Cadencia é uma plataforma de inteligência artificial para empresas que quere
 
 ---
 
-*Versão 2 — para agências:*
+*Versão 2 — para profissional de marketing boutique (estrategista, agência pequena, social media):*
 
-> "Eu parceiro com a Cadencia, que é uma plataforma de IA para gestão de conteúdo. A ideia é que sua agência consiga escalar o atendimento dos clientes sem precisar aumentar o time — a IA faz a produção de conteúdo, a equipe da Cadencia implementa, e você fatura mais sem contratar mais."
+> "Eu parceiro com o Cadencia, que é uma plataforma de produção e distribuição de conteúdo com IA. A ideia é que você opera o Cadencia por dentro da sua operação — sem dar acesso ao cliente, sem agência no meio. Você configura o perfil de cada cliente uma vez, o Cadencia gera e distribui, e você foca em estratégia. É crédito em real, pay-as-you-go — sem mensalidade em dólar."
 
 ---
 
@@ -85,7 +90,7 @@ O Cadencia é uma plataforma de inteligência artificial para empresas que quere
 
 **2. Apresenta o produto (60s)**
 
-> "A Cadencia resolve exatamente isso. É uma plataforma de IA que faz três coisas: primeiro, cria conteúdo para todas as redes sociais do cliente com a identidade visual e editorial dele — sem precisar de redator, sem depender de agência. Segundo, esse conteúdo é otimizado pra aparecer nas buscas de IA como ChatGPT e Gemini — não só no Google. Terceiro, converte esse conteúdo em campanhas de e-mail e WhatsApp personalizadas para aquecer os leads que chegam."
+> "O Cadencia é uma plataforma de produção e distribuição de conteúdo com IA. Ele entra no início e no fim do funil. No início: gera o primeiro rascunho já calibrado com a identidade e o método do cliente. No fim: distribui — blog, email, Instagram, LinkedIn, newsletter. No meio: você continua usando o que já usa (ChatGPT, Perplexity, Gemini, o que for) pra lapidar. O diferencial é que nenhuma outra ferramenta cobre as duas pontas — só o Cadencia. E é crédito em real, não em dólar."
 
 ---
 
@@ -122,6 +127,29 @@ Apontar para [cadencia.app.br](https://cadencia.app.br) e para a documentação 
 - Não prometer que o revendedor vai "mostrar o sistema ao vivo" sem conta demo disponível
 - Não improvisar funcionalidades que não existem
 - Não mostrar dados de clientes sem autorização
+
+---
+
+## Modelo reseller interno — para profissional de marketing boutique
+
+> Profissional que opera o Cadencia por dentro da própria estrutura, sem dar acesso direto ao cliente final.
+
+**Como funciona:**
+- O revendedor tem uma conta Cadencia com conta-mãe
+- Cada cliente vira um sub-tenant dentro da conta dele
+- Ele configura o perfil, editorias e identidade de cada cliente
+- Gera e distribui o conteúdo como parte do serviço prestado — cliente não acessa a plataforma
+
+**Por que esse modelo ressoa:**
+- Profissional mantém controle do processo e do IP do método
+- Cliente vê o resultado, não a ferramenta — sem dependência reversa
+- Custo operacional em créditos BRL, não mensalidade em dólar
+- Escala sem contratar: N clientes × mesmo sistema, sem headcount adicional
+
+**Diferença em relação ao Modelo A/B padrão:**
+Não é "compra créditos para usar no próprio negócio" — é "opera o Cadencia para os clientes da sua boutique como parte do serviço". A fatura é do profissional, não do cliente final.
+
+**Oferta de entrada para esse perfil:** Setup Cadencia R$997 — 3 sessões done-with-you + 30 créditos bônus. Ver [setup-cadencia](../foundation/setup-cadencia.md) para detalhes.
 
 ---
 

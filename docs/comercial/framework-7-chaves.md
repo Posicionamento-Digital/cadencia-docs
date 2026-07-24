@@ -9,6 +9,7 @@ tags: [comercial, canon]
 
 > Base: Alexandre Manhães (7 Passos) + adaptação Felipe Luis Salgueiro  
 > Atualizado: 09/06/2026 — substituiu versão Challenger Sale anterior  
+> Atualizado: 23/07/2026 — adaptações ICP Profissional de Marketing (estrategista boutique)  
 > Princípio: **energia + conexão + comando. A pessoa compra você antes de comprar o produto.**
 
 ---
@@ -39,6 +40,8 @@ Antes de entrar na call:
 - ❌ Listar currículo completo — 2-3 fatos concretos, não mais
 - ❌ Pedir desculpa pelo preço antes de apresentar — já começa perdendo
 
+> **Sinal de atenção — lead de indicação de autoridade forte:** se o lead começar a te ensinar algo nos primeiros minutos (metodologia, algoritmo, ferramenta), a Chave 1 já está concluída — a autoridade foi transferida pelo indicante antes da call. Cue imediato: ir para os 3Rs com "Isso me diz muito sobre como você pensa. Antes de qualquer coisa, quero entender melhor onde você está agora."
+
 ---
 
 ### Chave 2 — Conexão (3Rs)
@@ -55,6 +58,23 @@ Antes de entrar na call:
 | **Resistência** | "Por que você ainda não alcançou?" | Objeção real — dita por ele, não por você |
 
 > A resposta de Resistência é onde o serviço entra. O cliente verbaliza a objeção antes da apresentação — você a incorpora, não a rebate.
+
+#### Adaptação — ICP Profissional de Marketing (estrategista boutique / agência / social media)
+
+> Cadencia = **plataforma de produção e distribuição de conteúdo**. Para esse ICP: aumenta a velocidade da operação reduzindo custos operacionais — profissional dedica menos tempo a tarefas operacionais e mais tempo a estratégias de crescimento.
+
+As perguntas de Realidade precisam fazer o lead **colocar número no problema** que o Cadencia resolve. Não é "conte sobre o seu negócio" — é engenharia reversa do posicionamento.
+
+| Pergunta | Variável mapeada |
+|---|---|
+| *"Por cliente, quanto tempo você gasta por mês em produção de conteúdo — criar, revisar, ajustar, publicar?"* | Tempo operacional por cliente |
+| *"E o que você gasta hoje para operar isso — ferramentas, freelancers, horas suas que poderiam estar em estratégia?"* | Custo operacional atual |
+| *"Tem alguma parte do trabalho que você sabe que deveria dedicar mais tempo — estratégia, crescimento do próprio negócio, prospecção — mas não consegue porque está travado na operação?"* | O que está sendo sacrificado |
+
+**Conta do Cenário para esse ICP** (substitui a versão de meta de receita):
+> *"Você me falou que gasta X horas por cliente por mês em produção. Com N clientes são Y horas. Essas horas custam quanto da sua capacidade — o que você deixa de fazer em estratégia nesse tempo?"*
+
+O lead chega sozinho à conclusão: estou pagando caro demais com tempo para fazer o que a plataforma poderia fazer por mim.
 
 **O que não fazer:**
 - ❌ Fazer mais de 3 perguntas nessa fase — objetivo é 3Rs, não entrevista
@@ -85,7 +105,7 @@ Exercício de diagnóstico financeiro feito em voz alta com os números DO clien
 
 **Por que funciona:** os números são dele, o problema é específico e mensurável, a transição é natural — você não apresenta solução antes do problema estar cristalizado.
 
-Guia completo e exemplo real (Mel Quevedo): `../../../foundation/conta-do-cenario.md`
+Guia completo e exemplo real (Mel Quevedo): [conta-do-cenario.md](conta-do-cenario.md)
 
 ---
 
@@ -99,6 +119,15 @@ Guia completo e exemplo real (Mel Quevedo): `../../../foundation/conta-do-cenari
 - **Micro-contrato:** "Vou te apresentar algo. Se fizer sentido pra você, a gente vê como seguir. Se não fizer, tudo certo — sem pressão."
 
 > Esse micro-contrato libera o cliente pra dizer não sem constrangimento — e libera você pra apresentar sem ansiedade.
+
+#### Adaptação — ICP Profissional de Marketing (estrategista boutique)
+
+Profissional de marketing sofisticado tem perfil analítico. Sem micro-contrato explícito, a demo vira apresentação de produto — ele analisa sem se comprometer. A permissão para dizer não (que o micro-contrato oferece) é o que libera ele para dizer sim.
+
+**Sequência para esse ICP:**
+1. "Com base no que você descreveu — [X horas por cliente, Y clientes] — faz sentido a gente explorar uma solução pra isso?" (confirmação)
+2. "Você é quem toma essa decisão ou tem mais alguém envolvido?" (decisor)
+3. "Vou te mostrar como funciona. Se fizer sentido pra sua operação, a gente vê como seguir. Se não fizer, zero pressão." (micro-contrato)
 
 **O que não fazer:**
 - ❌ Apresentar para não-decisor sem micro-contrato de quem decide também
@@ -122,6 +151,30 @@ Guia completo e exemplo real (Mel Quevedo): `../../../foundation/conta-do-cenari
 - Bônus contextuais que emergiram dos 3Rs — não pré-definidos, surgem da escuta
 - Energia + conexão + comando: você conduz, não implora
 
+#### Adaptação — ICP Profissional de Marketing (estrategista boutique / agência / social media)
+
+**Reestruturação verbal (antes de tocar a tela):**
+
+Esse ICP já sabe que tem problema. Não precisa ser convencido de que existe gap — ele vive o gap. O ângulo que ele nunca teve é o posicionamento do Cadencia no funil de produção dele.
+
+> *"O Cadencia não substitui o ChatGPT, o Perplexity, o NotebookLM — você vai continuar usando todos eles. O que ele faz é entrar no início e no fim do seu funil. No início: a ideia, a estrutura, o primeiro rascunho já calibrado com a marca e o método do seu cliente. No meio: você usa o que você já usa pra lapidar. No fim: o Cadencia distribui — blog, email, Instagram, LinkedIn, newsletter. As outras ferramentas ficam no meio, onde são melhores. Nenhuma delas faz as duas pontas."*
+
+**Por que esse frame funciona para esse ICP:**
+- Não ameaça o stack atual (não substitui — envolve)
+- O único que substitui diretamente é o Manus (também gera conteúdo de saída)
+- Cadencia = wrapper do funil inteiro. Remover quebra o início e o fim do processo
+- Para quem "chicoteia as IAs": *"Você começa a chicotada de um lugar melhor — o contexto do cliente já está dentro"*
+
+**Demo em 3 pontos fixos para esse ICP (20 min máx):**
+
+| Ponto | O que mostrar | Conexão com a dor |
+|---|---|---|
+| 1 | Geração calibrada com método/marca do cliente | "Cadencia começa de dentro da identidade do cliente — não do zero" |
+| 2 | Funil de e-mail + scoring de lead | Surpresa garantida — profissional de marketing que nunca viu isso |
+| 3 | Distribuição multi-canal + modelo conta-mãe | "Cadencia fecha o funil — o que foi lapidado vai pra todos os canais de uma vez" |
+
+Após os 3 pontos: parar, perguntar. *"O que você achou mais relevante pra sua operação?"* — a resposta é o gancho da Chave 5.
+
 **O que não fazer:**
 - ❌ Usar case genérico quando tem contexto real dele disponível
 - ❌ Mostrar produto antes da reestruturação — apresentar solução sem mostrar o ângulo novo é só catálogo
@@ -139,7 +192,25 @@ Guia completo e exemplo real (Mel Quevedo): `../../../foundation/conta-do-cenari
 5. Declarar preço com naturalidade: "[R$ X à vista / 12x R$ Y]" → **silêncio**
 6. Se rejeitar: mudar o jogo (escopo menor, outra modalidade) — nunca mesmo escopo com desconto (G001)
 
+#### Adaptação — ICP Profissional de Marketing (modelo de créditos + Setup Cadencia)
+
+**Pré-requisito:** Conta do Cenário da Chave 2 precisa estar feita. Sem o número de "horas por cliente × N clientes" calculado em voz alta, não há âncora para o Fechamento. Se não foi feita, fazer agora antes de declarar preço.
+
+**A unidade de entrada não é crédito — é o Setup Cadencia R$997:**
+> 3 sessões done-with-you (Briefing 45min + Kickoff 90min + Primeiro Cliente 60min) + 30 créditos bônus (= 30 dias de uso sem compra adicional)
+
+**Sequência para esse ICP:**
+
+1. "O que você achou mais relevante pra sua operação?" → escutar (veio da Chave 4)
+2. Conectar com o cálculo: *"Você me falou que gasta X horas por cliente. Com N clientes, são Y horas por mês em operação. O Setup configura isso pra todos os seus clientes em 3 sessões — e os 30 créditos cobrem o primeiro mês."*
+3. "O investimento é R$997." → **silêncio**
+4. Se vier objeção de timing: *"Perfeito. O setup a gente pode começar depois que você sair da imersão — você fecha agora e começa no dia que fizer sentido."*
+5. Downsell (só após silêncio rejeitado): Pack Starter 30cr por R$199 — disponível apenas na reunião
+
 **O que não fazer:**
+- ❌ Explicar créditos por unidade antes de ancorar no Setup — a unidade de compra é o produto
+- ❌ Aceitar "vou amadurecer a ideia" sem entender o que especificamente precisa amadurecer
+- ❌ Oferecer downsell antes do silêncio pós-preço
 - ❌ Justificar o preço antes de ele reclamar
 - ❌ Preencher o silêncio depois de declarar o preço — quem fala primeiro depois do preço, perde
 - ❌ Oferecer desconto como Plano B — G001 (confirma rejeite)
@@ -156,6 +227,15 @@ Guia completo e exemplo real (Mel Quevedo): `../../../foundation/conta-do-cenari
 
 **Timing:** Logo após o fechamento, antes de desligar. Nunca em cold — só com deal fechado ou em momentum positivo.
 
+#### Adaptação — ICP Profissional de Marketing (stall ou call remarked)
+
+Esse ICP viaja em redes muito fechadas de alto valor (Poli, Kizo, SMlab, BNIs de nicho). Não esperar fechar para perguntar.
+
+Quando a call encerrou positiva mas sem compra:
+> *"Independentemente do timing, você conhece alguém que hoje está no mesmo ponto que você estava quando encontrou o [indicante] — sentindo essa pressão de operar muito para estrategizar pouco?"*
+
+Por que funciona: a dor está fresca (acabou de descrevê-la nas 3Rs). A indicação sai do estado emocional ativo, não de uma pergunta fria.
+
 ---
 
 ### Chave 7 — Validados
@@ -164,6 +244,19 @@ Guia completo e exemplo real (Mel Quevedo): `../../../foundation/conta-do-cenari
 - Mensagem pós-call (WhatsApp ou e-mail) reforçando o próximo passo
 - Reiterar o que ele disse que precisava (3R Resultado) e conectar com o que foi acordado
 - Tom: parceria, não prestação de serviço — você está do lado dele
+
+#### Adaptação — ICP Profissional de Marketing (call de stall)
+
+Quando a call não fechou mas foi remarked, Validados tem função diferente: não é reforçar decisão (não houve decisão) — é confirmar + resumir + plantar o próximo encontro.
+
+**Modelo de mensagem pós-stall:**
+> *"[Nome], obrigado pela call — foi uma conversa muito rica. Anotei o [data] às [hora]. Na próxima call a gente estrutura o Setup Cadencia pra sua operação com base no que você me contou hoje — [o ponto que mais resonou nas palavras dele]. Qualquer dúvida antes disso, me chama."*
+
+Regras:
+- Enviar em até 2h após a call
+- Nomear o que resonou nas palavras DELE (não o que você acha relevante)
+- Não mandar proposta, link ou material antes da next call — mata a reunião
+- Nomear o que vai acontecer na próxima call: cria expectativa concreta, não ansiosa
 
 ---
 
@@ -187,7 +280,7 @@ Guia completo e exemplo real (Mel Quevedo): `../../../foundation/conta-do-cenari
 ## Pós-call
 
 1. Registrar resultado no CRM Cadencia (mover stage do funil `geracao-negocios` + nota com sinais novos via `/api/app/contacts/[id]/notes`)
-2. Preencher bloco pós-deal em `../../foundation/learnings-calls-vendas.md` (sinais lidos vs realidade)
+2. Preencher bloco pós-deal em `learnings-calls-vendas.md` (sinais lidos vs realidade)
 3. Próximo passo:
    - Fechou → handoff CS no mesmo dia
    - Proposta enviada → cadência FUP via `fup-pos-reuniao.md`
@@ -198,12 +291,9 @@ Guia completo e exemplo real (Mel Quevedo): `../../../foundation/conta-do-cenari
 
 ## Refs
 
-- `../../foundation/leitura-de-sinais.md` — léxico de sinais (leitura antes da call)
-- `aposta-de-oferta.md` — template de nota pré-call (CRM Cadencia)
-- `../../foundation/learnings-calls-vendas.md` — blocos por deal (calibração)
-- `../../foundation/conta-do-cenario.md` — framework Conta do Cenário (7 passos, exemplo Mel Quevedo)
-- `../../gotchas.md` G001 — desconto confirma rejeite
-- `../../foundation/playbook-objecoes.md` — quebra de objeções (Chave 5)
-- `fup-pos-reuniao.md` — cadência pós-proposta
-- `../../skills/william.md` — negociação pós-proposta travada
-- `../../skills/eduardo-preparar-call/SKILL.md` — pré-call obrigatório
+- [leitura-de-sinais.md](leitura-de-sinais.md) — léxico de sinais (leitura antes da call)
+- [aposta-de-oferta.md](aposta-de-oferta.md) — template de nota pré-call (CRM Cadencia)
+- [conta-do-cenario.md](conta-do-cenario.md) — framework Conta do Cenário (7 passos, exemplo Mel Quevedo)
+- [playbook-objecoes.md](playbook-objecoes.md) — quebra de objeções (Chave 5)
+- [programa-revenda/kit-revendedor.md](programa-revenda/kit-revendedor.md) — kit do revendedor
+- [programa-revenda/processo-vendas.md](programa-revenda/processo-vendas.md) — processo de vendas revendedor

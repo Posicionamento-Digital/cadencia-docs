@@ -26,17 +26,31 @@ O revendedor **não fecha o projeto** — encaminha o lead qualificado para Feli
 
 O revendedor deve mirar quem tem **problema claro + dinheiro para resolver**. Não mirar todo mundo com CNPJ.
 
-**Perfil verde (ICP):**
+**Perfil verde (ICP) — dois segmentos:**
 
+**Segmento 1 — PME / empresa:**
 - Dono ou sócio de PME no Brasil
 - Faturamento: R$ 100k+/mês
 - Segmentos com mais fit: clínicas multi-unidade, redes de serviços, franquias, agências em crescimento
 - Já tentou contratar pessoas para resolver marketing/conteúdo — não funcionou ou ficou caro
 - Reconhece que depende de si mesmo para o negócio funcionar
 
+**Segmento 2 — Profissional de marketing boutique (estrategista, agência pequena, social media):**
+- Profissional com carteira de N clientes simultâneos (mínimo 3-4 clientes ativos)
+- Ticket médio por cliente: R$ 2.000–6.000/mês
+- Opera o conteúdo dos clientes internamente (não depende de equipe externa)
+- Stack avançado de IA: usa ChatGPT, Gemini, Perplexity, NotebookLM — mas recomeça do zero a cada cliente
+- Dor: "fazer meu tempo ficar mais caro" — não quer mais clientes, quer mesmos clientes com menos tempo operacional
+- Usa o Cadencia internamente: opera por dentro da boutique, sem dar acesso ao cliente final
+- **Oferta de entrada:** Setup Cadencia R$997 (não implementação completa)
+
 **Dor que o Cadencia resolve:**
 
+**Para PME:**
 > "Preciso que meu marketing funcione sem eu estar presente."
+
+**Para profissional boutique:**
+> "Preciso produzir conteúdo de N clientes sem que o custo operacional coma toda a minha margem estratégica."
 
 **Perguntas mentais rápidas antes de abordar:**
 
@@ -130,7 +144,7 @@ Para leads com mais fit (clínicas, agências, empresas B2B), o revendedor usa o
 | Perfil do lead | Ângulo de entrada |
 |---|---|
 | Dono de agência | "Escala o atendimento dos seus clientes sem aumentar o time" |
-| Consultor / estrategista digital | "Entrega mais resultado para os clientes com menos esforço operacional" |
+| Consultor / estrategista digital | "Entrega mais resultado para os clientes com menos esforço operacional — o Cadencia entra no início e no fim do funil de produção, as ferramentas que você já usa ficam no meio" |
 | Empresa que vende direto (B2B/B2C) | "Gera conteúdo + aquece leads próprios automaticamente" |
 | Clínica de saúde | "Sai da dependência de indicação e monta captação previsível" |
 | E-commerce | "Personalização e retenção automatizada com IA" |
