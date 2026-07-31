@@ -351,6 +351,17 @@ nav:
         - POP de Uso: _infra/vps-dev/POP-Uso-VPS-Dev.md
         - Provisionar: _infra/vps-dev/Playbook-Provisionar-VPS-Dev.md
         - Acesso Luiz: _infra/vps-dev/Acesso-VPS-Dev-Luiz.md
+        - "Inventário 2026-07-31 (pós-desligamento Luiz)":
+          - "README — visão geral": _infra/vps-dev/2026-07-31-README.md
+          - Arquitetura (C4): _infra/vps-dev/2026-07-31-architecture.md
+          - Stack Lara GCI-GO: _infra/vps-dev/2026-07-31-stack-lara-gci-go.md
+          - Stack Cadencia Agenda: _infra/vps-dev/2026-07-31-stack-cadencia-agenda.md
+          - Stack PD Motor: _infra/vps-dev/2026-07-31-stack-pd-motor.md
+          - Stack Hermes Agent: _infra/vps-dev/2026-07-31-stack-hermes-agent.md
+          - Cloudflared Tunnel: _infra/vps-dev/2026-07-31-cloudflared-tunnel.md
+          - Crons e Systemd: _infra/vps-dev/2026-07-31-crons-e-services.md
+          - Paths e Storage: _infra/vps-dev/2026-07-31-paths-e-storage.md
+          - Runbook — recuperar compose: _infra/vps-dev/2026-07-31-runbook-recuperar-compose.md
       - Observabilidade:
         - Central Observabilidade — README: central-observabilidade/README.md
         - Central Observabilidade: _infra/Central-Observabilidade.md
