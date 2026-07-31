@@ -433,6 +433,46 @@
          <lastmod>2026-07-31</lastmod>
     </url>
     <url>
+         <loc>https://docs.cadencia.app.br/_infra/vps-dev/2026-07-31-README/</loc>
+         <lastmod>2026-07-31</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.cadencia.app.br/_infra/vps-dev/2026-07-31-architecture/</loc>
+         <lastmod>2026-07-31</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.cadencia.app.br/_infra/vps-dev/2026-07-31-cloudflared-tunnel/</loc>
+         <lastmod>2026-07-31</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.cadencia.app.br/_infra/vps-dev/2026-07-31-crons-e-services/</loc>
+         <lastmod>2026-07-31</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.cadencia.app.br/_infra/vps-dev/2026-07-31-paths-e-storage/</loc>
+         <lastmod>2026-07-31</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.cadencia.app.br/_infra/vps-dev/2026-07-31-runbook-recuperar-compose/</loc>
+         <lastmod>2026-07-31</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.cadencia.app.br/_infra/vps-dev/2026-07-31-stack-cadencia-agenda/</loc>
+         <lastmod>2026-07-31</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.cadencia.app.br/_infra/vps-dev/2026-07-31-stack-hermes-agent/</loc>
+         <lastmod>2026-07-31</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.cadencia.app.br/_infra/vps-dev/2026-07-31-stack-lara-gci-go/</loc>
+         <lastmod>2026-07-31</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.cadencia.app.br/_infra/vps-dev/2026-07-31-stack-pd-motor/</loc>
+         <lastmod>2026-07-31</lastmod>
+    </url>
+    <url>
          <loc>https://docs.cadencia.app.br/_infra/vps-dev/Acesso-VPS-Dev-Luiz/</loc>
          <lastmod>2026-07-31</lastmod>
     </url>
@@ -1694,6 +1734,14 @@
     </url>
     <url>
          <loc>https://docs.cadencia.app.br/rfcs/RFC-001-resend-email-event-mirror/</loc>
+         <lastmod>2026-07-31</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.cadencia.app.br/rfcs/RFC-002-llm-json-extraction-retry/</loc>
+         <lastmod>2026-07-31</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.cadencia.app.br/rfcs/RFC-003-integracao-social-composio/</loc>
          <lastmod>2026-07-31</lastmod>
     </url>
 </urlset>
