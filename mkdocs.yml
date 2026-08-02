@@ -111,6 +111,8 @@ nav:
       - Blog por tenant: cadencia-app/lib/blog-tenant.md
       - Tracking & Analytics: cadencia-app/lib/tracking-analytics.md
       - Runbooks: cadencia-app/runbooks/README.md
+    - Auth & Recovery:
+      - Fluxo reset de senha: cadencia-app/auth-recovery-flow.md
     - Growth — Tráfego Meta Ads:
       - Gestão de Tráfego (Pedro): cadencia-app/gestao-trafego.md
     - Lara & CRM Conversacional:
