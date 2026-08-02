@@ -62,7 +62,7 @@ Super_admin sempre vê (pra suporte), independente da flag.
 
 | Env | Escopo | Origem |
 |---|---|---|
-| `META_SYSTEM_USER_TOKEN` | production + preview | System user Meta "Claude Code". 1P `Credenciais de API - Meta API token` (Posicionamento Digital) — item precisa update manual (SA sem write no vault) |
+| `META_SYSTEM_USER_TOKEN` | production + preview | System user Meta "Claude Code" (app `846142204524437`, never-expire). 1P: `Meta API - System User Token [Claude Code]` (vault **Serviços & Tools**, campo `credential`). ⚠️ Item legado `Credenciais de API - Meta API token` (vault Posicionamento Digital) tem token expirado desde 18-Mar-2026 — **deletar manualmente** (SA sem write nesse vault). |
 | `OPENROUTER_API_KEY` | production + preview | 1P `OpenRouter - API - Cadencia app` (Providers IA) |
 
 **Legado removido em 01/08:** `META_DEMO_ACCESS_TOKEN`, `META_DEMO_AD_ACCOUNT_ID`, `TRAFEGO_DEMO_TENANT_ID`, `TRAFEGO_DEMO_FIXTURES` — substituídos por `META_SYSTEM_USER_TOKEN` + `tenant_trafego_meta` + `flag_trafego_enabled`.
