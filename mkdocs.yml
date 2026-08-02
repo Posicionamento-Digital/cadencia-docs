@@ -111,6 +111,8 @@ nav:
       - Blog por tenant: cadencia-app/lib/blog-tenant.md
       - Tracking & Analytics: cadencia-app/lib/tracking-analytics.md
       - Runbooks: cadencia-app/runbooks/README.md
+    - Growth — Tráfego Meta Ads:
+      - Gestão de Tráfego (Pedro): cadencia-app/gestao-trafego.md
     - Lara & CRM Conversacional:
       - Agente Lara: cadencia-app/agente-lara.md
       - Cadências de contatos: cadencia-app/cadencias-de-contatos.md
