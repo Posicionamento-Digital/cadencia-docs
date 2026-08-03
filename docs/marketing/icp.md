@@ -133,8 +133,13 @@ atualizado: 2026-07-22
 - **Auto-segmenta a própria carteira antes de adotar:** pergunta "funciona pra qual dos meus clientes?", não "funciona pra mim?". Clientes grandes (banco de fotos próprio, identidade rígida, produção customizada) = fora do escopo. Clientes médios/pequenos = sweet spot.
 - Prefere crédito avulso sobre pacote de implementação ("igual comprar crédito de ChatGPT").
 - Chega via autoridade conectora (ex-professores, referências de mercado) — não via outbound.
-- **Product gap bloqueante:** upload de banco de fotos completo para todos os slides (não só capa) — issue a abrir no roadmap.
-- Exemplo: Agência 1002 (indicação Poli/ESPM).
+- **Product gap bloqueante:** upload de banco de fotos completo para todos os slides (não só capa) — DEV-1686.
+- **Dynamic risk:** objetivo estratégico deles é subir para clientes maiores — exatamente os que não encaixam hoje. Se conseguirem, o fit encolhe. DEV-1686 é o que garante que a relação escale com eles.
+- **Insumo com margem:** pensam em Cadencia como custo de insumo com markup. Conversa de precificação = estrutura de margem, não valor da plataforma.
+- **Driver emocional:** operação sustentável para o time (conflito geracional). Copy fundador velho: "faça mais com o mesmo time." Copy fundador jovem: "a agência que você quer construir não precisa de 14h/dia de ninguém."
+- **Demo sequence:** aha moment foi CRM de nutrição + scoring, não carrossel. Abrir pelo problema comercial.
+- **Onboarding de cliente novo é a porta de entrada:** menor fricção onde não há workflow estabelecido.
+- Exemplo: Agência 1002 (indicação Poli/ESPM, 03/08/2026).
 
 ---
 
