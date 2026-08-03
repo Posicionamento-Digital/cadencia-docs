@@ -143,6 +143,20 @@ atualizado: 2026-07-22
 
 ---
 
+---
+
+**ICP Creator — executivo ou profissional liberal que quer criar conteúdo pessoal** (validado 03/08/2026)
+
+- **Pergunta central:** "isso funciona para mim?" — decisão autônoma, sem gating externo
+- Fecha em D+1 quando o gatilho certo é acionado — não precisa de follow-up
+- **Gatilho:** prova social orgânica — ver alguém que admira usando e obtendo resultado
+- **Prova:** Fernando Lima (Gerente RGM Danone) — viu Mel Quevedo marcando Felipe no Instagram → pagou R$990 via Pix no dia seguinte sem follow-up
+- **Canal de aquisição:** post de cliente satisfeito no Instagram. Cada post = funil novo.
+- **Job to be done:** "quero criar conteúdo consistente sobre minha área sem depender de agência"
+- **Perfil:** executivo C-level/gerência em empresa grande ou especialista (médico, advogado, consultor) com autoridade e pouco tempo
+
+---
+
 **ICP secundário desta trilha: empresa em transição**
 
 - Empresa que dispensou agência e ainda não tem time interno formado
