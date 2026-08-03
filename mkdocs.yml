@@ -151,6 +151,7 @@ nav:
     - Pipeline:
       - Seinfeld Email pipeline: cadencia-app/pipeline/seinfeld-email-pipeline.md
     - Features:
+      - Conexões sociais via Composio: cadencia-app/features/social-connections/index.md
       - CRM — Lista Tabela Linear: cadencia-app/features/crm-lista-tabela-linear.md
       - Mise en place — Growth pipeline: cadencia-app/features/mise-en-place-growth-pipeline.md
     - CLI & MCP:
