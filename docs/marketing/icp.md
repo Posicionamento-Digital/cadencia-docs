@@ -100,17 +100,43 @@ atualizado: 2026-07-22
 
 > ⚠️ ICP revisado após análise de pipeline. O perfil anterior ("gestor de marketing ou dono com operação ativa") é ICP secundário — não primário.
 
-**ICP primário desta trilha: agência de marketing / reseller**
+**ICP primário desta trilha: profissional de marketing que atende múltiplos clientes**
 
-- Diretora ou sócia de agência com 5–25 clientes ativos
-- Custo marginal atual: headcount por cliente novo (designer, redator, social media)
-- Já usa Canva + ChatGPT mas reexplica quem é cada cliente a cada uso
-- Travada em ~15 clientes por limitação de processo, não de talento
+> ⚠️ Rótulos descartados em copy: "agência" (o ICP faz o trabalho de uma agência mas não se identifica com o termo), "boutique" (rótulo interno), "backend de um time de marketing" (dev language). Usar: "profissional de marketing", "prestador de serviço de conteúdo", "você que atende múltiplos clientes".
+
+- Opera sozinho ou com 1-2 freelas; ~6 clientes ativos em média
+- Usa LLMs diretamente com método próprio — não usa ferramentas "de agência" como Jasper/Copy.ai
+- Custo marginal por cliente novo é tempo operacional — reexplica briefing a cada prompt
+- Trava antes de 15 clientes por processo, não por talento
 - Objeção real: fricção de adoção (mudança de rotina), não preço
+- Argumento de venda: redução de custo operacional (não "IA gera conteúdo" — ICP tem vergonha de admitir que usa IA)
+- Exemplos: Vayne Sacaro, Karina Vieira, Daniela Franco
 
-**Job to be done:** "Quero atender mais clientes sem crescer o time proporcionalmente."
+**Job to be done:** "Quero operar mais clientes sem que a operação me consuma."
 
 **Disposto a investir:** créditos proporcionais à carteira (modelo reseller — compra insumo, vende resultado com margem)
+
+---
+
+**Sub-segmento validado — operador solo já fluente em IA generativa** (call Magali Pinfildi, Pinfildi Comunicação, 27/07/2026)
+
+- Não tem equipe pra escalar — ela É a operação. Job to be done muda de "escalar equipe" para "escalar a si mesma".
+- Já resolveu a dor de criação sozinho (ChatGPT + Gemini pagos com processo próprio). O wedge não é geração de conteúdo — é distribuição/nutrição (email marketing + scoring de lead).
+- Modelo de receita hoje é projeto, não recorrência — o canal de e-mail/nutrição é o que resolve a transição projeto→recorrência.
+- Exigência de invisibilidade da ferramenta: não quer só white-label — quer que a existência da ferramenta não apareça na conversa com o cliente final.
+
+---
+
+**Sub-segmento validado — agência com equipe pequena** (call Agência 1002, Andressa + Guilherme, 03/08/2026)
+
+- Tem equipe com times fixos por cliente — founder decide, time opera. Buy-in do time é pré-requisito de adoção.
+- **Auto-segmenta a própria carteira antes de adotar:** pergunta "funciona pra qual dos meus clientes?", não "funciona pra mim?". Clientes grandes (banco de fotos próprio, identidade rígida, produção customizada) = fora do escopo. Clientes médios/pequenos = sweet spot.
+- Prefere crédito avulso sobre pacote de implementação ("igual comprar crédito de ChatGPT").
+- Chega via autoridade conectora (ex-professores, referências de mercado) — não via outbound.
+- **Product gap bloqueante:** upload de banco de fotos completo para todos os slides (não só capa) — issue a abrir no roadmap.
+- Exemplo: Agência 1002 (indicação Poli/ESPM).
+
+---
 
 **ICP secundário desta trilha: empresa em transição**
 

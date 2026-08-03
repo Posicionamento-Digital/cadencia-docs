@@ -84,7 +84,19 @@ Cadência é a primeira resposta honesta para esse desejo.
 **Investe:** R$5k–R$20k entrada + mensalidade
 **Cadência como:** ferramenta operacional pros gestores de IA atenderem clientes finais
 
-### Trilha 4 — White-glove agências (ICP especial)
+### Trilha 4 — Agência com equipe pequena (validada 03/08/2026)
+
+**Quem:** agência com 3-10 pessoas, times fixos por cliente, portfolio misto (clientes médios e grandes)
+**Modelo:** compra créditos avulsos, opera o Cadencia para os clientes médios da carteira. Clientes grandes ficam fora por enquanto (resistência por banco de fotos / identidade visual rígida).
+**Diferença do reseller solo:** tem equipe que precisa adotar — onboarding deve incluir o time desde o início, não só o founder.
+**Comportamento de compra:** auto-segmenta a carteira antes de decidir. Prefere crédito avulso sobre plano fechado.
+**Product gap crítico:** upload de banco de fotos completo para todos os slides bloqueia adoção para clientes com fotógrafo contratado. Feature prioritária no roadmap.
+**Canal de chegada:** autoridade conectora (ex-professores, referências do ecossistema de publicidade/marketing) — não via outbound.
+**Exemplos:** Agência 1002 (Andressa + Guilherme, indicação Poli/ESPM, 03/08/2026)
+
+---
+
+### Trilha 4b — White-glove agências (ICP especial)
 
 **Quem:** agência que atende N clientes finais e quer plataforma branded
 **Modelo:** agência paga Cadência, opera multi-tenant pros clientes
