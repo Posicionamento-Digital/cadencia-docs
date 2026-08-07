@@ -1,72 +1,53 @@
-# Editor visual — fundação Konva homologada
+# Editor visual de slides — arquitetura atual
 
-> **Estado atual:** a DEV-1669 homologou Konva como engine para a futura RFC do editor visual. O que existe hoje é um laboratório funcional em Preview, não o editor completo e não uma feature habilitada em produção.
+> **Estado atual:** o editor visual baseado em Konva e `cadencia.slide-design/v1` está disponível em produção para gerações novas. O salvamento atual persiste texto; as demais manipulações visuais ainda são locais da sessão.
 
-## O que foi decidido
+## Não confundir com a Epic E
 
-- **Konva 10.3 foi homologado** no Next.js 15 + React 19.
-- **Fabric.js foi eliminado** porque uma linha do fixture virou barra espessa, apesar do round-trip semântico válido.
-- O estado persistido será um contrato próprio do Cadência, como `cadencia.slide-design/v1`, com adapter para Konva.
-- O pipeline atual dos workers será preservado. Novos slides precisarão nascer também com uma representação estruturada em camadas.
-- A edição será desktop-first; a opção ficará oculta em telas menores que 1024 px.
+A arquitetura vigente usa canvas Konva, estado estruturado em `design_manifest` e a rota full-screen `/app/editor/[documentId]?slide=<index>`.
 
-## O que foi abandonado
+A [Epic E / DEV-1412](epic-e-edicao-slide.md) é histórico arquivado. Seus overlays `<textarea>`, `layout_metadata.fields[]`, URL `?edit=` e backfill não devem ser reativados nem usados como base para novas funcionalidades.
 
-A [Epic E / DEV-1412](epic-e-edicao-slide.md) tentou editar texto posicionando campos sobre um PNG e rerenderizando cada save via API, fila, worker Playwright, Storage e polling.
+## Componentes atuais
 
-Esse caminho foi reprovado como arquitetura do editor:
+- **Contrato:** `cadencia.slide-design/v1`, armazenado em `slides_content[i].design_manifest`.
+- **Engine:** Konva atrás de adapter próprio do Cadência.
+- **UI:** editor full-screen desktop, um canvas vivo e miniaturas lazy-loaded.
+- **Sessão:** cache LRU de até 10 slides, baseline e dirty state por slide.
+- **Fallback:** gerações históricas sem manifesto continuam exibindo o PNG.
+- **PNG final:** o pipeline HTML + Playwright dos workers continua sendo a fonte da imagem publicada.
 
-1. o PNG é achatado e não contém camadas manipuláveis;
-2. `layout_metadata` descreve geometria observada, mas não é um documento editável;
-3. cada gesto dependia de processamento assíncrono e bloqueava a interface;
-4. a cobertura dos templates era parcial;
-5. a experiência não atingiu a resposta imediata esperada de Canva, Miro ou Excalidraw.
+## O que o usuário consegue fazer
 
-O Playwright **não foi descontinuado no produto**. Ele continua válido na geração HTML→PNG dos workers. O que foi descartado é usar worker/Chromium/polling no caminho crítico de cada gesto do usuário.
+| Ação | Na sessão | Depois de salvar e reabrir |
+|---|---:|---:|
+| Editar texto | Sim | **Sim** |
+| Inserir quebra de linha com `Shift + Enter` | Sim | **Sim** |
+| Desfazer/refazer | Sim | Não se aplica antes do save |
+| Mover, duplicar, excluir ou reordenar | Sim | Não |
+| Criar formas | Não | Não |
+| Trocar fundo ou imagem | Não | Não |
 
-## Arquitetura validada no spike
+Na edição inline, `Enter` conclui, `Shift + Enter` cria uma nova linha e `Esc` cancela. O botão **Salvar** aceita somente alterações textuais. Se também houver transformação, mudança de camada ou CRUD local, o editor pede que essas alterações sejam desfeitas antes de salvar o texto.
 
-```mermaid
-flowchart LR
-    Preview[Rota Preview protegida por flag] --> Lab[Laboratório DEV-1669]
-    Lab --> Domain[Schema spike-v0]
-    Domain --> Adapter[Adapter Konva]
-    Adapter --> Canvas[Canvas local 1080 x 1440]
-    Canvas --> Commands[Manipulação + undo/redo]
-    Commands --> Domain
-    Adapter --> PNG[Export PNG no navegador]
-```
+## Como o salvamento funciona
 
-O laboratório cobre texto, imagens, retângulo, círculo, linha e seta; seleção, movimento, duplicação, exclusão, reorder, undo/redo, serialização, export e descarte da engine.
+Cada campo textual alterado é enviado para o endpoint de edição com uma chave de idempotência. O servidor atualiza o campo do slide e o `design_manifest`, preserva o espelhamento `headline` ↔ `text` das capas e enfileira o rerender do PNG. O cliente espera cada job terminar antes de enviar o campo seguinte, recarrega o manifesto e só então limpa o dirty state.
 
-## Resultados
+O endpoint e o polling foram reaproveitados da infraestrutura anterior, mas isso não reativa a Epic E: somente o contrato de persistência/fila é compartilhado.
 
-| Gate | Resultado final |
-|---|---:|
-| E2E canônico | 7/7 |
-| Grupos adversariais | 14/14 |
-| Fuzz determinístico | 600/600 comandos |
-| Lifecycle soak | 30/30 ciclos |
-| Ready abaixo de 3 s | 14/14 |
-| Máximo observado na série final | 2.224 ms |
+## Evolução segura
 
-O primeiro `load()` do Konva altera o antialias de 0,62% dos pixels nas bordas de uma seta/linha. O estado semântico é idêntico e os loads seguintes estabilizam; a diferença permanece no escopo do QA humano visual.
-
-## Contratos e fronteiras
-
-- `cadencia.slide-design/spike-v0` é experimental e não deve ser persistido como schema definitivo.
-- O laboratório não escreve no Supabase, não chama worker, não faz upload e não consome créditos.
-- O futuro editor não deve conhecer cobrança ou lifecycle da biblioteca de mídia; referencia ativos por `media_asset_id`.
-- O renderer atual não deve ser reconstruído nesta fase.
-- Produção continua sem `DEV_1669_SPIKE_ENABLED`.
-
-## Próxima etapa
-
-A DEV-1669 autoriza elaborar/seguir a RFC do editor e definir `cadencia.slide-design/v1`, persistência, novos slides estruturados e integração com biblioteca de mídia. Ela não autoriza merge em produção nem significa que a interface final já existe.
+- Evoluir `cadencia.slide-design/v1`, o adapter Konva e os componentes `SlideDesignEditor`.
+- Não inferir camadas de PNGs históricos nem executar o backfill de `layout_metadata` para o editor novo.
+- Persistência de transformações, formas, propriedades e background exige stories e contrato próprios.
+- Toda mudança passa pelo gate visual e pelo E2E de save em Vercel Preview; os runners recusam produção.
 
 ## Referências
 
-- Issue Linear: [DEV-1669](https://linear.app/cadencia/issue/DEV-1669/spikeeditor-validar-fabricjs-vs-konva-no-next-15-e-react-19)
-- Projeto: [sys: Refundação da geração de conteúdo](https://linear.app/cadencia/project/sys-refundacao-da-geracao-de-conteudo-d8a2d7c8edb9)
-- Código: `cadencia-app/docs/features/editor-visual-engine-spike.md`
-- Relatório: `cadencia-app/docs/qa/dev-1669-final-qa-report.md`
+- Fonte técnica canônica: `cadencia-app/docs/editor/slide-design-v1.md`
+- ADR vigente: `cadencia-app/docs/adr/0019-editor-visual-konva-slide-design-v1.md`
+- QA: `cadencia-app/tests/qa/README.md`
+- Engine: [DEV-1669](https://linear.app/cadencia/issue/DEV-1669/spikeeditor-validar-fabricjs-vs-konva-no-next-15-e-react-19)
+- Contrato: [DEV-1670](https://linear.app/cadencia/issue/DEV-1670/feateditor-gerar-e-abrir-slide-novo-no-contrato-cadenciaslide-designv1)
+- Shell e save: [DEV-1671](https://linear.app/cadencia/issue/DEV-1671/feateditor-abrir-editor-full-screen-com-miniaturas-lazy-loaded)

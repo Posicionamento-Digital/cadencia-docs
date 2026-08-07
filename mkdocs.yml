@@ -153,7 +153,7 @@ nav:
     - Features:
       - CRM — Lista Tabela Linear: cadencia-app/features/crm-lista-tabela-linear.md
       - Mise en place — Growth pipeline: cadencia-app/features/mise-en-place-growth-pipeline.md
-      - Editor visual — fundação Konva: cadencia-app/features/editor-visual-engine-spike.md
+      - Editor visual de slides — arquitetura atual: cadencia-app/features/editor-visual-engine-spike.md
       - "Histórico: Epic E / DEV-1412 reprovada": cadencia-app/features/epic-e-edicao-slide.md
     - CLI & MCP:
       - Cadencia CLI: cadencia-app/cli-mcp/cadencia-cli.md

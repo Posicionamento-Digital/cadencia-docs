@@ -1,7 +1,7 @@
 # Histórico — Epic E / DEV-1412: editor por overlay e rerender
 
 > [!CAUTION]
-> **ARQUITETURA REPROVADA E NÃO UTILIZÁVEL.** Esta página existe para preservar o histórico. Não reative `NEXT_PUBLIC_EPIC_E_ENABLED`, não continue a solução por overlay `<textarea>`/`layout_metadata` e não trate a ativação em produção como pendência válida. A direção atual está em [Editor visual — fundação Konva homologada](editor-visual-engine-spike.md).
+> **ARQUITETURA REPROVADA, ARQUIVADA E NÃO UTILIZÁVEL.** Esta página existe somente para preservar histórico. Não reative `NEXT_PUBLIC_EPIC_E_ENABLED`, não continue a solução por overlay `<textarea>`/`layout_metadata` e não trate sua ativação como pendência. O editor vigente em produção está em [Editor visual de slides — arquitetura atual](editor-visual-engine-spike.md).
 
 ## O que foi tentado
 
@@ -30,7 +30,7 @@ O requisito aprovado passou a ser resposta local em tempo real, feedback de save
 
 A DEV-1669 testou Fabric e Konva no stack real. Konva foi homologado como engine da futura fundação: canvas local, estado estruturado próprio do Cadência, manipulação em tempo real e PNG derivado no navegador.
 
-Isso ainda é um spike, não o editor completo. A próxima etapa define contratos definitivos na RFC e só então implementa persistência e UI de produto.
+A direção foi materializada nas DEV-1670 e DEV-1671 com `cadencia.slide-design/v1`, adapter Konva e shell full-screen. A persistência atual cobre texto; transformações e novos elementos continuam fora do contrato de save.
 
 ## Fontes históricas
 
