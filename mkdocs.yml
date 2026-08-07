@@ -168,6 +168,8 @@ nav:
       - ADR-0004 Carrossel Railway: cadencia-app/adr/0004-carrossel-railway-resto-vps.md
       - ADR-0005 Location PIT token: cadencia-app/adr/0005-location-pit-token-por-tenant.md
       - ADR-0006 Multi-tenant RLS: cadencia-app/adr/0006-multi-tenant-rls-supabase.md
+      - ADR-0010 Composio OAuth único: cadencia-app/adr/0010-composio-oauth-unico.md
+      - ADR-0019 Publicação social assíncrona: cadencia-app/adr/0019-publicacao-social-assincrona-estado-por-canal.md
     - Roadmap & PRD:
       - PRD — Resumo executivo: cadencia-app/prd/PRD-Executive-Summary.md
       - PRD — Arquitetura: cadencia-app/prd/PRD-Arquitetura-Tecnica.md

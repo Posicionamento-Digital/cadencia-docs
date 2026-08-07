@@ -14,6 +14,8 @@ Decisões arquiteturais não óbvias do Cadência. Cada ADR responde **"por que 
 | [0004](0004-carrossel-railway-resto-vps.md) | **Carrossel/reels Railway**, blog/seinfeld/linkedin/instagram/newsletter VPS | 2026-05-27 (decisão original ~10/2025) | aceito |
 | [0005](0005-location-pit-token-por-tenant.md) | **`location_pit_token` por tenant** (não `api_key` global) | 2026-05-27 | aceito |
 | [0006](0006-multi-tenant-rls-supabase.md) | **Multi-tenant via RLS Supabase**, não DBs separados | 2026-05-27 | aceito |
+| [0010](0010-composio-oauth-unico.md) | **Composio** como provedor OAuth único para integrações sociais | 2026-06-16 | aceito |
+| [0019](0019-publicacao-social-assincrona-estado-por-canal.md) | **Publicação social assíncrona** com estado por canal | 2026-08-07 | aceito |
 
 ## Quando consultar uma ADR
 
