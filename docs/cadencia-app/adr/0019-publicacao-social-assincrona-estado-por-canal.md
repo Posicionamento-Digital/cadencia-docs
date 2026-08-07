@@ -1,6 +1,6 @@
 # ADR-0019 — Publicação social assíncrona com estado por canal
 
-**Data:** 2026-08-07  
+**Data:** 2026-08-07
 **Status:** aceito
 
 ## Contexto
