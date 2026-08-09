@@ -21,16 +21,18 @@
 
 ### 1. Artefatos entregues/entregáveis a cliente externo
 
+Base canônica: `D:\PD-Cloud\Clientes\<NomeCliente>\Materiais\Entregues\<categoria>\`. Todas as subcategorias abaixo vivem dentro de `Materiais\Entregues\`.
+
 | Pista | Destino |
 |---|---|
-| PDF de contrato assinado / a assinar | `D:\PD-Cloud\Clientes\<NomeCliente>\Contratos\` |
-| Proposta comercial finalizada (PDF/DOCX) | `D:\PD-Cloud\Clientes\<NomeCliente>\Propostas\` |
-| Manual da marca / dossier v3 / soul entregues | `D:\PD-Cloud\Clientes\<NomeCliente>\Marca\` |
-| Apresentação final / deck reunião entregue | `D:\PD-Cloud\Clientes\<NomeCliente>\Apresentacoes\` |
-| Gravação de reunião liberada pra cliente | `D:\PD-Cloud\Clientes\<NomeCliente>\Reunioes\` |
-| Ata em PDF entregue ao cliente (não a fonte no vault) | `D:\PD-Cloud\Clientes\<NomeCliente>\Reunioes\Atas\` |
-| Peça de conteúdo (carrossel, blog PDF) entregue | `D:\PD-Cloud\Clientes\<NomeCliente>\Conteudo\<data>\` |
-| Template reutilizável (modelo em branco) | `D:\PD-Cloud\Templates\<categoria>\` |
+| PDF de contrato assinado / a assinar | `D:\PD-Cloud\Clientes\<Nome>\Materiais\Entregues\Contratos\` |
+| Proposta comercial finalizada (PDF/DOCX) | `D:\PD-Cloud\Clientes\<Nome>\Materiais\Entregues\Propostas\` |
+| Manual da marca / dossier v3 / soul entregues | `D:\PD-Cloud\Clientes\<Nome>\Materiais\Entregues\Marca\` |
+| Apresentação final / deck reunião entregue | `D:\PD-Cloud\Clientes\<Nome>\Materiais\Entregues\Apresentacoes\` |
+| Ata em PDF entregue ao cliente (não a fonte no vault) | `D:\PD-Cloud\Clientes\<Nome>\Materiais\Entregues\Atas\` |
+| Peça de conteúdo (carrossel, blog PDF) entregue | `D:\PD-Cloud\Clientes\<Nome>\Materiais\Entregues\Conteudo\<data>\` |
+| Planilhas do cliente (dashboard, controle) | `D:\PD-Cloud\Clientes\<Nome>\Planilhas\` |
+| Template reutilizável (modelo em branco, cross-cliente) | `D:\PD-Cloud\Templates\<categoria>\` |
 | Arquivo genérico pra share rápido único | `D:\PD-Cloud\Public\` |
 
 **Após gravar em `D:\PD-Cloud\`, se o objetivo é gerar link, retornar `https://cloud.cadencia.app.br/files/<path>` e sugerir gerar share link via UI (agentes ainda não têm API pra criar share programaticamente).**
@@ -39,11 +41,13 @@
 
 | Pista | Destino |
 |---|---|
-| Áudio/vídeo enviado pelo cliente | OneDrive: `Documentos\Customer Success\<categoria>\<Cliente>\Materiais\Recebidos\` (regra CLIENT-FILES-POLICY §DEV-1043) |
-| Planilha/doc que cliente mandou | idem OneDrive |
+| Áudio/vídeo enviado pelo cliente | `D:\PD-Cloud\Clientes\<Nome>\Materiais\Recebidos\` (via SMB Tailscale `\\caixa1.taild6079b.ts.net\PDCloud\Clientes\<Nome>\Materiais\Recebidos\`) |
+| Planilha/doc que cliente mandou | idem |
 | Transcrição de reunião com cliente | Vault Empresa `Reuniões/Clientes/<Cliente>/<data>_<slug>.md` (regra CSE-90) |
 
-**NÃO usar `D:\PD-Cloud\Recebidos\`** — essa pasta é pra upload direto do cliente (share link com permissão upload), não pra arquivo que agente cola. Cliente-side path.
+**Cliente sobe direto:** share link do Filebrowser em `Recebidos\` com permissão upload — cliente não precisa de conta, sobe pelo browser, aparece direto na pasta.
+
+**Genérica `D:\PD-Cloud\Recebidos\`** (fora de `Clientes\`) = pasta pra upload rápido sem cliente identificado (evento ad-hoc).
 
 ### 3. Docs internas (código, framework, playbook)
 
@@ -93,7 +97,7 @@ Se o arquivo não casa claramente com nenhuma linha acima, aplicar em ordem:
 
 1. **É pra sair do círculo interno da PD (cliente externo, parceiro, público)?** → `D:\PD-Cloud\`
 2. **É doc/nota/plano interno?** → repo relevante (`pd-framework/times/`, `<projeto>/docs/`) ou vault Obsidian
-3. **É material físico recebido de cliente?** → OneDrive `Customer Success\`
+3. **É material físico recebido de cliente?** → Cadencia Cloud `\\caixa1.taild6079b.ts.net\PDCloud\Clientes\<Nome>\Materiais\Recebidos\`
 4. **É temporário/descartável?** → `C:\temp\` (notebook) ou `C:\Windows\Temp\` (CAIXA1)
 5. **Ainda em dúvida?** → agente reporta ao Felipe COM proposta única + racional (não menu de opções)
 
@@ -113,7 +117,7 @@ Se o arquivo não casa claramente com nenhuma linha acima, aplicar em ordem:
 | Doc técnica de um repo | `<repo>/docs/` OU `docs.cadencia.app.br` (autenticado, admin) |
 | Ata / transcrição de reunião | Vault Empresa `Reuniões/Clientes/` ou `Reuniões/Interno/` |
 | Material entregue a cliente X | `D:\PD-Cloud\Clientes\<X>\` |
-| Material recebido de cliente X | OneDrive `Customer Success\<cat>\<X>\Materiais\Recebidos\` |
+| Material recebido de cliente X | `\\caixa1.taild6079b.ts.net\PDCloud\Clientes\<X>\Materiais\Recebidos\` |
 | Incidente de sistema | Hub `Incidentes\INDEX.md` |
 | Backup restaurável de qualquer coisa | `F:\restic-repo\` via `restic snapshots` (senha 1P vault Databases) |
 | Plano de issue Linear DEV-XXXX | `pd-framework/times/<squad>/context/plano-DEV-XXXX.md` |
@@ -128,7 +132,7 @@ Se o arquivo não casa claramente com nenhuma linha acima, aplicar em ordem:
 
 ## Referências
 
-- [`_core/CLIENT-FILES-POLICY.md`](CLIENT-FILES-POLICY.md) — materiais físicos de cliente (OneDrive)
+- [`_core/CLIENT-FILES-POLICY.md`](CLIENT-FILES-POLICY.md) — materiais físicos de cliente (Cadencia Cloud)
 - [`times/infra/context/plano-backup-caixa1.md`](../times/infra/context/plano-backup-caixa1.md) — plano backup completo
 - [`_shared/backup-caixa1/README.md`](../_shared/backup-caixa1/README.md) — scripts + deploy
 - Doc infra Obsidian Pessoal: `Infra/2026-08-08 VPS Local CAIXA1 (Windows).md`
