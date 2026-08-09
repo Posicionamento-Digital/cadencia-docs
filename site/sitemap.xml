@@ -409,6 +409,26 @@
          <lastmod>2026-08-09</lastmod>
     </url>
     <url>
+         <loc>https://docs.cadencia.app.br/_infra/backup-caixa1/componentes/cadencia-cloud-arquitetura/</loc>
+         <lastmod>2026-08-09</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.cadencia.app.br/_infra/backup-caixa1/componentes/cloudflared-tunnel/</loc>
+         <lastmod>2026-08-09</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.cadencia.app.br/_infra/backup-caixa1/componentes/filebrowser/</loc>
+         <lastmod>2026-08-09</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.cadencia.app.br/_infra/backup-caixa1/componentes/migracao-onedrive-cadencia-cloud/</loc>
+         <lastmod>2026-08-09</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.cadencia.app.br/_infra/backup-caixa1/componentes/restic/</loc>
+         <lastmod>2026-08-09</lastmod>
+    </url>
+    <url>
          <loc>https://docs.cadencia.app.br/_infra/cloudflare/</loc>
          <lastmod>2026-08-09</lastmod>
     </url>
