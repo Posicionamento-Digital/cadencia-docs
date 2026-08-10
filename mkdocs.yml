@@ -398,6 +398,18 @@ nav:
         - Banco de Dados: _infra/recovery-hertzner/04-banco-dados.md
         - Infraestrutura: _infra/recovery-hertzner/05-infraestrutura.md
         - Backups Brutos: _infra/recovery-hertzner/06-backups-brutos.md
+      - "Backup + Cloud CAIXA1":
+        - README: _infra/backup-caixa1/README.md
+        - Plano: _infra/backup-caixa1/plano.md
+        - "Storage Map": _infra/backup-caixa1/storage-map.md
+        - "Inventário VPS": _infra/backup-caixa1/inventario-vps.md
+        - "Política de Arquivos de Cliente": _infra/backup-caixa1/client-files-policy.md
+        - "Componente — restic": _infra/backup-caixa1/componentes/restic.md
+        - "Componente — Backup VPS via Tailscale (F7+F8)": _infra/backup-caixa1/componentes/backup-vps-tailscale.md
+        - "Componente — Filebrowser": _infra/backup-caixa1/componentes/filebrowser.md
+        - "Componente — Cloudflared Tunnel": _infra/backup-caixa1/componentes/cloudflared-tunnel.md
+        - "Componente — Cadencia Cloud (Arquitetura)": _infra/backup-caixa1/componentes/cadencia-cloud-arquitetura.md
+        - "Migração OneDrive → Cadencia Cloud": _infra/backup-caixa1/componentes/migracao-onedrive-cadencia-cloud.md
     - PD Framework:
       - "Como funciona (consolidado)": "_pd-framework/PD Framework — Como funciona (consolidado 2026-05-25).md"
       - "Framework 2.0 (Motor Autônomo)": "_pd-framework/2026-07-08 PD Framework 2.0 — Apresentação (Motor Autônomo).md"

@@ -154,10 +154,23 @@ Faz backup de 1 pasta + restore em `C:\Temp\restic-test\` + valida contagem + li
 
 **Restic ≠ sync.** Se o objetivo é sincronizar Obsidian vault entre notebook + celular sempre igual, use Syncthing. Restic é backup histórico.
 
+## Dois modos de uso no ecossistema PD
+
+### 1. Restic local (CAIXA1 → `F:\restic-repo`)
+
+Fontes que a CAIXA1 acessa diretamente: notebook via SMB Tailscale, Supabase via `pg_dump` remoto, GitHub via `gh` CLI, Vercel via `vercel env pull`, 1P via `op` CLI. Scripts PowerShell em `_shared/backup-caixa1/*.ps1` rodam agendados no Task Scheduler Windows e escrevem em `F:\restic-repo\` (single repo local).
+
+### 2. Restic remote via rest-server (VPSs → CAIXA1)
+
+**Desde 2026-08-09 (F7+F8).** Restic client roda LOCAL nas VPSs Dev + Master (cron root 03h UTC), pushando delta encriptado pro `rest-server` na CAIXA1 através da rede Tailscale (`100.107.73.81:8000`). Dedup + AES256 acontecem na CPU da VPS (melhor que Celeron do CAIXA1). Cada VPS grava seu próprio repo em `F:\restic-repos-remote\vps-<name>\` — não deduplica entre VPSs, mas deduplica dentro de cada (chunks CDC entre `pg_dump` snapshots por exemplo).
+
+Doc dedicada: [`backup-vps-tailscale.md`](backup-vps-tailscale.md).
+
 ## Refs
 
 - README raiz: `_shared/backup-caixa1/README.md`
 - Plano canônico: `times/infra/context/plano-backup-caixa1.md`
-- Scripts que usam: `_shared/backup-caixa1/*.ps1`
+- Scripts modo 1 (CAIXA1-side): `_shared/backup-caixa1/*.ps1`
+- Scripts modo 2 (VPS-side): `_shared/backup-caixa1/vps/*.sh`
 - Restic docs oficiais: https://restic.readthedocs.io/
-- Issue F3: DEV-1730
+- Issues: F3 DEV-1730 (modo 1), F7 DEV-1735 + F8 DEV-1736 (modo 2)
