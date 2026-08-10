@@ -1,7 +1,9 @@
 # Agenda da Lara
 
 > Agenda Cadência nativa por default, com contrato único para consultar, criar, alterar e cancelar
-> compromissos; Google Calendar, Cal.com e Easy!Appointments são providers opcionais.
+> compromissos; Google Calendar e Cal.com são providers opcionais implementados e cobertos por testes.
+> Easy!Appointments também está implementado com testes mockados, mas ainda aguarda E2E contra
+> ambiente vivo.
 
 ## Por que foi construído assim
 
@@ -18,7 +20,7 @@ significar que o compromisso foi criado sem resposta; repetir automaticamente pr
 |---|---|
 | Contrato/orquestração | FastAPI, `SchedulingPlugin`, `SchedulingService` |
 | Agenda default | Supabase `appointments` + `lara_scheduling_config` |
-| Providers externos | Google Calendar v3, Cal.com v2, Easy!Appointments REST |
+| Providers externos | Google Calendar v3, Cal.com v2; Easy!Appointments REST com E2E vivo pendente |
 | CRM | Contatos Cadência vinculados ao appointment |
 | Segurança | Credenciais JSON cifradas no backend |
 | Onde roda | `cadencia-lara` na VPS Master; página pública no `cadencia-app` |
@@ -45,9 +47,9 @@ flowchart TD
     subgraph SG_flow["Fluxo do processo"]
         request["Contato pede horário ou consulta um agendamento"]
         availability["Consulta slots no provider efetivo do tenant"]
-        identity["Confirma nome completo + nascimento e garante contato CRM"]
+        identity["Coleta os dados configurados pelo tenant e garante contato CRM"]
         mutate["Cria, consulta, altera ou cancela com chave idempotente"]
-        reply["Só confirma depois do sucesso; material pós-agendamento usa…"]
+        reply["Só confirma o compromisso depois do sucesso"]
     end
     class request,availability,identity,mutate,reply flow
 
@@ -94,8 +96,11 @@ Sem configuração explícita, `native` calcula disponibilidade a partir do hor�
 menos appointments ativos. Criar agenda o compromisso e garante/vincula o contato do CRM. A página
 pública `/agendar/[slug]` usa endpoints server-to-server; o lead não acessa a API administrativa.
 
-As skills verificam slot, exigem os dados contratuais e só confirmam depois de sucesso. A consulta de
-agendamento lê o estado persistido; o alias legado `agendar` fica oculto para não duplicar tools.
+As skills verificam slot e só confirmam depois de sucesso. O schema genérico aceita nome, início,
+duração, telefone, email, assunto, local e observação, mas não marca esses campos como obrigatórios;
+regras adicionais de coleta pertencem à configuração/prompt do tenant e não são enforcement da tool.
+A consulta de agendamento lê o estado persistido; o alias legado `agendar` fica oculto para não
+duplicar tools.
 
 ## Decisões técnicas
 
@@ -111,7 +116,8 @@ agendamento lê o estado persistido; o alias legado `agendar` fica oculto para n
 - **`unknown` não é falha definitiva** — o compromisso pode existir; humano deve conferir.
 - **Sistema externo não sincronizado** — dupla digitação manual pode deixar o Cadência desatualizado e
   permitir overbooking.
-- **Easy!Appointments tem gap de UI** — backend suporta; formulário ainda não expõe.
+- **Easy!Appointments ainda não tem prova ao vivo** — backend implementado e testes mockados, mas o
+  E2E contra ambiente real está pendente; o formulário também não expõe esse provider.
 - **Cal.com varia headers/versões** — slots e bookings não compartilham contrato HTTP idêntico.
 - **Horário comercial não basta** — provider e appointments ainda determinam o slot final.
 
@@ -134,7 +140,8 @@ tests/test_dev1588_consultar_agendamento.py`.
 A agenda Cadência (`native`), sem OAuth ou chave externa.
 
 **Quais providers externos estão implementados?**
-Google Calendar, Cal.com e Easy!Appointments.
+Google Calendar e Cal.com estão implementados e cobertos por testes do repositório. Easy!Appointments
+também está implementado com mocks, mas o E2E contra ambiente vivo segue explicitamente pendente.
 
 **Posso repetir uma criação após timeout?**
 Não automaticamente. Primeiro confirme no provider, pois a mutação pode ter sido aplicada.

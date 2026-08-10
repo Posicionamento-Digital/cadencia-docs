@@ -10,10 +10,10 @@ e oferece o painel. O `cadencia-lara` recebe webhooks Evolution GO/whatsmeow, se
 executa o agente e persiste os resultados. O browser nunca escolhe o tenant, conhece chaves
 administrativas ou determina a instância do WhatsApp.
 
-O runtime persiste o inbound antes dos gates, usa fila durável/debounce e só confirma trabalho após a
-conclusão. Isso evita turnos invisíveis durante falha de modelo, mídia, saldo ou processo. Política
-global e instrução do tenant são camadas diferentes: o cliente personaliza seu atendimento sem apagar
-as regras da plataforma.
+O runtime persiste o inbound antes dos gates e usa Stream + buffer durável de debounce. O `XACK` do
+Stream acontece após a transferência ao buffer; a conclusão do turno controla separadamente o commit
+desse buffer. Política global e instrução do tenant são camadas diferentes: o cliente personaliza seu
+atendimento sem apagar as regras da plataforma.
 
 ## Stack
 
@@ -51,8 +51,8 @@ flowchart TD
         resolve["Valida conexão e resolve tenant + contato canônico"]
         persist["Persiste inbound e enfileira a conversa"]
         reason["Aplica modo, billing, plataforma > tenant, contexto e tools"]
-        send["Gera e envia com retry; vazio/erro recebe fallback visível"]
-        finish["Persiste provider ID e confirma a fila"]
+        send["Gera e envia com retry; tenta fallback se o canal estiver disponível"]
+        finish["Persiste provider ID e conclui o buffer"]
     end
     class inbound,resolve,persist,reason,send,finish flow
 
@@ -80,7 +80,7 @@ flowchart TD
     resolve -->|"válido + conectado"| persist
     persist -->|"modo bot + autorizado"| reason
     reason -->|"contexto montado"| send
-    send -->|"sucesso/fallback persistido"| finish
+    send -->|"envio bem-sucedido"| finish
     resolve -->|"decide"| connected
     connected -->|"não"| stop
     connected -->|"sim"| persist
@@ -96,9 +96,9 @@ flowchart TD
     send -->|"falha recuperável"| recover
 ```
 
-O painel `/app/lara` reúne Conversas, Agente, Conhecimento, Ferramentas, Operador, Conexão,
-Playground e Dashboard. A timeline representa texto, mídia, localização, contato, reply, reação,
-eventos e cards internos sem transformar tool/system/error em mensagem para o paciente.
+O painel `/app/lara` reúne nove superfícies: Conversas, Agente, Conhecimento, Ferramentas, Materiais,
+Operador, Conexão, Playground e Dashboard. A timeline representa texto, mídia, localização, contato,
+reply, reação, eventos e cards internos sem transformar tool/system/error em mensagem para o paciente.
 
 O agente recebe política global, prompt do tenant, data/hora, conhecimento fixado, estilo, RAG,
 identidade e histórico, nessa ordem. Modelo salvo é uma preferência; allowlist e default globais
@@ -121,7 +121,10 @@ definem o modelo efetivo. No playground, apenas tools de leitura executam; muta�
 - **Instância não significa conexão** — resposta só é permitida quando Evolution informa `LoggedIn`.
 - **Prompt do tenant não é política** — não copiar a camada global para o textarea do cliente.
 - **Modelo salvo pode ser inválido** — sempre observar `effective_model`, não apenas o campo do tenant.
-- **ACK antecipado perde mensagem** — item só conclui após persistência/envio/fallback.
+- **HTTP 200, XACK e commit não são sinônimos** — o Stream é confirmado após entrar no buffer; o
+  buffer é concluído separadamente ao fim do turno.
+- **Fallback depende do canal** — se Evolution falhar no envio normal e no fallback, o runtime atual
+  apenas registra o erro; ainda não persiste `needs_owner` para esse caso.
 - **URL de mídia não é permanente** — Storage é privado e o painel usa URL assinada/blob.
 - **Playground não prova mutação** — agendar, cancelar, handoff e materiais são simulados ali.
 
