@@ -1,117 +1,146 @@
 # Agenda da Lara
 
-> Camada única de disponibilidade, criação, alteração e cancelamento de compromissos para Google Calendar, Cal.com e Easy!Appointments.
+> Agenda Cadência nativa por default, com contrato único para consultar, criar, alterar e cancelar
+> compromissos; Google Calendar, Cal.com e Easy!Appointments são providers opcionais.
 
 ## Por que foi construído assim
 
-Cada provedor tem autenticação, formato de slot e semântica de falha diferentes. A Lara usa um contrato comum (`SchedulingPlugin`) e uma camada de serviço para idempotência, auditoria e handoff. Assim, as skills conversacionais não precisam conhecer detalhes de Google Calendar, Cal.com ou Easy!Appointments.
+A Lara precisa agendar sem obrigar o cliente a obter OAuth ou contratar outra agenda. Por isso o
+provider `native`, persistido no próprio Supabase Cadência, é o default zero-config. Integrações
+externas continuam disponíveis atrás do mesmo contrato quando o negócio já depende delas.
 
-Mutação com resultado incerto não é repetida automaticamente. Em um timeout, 429 ou 5xx, o provedor pode ter criado o compromisso mesmo sem devolver confirmação; repetir cegamente produziria duplicatas.
+O serviço centraliza idempotência, auditoria e resultado incerto. Timeout, 429 ou 5xx numa mutação pode
+significar que o compromisso foi criado sem resposta; repetir automaticamente produziria duplicatas.
 
 ## Stack
 
 | Componente | Tecnologia |
 |---|---|
-| Contrato e orquestração | FastAPI, `SchedulingPlugin`, `SchedulingService` |
-| Google | Google Calendar API v3 |
-| Cal.com | API v2, hosted ou self-hosted |
-| Easy!Appointments | API REST |
-| Configuração | `lara_scheduling_config` no Supabase |
+| Contrato/orquestração | FastAPI, `SchedulingPlugin`, `SchedulingService` |
+| Agenda default | Supabase `appointments` + `lara_scheduling_config` |
+| Providers externos | Google Calendar v3, Cal.com v2, Easy!Appointments REST |
+| CRM | Contatos Cadência vinculados ao appointment |
 | Segurança | Credenciais JSON cifradas no backend |
+| Onde roda | `cadencia-lara` na VPS Master; página pública no `cadencia-app` |
 
 ## Como funciona
 
 ```mermaid
 flowchart TD
-    classDef core fill:#FEE2E2,stroke:#EF4444,color:#111
+    classDef component fill:#D1FAE5,stroke:#10B981,color:#111
     classDef flow fill:#DBEAFE,stroke:#3B82F6,color:#111
+    classDef decision fill:#EDE9FE,stroke:#8B5CF6,color:#111
+    classDef core fill:#FEE2E2,stroke:#EF4444,color:#111
     classDef external fill:#FEF3C7,stroke:#F59E0B,color:#111
     classDef warning fill:#FEF9C3,stroke:#EAB308,color:#111
-    classDef component fill:#D1FAE5,stroke:#10B981,color:#111
-    classDef decision fill:#EDE9FE,stroke:#8B5CF6,color:#111
 
     subgraph SG_component["Componentes"]
         ui[("Projetos/Cadencia/Docs/agenda-lara.md")]
         skills["Skills"]
         service["SchedulingService"]
+        crm["CRM Cadência"]
     end
-    class ui,skills,service component
+    class ui,skills,service,crm component
 
     subgraph SG_flow["Fluxo do processo"]
-        request["Contato pede horário"]
-        availability["Lara consulta slots no provedor do tenant"]
-        confirm["Valida o slot e cria chave idempotente"]
-        mutate["Cria, altera ou cancela o compromisso"]
-        reply["Responde confirmação formatada no WhatsApp"]
+        request["Contato pede horário ou consulta um agendamento"]
+        availability["Consulta slots no provider efetivo do tenant"]
+        identity["Confirma nome completo + nascimento e garante contato CRM"]
+        mutate["Cria, consulta, altera ou cancela com chave idempotente"]
+        reply["Só confirma depois do sucesso; material pós-agendamento usa…"]
     end
-    class request,availability,confirm,mutate,reply flow
+    class request,availability,identity,mutate,reply flow
 
     subgraph SG_decision["Decisões"]
-        configured["Agenda está configurada e habilitada?"]
-        free["Slot cobre todo o período solicitado?"]
+        provider["Provider definido?"]
+        free["Slot ainda cobre todo o período?"]
+        operation["Leitura ou mutação?"]
         result["Resultado ok, duplicate, error ou unknown?"]
     end
-    class configured,free,result decision
+    class provider,free,operation,result decision
 
-    title["Agenda da Lara"]
+        title["Agenda da Lara"]
     class title core
-    providers["Provedores"]
+
+        providers["Providers"]
     class providers external
-    handoff["Resultado unknown"]
-    class handoff warning
+
+    subgraph SG_warning["Gotchas / Erros"]
+        handoff["Resultado unknown"]
+        manual["Sistema clínico externo"]
+    end
+    class handoff,manual warning
 
     request --> availability
-    availability --> confirm
-    confirm --> mutate
-    mutate --> reply
-    availability --> configured
-    confirm --> free
-    mutate --> result
+    availability -->|"slot escolhido"| identity
+    identity -->|"dados completos"| mutate
+    mutate -->|"ok/duplicate"| reply
+    availability -->|"decide"| provider
+    provider -->|"ausente: native"| availability
+    provider -->|"externo configurado"| providers
+    availability -->|"decide"| free
+    free -->|"sim"| identity
+    free -->|"não: oferecer outro"| availability
+    mutate -->|"decide"| operation
+    operation -->|"leitura"| reply
+    operation -->|"mutação"| result
+    result -->|"ok/duplicate"| reply
     result -->|"unknown"| handoff
+    result -->|"error de leitura: pode repetir"| availability
+    crm -->|"se houver dupla digitação"| manual
 ```
 
-O tenant define provedor, calendário ou event type, fuso, duração, horário comercial e credencial. As skills consultam disponibilidade antes de agendar e formatam a confirmação em pt-BR. A mesma disponibilidade é consumida por condições `slot_available` nas cadências de contatos.
+Sem configuração explícita, `native` calcula disponibilidade a partir do horário comercial do tenant
+menos appointments ativos. Criar agenda o compromisso e garante/vincula o contato do CRM. A página
+pública `/agendar/[slug]` usa endpoints server-to-server; o lead não acessa a API administrativa.
+
+As skills verificam slot, exigem os dados contratuais e só confirmam depois de sucesso. A consulta de
+agendamento lê o estado persistido; o alias legado `agendar` fica oculto para não duplicar tools.
 
 ## Decisões técnicas
 
-- Leituras com falha retornam `error` retryable, nunca `unknown`.
-- Mutações com resposta incerta retornam `unknown` e exigem verificação ou handoff humano.
-- Cancelar compromisso já ausente é sucesso idempotente.
-- Google usa a chave idempotente como `eventId`; HTTP 409 representa replay.
-- Cal.com recebe a chave e aceita ambiente hosted ou self-hosted.
-- Easy!Appointments usa service/provider configurados e também atende o endpoint de disponibilidade das cadências.
-- Datas sem timezone são interpretadas no fuso do tenant, com default `America/Sao_Paulo`.
+- `native` é default e zero-config; providers externos são escolha explícita.
+- Unique parcial protege chave idempotente e conflito de slot no Postgres.
+- Leituras falham como `error` retryable; mutações ambíguas falham como `unknown` sem retry cego.
+- Datas sem timezone usam o fuso do tenant; default `America/Sao_Paulo`.
+- Credenciais externas ficam cifradas e nunca retornam ao painel.
+- Cadências consultam a mesma disponibilidade pelo adaptador administrativo da Lara.
 
 ## Gotchas & armadilhas
 
-- `unknown` significa que o compromisso pode existir; não repetir automaticamente.
-- Credenciais são cifradas e nunca retornam ao painel.
-- O backend suporta Easy!Appointments, mas o tipo e o dropdown atuais do `cadencia-app` mostram apenas GCal e Cal.com.
-- Cal.com usa versões e headers diferentes entre slots e bookings.
-- `business_hours` é configuração local; a disponibilidade final continua sendo a resposta do provedor.
-- Agenda desabilitada ou incompleta deve produzir resposta controlada, não slot vazio inventado.
+- **`unknown` não é falha definitiva** — o compromisso pode existir; humano deve conferir.
+- **Sistema externo não sincronizado** — dupla digitação manual pode deixar o Cadência desatualizado e
+  permitir overbooking.
+- **Easy!Appointments tem gap de UI** — backend suporta; formulário ainda não expõe.
+- **Cal.com varia headers/versões** — slots e bookings não compartilham contrato HTTP idêntico.
+- **Horário comercial não basta** — provider e appointments ainda determinam o slot final.
 
 ## Como operar
 
-1. Em **Lara > Ferramentas/Agenda**, escolha o provedor e informe calendário ou event type.
-2. Configure fuso, duração, horário comercial e credencial do provedor.
-3. Habilite a agenda e consulte disponibilidade no Playground.
-4. Teste criação, alteração e cancelamento com a mesma chave para verificar idempotência.
-5. Em resultado `unknown`, consulte o provedor antes de repetir a ação.
-6. Para Easy!Appointments, configure via backend/API enquanto o gap do formulário não for fechado.
+1. Use `native` para a agenda Cadência sem credenciais; configure horário/fuso/duração quando necessário.
+2. Se usar provider externo, selecione-o e grave credenciais somente pelo backend.
+3. Valide disponibilidade e consulta no Playground.
+4. Teste criação/cancelamento num tenant de teste, inclusive replay idempotente e slot ocupado.
+5. Em `unknown`, consulte o provider antes de qualquer nova mutação.
+6. Se existir sistema clínico externo, defina integração ou controle formal da dupla digitação.
 
-Validação técnica: `pytest -q tests/scheduling tests/test_dev1270_skills.py` no `cadencia-lara`.
+Validação técnica: `pytest -q tests/scheduling/test_native.py tests/test_dev1364_booking_endpoints.py
+tests/test_dev1459_provider_default.py tests/test_dev1581_vincular_contato.py
+tests/test_dev1588_consultar_agendamento.py`.
 
 ## FAQ
 
-**Quais provedores estão implementados?**
+**Qual agenda funciona sem configuração?**
+A agenda Cadência (`native`), sem OAuth ou chave externa.
+
+**Quais providers externos estão implementados?**
 Google Calendar, Cal.com e Easy!Appointments.
 
-**Por que Easy!Appointments não aparece no formulário?**
-O backend já suporta o provider, mas a tipagem e o dropdown atuais ainda não foram atualizados.
-
 **Posso repetir uma criação após timeout?**
-Não automaticamente. Primeiro confirme no provedor, pois a mutação pode ter sido aplicada.
+Não automaticamente. Primeiro confirme no provider, pois a mutação pode ter sido aplicada.
 
-**Cadências usam essa agenda?**
-Sim. Passos condicionais podem consultar disponibilidade pelo endpoint administrativo da Lara.
+**Agendamento cria o contato?**
+Sim. A skill garante o contato no CRM e vincula o appointment quando há sucesso.
+
+**A agenda da Lara sincroniza um sistema clínico externo?**
+Somente se existir integração específica. Cópia manual não atualiza automaticamente a disponibilidade.
