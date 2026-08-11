@@ -15,6 +15,11 @@ Stream acontece após a transferência ao buffer; a conclusão do turno controla
 desse buffer. Política global e instrução do tenant são camadas diferentes: o cliente personaliza seu
 atendimento sem apagar as regras da plataforma.
 
+Fatos críticos podem ter resposta determinística antes do modelo. O primeiro contrato é o endereço:
+quando o contato pede explicitamente o endereço, a Lara envia o texto oficial configurado sem pedir
+ao LLM que improvise nem substituir a resposta por um material. Materiais sem regra `send_when`
+continuam disponíveis ao operador, mas não podem ser escolhidos autonomamente pela Lara.
+
 ## Stack
 
 | Camada | Tecnologia |
@@ -50,11 +55,13 @@ flowchart TD
         inbound["Mensagem chega no WhatsApp"]
         resolve["Valida conexão e resolve tenant + contato canônico"]
         persist["Persiste inbound e enfileira a conversa"]
+        fact["Há fato crítico configurado para esta intenção?"]
         reason["Aplica modo, billing, plataforma > tenant, contexto e tools"]
+        exact["Responde com o texto oficial"]
         send["Gera e envia com retry; tenta fallback se o canal estiver disponível"]
         finish["Persiste provider ID e conclui o buffer"]
     end
-    class inbound,resolve,persist,reason,send,finish flow
+    class inbound,resolve,persist,reason,exact,send,finish flow
 
     subgraph SG_decision["Decisões"]
         connected["Tenant válido e WhatsApp LoggedIn?"]
@@ -78,7 +85,10 @@ flowchart TD
 
     inbound --> resolve
     resolve -->|"válido + conectado"| persist
-    persist -->|"modo bot + autorizado"| reason
+    persist -->|"modo bot + autorizado"| fact
+    fact -->|"sim"| exact
+    fact -->|"não"| reason
+    exact --> send
     reason -->|"contexto montado"| send
     send -->|"envio bem-sucedido"| finish
     resolve -->|"decide"| connected
@@ -111,6 +121,9 @@ definem o modelo efetivo. No playground, apenas tools de leitura executam; muta�
 - Contato é canonicalizado antes de dedupe, fila, billing e timeline; LID é alias.
 - Tools HTTP/MCP usam schema, cofre, SSRF pinning, aprovação, auditoria e kill switch.
 - Biblioteca de materiais separa arquivo, forma de envio (`send_as`) e orientação (`send_when`).
+- Material sem `send_when` é somente manual e não entra no catálogo autônomo do agente.
+- Endereço oficial é um fato estruturado por tenant, não apenas texto solto no prompt ou no RAG.
+- API e worker dedicado usam o mesmo Supabase e precisam receber a mesma fonte de `service_role`.
 - Cobrança é por conversa iniciada; metering/cap continuam controles distintos.
 - O scheduler de cadências vive no `cadencia-growth`; Lara é canal, disponibilidade e sinal inbound.
 
@@ -127,15 +140,19 @@ definem o modelo efetivo. No playground, apenas tools de leitura executam; muta�
   apenas registra o erro; ainda não persiste `needs_owner` para esse caso.
 - **URL de mídia não é permanente** — Storage é privado e o painel usa URL assinada/blob.
 - **Playground não prova mutação** — agendar, cancelar, handoff e materiais são simulados ali.
+- **Health da API não valida o worker** — um `401` apenas no worker pode cair no fallback seguro e
+  esconder perda de configuração, histórico, uso ou billing.
 
 ## Como operar
 
 1. Habilite `flag_lara_enabled` e defina preset/capabilities pelo super_admin.
 2. Em **Conexão**, use QR ou código de pareamento e confirme `LoggedIn`.
-3. Em **Agente**, edite apenas o prompt do tenant e observe o modelo efetivo.
-4. Cadastre conhecimento, estilo, tools e materiais; aprove o que exigir revisão.
+3. Em **Agente**, edite o prompt do tenant, observe o modelo efetivo e grave fatos críticos como
+   endereço no campo estruturado correspondente.
+4. Cadastre conhecimento, estilo, tools e materiais; material autônomo exige `send_when` explícito.
 5. Configure operador e agenda; valide leitura no Playground.
 6. Faça mutações em tenant de teste e acompanhe timeline, conexão, uso e billing.
+7. Após deploy ou rotação de segredo, valide API e worker separadamente nos logs sanitizados.
 
 Validação técnica: `npm test -- --run && npm run build` no `cadencia-app`; `pytest -q` no
 `cadencia-lara`.
@@ -155,4 +172,10 @@ O backend restringe modelos à allowlist global e cai no default seguro.
 Sim. O modo é persistido por conversa; inbound continua salvo, mas o bot não responde.
 
 **A Lara pode enviar um material porque o prompt mandou?**
-Somente por `enviar_material` e após sucesso do Evolution. `send_when` orienta, não comprova envio.
+Somente por `enviar_material`, com `send_when` explícito e após sucesso do Evolution. Sem a regra, o
+material fica disponível apenas para o operador.
+
+**A Lara usa o LLM para responder o endereço?**
+Não quando `business_facts.address.answer` está configurado e a intenção é explícita. Ela envia
+literalmente a resposta oficial; frases sobre endereço do próprio contato, entrega, cobrança,
+residência ou endereço digital seguem o fluxo normal.
