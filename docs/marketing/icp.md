@@ -58,11 +58,15 @@ tags: [marketing, canon]
 - Exemplos: WGL, SZ Soluções, H&Co
 - Ticket: R$2.990–5.000/mês
 
-**Modelo Done-for-You:** empresa sem agência e sem time (quer resultado, não quer operar).
+**Modelo Done-for-You:** profissional liberal ou empresa sem agência e sem time (quer resultado, não quer operar).
 
 - A Cadencia opera como agência usando o próprio SaaS
 - Canal de caixa e laboratório de produto — não é ICP de produto escalonável
-- Exemplos: OP Odontopenha, Mel Quevedo, Ariane Farrapo
+- Dor central específica: **constância de presença digital**, não escala de clientes — o profissional tem conhecimento e reputação, mas não tem rotina de conteúdo
+- **Segunda dor real: CRM** — já tentou outros CRMs, não conseguiu usar. O CRM integrado ao fluxo de conteúdo é a barreira que Cadencia quebra. Frase nativa: *"Eu tentei alguns [CRMs], não consegui."* (Mel Quevedo)
+- **Job to be done:** "Quero aparecer com consistência sem depender de ter criatividade e tempo ao mesmo tempo."
+- Perfis típicos: advogados, dentistas, médicos, contadores, arquitetos — autoridade de nicho, sem operação de marketing
+- Exemplos: OP Odontopenha (clínica odontológica), Mel Quevedo (Horus Marcas e Patentes), Ariane Farrapo
 
 **Anti-ICP confirmado:** dono de PME operando sozinho sem área de marketing. Quer o resultado, não quer operar a ferramenta. Rodolfo é o caso-referência: entusiasta, cadastrado, nunca ativou.
 
@@ -75,6 +79,9 @@ tags: [marketing, canon]
 3. **Dificuldade de escalar** — crescem receita mas crescem junto o caos operacional
 4. **Gestor sobrecarregado** — dono resolve tudo, não tem tempo para estratégia
 5. **Imprevisibilidade financeira** — não conseguem projetar crescimento com segurança
+6. **Constância impossível sem criatividade + tempo simultâneos** — o profissional cria em rajadas quando tem inspiração e janela livre. Quando uma das duas falta, o canal para. A presença digital depende de um alinhamento que raramente acontece. Frase-problema nativa: *"São momentos que eu tô com criatividade e momentos que eu tô com tempo."* (Mel Quevedo, call 14/08/2026)
+
+> **Frase-problema alternativa para copy** (mais ressonante que "escala" para o perfil liberal e DFY): *"Você cria quando tem criatividade E tempo. Mas você precisa aparecer sempre."*
 
 **Crenças que bloqueiam ação:**
 - "Conteúdo é perda de tempo" — só vendo por indicação
