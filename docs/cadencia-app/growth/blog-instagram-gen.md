@@ -8,7 +8,7 @@
 
 ## TL;DR
 
-2 scripts de geração que rodam na VPS: `blog_generate.py` gera post de blog e faz deploy via webhook. `instagram_generate.py` gera legenda/hashtags para Instagram (a publicação em si é feita pelos workers Coolify VPS Master).
+2 scripts de geração que rodam na VPS: `blog_generate.py` gera o post e grava a publicação diretamente no Supabase. `instagram_generate.py` gera legenda/hashtags para Instagram (a publicação em si é feita pelos workers Coolify VPS Master).
 
 ## Identidade
 
@@ -17,14 +17,16 @@
   - `pipeline/blog_generate.py`
   - `pipeline/instagram_generate.py`
 - **Status:** ativo
-- **Deps:** `published_posts`, `tenant_config`, cadencia-blog webhook
+- **Deps:** `generation_queue`, `content_ideas`, `published_posts`, `tenant_config`
 
 ## blog_generate.py
 
-1. Gera post de blog via LLM (conteúdo long-form baseado no editorial do post)
-2. Salva em `published_posts.blog_content` + `published_posts.published=true`
-3. Chama `POST /api/publish` no blog tenant (cadencia-blog) para revalidar cache
-4. Se blog falha → `trigger_server.py` aborta o restante da pipeline (G — blog é pré-requisito)
+1. Reivindica atomicamente uma row de `generation_queue` ou processa a ideia informada no modo direto.
+2. Verifica deduplicação por `content_idea_id`; o índice único em `published_posts` é a garantia final contra corrida residual.
+3. Gera o conteúdo long-form, HTML, metadados e imagem destacada.
+4. Insere diretamente em `published_posts` com `html_content`, `status='published'`, `tenant_id` e URL final.
+5. Marca `content_ideas.status='used'` e fecha a row da fila como `completed`.
+6. O `cadencia-blog` lê a nova row na próxima requisição (`force-dynamic`, `revalidate = 0`, `cache: 'no-store'`). O worker atual não chama `POST /api/publish` e não dispara deploy/rebuild.
 
 ## instagram_generate.py
 
@@ -34,7 +36,7 @@
 
 ## Don'ts
 
-- Blog failure = abort da pipeline. Fix bugs aqui tem prioridade
+- Falha ao inserir `published_posts` marca o job como `failed` e interrompe esta geração.
 - `instagram_generate.py` na VPS e `instagram_publisher.py` nos workers são coisas diferentes
 
 ---
@@ -47,19 +49,21 @@
 ## Quando NÃO usar
 
 - ❌ Para carrossel/reels (workers Coolify VPS Master).
-- ❌ `trial`/`essencial`/`starter` fora de seg+qui (frequência restrita).
-- ❌ Blog em batch concorrente — gera duplicação.
+- ❌ Usar este script como endpoint HTTP de publicação; ele é worker de geração.
+- ❌ Bypassar o claim atômico ou remover o índice único de deduplicação.
 
 ## Por que funciona assim
 
 - Blog primeiro (insumo) → Instagram + LinkedIn derivam dele.
-- Render HTML em template Jinja → publicação automática no `cadencia-blog` (Next.js estático, white-label por tenant).
+- Escrita única no Supabase → o blog Next.js white-label renderiza dinamicamente sem webhook de invalidação.
+- Claim CAS + índice único `(tenant_id, content_idea_id)` protegem contra cron e trigger processarem a mesma ideia.
 
 ## 🚫 Don'ts
 
-- **Não** rodar 2 instâncias do `blog_generate.py` simultaneamente para o mesmo tenant — duplica post.
+- **Não** remover as guardas CAS/unique que tornam execuções concorrentes idempotentes.
 - **Não** ignorar coluna `research_documents` correta no schema.
 - **Não** publicar Instagram sem blog do dia.
+- **Não** reintroduzir chamada a `/api/publish` apenas para revalidar cache: o runtime atual usa `no-store`.
 
 ## 🪦 Já tentamos
 
@@ -71,9 +75,10 @@
 
 | Sintoma | Causa provável | Fix |
 |---|---|---|
-| Post duplicado | Batch concorrente; sem lock | Lock pessimista por tenant antes de gerar |
+| Post duplicado | Regressão no claim CAS ou no índice único por ideia | Verificar `claim_queue_item()` e índice `(tenant_id, content_idea_id)` |
 | Coluna research errada | Schema mudou, código antigo | Reconciliar `research_documents` column name |
 | Blog trava 100% CPU | Subprocess sem timeout | Adicionar `timeout=` |
+| Post foi gravado mas não aparece | `tenant_id`, `status`, `html_content` ou env do blog divergente | Conferir a row e o `TENANT_ID` da instância; não há ISR para forçar |
 
 ## 📚 Referências cruzadas
 
