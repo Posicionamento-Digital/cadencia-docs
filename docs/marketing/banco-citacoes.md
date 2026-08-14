@@ -45,13 +45,13 @@ Frases reais capturadas em calls, depoimentos, feedbacks e conversas. Fonte úni
 
 ---
 
-### OP Odontopenha — Clínica Odontológica (DFY)
-**Contexto:** cliente ativo. Frase reportada por Felipe em call com Mel Quevedo (14/08/2026).
+### Ana Carolina — OP Odontopenha — Clínica Odontológica (DFY)
+**Contexto:** cliente ativa. Frase reportada por Felipe em call com Mel Quevedo (14/08/2026).
 
 **Transformação — tempo:**
 > "O Cadência estava fazendo ela ter duas horas a mais de sono."
 
-**Autorização:** frase reportada por Felipe, não gravada diretamente com a cliente. Usar como prova anônima ("uma cliente nossa disse") até confirmar autorização nominal.
+**Autorização:** frase reportada por Felipe. Confirmar com Ana Carolina antes de uso público nominal.
 
 ---
 
