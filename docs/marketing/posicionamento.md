@@ -4,8 +4,6 @@ tags: [marketing, canon]
 ---
 
 > **Fonte de verdade:** [cadencia-docs / Marketing / posicionamento](https://posicionamento-digital.github.io/cadencia-docs/marketing/posicionamento/)
-> Este arquivo é **cópia** — pode estar em drift. Sempre editar primeiro na fonte.
-
 # Posicionamento — Cadencia
 
 > Framework: Kotler (marketing estratégico) + Al Ries "Posicionamento: a batalha pela sua mente".
@@ -40,6 +38,11 @@ Não somos:
 Somos o único elo que transforma conhecimento tácito em processo automatizado com acompanhamento real.
 
 **Mensagem central:** _"Você já sabe o que funciona. A gente transforma isso em escala."_
+
+**Mensagem alternativa — perfil liberal/DFY** (mais ressonante quando a dor é constância, não escala de clientes):
+_"Você cria quando tem criatividade E tempo. Mas você precisa aparecer sempre."_
+
+> Fonte nativa: Mel Quevedo (Horus Marcas e Patentes), call 14/08/2026: *"São momentos que eu tô com criatividade e momentos que eu tô com tempo."*
 
 ---
 
