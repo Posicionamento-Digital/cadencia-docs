@@ -39,3 +39,10 @@ jobs:
           git add -f site/
           git diff --staged --quiet || git commit -m "chore(docs): rebuild site/ [skip ci]"
           git push
+
+      - name: Publicar o mesmo build no GitHub Pages
+        run: |
+          mkdocs gh-deploy \
+            --clean \
+            --remote-branch gh-pages \
+            --message "chore(docs): deploy {sha} [skip ci]"
