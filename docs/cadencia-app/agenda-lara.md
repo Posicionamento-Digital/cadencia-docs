@@ -102,6 +102,21 @@ regras adicionais de coleta pertencem à configuração/prompt do tenant e não 
 A consulta de agendamento lê o estado persistido; o alias legado `agendar` fica oculto para não
 duplicar tools.
 
+### Confirmação e reagendamento por resposta
+
+Para tenants com confirmação habilitada, o lembrete D-1 termina com as respostas textuais
+`CONFIRMAR` e `REAGENDAR`. `CONFIRMAR` é tratado deterministicamente antes de billing, LLM e tools:
+confirma o appointment de forma idempotente e move a oportunidade para o estágio confirmado sem
+regredir o funil. Se a leitura de configuração estiver indeterminada, o fluxo falha fechado com uma
+resposta neutra; só retorna ao atendimento normal quando a feature está comprovadamente ausente ou
+desativada.
+
+`REAGENDAR` não cancela nem troca a consulta de imediato. A Lara acolhe o pedido, pergunta se pode
+ajudar, consulta horários reais e só altera o appointment depois que o contato escolhe uma opção. Se a
+pessoa pede para esperar, ocorre uma tentativa consultiva de recuperação; uma recusa explícita é
+respeitada. Ao reagendar na agenda nativa, a confirmação volta a pendente e lembretes da data anterior
+ficam `superseded`, preservando auditoria.
+
 ## Decisões técnicas
 
 - `native` é default e zero-config; providers externos são escolha explícita.
@@ -129,6 +144,21 @@ duplicar tools.
 4. Teste criação/cancelamento num tenant de teste, inclusive replay idempotente e slot ocupado.
 5. Em `unknown`, consulte o provider antes de qualquer nova mutação.
 6. Se existir sistema clínico externo, defina integração ou controle formal da dupla digitação.
+7. Mudança na Lara passa primeiro pelo ambiente Attemys; deploy de produção exige API e worker no
+   mesmo commit.
+8. O E2E usa appointment sintético e número controlado da equipe e termina limpando appointment,
+   reminder, oportunidade, timeline e conversa.
+
+### Aceite controlado — Clínica OP, 14/08/2026
+
+`CONFIRMAR` confirmou a fixture, moveu **Avaliação Agendada** para **Avaliação Confirmada**, gravou
+exatamente um evento de confirmação e um de mudança de estágio e permaneceu idempotente no replay.
+`REAGENDAR` preservou a consulta pendente, abriu o contexto e ofereceu horários reais; o replay não
+duplicou timeline nem movimento. A escolha final e a gravação do novo horário não foram executadas
+nesse E2E e continuam como limite explícito da validação.
+
+O follow-up de não comparecimento permanece separado: ele exige no-show canônico por appointment e
+nunca deve disparar para consulta futura, cancelada, comparecida ou ainda sem status.
 
 Validação técnica: `pytest -q tests/scheduling/test_native.py tests/test_dev1364_booking_endpoints.py
 tests/test_dev1459_provider_default.py tests/test_dev1581_vincular_contato.py

@@ -70,7 +70,7 @@ flowchart TD
     condition -->|"não"| pause
 ```
 
-Os gatilhos disponíveis são `manual`, `instant`, `stage`, `inbound_whatsapp` e `outbound_no_reply`. O campo `since` protege a base histórica ao ativar automações. Email e WhatsApp são automáticos; ligação, manual e Instagram geram ações humanas. `offset_minutes` prevalece sobre `day_offset`, sempre relativo ao início da inscrição.
+Os gatilhos disponíveis são `manual`, `instant`, `stage`, `inbound_whatsapp`, `outbound_no_reply` e `lara_no_reply`. O último usa `lara_conversations.last_lara_at`, gravado somente depois de uma resposta conversacional confirmada da Lara; operador, sistema e a própria cadência não atualizam esse relógio. O campo `since` protege a base histórica ao ativar automações. Email e WhatsApp são automáticos; ligação, manual e Instagram geram ações humanas. `offset_minutes` prevalece sobre `day_offset`, sempre relativo ao início da inscrição.
 
 ## Decisões técnicas
 
@@ -81,10 +81,14 @@ Os gatilhos disponíveis são `manual`, `instant`, `stage`, `inbound_whatsapp` e
 - As cadências 10D Prospecção e FUP Pós-Proposta são semeadas com copy operacional e associação de pipeline.
 - Instagram é canal manual, não automação de publicação.
 - Migrações removeram `auto_enroll*` somente depois de aposentar o leitor antigo.
+- `set_cadence_activation` liga a cadência e o master switch na mesma transação. Ao religar o master,
+  reinicia o `since` das automações ativas para não consumir backlog.
+- `entry_event_at` impede que o mesmo `last_lara_at` rematricule depois da conclusão e permite novo
+  ciclo somente para uma nova resposta confirmada da Lara.
 
 ## Gotchas & armadilhas
 
-- O cron atual roda uma vez ao dia (`10 14 * * *`, 11:10 BRT). Offsets em minutos não implicam precisão de minutos enquanto a frequência não for aumentada.
+- O tick roda a cada 5 minutos; o envio acontece depois do prazo configurado, no primeiro tick posterior.
 - O runtime usa estado `running`; comentários antigos de schema que citam `active` não são contrato atual.
 - A migration `20260715190000_cadence_unify_dev1329.sql` apaga linhas de teste com `driver='lara'`; não reaplicar sem verificar o banco.
 - `inbound_whatsapp` só matricula contato já existente no CRM.
@@ -114,5 +118,25 @@ O check idempotente impede repetição do mesmo passo/ciclo em condições norma
 **O que acontece quando o lead responde no WhatsApp?**
 A inscrição em andamento é pausada antes do próximo disparo.
 
-**Por que um passo de cinco minutos pode executar horas depois?**
-Porque o scheduler atual é diário. O offset define vencimento, mas a frequência do cron define quando ele será observado.
+**Por que um passo pode executar alguns minutos depois do vencimento?**
+Porque o offset define o vencimento e o tick de 5 minutos define quando ele será observado.
+
+## Implementação de referência — Clínica OP
+
+A retomada curta aguarda 10 minutos completos após uma resposta confirmada da Lara. Persistindo o
+silêncio, ela envia “Posso dar continuidade no seu atendimento?” e conecta o contato à sequência
+comercial D1–D7. Os passos longos saem às 09:00 no fuso `America/Sao_Paulo`, inclusive aos sábados e
+domingos. Se o contato volta a conversar e silencia novamente, os 10 minutos são respeitados outra vez
+e a sequência retoma no próximo dia a partir do passo pendente, sem voltar ao D1.
+
+O funil acompanha o estado: `tentando-contato` durante retomada, `em-conversa` após resposta,
+**Avaliação Agendada** após booking, **Avaliação Confirmada** após confirmação e `resgate` quando o D7
+termina sem resposta. `standby` fica reservado para quem pediu espera. Resposta, opt-out, takeover
+humano ou agendamento impedem o próximo envio.
+
+Os textos usam `{{lead_first_name}}`; `{first name}` não é sintaxe válida. Áudios e imagens podem ser
+provisórios desde que pertençam à biblioteca do tenant e não citem outra clínica. A frase “Temos apenas
+5 vagas disponíveis” é uma decisão comercial específica da OP, não um padrão global.
+
+O aceite de produção usou apenas números controlados da equipe, sem pacientes e sem matrícula
+histórica. No-show é outro fluxo e não reutiliza `lara_no_reply`.

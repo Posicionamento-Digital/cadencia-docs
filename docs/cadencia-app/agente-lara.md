@@ -124,6 +124,7 @@ definem o modelo efetivo. No playground, apenas tools de leitura executam; muta�
 - Material sem `send_when` é somente manual e não entra no catálogo autônomo do agente.
 - Endereço oficial é um fato estruturado por tenant, não apenas texto solto no prompt ou no RAG.
 - API e worker dedicado usam o mesmo Supabase e precisam receber a mesma fonte de `service_role`.
+- API e worker são um único release lógico e devem rodar exatamente o mesmo commit.
 - Cobrança é por conversa iniciada; metering/cap continuam controles distintos.
 - O scheduler de cadências vive no `cadencia-growth`; Lara é canal, disponibilidade e sinal inbound.
 
@@ -153,6 +154,12 @@ definem o modelo efetivo. No playground, apenas tools de leitura executam; muta�
 5. Configure operador e agenda; valide leitura no Playground.
 6. Faça mutações em tenant de teste e acompanhe timeline, conexão, uso e billing.
 7. Após deploy ou rotação de segredo, valide API e worker separadamente nos logs sanitizados.
+8. Para alterações funcionais da Lara, valide primeiro no ambiente Attemys e depois faça E2E com
+   contato sintético ou número controlado da equipe, nunca paciente.
+
+Hoje a cobrança debita um crédito quando a Lara inicia a conversa cobrável do contato. A evolução para
+uma nova cobrança somente após 30 dias de inatividade está planejada na DEV-1766, mas ainda não foi
+implementada; não confundir essa decisão de negócio com o comportamento atual.
 
 Validação técnica: `npm test -- --run && npm run build` no `cadencia-app`; `pytest -q` no
 `cadencia-lara`.
