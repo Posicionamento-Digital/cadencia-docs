@@ -81,10 +81,8 @@ Os gatilhos disponíveis são `manual`, `instant`, `stage`, `inbound_whatsapp`, 
 - As cadências 10D Prospecção e FUP Pós-Proposta são semeadas com copy operacional e associação de pipeline.
 - Instagram é canal manual, não automação de publicação.
 - Migrações removeram `auto_enroll*` somente depois de aposentar o leitor antigo.
-- `set_cadence_activation` liga a cadência e o master switch na mesma transação. Ao religar o master,
-  reinicia o `since` das automações ativas para não consumir backlog.
-- `entry_event_at` impede que o mesmo `last_lara_at` rematricule depois da conclusão e permite novo
-  ciclo somente para uma nova resposta confirmada da Lara.
+- `set_cadence_activation` liga a cadência e o master switch na mesma transação. Ao religar o master, reinicia o `since` de todas as automações ativas para não consumir backlog.
+- `entry_event_at` impede que o mesmo `last_lara_at` rematricule depois da conclusão e permite novo ciclo somente para uma nova resposta da Lara.
 
 ## Gotchas & armadilhas
 
@@ -121,22 +119,8 @@ A inscrição em andamento é pausada antes do próximo disparo.
 **Por que um passo pode executar alguns minutos depois do vencimento?**
 Porque o offset define o vencimento e o tick de 5 minutos define quando ele será observado.
 
-## Implementação de referência — Clínica OP
+## Aceite de produção — DEV-1737
 
-A retomada curta aguarda 10 minutos completos após uma resposta confirmada da Lara. Persistindo o
-silêncio, ela envia “Posso dar continuidade no seu atendimento?” e conecta o contato à sequência
-comercial D1–D7. Os passos longos saem às 09:00 no fuso `America/Sao_Paulo`, inclusive aos sábados e
-domingos. Se o contato volta a conversar e silencia novamente, os 10 minutos são respeitados outra vez
-e a sequência retoma no próximo dia a partir do passo pendente, sem voltar ao D1.
+Em 13/08/2026, a Clínica OP passou por duas rodadas E2E com número controlado da equipe: duas respostas confirmadas da Lara produziram duas matrículas e dois follow-ups, sem envio antecipado nem duplicação. Os ticks observados tiveram `failed=0` e `error=0`. Nenhum paciente foi usado no teste.
 
-O funil acompanha o estado: `tentando-contato` durante retomada, `em-conversa` após resposta,
-**Avaliação Agendada** após booking, **Avaliação Confirmada** após confirmação e `resgate` quando o D7
-termina sem resposta. `standby` fica reservado para quem pediu espera. Resposta, opt-out, takeover
-humano ou agendamento impedem o próximo envio.
-
-Os textos usam `{{lead_first_name}}`; `{first name}` não é sintaxe válida. Áudios e imagens podem ser
-provisórios desde que pertençam à biblioteca do tenant e não citem outra clínica. A frase “Temos apenas
-5 vagas disponíveis” é uma decisão comercial específica da OP, não um padrão global.
-
-O aceite de produção usou apenas números controlados da equipe, sem pacientes e sem matrícula
-histórica. No-show é outro fluxo e não reutiliza `lara_no_reply`.
+Artefatos: Lara `6e06d1d`, Growth PR #132 (`9e0802f`), App PR #309 (`9e4bf23`) e migration `20260812181500`.

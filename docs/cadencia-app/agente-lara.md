@@ -1,19 +1,12 @@
 # Agente Lara
 
-> Atendente WhatsApp multi-tenant do Cadência, com operação humana, prompt em camadas, conhecimento,
-> ferramentas, agenda, materiais, timeline e billing em uma única superfície.
+> Atendente WhatsApp multi-tenant do Cadência, com operação humana, conhecimento, ferramentas, agenda, mídia, uso e billing em uma única superfície.
 
 ## Por que foi construído assim
 
-A Lara separa interface e runtime. O `cadencia-app` autentica o usuário, resolve o tenant no servidor
-e oferece o painel. O `cadencia-lara` recebe webhooks Evolution GO/whatsmeow, serializa conversas,
-executa o agente e persiste os resultados. O browser nunca escolhe o tenant, conhece chaves
-administrativas ou determina a instância do WhatsApp.
+A Lara foi separada em duas responsabilidades. O `cadencia-app` autentica o usuário, resolve o tenant no servidor e oferece a interface. O `cadencia-lara` recebe webhooks, serializa conversas, executa o agente e persiste os resultados. Essa divisão impede que o browser escolha um `tenant_id`, conheça chaves administrativas ou determine a instância de WhatsApp.
 
-O runtime persiste o inbound antes dos gates e usa Stream + buffer durável de debounce. O `XACK` do
-Stream acontece após a transferência ao buffer; a conclusão do turno controla separadamente o commit
-desse buffer. Política global e instrução do tenant são camadas diferentes: o cliente personaliza seu
-atendimento sem apagar as regras da plataforma.
+O runtime usa fila durável e debounce para agrupar mensagens consecutivas. A resposta só confirma a fila depois de persistir e enviar com sucesso; falhas anteriores permanecem recuperáveis. O takeover humano, o billing e os limites mensais são gates do backend, não apenas controles visuais.
 
 Fatos críticos podem ter resposta determinística antes do modelo. O primeiro contrato é o endereço:
 quando o contato pede explicitamente o endereço, a Lara envia o texto oficial configurado sem pedir
@@ -25,164 +18,126 @@ continuam disponíveis ao operador, mas não podem ser escolhidos autonomamente 
 | Camada | Tecnologia |
 |---|---|
 | Interface e API de borda | Next.js 15, React 19, Supabase Auth/Realtime |
-| Runtime | Python, FastAPI, OpenAI-compatible LLMs |
-| Canal | Evolution GO/whatsmeow, uma instância por tenant |
-| Estado/fila | Supabase PostgreSQL + Storage, Redis Streams |
-| Conhecimento | Texto fixado, RAG, FAQ, URL/arquivos e `style_digest` |
-| Extensões | Tools HTTP/MCP, skills, materiais e agenda |
-| Onde roda | Vercel (`cadencia-app`) e VPS Master/Coolify (`cadencia-lara`) |
+| Runtime | FastAPI, Python, OpenAI-compatible LLMs |
+| Canal | Evolution API / WhatsApp |
+| Estado | Supabase PostgreSQL e Storage |
+| Conhecimento | RAG, FAQ, URL, arquivos e `style_digest` |
+| Extensões | Tools HTTP/MCP, skills first-party e agenda |
 
 ## Como funciona
 
 ```mermaid
 flowchart TD
-    classDef component fill:#D1FAE5,stroke:#10B981,color:#111
     classDef flow fill:#DBEAFE,stroke:#3B82F6,color:#111
-    classDef decision fill:#EDE9FE,stroke:#8B5CF6,color:#111
-    classDef core fill:#FEE2E2,stroke:#EF4444,color:#111
-    classDef external fill:#FEF3C7,stroke:#F59E0B,color:#111
+    classDef component fill:#D1FAE5,stroke:#10B981,color:#111
     classDef warning fill:#FEF9C3,stroke:#EAB308,color:#111
+    classDef decision fill:#EDE9FE,stroke:#8B5CF6,color:#111
+    classDef external fill:#FEF3C7,stroke:#F59E0B,color:#111
+    classDef core fill:#FEE2E2,stroke:#EF4444,color:#111
 
     subgraph SG_component["Componentes"]
         panel[("Projetos/Cadencia/Docs/agente-lara.md")]
         api["API de borda"]
         runtime["Runtime Lara"]
-        timeline["Timeline e materiais"]
     end
-    class panel,api,runtime,timeline component
+    class panel,api,runtime component
 
     subgraph SG_flow["Fluxo do processo"]
         inbound["Mensagem chega no WhatsApp"]
-        resolve["Valida conexão e resolve tenant + contato canônico"]
-        persist["Persiste inbound e enfileira a conversa"]
+        resolve["Resolve instância, tenant e contato canônico"]
+        queue["Agrupa bolhas e serializa a conversa"]
         fact["Há fato crítico configurado para esta intenção?"]
-        reason["Aplica modo, billing, plataforma > tenant, contexto e tools"]
+        reason["Aplica operador, billing, RAG, tools e LLM"]
         exact["Responde com o texto oficial"]
-        send["Gera e envia com retry; tenta fallback se o canal estiver disponível"]
-        finish["Persiste provider ID e conclui o buffer"]
+        send["Envia, persiste e confirma a fila"]
     end
-    class inbound,resolve,persist,reason,exact,send,finish flow
+    class inbound,resolve,queue,reason,exact,send flow
 
     subgraph SG_decision["Decisões"]
-        connected["Tenant válido e WhatsApp LoggedIn?"]
-        mode["Modo bot, human ou paused?"]
-        limit["Saldo, cap e capability permitem gerar?"]
-        tool["Sessão real ou playground? Tool lê ou altera estado?"]
+        tenant["Tenant resolvido?"]
+        mode["Conversa está com Lara ou humano?"]
+        limit["Há saldo e limite mensal?"]
+        tool["Tool exige aprovação/está ativa?"]
     end
-    class connected,mode,limit,tool decision
+    class tenant,mode,limit,tool decision
 
-        title["Agente Lara"]
+    title["Agente Lara"]
     class title core
-
-        evolution["Evolution GO + Supabase + Redis"]
-    class evolution external
-
-    subgraph SG_warning["Gotchas / Erros"]
-        stop["Sem resposta automática"]
-        recover["Falha recuperável"]
-    end
-    class stop,recover warning
+    data["Supabase por tenant"]
+    class data external
+    err["Falha antes do sucesso"]
+    class err warning
 
     inbound --> resolve
-    resolve -->|"válido + conectado"| persist
-    persist -->|"modo bot + autorizado"| fact
+    resolve -->|"tenant válido"| queue
+    queue --> fact
     fact -->|"sim"| exact
     fact -->|"não"| reason
     exact --> send
-    reason -->|"contexto montado"| send
-    send -->|"envio bem-sucedido"| finish
-    resolve -->|"decide"| connected
-    connected -->|"não"| stop
-    connected -->|"sim"| persist
-    persist -->|"decide"| mode
-    mode -->|"bot"| reason
-    mode -->|"human/paused"| stop
-    reason -->|"decide"| limit
-    limit -->|"sim"| send
-    limit -->|"não"| stop
-    reason -->|"decide"| tool
-    tool -->|"leitura/real autorizada"| send
-    tool -->|"mutação no playground: simula"| stop
-    send -->|"falha recuperável"| recover
+    reason -->|"autorizado"| send
+    resolve -->|"decide"| tenant
+    reason --> mode
+    reason --> limit
+    reason --> tool
+    reason -->|"erro"| err
 ```
 
-O painel `/app/lara` reúne nove superfícies: Conversas, Agente, Conhecimento, Ferramentas, Materiais,
-Operador, Conexão, Playground e Dashboard. A timeline representa texto, mídia, localização, contato,
-reply, reação, eventos e cards internos sem transformar tool/system/error em mensagem para o paciente.
-
-O agente recebe política global, prompt do tenant, data/hora, conhecimento fixado, estilo, RAG,
-identidade e histórico, nessa ordem. Modelo salvo é uma preferência; allowlist e default globais
-definem o modelo efetivo. No playground, apenas tools de leitura executam; mutações são simuladas.
+O painel `/app/lara` reúne Conversas, Agente, Conhecimento, Ferramentas, Operador, Conexão, Playground e Dashboard administrativo. Conversas usam Realtime e polling de 6 segundos como fallback, suportam mídia, outbox otimista com retry, takeover bot/humano, não lidas, merge LID/telefone e deep-link responsivo.
 
 ## Decisões técnicas
 
-- `laraGuard()` autentica, resolve tenant e valida a flag em cada rota protegida.
-- O browser nunca recebe `LARA_ADMIN_KEY`, `LARA_SUPER_ADMIN_KEY` ou token Evolution.
-- Contato é canonicalizado antes de dedupe, fila, billing e timeline; LID é alias.
-- Tools HTTP/MCP usam schema, cofre, SSRF pinning, aprovação, auditoria e kill switch.
-- Biblioteca de materiais separa arquivo, forma de envio (`send_as`) e orientação (`send_when`).
-- Material sem `send_when` é somente manual e não entra no catálogo autônomo do agente.
+- `laraGuard()` autentica, resolve o tenant e valida a feature flag em toda API protegida.
+- O browser nunca envia o tenant efetivo nem recebe `LARA_ADMIN_KEY` ou `LARA_SUPER_ADMIN_KEY`.
+- Ferramentas HTTP/MCP usam schema, cofre de segredos, proteção SSRF, aprovação e kill switch.
+- Conhecimento livre, FAQ, URL, arquivos e perguntas recorrentes alimentam a mesma base por tenant.
+- Cobrança considera conversa iniciada; metering, saldo e cap mensal são aplicados antes da geração.
+- Abas visitadas permanecem montadas e URL/contato sobrevivem a refresh e navegação.
 - Endereço oficial é um fato estruturado por tenant, não apenas texto solto no prompt ou no RAG.
-- API e worker dedicado usam o mesmo Supabase e precisam receber a mesma fonte de `service_role`.
-- API e worker são um único release lógico e devem rodar exatamente o mesmo commit.
-- Cobrança é por conversa iniciada; metering/cap continuam controles distintos.
-- O scheduler de cadências vive no `cadencia-growth`; Lara é canal, disponibilidade e sinal inbound.
+- API e worker dedicado precisam usar a mesma fonte de credencial Supabase; são dois processos do
+  mesmo runtime, não dois ambientes de dados.
 
 ## Gotchas & armadilhas
 
-- **QR agressivo derruba o provedor** — polling direto abre clientes e esgota Postgres; usar cache de
-  12s e disjuntor 10–120s.
-- **Instância não significa conexão** — resposta só é permitida quando Evolution informa `LoggedIn`.
-- **Prompt do tenant não é política** — não copiar a camada global para o textarea do cliente.
-- **Modelo salvo pode ser inválido** — sempre observar `effective_model`, não apenas o campo do tenant.
-- **HTTP 200, XACK e commit não são sinônimos** — o Stream é confirmado após entrar no buffer; o
-  buffer é concluído separadamente ao fim do turno.
-- **Fallback depende do canal** — se Evolution falhar no envio normal e no fallback, o runtime atual
-  apenas registra o erro; ainda não persiste `needs_owner` para esse caso.
-- **URL de mídia não é permanente** — Storage é privado e o painel usa URL assinada/blob.
-- **Playground não prova mutação** — agendar, cancelar, handoff e materiais são simulados ali.
-- **Health da API não valida o worker** — um `401` apenas no worker pode cair no fallback seguro e
-  esconder perda de configuração, histórico, uso ou billing.
+- Esconder a navegação não autoriza acesso; o gate deve existir em cada rota da API.
+- Erro de backend não pode ser apresentado como estado vazio.
+- Realtime pode cair silenciosamente, por isso o polling não deve ser removido.
+- `activeRef` precisa mudar no mesmo tick da abertura da conversa para não descartar a primeira resposta.
+- Mídia assinada pode exigir fetch como blob; a URL interna não é link permanente.
+- Aprovação de tool e kill switch pertencem ao super_admin.
+- O runtime antigo de cadências dentro da Lara foi aposentado; Lara hoje é adaptador de canal e agenda.
+- Health verde da API não prova que o worker está autenticado no Supabase. Um `401` apenas no worker
+  pode ser mascarado pelo fallback seguro e causar perda de configuração, histórico ou billing.
 
 ## Como operar
 
-1. Habilite `flag_lara_enabled` e defina preset/capabilities pelo super_admin.
-2. Em **Conexão**, use QR ou código de pareamento e confirme `LoggedIn`.
-3. Em **Agente**, edite o prompt do tenant, observe o modelo efetivo e grave fatos críticos como
-   endereço no campo estruturado correspondente.
-4. Cadastre conhecimento, estilo, tools e materiais; material autônomo exige `send_when` explícito.
-5. Configure operador e agenda; valide leitura no Playground.
-6. Faça mutações em tenant de teste e acompanhe timeline, conexão, uso e billing.
-7. Após deploy ou rotação de segredo, valide API e worker separadamente nos logs sanitizados.
-8. Para alterações funcionais da Lara, valide primeiro no ambiente Attemys e depois faça E2E com
-   contato sintético ou número controlado da equipe, nunca paciente.
+1. Habilite `flag_lara_enabled` no tenant e configure a instância.
+2. Em **Conexão**, gere o QR e confirme o estado conectado.
+3. Em **Agente**, configure prompt, modelo permitido, temperatura, greeting, limites e guardrails;
+   fatos críticos como endereço devem ser gravados no campo estruturado correspondente.
+4. Cadastre conhecimento e aprove respostas mineradas antes de publicá-las na KB.
+5. Cadastre tools por referência de segredo e envie para aprovação quando necessário.
+6. Configure operador, agenda e skills; todo material autônomo precisa de `send_when` explícito.
+7. Valide no Playground antes de usar uma conversa real.
+8. Após deploy ou rotação de segredo, valide API e worker separadamente nos logs sanitizados.
+9. Acompanhe conexão, uso e billing no dashboard administrativo.
 
-Hoje a cobrança debita um crédito quando a Lara inicia a conversa cobrável do contato. A evolução para
-uma nova cobrança somente após 30 dias de inatividade está planejada na DEV-1766, mas ainda não foi
-implementada; não confundir essa decisão de negócio com o comportamento atual.
-
-Validação técnica: `npm test -- --run && npm run build` no `cadencia-app`; `pytest -q` no
-`cadencia-lara`.
+Validação técnica: `npm run build` no `cadencia-app` e `pytest -q` no `cadencia-lara`.
 
 ## FAQ
 
-**A Lara pode escolher outro tenant ou instância pelo payload?**
-Não. API de borda e backend resolvem ambos no servidor.
-
-**O prompt do cliente substitui as regras da Cadência?**
-Não. A política global é injetada primeiro e prevalece.
-
-**Por que o modelo salvo pode não ser o usado?**
-O backend restringe modelos à allowlist global e cai no default seguro.
+**A Lara pode escolher outro tenant ou outra instância pelo payload?**
+Não. A API de borda e o backend resolvem ambos no servidor.
 
 **O operador humano consegue assumir uma conversa?**
-Sim. O modo é persistido por conversa; inbound continua salvo, mas o bot não responde.
+Sim. O modo é persistido por conversa e o runtime deixa de responder enquanto estiver em atendimento humano.
 
-**A Lara pode enviar um material porque o prompt mandou?**
-Somente por `enviar_material`, com `send_when` explícito e após sucesso do Evolution. Sem a regra, o
-material fica disponível apenas para o operador.
+**Ferramentas MCP podem ser ativadas diretamente pelo cliente?**
+Não quando exigem análise. Aprovação e kill switch são controles administrativos.
+
+**O que acontece se enviar a resposta e falhar antes do ACK?**
+A mensagem permanece recuperável na fila; o fluxo foi desenhado para não confirmar trabalho incompleto.
 
 **A Lara usa o LLM para responder o endereço?**
-Não quando `business_facts.address.answer` está configurado e a intenção é explícita. Ela envia
-literalmente a resposta oficial; frases sobre endereço do próprio contato, entrega, cobrança,
+Não quando `business_facts.address.answer` está configurado e a intenção é explícita. Nesse caso, ela
+envia literalmente a resposta oficial; frases sobre endereço do próprio contato, entrega, cobrança,
 residência ou endereço digital seguem o fluxo normal.
