@@ -32,10 +32,6 @@ mkdocs serve
 # O site atualiza em ~40s via GitHub Actions
 ```
 
-O conteúdo-fonte e o build pré-renderizado permanecem na `main`. O workflow também publica o mesmo
-build em `gh-pages`, branch servida pelo GitHub Pages. `gh-pages` é artefato de deploy, não fonte para
-edição manual.
-
 ## Estrutura
 
 ```
