@@ -1,7 +1,8 @@
 # IndexNow — notificação de URLs públicas
 
-> Feature entregue via [DEV-1774](https://linear.app/cadencia/issue/DEV-1774) (PR #331, merge `826eb65` em 2026-08-15).
-> Público: quem precisa adicionar página SEO nova no `cadencia-app`, ou a skill `/cadencia-nova-pagina-seo` executando o fluxo.
+> Site institucional: [DEV-1774](https://linear.app/cadencia/issue/DEV-1774) (PR #331 `826eb65`, 2026-08-15).
+> Blogs de tenant + provisionamento automático: [DEV-1775](https://linear.app/cadencia/issue/DEV-1775) (PR cadencia-app #333 + cadencia-growth #136).
+> Público: quem precisa adicionar página SEO nova no `cadencia-app`, ou a skill `/cadencia-nova-pagina-seo` executando o fluxo, ou provisiona/administra tenant novo.
 
 ## O que é
 
@@ -150,6 +151,49 @@ site:cadencia.app.br/<url-testada>
 - Related (produto): [`/casos-de-uso/aparecer-no-chatgpt-e-no-google`](https://cadencia.app.br/casos-de-uso/aparecer-no-chatgpt-e-no-google) — o argumento do próprio produto sobre por que aparecer no ChatGPT importa
 - Related (feature): DEV-1771 hub SEO — IndexNow é o próximo passo lógico de distribuição
 
+## IndexNow em blogs de tenant (DEV-1775)
+
+Além do site institucional, **todo blog de tenant** notifica IndexNow no momento em que um post é publicado. Arquitetura análoga mas com **chave por tenant** (isolamento por design).
+
+### Componentes
+
+| Arquivo | Papel |
+|---|---|
+| `cadencia-blog/src/lib/indexnow.ts` | Helper `notifyIndexNow(urls[])` fail-safe (log-only, timeout 10s) |
+| `cadencia-blog/src/middleware.ts` | Serve `/<INDEXNOW_KEY>.txt` com o valor da chave em texto plano — matcher restrito a `/:key.txt` |
+| `cadencia-blog/src/app/api/publish/route.ts` | Chama `notifyIndexNow([postUrl])` após `sbUpsert` — não muda contrato do webhook |
+| `cadencia-growth/pipeline/provision_tenant.py` | Gera chave hex 32 chars e injeta 2 env vars no Vercel do tenant (`INDEXNOW_KEY` + `INDEXNOW_KEY_LOCATION`) |
+
+### Chave por tenant
+
+Cada tenant recebe chave própria (`secrets.token_hex(16)`) gerada no provisionamento. Env vars injetadas via Vercel API v10 (`/projects/<id>/env`).
+
+- **Tenant novo**: nasce com IndexNow ativo — chave hospedada via middleware em `https://<slug>.cadencia.app.br/<chave>.txt`
+- **Tenant existente**: ganha IndexNow automático quando `provision_tenant.py` roda de novo (helper `_vercel_add_env_if_missing` é idempotente — só adiciona se ainda não existir). Cron diário de tenants pending já dispara isso.
+
+### Fluxo de notificação
+
+```
+Growth pipeline VPS gera post → POST /api/publish (webhook)
+  → sbUpsert em published_posts
+  → Next.js revalidate (cache invalidation)
+  → notifyIndexNow([postUrl])  ← NOVO
+  → POST api.indexnow.org (JSON com host/key/keyLocation/urlList do tenant)
+  → HTTP 200/202 = sucesso; qualquer outro = log warn, publicação segue
+```
+
+### Fail-safe (não bloqueia publicação)
+
+- Sem `INDEXNOW_KEY` no env: `console.warn` + `return false`, publicação segue normal
+- Erro HTTP no IndexNow: `console.error` com status + primeiros 200 chars do body, publicação segue
+- Timeout de 10s: `AbortController` cancela, publicação segue
+- **Publicação nunca é abortada por IndexNow** — regra dura, IndexNow é notificação, não caminho crítico
+
+### Insight Artificial
+
+Blog separado (`insightartificial.ia.br`) — repo do site em si não localizado nesta sessão. Requer investigação separada + PR próprio. Não incluído em DEV-1775 executada.
+
 ## Histórico
 
-- **2026-08-15** — Feature inicial via DEV-1774. Workflow + scripts + chave + doc básica (PR #331 merged `826eb65`). Doc expandida com integração `/cadencia-nova-pagina-seo`, ADR Python vs Node, cobertura por tipo e gotchas.
+- **2026-08-15 (site institucional)** — Feature inicial via DEV-1774. Workflow GitHub Action + scripts Python + chave estática + doc básica (PR #331 merged `826eb65`). Doc expandida com integração `/cadencia-nova-pagina-seo`, ADR Python vs Node, cobertura por tipo e gotchas.
+- **2026-08-15 (blogs de tenant)** — Expansão via DEV-1775 (parte 1+2 no cadencia-app PR #333, parte 3+4 no cadencia-growth PR #136). Helper + middleware + integração no webhook `/api/publish`; provisionamento gera chave por tenant + retrofit inline. Parte 5 (Insight Artificial) e testes de retrofit em tenants individuais pendentes.
