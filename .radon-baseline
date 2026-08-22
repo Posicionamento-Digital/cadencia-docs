@@ -1,0 +1,3 @@
+# Legacy complexity outside the DEV-1647 documentation diff.
+docs/_infra/cloudflare/espelhar.py
+site/_infra/cloudflare/espelhar.py
