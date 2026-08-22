@@ -53,11 +53,12 @@ flowchart TD
         legacy_empty["Não: renomear e evoluir preservando colunas legadas"]
         tenant["Tenant do vínculo coincide?"]
         tenant_yes["Sim: FK composta e RLS autorizam a linha própria"]
-        coverage["Cobertura é parcial?"]
-        coverage_yes["Sim: motivo obrigatório e evidência preservada"]
-        coverage_no["Não: lista de motivos deve ficar vazia"]
+        coverage["Qual é o estado da cobertura?"]
+        coverage_complete["complete: motivos vazios e métricas presentes"]
+        coverage_partial["partial: motivo obrigatório e métricas presentes"]
+        coverage_unavailable["unavailable: motivo obrigatório e payload vazio"]
     end
-    class legacy,legacy_empty,tenant,tenant_yes,coverage,coverage_yes,coverage_no decision
+    class legacy,legacy_empty,tenant,tenant_yes,coverage,coverage_complete,coverage_partial,coverage_unavailable decision
 
         title["Métricas e análises sociais"]
     class title core
@@ -76,8 +77,9 @@ flowchart TD
     legacy -->|"one or more rows"| legacy_rows
     tenant -->|"yes"| tenant_yes
     tenant -->|"no"| tenant_no
-    coverage -->|"yes"| coverage_yes
-    coverage -->|"no"| coverage_no
+    coverage -->|"complete"| coverage_complete
+    coverage -->|"partial"| coverage_partial
+    coverage -->|"unavailable"| coverage_unavailable
     snapshot --> analysis
     analysis --> learning
     validator -->|"payload válido"| persist
