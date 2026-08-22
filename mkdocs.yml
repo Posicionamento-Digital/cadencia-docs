@@ -153,6 +153,7 @@ nav:
     - Features:
       - Conexões sociais via Composio: cadencia-app/features/social-connections/index.md
       - Métricas e análises sociais: cadencia-app/features/social-analytics/index.md
+      - Sidebar pending badges: cadencia-app/features/sidebar-pending-badges.md
       - CRM — Lista Tabela Linear: cadencia-app/features/crm-lista-tabela-linear.md
       - Mise en place — Growth pipeline: cadencia-app/features/mise-en-place-growth-pipeline.md
       - Editor visual de slides — arquitetura atual: cadencia-app/features/editor-visual-engine-spike.md

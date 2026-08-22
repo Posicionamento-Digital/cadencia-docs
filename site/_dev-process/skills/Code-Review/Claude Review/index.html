@@ -3,8 +3,8 @@
 </span><span id=__span-0-3><a id=__codelineno-0-3 name=__codelineno-0-3 href=#__codelineno-0-3></a>description: &gt;
 </span><span id=__span-0-4><a id=__codelineno-0-4 name=__codelineno-0-4 href=#__codelineno-0-4></a>  Roda code review via Claude Code CLI (Anthropic) com Opus 4.7 na branch atual, processa o output
 </span><span id=__span-0-5><a id=__codelineno-0-5 name=__codelineno-0-5 href=#__codelineno-0-5></a>  e classifica achados em P1/P2/P3 por categoria (lógica, sintaxe, estilo, segurança).
-</span><span id=__span-0-6><a id=__codelineno-0-6 name=__codelineno-0-6 href=#__codelineno-0-6></a>  Ativar quando Felipe disser &quot;/claude-review&quot;, &quot;roda claude review&quot;, &quot;review com claude&quot;,
-</span><span id=__span-0-7><a id=__codelineno-0-7 name=__codelineno-0-7 href=#__codelineno-0-7></a><span class=gu>  &quot;review com opus&quot;, &quot;pede pro opus revisar&quot;, &quot;claude review nos últimos commits&quot;.</span>
+</span><span id=__span-0-6><a id=__codelineno-0-6 name=__codelineno-0-6 href=#__codelineno-0-6></a>  Ativar quando Felipe disser "/claude-review", "roda claude review", "review com claude",
+</span><span id=__span-0-7><a id=__codelineno-0-7 name=__codelineno-0-7 href=#__codelineno-0-7></a><span class=gu>  "review com opus", "pede pro opus revisar", "claude review nos últimos commits".</span>
 </span><span id=__span-0-8><a id=__codelineno-0-8 name=__codelineno-0-8 href=#__codelineno-0-8></a><span class=gu>---</span>
 </span><span id=__span-0-9><a id=__codelineno-0-9 name=__codelineno-0-9 href=#__codelineno-0-9></a>
 </span><span id=__span-0-10><a id=__codelineno-0-10 name=__codelineno-0-10 href=#__codelineno-0-10></a><span class=gh># /claude-review — Code Review via Claude Code CLI (Opus 4.7) + Classificação Estruturada</span>
@@ -29,7 +29,7 @@
 </span><span id=__span-1-2><a id=__codelineno-1-2 name=__codelineno-1-2 href=#__codelineno-1-2></a>
 </span><span id=__span-1-3><a id=__codelineno-1-3 name=__codelineno-1-3 href=#__codelineno-1-3></a>```bash
 </span><span id=__span-1-4><a id=__codelineno-1-4 name=__codelineno-1-4 href=#__codelineno-1-4></a># Opção 1: Diff via pipe (preferida para diffs grandes)
-</span><span id=__span-1-5><a id=__codelineno-1-5 name=__codelineno-1-5 href=#__codelineno-1-5></a>git diff HEAD~3..HEAD | claude -p &quot;$(cat &lt;&lt;&#39;PROMPT&#39;
+</span><span id=__span-1-5><a id=__codelineno-1-5 name=__codelineno-1-5 href=#__codelineno-1-5></a>git diff HEAD~3..HEAD | claude -p "$(cat &lt;&lt;'PROMPT'
 </span><span id=__span-1-6><a id=__codelineno-1-6 name=__codelineno-1-6 href=#__codelineno-1-6></a>Você é um code reviewer sênior especializado em [STACK_DETECTADA].
 </span><span id=__span-1-7><a id=__codelineno-1-7 name=__codelineno-1-7 href=#__codelineno-1-7></a>
 </span><span id=__span-1-8><a id=__codelineno-1-8 name=__codelineno-1-8 href=#__codelineno-1-8></a>Revise o diff abaixo com foco em:
@@ -50,7 +50,7 @@
 </span><span id=__span-1-23><a id=__codelineno-1-23 name=__codelineno-1-23 href=#__codelineno-1-23></a>
 </span><span id=__span-1-24><a id=__codelineno-1-24 name=__codelineno-1-24 href=#__codelineno-1-24></a>NÃO use ferramentas, NÃO edite arquivos, NÃO rode comandos.
 </span><span id=__span-1-25><a id=__codelineno-1-25 name=__codelineno-1-25 href=#__codelineno-1-25></a>PROMPT
-</span><span id=__span-1-26><a id=__codelineno-1-26 name=__codelineno-1-26 href=#__codelineno-1-26></a>)&quot; --model opus --max-turns 1
+</span><span id=__span-1-26><a id=__codelineno-1-26 name=__codelineno-1-26 href=#__codelineno-1-26></a>)" --model opus --max-turns 1
 </span></code></pre></div></p> <h2 id=classificacao-de-prioridade>Classificação de prioridade<a class=headerlink href=#classificacao-de-prioridade title="Permanent link">&para;</a></h2> <h3 id=p1-critico-corrigir-antes-de-deploy>P1 — Crítico (corrigir ANTES de deploy)<a class=headerlink href=#p1-critico-corrigir-antes-de-deploy title="Permanent link">&para;</a></h3> <ul> <li>Bugs que quebram funcionalidade em produção</li> <li>Vulnerabilidades de segurança (auth bypass, injection, RLS)</li> <li>Race conditions que causam perda de dados</li> <li>Regressões que quebram fluxos existentes</li> </ul> <h3 id=p2-importante-corrigir-nesta-sessao>P2 — Importante (corrigir nesta sessão)<a class=headerlink href=#p2-importante-corrigir-nesta-sessao title="Permanent link">&para;</a></h3> <ul> <li>Dead code que polui o codebase</li> <li>Error handling ausente em paths críticos</li> <li>Tipagem incorreta ou <code>any</code> em interfaces públicas</li> </ul> <h3 id=p3-sugestao-backlog>P3 — Sugestão (backlog)<a class=headerlink href=#p3-sugestao-backlog title="Permanent link">&para;</a></h3> <ul> <li>Melhorias de estilo e legibilidade</li> <li>Refatorações opcionais</li> <li>Convenções de naming</li> </ul> <h2 id=formato-do-relatorio>Formato do relatório<a class=headerlink href=#formato-do-relatorio title="Permanent link">&para;</a></h2> <p>Salvar em <code>docs/claude-reviews/claude-review-DD-MM-YYYY.md</code>:</p> <div class="language-markdown highlight"><pre><span></span><code><span id=__span-2-1><a id=__codelineno-2-1 name=__codelineno-2-1 href=#__codelineno-2-1></a><span class=gh># Claude Review — DD/MM/YYYY</span>
 </span><span id=__span-2-2><a id=__codelineno-2-2 name=__codelineno-2-2 href=#__codelineno-2-2></a>
 </span><span id=__span-2-3><a id=__codelineno-2-3 name=__codelineno-2-3 href=#__codelineno-2-3></a><span class=gu>## Resumo</span>

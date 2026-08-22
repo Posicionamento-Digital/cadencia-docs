@@ -17,13 +17,13 @@
 </span><span id=__span-0-17><a id=__codelineno-0-17 name=__codelineno-0-17 href=#__codelineno-0-17></a>
 </span><span id=__span-0-18><a id=__codelineno-0-18 name=__codelineno-0-18 href=#__codelineno-0-18></a><span class=gu>### 2. Explore the codebase (optional)</span>
 </span><span id=__span-0-19><a id=__codelineno-0-19 name=__codelineno-0-19 href=#__codelineno-0-19></a>
-</span><span id=__span-0-20><a id=__codelineno-0-20 name=__codelineno-0-20 href=#__codelineno-0-20></a>If you have not already explored the codebase, do so to understand the current state of the code. Issue titles and descriptions should use the project&#39;s domain glossary vocabulary, and respect ADRs in the area you&#39;re touching.
+</span><span id=__span-0-20><a id=__codelineno-0-20 name=__codelineno-0-20 href=#__codelineno-0-20></a>If you have not already explored the codebase, do so to understand the current state of the code. Issue titles and descriptions should use the project's domain glossary vocabulary, and respect ADRs in the area you're touching.
 </span><span id=__span-0-21><a id=__codelineno-0-21 name=__codelineno-0-21 href=#__codelineno-0-21></a>
 </span><span id=__span-0-22><a id=__codelineno-0-22 name=__codelineno-0-22 href=#__codelineno-0-22></a><span class=gu>### 3. Draft vertical slices</span>
 </span><span id=__span-0-23><a id=__codelineno-0-23 name=__codelineno-0-23 href=#__codelineno-0-23></a>
 </span><span id=__span-0-24><a id=__codelineno-0-24 name=__codelineno-0-24 href=#__codelineno-0-24></a>Break the plan into <span class=gs>**tracer bullet**</span> issues. Each issue is a thin vertical slice that cuts through ALL integration layers end-to-end, NOT a horizontal slice of one layer.
 </span><span id=__span-0-25><a id=__codelineno-0-25 name=__codelineno-0-25 href=#__codelineno-0-25></a>
-</span><span id=__span-0-26><a id=__codelineno-0-26 name=__codelineno-0-26 href=#__codelineno-0-26></a>Slices may be &#39;HITL&#39; or &#39;AFK&#39;. HITL slices require human interaction. AFK slices can be implemented and merged without human interaction. Prefer AFK over HITL where possible.
+</span><span id=__span-0-26><a id=__codelineno-0-26 name=__codelineno-0-26 href=#__codelineno-0-26></a>Slices may be 'HITL' or 'AFK'. HITL slices require human interaction. AFK slices can be implemented and merged without human interaction. Prefer AFK over HITL where possible.
 </span><span id=__span-0-27><a id=__codelineno-0-27 name=__codelineno-0-27 href=#__codelineno-0-27></a>
 </span><span id=__span-0-28><a id=__codelineno-0-28 name=__codelineno-0-28 href=#__codelineno-0-28></a>&lt;vertical-slice-rules&gt;
 </span><span id=__span-0-29><a id=__codelineno-0-29 name=__codelineno-0-29 href=#__codelineno-0-29></a><span class=k>-</span><span class=w> </span>Each slice delivers a narrow but COMPLETE path through every layer (schema, API, UI, tests)
@@ -53,7 +53,7 @@
 </span><span id=__span-0-53><a id=__codelineno-0-53 name=__codelineno-0-53 href=#__codelineno-0-53></a>
 </span><span id=__span-0-54><a id=__codelineno-0-54 name=__codelineno-0-54 href=#__codelineno-0-54></a>For each approved slice, publish a new issue to the issue tracker. Use the issue body template below. These issues are considered ready for AFK agents, so publish them with the correct triage label unless instructed otherwise.
 </span><span id=__span-0-55><a id=__codelineno-0-55 name=__codelineno-0-55 href=#__codelineno-0-55></a>
-</span><span id=__span-0-56><a id=__codelineno-0-56 name=__codelineno-0-56 href=#__codelineno-0-56></a>Publish issues in dependency order (blockers first) so you can reference real issue identifiers in the &quot;Blocked by&quot; field.
+</span><span id=__span-0-56><a id=__codelineno-0-56 name=__codelineno-0-56 href=#__codelineno-0-56></a>Publish issues in dependency order (blockers first) so you can reference real issue identifiers in the "Blocked by" field.
 </span><span id=__span-0-57><a id=__codelineno-0-57 name=__codelineno-0-57 href=#__codelineno-0-57></a>
 </span><span id=__span-0-58><a id=__codelineno-0-58 name=__codelineno-0-58 href=#__codelineno-0-58></a>&lt;issue-template&gt;
 </span><span id=__span-0-59><a id=__codelineno-0-59 name=__codelineno-0-59 href=#__codelineno-0-59></a><span class=gu>## Parent</span>
@@ -76,7 +76,7 @@
 </span><span id=__span-0-76><a id=__codelineno-0-76 name=__codelineno-0-76 href=#__codelineno-0-76></a>
 </span><span id=__span-0-77><a id=__codelineno-0-77 name=__codelineno-0-77 href=#__codelineno-0-77></a><span class=k>-</span><span class=w> </span>A reference to the blocking ticket (if any)
 </span><span id=__span-0-78><a id=__codelineno-0-78 name=__codelineno-0-78 href=#__codelineno-0-78></a>
-</span><span id=__span-0-79><a id=__codelineno-0-79 name=__codelineno-0-79 href=#__codelineno-0-79></a>Or &quot;None - can start immediately&quot; if no blockers.
+</span><span id=__span-0-79><a id=__codelineno-0-79 name=__codelineno-0-79 href=#__codelineno-0-79></a>Or "None - can start immediately" if no blockers.
 </span><span id=__span-0-80><a id=__codelineno-0-80 name=__codelineno-0-80 href=#__codelineno-0-80></a>
 </span><span id=__span-0-81><a id=__codelineno-0-81 name=__codelineno-0-81 href=#__codelineno-0-81></a>&lt;/issue-template&gt;
 </span><span id=__span-0-82><a id=__codelineno-0-82 name=__codelineno-0-82 href=#__codelineno-0-82></a>
